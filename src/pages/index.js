@@ -12,6 +12,6 @@ export { default as Login } from './Login';
 export { default as Profile } from './Profile';
 export { default as DetailsRecipeDrink } from './DetailsRecipeDrink';
 export { default as DetailsRecipeFood } from './DetailsRecipeFood';
-export { default as ProgressRecipesDrink } from '/ProgressRecipesDrink';
+export { default as ProgressRecipesDrink } from './ExploreIngredientsDrink';
 export { default as ProgressRecipesFood } from './ProgressRecipesFood';
 export { default as NotFound } from './NotFound';
