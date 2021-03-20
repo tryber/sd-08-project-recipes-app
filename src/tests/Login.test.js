@@ -49,8 +49,12 @@ describe('Página inicial de login', () => {
     userEvent.type(password, '123456');
     expect(submit).toBeDisabled();
 
-    userEvent.type(email, 'email@mail.com');
+    userEvent.type(email, 'email@email.');
     userEvent.type(password, '123456');
+    expect(submit).toBeDisabled();
+
+    userEvent.type(email, 'email@mail.com');
+    userEvent.type(password, '1234567');
     expect(submit).toBeEnabled();
 
     userEvent.type(email, 'email@email');
@@ -59,10 +63,6 @@ describe('Página inicial de login', () => {
 
     userEvent.type(email, testEmail);
     userEvent.type(password, '12345');
-    expect(submit).toBeDisabled();
-
-    userEvent.type(email, 'email@email.');
-    userEvent.type(password, '123456');
     expect(submit).toBeDisabled();
 
     userEvent.type(email, 'email.email@com');

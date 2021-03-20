@@ -42,7 +42,8 @@ class LoginForm extends Component {
   }
 
   validatorPassword(password) {
-    return password.length > SIX_LENGTH_PASSWORDS;
+    const MIN_LENGTH_PASSWORD = 6;
+    return password.length > MIN_LENGTH_PASSWORD;
   }
 
   validatorEmail(email) {
