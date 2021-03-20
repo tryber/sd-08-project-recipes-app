@@ -82,7 +82,8 @@ class LoginForm extends Component {
           </label>
           <button
             type="button"
-            value="Entrar"
+            value="Enviar"
+            data-testid="login-submit-btn"
             onClick={ this.handleSubmit }
             data-testid="login-submit-btn"
             disabled={ this.validatorDataLog() }
