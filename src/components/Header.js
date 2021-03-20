@@ -40,11 +40,10 @@ function Header() {
                 type="text"
                 placeholder="Buscar Receitas"
                 data-testid="search-input"
-                
               />
             </Form.Group>
           </Form.Row>
-          <Form.Row >
+          <Form.Row>
             <Form.Group controlId="radioPrefer" className="m-1 lh-1">
               <Form.Check inline name="radioPrefer" id="ingredientes">
                 <Form.Check.Input type="radio" />
