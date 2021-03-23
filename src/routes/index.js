@@ -4,16 +4,17 @@ import { Switch, Route } from 'react-router-dom';
 import Login from '../pages/Login';
 import Comidas from '../pages/Comidas';
 import PerfilPágina from '../pages/PerfilPágina';
+import Detalhes from '../pages/Detalhes';
 
 const Routes = () => (
   <Switch>
     <Route exact path="/" component={ Login } />
     <Route exact path="/comidas" component={ Comidas } />
     <Route exact path="/comidas/:id/in-progress" />
-    <Route exact path="/comidas/:id" />
+    <Route exact path="/comidas/:id" component={ Detalhes } />
     <Route exact path="/bebidas" />
     <Route exact path="/bebidas/:id/in-progress" />
-    <Route exact path="/bebidas/:id" />
+    <Route exact path="/bebidas/:id" component={ Detalhes } />
     <Route exact path="/explorar" />
     <Route exact path="/explorar/comidas" />
     <Route exact path="/explorar/bebidas" />

@@ -10,6 +10,7 @@ const Provider = ({ children }) => {
     setFood(results ? results.meals : []);
   };
   const context = { handleHeaderSearch, food };
+
   return (
     <div>
       <LariContext.Provider value={ context }>
