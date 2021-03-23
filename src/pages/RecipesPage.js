@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Redirect, useHistory } from 'react-router';
+import { useHistory } from 'react-router';
 import useFetchDrinkRecipes from '../hooks/useFetchDrinkRecipes';
 import useFetchMealRecipes from '../hooks/useFetchMealRecipes';
 
