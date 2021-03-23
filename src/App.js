@@ -5,6 +5,7 @@ import Cocktails from './pages/Cocktails';
 import CocktailsExplorer from './pages/CocktailsExplorer';
 import CocktailsIngredients from './pages/CocktailsIngredients';
 import CocktailRecipeDetails from './pages/CocktailRecipeDetails';
+import CocktailRecipeInProgress from './pages/CocktailRecipeInProgress';
 import Explorer from './pages/Explorer';
 import FavoriteRecipes from './pages/FavoriteRecipes';
 import Login from './pages/Login';
@@ -13,8 +14,10 @@ import MealsExplorer from './pages/MealsExplorer';
 import MealsIngredients from './pages/MealsIngredients';
 import MealsOrigin from './pages/MealsOrigin';
 import MealRecipeDetails from './pages/MealRecipeDetails';
+import MealRecipeInProgress from './pages/MealRecipeInProgress';
 import Profile from './pages/Profile';
 import RecipesDone from './pages/RecipesDone';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -35,8 +38,18 @@ function App() {
       />
       <Route
         exact
-        path="/bebidas/:id"
+        path="/bebidas/:id/"
         render={ (props) => <CocktailRecipeDetails { ...props } /> }
+      />
+      <Route
+        exact
+        path="/comidas/:id/in-progress"
+        render={ (props) => <MealRecipeInProgress { ...props } /> }
+      />
+      <Route
+        exact
+        path="/bebidas/:id/in-progress"
+        render={ (props) => <CocktailRecipeInProgress { ...props } /> }
       />
       <Route exact path="/explorar/comidas" component={ MealsExplorer } />
       <Route exact path="/explorar/bebidas" component={ CocktailsExplorer } />

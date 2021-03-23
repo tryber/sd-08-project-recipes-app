@@ -1,14 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
+import RecipesContext from '../context/RecipesContext';
 
 function MealCard({ meal, index, history }) {
+  const { setMeal } = useContext(RecipesContext);
   const { strMeal, strMealThumb, idMeal } = meal;
+
+  const handleClick = () => {
+    setMeal(meal);
+    history.push(`/comidas/${idMeal}`);
+  };
 
   return (
     <button
       type="button"
       data-testid={ `${index}-recipe-card` }
-      onClick={ () => history.push(`/comidas/${idMeal}`) }
+      onClick={ handleClick }
     >
       <img
         src={ strMealThumb }
