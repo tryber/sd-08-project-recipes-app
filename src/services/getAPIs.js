@@ -57,3 +57,15 @@ export const getDrinkByFirstLetter = async (FirstLetter) => {
   const { drinks } = await fetch(Url).then((response) => response.json());
   return drinks;
 };
+
+export const getMealsDetails = async (byId) => {
+  const Url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${byId}`;
+  const { meals } = await fetch(Url).then((response) => response.json());
+  return meals;
+};
+
+export const getDrinksDetails = async (byId) => {
+  const Url = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${byId}`;
+  const { drinks } = await fetch(Url).then((response) => response.json());
+  return drinks;
+};
