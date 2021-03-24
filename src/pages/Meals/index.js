@@ -10,8 +10,8 @@ import MealCard from '../../components/MealCard';
 import CategoryBar from '../../components/CategoryBar';
 import { LIMIT_OF_CARDS } from '../../common/defs';
 
-export default function Meals({ history }) {
-  const { meals, isShow } = useContext(RecipesContext);
+export default function Meals() {
+  const { meals, isShow, setMeal } = useContext(RecipesContext);
 
   return (
     <div>
@@ -24,7 +24,7 @@ export default function Meals({ history }) {
         }
         if (index < LIMIT_OF_CARDS) {
           return (
-            <MealCard key={ index } meal={ meal } index={ index } history={ history } />
+            <MealCard onClick={ () => setMeal(meal) } index={ index } key={ index } meal={ meal } />
           );
         }
         return null;
@@ -33,4 +33,4 @@ export default function Meals({ history }) {
   );
 }
 
-Meals.propTypes = ({ history: PropTypes.objectOf(PropTypes.string).isRequired });
+// Meals.propTypes = ({ history: PropTypes.objectOf(PropTypes.string).isRequired });
