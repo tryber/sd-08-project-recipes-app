@@ -38,3 +38,8 @@
   text-decoration: none;
   width: 200px;
 }
+
+.btn-profile:focus {
+  box-shadow: none;
+  outline: none;
+}

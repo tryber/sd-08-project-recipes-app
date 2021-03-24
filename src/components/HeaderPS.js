@@ -5,6 +5,8 @@ import searchIcon from '../images/searchIcon.svg';
 import profileIcon from '../images/profileIcon.svg';
 import Context from '../context/Context';
 
+import '../styles/HeaderPS.css';
+
 const radioSearchOptions = [
   ['ingredient', 'Ingrediente', 'i'],
   ['name', 'Nome', 's'],
@@ -31,61 +33,79 @@ const HeaderPS = ({ title, endpoint }) => {
   }
 
   return (
-    <div className="navbar">
-      <Link to="/perfil">
-        <img
-          data-testid="profile-top-btn"
-          src={ profileIcon }
-          alt="profile"
-        />
-      </Link>
-      <h1 data-testid="page-title">{ title }</h1>
-      <a
-        data-toggle="collapse"
-        href="#collapseInput"
-        role="button"
-        aria-expanded="false"
-        aria-controls="collapseInput"
-        onClick={ () => {
-          setData(data === '' ? 'search-input' : '');
-          setOpen(open === 'collapse' ? 'collapse.show' : 'collapse');
-        } }
-      >
-        <img
-          data-testid="search-top-btn"
-          src={ searchIcon }
-          alt="search"
-        />
-      </a>
-      <div className={ open }>
-        <input
-          type="text"
-          data-testid={ data }
-          placeholder="Buscar Receita"
-          onChange={ (e) => setInputText(e.target.value) }
-          value={ inputText }
-        />
-        { radioSearchOptions.map((option) => (
-          <label key={ option[0] } htmlFor={ option[0] }>
-            <input
-              checked={ radioValue === option[2] }
-              data-testid={ `${option[0]}-search-radio` }
-              id={ option[0] }
-              name="search-radio"
-              type="radio"
-              onChange={ (e) => setRadioValue(e.target.value) }
-              value={ option[2] }
-            />
-            { option[1] }
-          </label>
-        )) }
-        <button
-          data-testid="exec-search-btn"
-          onClick={ handleClick }
-          type="submit"
+    <div>
+      <div className="navbar headerPS">
+        <Link to="/perfil">
+          <img
+            data-testid="profile-top-btn"
+            src={ profileIcon }
+            alt="profile"
+          />
+        </Link>
+        <h1 data-testid="page-title">{ title }</h1>
+        <a
+          data-toggle="collapse"
+          href="#collapseInput"
+          role="button"
+          aria-expanded="false"
+          aria-controls="collapseInput"
+          onClick={ () => {
+            setData(data === '' ? 'search-input' : '');
+            setOpen(open === 'collapse' ? 'collapse.show' : 'collapse');
+          } }
         >
-          Buscar
-        </button>
+          <img
+            data-testid="search-top-btn"
+            src={ searchIcon }
+            alt="search"
+          />
+        </a>
+      </div>
+      <div>
+        <div className={ open }>
+          <hr />
+          <div className="one-headerps">
+            <input
+              type="text"
+              data-testid={ data }
+              placeholder="Buscar Receita"
+              onChange={ (e) => setInputText(e.target.value) }
+              value={ inputText }
+              className="input-headerps"
+            />
+          </div>
+          <div className="two-headerps">
+            { radioSearchOptions.map((option) => (
+              <label
+                key={ option[0] }
+                htmlFor={ option[0] }
+                className="label-radio-headerps"
+              >
+                <input
+                  checked={ radioValue === option[2] }
+                  data-testid={ `${option[0]}-search-radio` }
+                  id={ option[0] }
+                  name="search-radio"
+                  type="radio"
+                  onChange={ (e) => setRadioValue(e.target.value) }
+                  value={ option[2] }
+                  className="input-radio-headerps"
+                />
+                { option[1] }
+              </label>
+            )) }
+          </div>
+          <div className="three-headerps">
+            <button
+              data-testid="exec-search-btn"
+              onClick={ handleClick }
+              type="submit"
+              className="btn-headerps"
+            >
+              Buscar
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );

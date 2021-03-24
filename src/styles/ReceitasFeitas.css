@@ -1,0 +1,35 @@
+.btns-recipes-completed {
+  align-items: center;
+  display: flex;
+  flex-flow: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.btn-recipes-completed {
+  background-color: #c8aab6;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.2);
+  color: rgb(77, 74, 74);
+  margin-top: 10px;
+  padding: 5px 10px;
+  text-decoration: none;
+  width: 25%;
+}
+
+.btn-recipes-completed:hover {
+  background-color: #ca9bae;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.2);
+  color: rgb(77, 74, 74);
+  cursor: pointer;
+  margin-top: 10px;
+  padding: 5px 10px;
+  text-decoration: none;
+  width: 25%;
+}
+
+.btn-recipes-completed:focus {
+  box-shadow: none;
+  outline: none;
+}

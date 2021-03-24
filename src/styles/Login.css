@@ -63,6 +63,11 @@ h1 {
   width: 50%;
 }
 
+.btn-submit:focus {
+  box-shadow: none;
+  outline: none;
+}
+
 .btn-submit:disabled {
   background-color: #dad5d7;
   box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.2);

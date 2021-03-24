@@ -26,9 +26,13 @@ function RecipeList({ route, recipeType }) {
 
     return recipes
       ? (
-        <section>
+        <section className="container-recipe-list">
           {recipes.slice(0, FIRST_TWELVE_RECIPES).map((recipe, index) => (
-            <div data-testid={ `${index}-recipe-card` } key={ recipe[`id${recipeType}`] }>
+            <div
+              className="holder"
+              data-testid={ `${index}-recipe-card` }
+              key={ recipe[`id${recipeType}`] }
+            >
               <p data-testid={ `${index}-card-name` }>{ recipe[`str${recipeType}`] }</p>
               <img
                 className="recipe-img"
@@ -36,6 +40,7 @@ function RecipeList({ route, recipeType }) {
                 src={ recipe[`str${recipeType}Thumb`] }
                 alt="recipe thumbnail"
               />
+              <hr />
             </div>
           ))}
         </section>

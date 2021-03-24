@@ -1,0 +1,55 @@
+.headerPS {
+  background: radial-gradient(white, #ccacb9);
+}
+
+.one-headerps {
+  margin-bottom: 10px;
+  margin-left: 50px;
+}
+
+.input-headerps {
+  border-color: rgb(209, 209, 205);
+  border-radius: 5px;
+  width: 85%;
+}
+
+.two-headerps {
+  margin-left: 50px;
+}
+
+.label-radio-headerps {
+  margin-right: 30px;
+}
+
+.input-radio-headerps {
+  margin-right: 5px;
+}
+
+.three-headerps {
+  margin-left: 50px;
+  margin-top: 5px;
+}
+
+.btn-headerps {
+  background-color: #c8aab6;
+  border-radius: 10px;
+  color: rgb(77, 74, 74);
+  padding: 5px;
+  text-decoration: none;
+  width: 100px;
+}
+
+.btn-headerps:hover {
+  background-color: #ca9bae;
+  border-radius: 10px;
+  color: rgb(77, 74, 74);
+  cursor: pointer;
+  padding: 5px;
+  text-decoration: none;
+  width: 100px;
+}
+
+.btn-headerps:focus {
+  box-shadow: none;
+  outline: none;
+}

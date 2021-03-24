@@ -4,10 +4,12 @@ import drinkIcon from '../images/drinkIcon.svg';
 import exploreIcon from '../images/exploreIcon.svg';
 import mealIcon from '../images/mealIcon.svg';
 
+import '../styles/Footer.css';
+
 const Footer = () => (
-  <footer data-testid="footer" className="navbar fixed-bottom">
+  <footer data-testid="footer" className="navbar fixed-bottom footer">
     <Link to="/bebidas">
-      <button type="button">
+      <button type="button" className="btn-footer">
         <img
           src={ drinkIcon }
           alt="ícone drink"
@@ -16,7 +18,7 @@ const Footer = () => (
       </button>
     </Link>
     <Link to="/explorar">
-      <button type="button">
+      <button type="button" className="btn-footer">
         <img
           src={ exploreIcon }
           alt="ícone explorar"
@@ -25,7 +27,7 @@ const Footer = () => (
       </button>
     </Link>
     <Link to="/comidas">
-      <button type="button">
+      <button type="button" className="btn-footer">
         <img
           src={ mealIcon }
           alt="ícone receitas"

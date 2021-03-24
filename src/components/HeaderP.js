@@ -3,8 +3,10 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import profileIcon from '../images/profileIcon.svg';
 
+import '../styles/HeaderP.css';
+
 const HeaderP = ({ title }) => (
-  <div className="navbar">
+  <div className="navbar headerP">
     <Link to="/perfil">
       <img
         data-testid="profile-top-btn"
