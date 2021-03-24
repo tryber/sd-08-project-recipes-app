@@ -23,6 +23,17 @@ function DetailsMeal() {
   const sizeOfLength = 3;
   const startOfSlice = 0;
   const endOfSlice = 2;
+
+  const measure = Object.entries(mealDetail).reduce(
+    (acc, [key, value], index) => {
+      if (key.includes('strMeasure') && value) {
+        return acc.concat(value);
+      }
+      return acc;
+    },
+    [],
+  );
+
   return (
     <div>
       <div className="container-card-meal-details">
@@ -44,12 +55,16 @@ function DetailsMeal() {
                     key={ index }
                   >
                     {value}
+                    {' '}
+                    -
+                    {measure[acc.length]}
                   </li>,
                 );
               }
               return acc;
             }, [])}
           </ul>
+
           <h4>Instructions</h4>
           <p data-testid="instructions">{mealDetail.strInstructions}</p>
           <h4>Video</h4>

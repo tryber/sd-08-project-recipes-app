@@ -1,6 +1,6 @@
 import React, { useEffect, useContext, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getDrinksDetails } from '../services/getAPIs';
+import { getDrinksDetails, getMealByName } from '../services/getAPIs';
 import { LoginAndFoodContext } from '../context/ContextFood';
 import shareIcon from '../images/shareIcon.svg';
 import whiteHeartIcon from '../images/whiteHeartIcon.svg';
@@ -17,12 +17,22 @@ function DetailsDrink() {
       console.log(saveDetail);
       setDrinkDetail(saveDetail);
     }
+    getMealByName('');
     fetchDetails();
   }, []);
 
   const sizeOfLength = 3;
   const startOfSlice = 0;
   const endOfSlice = 2;
+  const measure = Object.entries(drinkDetail).reduce(
+    (acc, [key, value], index) => {
+      if (key.includes('strMeasure') && value) {
+        return acc.concat(value);
+      }
+      return acc;
+    },
+    [],
+  );
 
   return (
     <div>
@@ -34,7 +44,12 @@ function DetailsDrink() {
             alt="thumbnails-drink"
           />
           <h2 data-testid="recipe-title">{drinkDetail.strDrink}</h2>
-          <p data-testid="recipe-category">{drinkDetail.strCategory}</p>
+          <p data-testid="recipe-category">
+            {drinkDetail.strCategory}
+            {' '}
+            -
+            {drinkDetail.strAlcoholic}
+          </p>
           <h3>Ingredients</h3>
           <ul>
             {Object.entries(drinkDetail).reduce((acc, [key, value], index) => {
@@ -44,7 +59,10 @@ function DetailsDrink() {
                     data-testid={ `${acc.length}-ingredient-name-and-measure` }
                     key={ index }
                   >
+                    {measure[acc.length]}
                     {value}
+                    {' '}
+                    -
                   </li>,
                 );
               }
