@@ -67,5 +67,5 @@ export const getMealsDetails = async (byId) => {
 export const getDrinksDetails = async (byId) => {
   const Url = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${byId}`;
   const { drinks } = await fetch(Url).then((response) => response.json());
-  return drinks;
+  return drinks[0];
 };
