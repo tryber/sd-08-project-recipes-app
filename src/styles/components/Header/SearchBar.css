@@ -24,6 +24,7 @@
   display: flex;
   margin: 0 auto;
   width: 80%;
+  z-index: 10;
 }
 
 .searchBarContainer > .searchBarRadios > label {
