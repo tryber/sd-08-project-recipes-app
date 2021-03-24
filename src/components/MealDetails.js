@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
+import copy from 'clipboard-copy';
+
+import shareIcon from '../assets/images/shareIcon.svg';
+import favIconEnable from '../assets/images/blackHeartIcon.svg';
+import favIconDisable from '../assets/images/whiteHeartIcon.svg';
+
 const MAX_INGREDIENTS_NUMBER = 20;
 const UNITARY_INCREMENT = 1;
 
@@ -35,12 +41,37 @@ function MealDetails({ meal }) {
   if (meal === undefined) {
     return null;
   }
+
+  function copyLink(id) {
+    copy(`http://localhost:3000/comidas/${id}`);
+    document.querySelector('#link').style = 'inline';
+  }
+
   return (
     <div>
       <h2 data-testid="recipe-title">{meal.strMeal}</h2>
       <img src={ meal.strMealThumb } alt="meal" data-testid="recipe-photo" />
-      <button type="button" data-testid="share-btn">Share</button>
-      <button type="button" data-testid="favorite-btn">Favorite</button>
+      <br />
+      <button
+        type="button"
+        data-testid="share-btn"
+        onClick={ () => { copyLink(); } }
+      >
+        <img src={ shareIcon } alt="share" />
+      </button>
+      <p id="link" style={ { display: 'none' } }>Link copiado!</p>
+
+      <button
+        type="button"
+        onClick={ handleClickFavoriteButton }
+      >
+        <img
+          src={ favorite ? favIconEnable : favIconDisable }
+          alt="favorite"
+          data-testid="favorite-btn"
+        />
+      </button>
+
       <p data-testid="recipe-category">{meal.strCategory}</p>
       {ingredients.map((ingredient, index) => (
         <p
