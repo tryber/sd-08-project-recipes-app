@@ -69,24 +69,44 @@ const setLocalStorage = (recipe) => {
         ...meals, [recipe.idMeal]: ingredients } }));
 };
 
+const favoriteObject = (meal) => {
+  console.log(meal);
+  if (meal.length === 0) {
+    return console.log(meal);
+  }
+  console.log(meal);
+  const object = {
+    id: meal[0].idDrink,
+    type: 'bebida',
+    area: meal[0].area || '',
+    category: meal[0].strCategory || '',
+    alcoholicOrNot: meal[0].strAlcoholic || '',
+    name: meal[0].strDrink,
+    image: meal[0].strDrinkThumb,
+  };
+  console.log(object);
+  return object;
+};
 const handleFavorite = (recipe, iFavorite) => {
   console.log('entrou no favorite useEffect');
   if (iFavorite) {
     console.log('entrou no isFavorite');
     const favoriteArray = JSON.parse(localStorage.getItem('favoriteRecipes'));
+    const favRecipe = favoriteObject(recipe);
     return favoriteArray.length <= 1 ? localStorage.setItem('favoriteRecipes',
-      JSON.stringify([recipe])) : localStorage.setItem('favoriteRecipes',
-      JSON.stringify([...favoriteArray, recipe]));
+      JSON.stringify([favRecipe])) : localStorage.setItem('favoriteRecipes',
+      JSON.stringify([...favoriteArray, favRecipe]));
   }
   console.log('saiu do isFavorite');
 
   const favoriteArray = JSON.parse(localStorage.getItem('favoriteRecipes'));
   console.log(favoriteArray);
   if (favoriteArray !== null && favoriteArray.length > 1) {
+    const favRecipe = favoriteObject(recipe);
     console.log('entrou no delete favorite length maior que 1');
     return localStorage.setItem('favoriteRecipes', JSON.stringify([
-      favoriteArray.slice(0, favoriteArray[favoriteArray.indexOf(recipe[0])]),
-      favoriteArray.slice(favoriteArray[favoriteArray.indexOf(recipe[0])]),
+      favoriteArray.slice(0, favoriteArray[favoriteArray.indexOf(favRecipe)]),
+      favoriteArray.slice(favoriteArray[favoriteArray.indexOf(favRecipe)]),
     ]));
   }
   // localStorage.setItem('favoriteRecipes', JSON.stringify([]));

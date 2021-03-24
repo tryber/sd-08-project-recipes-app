@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import DrnkRecipeIngredients from '../components/recipeInProgress/DrinkRecipeIngredients';
+import DrinkRecipeTop from '../components/recipeInProgress/DrinkRecipeTop';
 
 const DrinkDetailsInProgress = () => {
   const [redirect, setRedirect] = useState(false);
@@ -10,7 +12,9 @@ const DrinkDetailsInProgress = () => {
   }, [redirect]);
   return (
     <div>
-      Drink Recipe in Progress
+      Drink Recipe In Progress
+      <DrinkRecipeTop />
+      <DrnkRecipeIngredients />
     </div>
   );
 };
