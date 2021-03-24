@@ -20,7 +20,7 @@
   width: 100%;
 }
 
-/* .searchBarContainer > .searchBarRadios {
+.searchBarContainer > .searchBarRadios {
   display: flex;
   margin: 0 auto;
   width: 80%;
@@ -29,8 +29,11 @@
 .searchBarContainer > .searchBarRadios > label {
   display: flex;
   width: 80%;
+}
+
+.searchBarContainer > .searchBarRadios > label > input {
   z-index: 10;
-} */
+}
 
 .searchBarContainer > button {
   background-color: #fd951f;
@@ -38,4 +41,3 @@
   display: flex;
   justify-content: space-around;
 }
-

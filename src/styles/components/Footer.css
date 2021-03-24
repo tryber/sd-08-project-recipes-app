@@ -8,7 +8,6 @@
   position: fixed;
   right: 0;
   width: 100%;
-  z-index: 11;
 }
 
 .footerContainer > a {
@@ -24,4 +23,5 @@
 .footerContainer > a > button > img {
   padding: 3px;
   width: 60px;
+  z-index: 11;
 }
