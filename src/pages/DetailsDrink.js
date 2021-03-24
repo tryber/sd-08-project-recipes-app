@@ -1,6 +1,5 @@
-import React, { useEffect, useContext, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { DataDrinksContext } from '../context/ContextDrinks';
 import { getDrinksDetails } from '../services/getAPIs';
 import shareIcon from '../images/shareIcon.svg';
 import whiteHeartIcon from '../images/whiteHeartIcon.svg';
@@ -34,9 +33,6 @@ function DetailsDrink() {
           <p data-testid="recipe-category">{drinkDetail.strCategory}</p>
           <h3>Ingredients</h3>
           <ul>
-            {/* {
-              Object.entries(drinkDetail)
-            } */}
             {Object.entries(drinkDetail).reduce((acc, [key, value], index) => {
               if (key.includes('strIngredient') && value) {
                 return acc.concat(
