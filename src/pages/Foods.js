@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import { Header, Footer, Loading, Cards } from '../components';
+import { Header, Footer, Cards } from '../components';
 import { fetchFood } from '../store/actions';
 import '../styles/pages/Container.css';
 
@@ -24,7 +24,7 @@ class Foods extends Component {
   }
 
   render() {
-    const { listFoods, isFetching } = this.props;
+    const { listFoods } = this.props;
     if (listFoods && listFoods.length === 1) {
       return <Redirect to={ `/comidas/${listFoods[0].idMeal}` } />;
     }
@@ -32,7 +32,6 @@ class Foods extends Component {
     return (
       <div>
         <Header title="Comidas" />
-        {isFetching && <Loading />}
         <div className="container">
 
           { listFoods && listFoods.reduce((acc, cur, index) => {
@@ -59,7 +58,6 @@ class Foods extends Component {
 Foods.propTypes = {
   listFoods: PropTypes.arrayOf(PropTypes.objectOf).isRequired,
   getFood: PropTypes.func.isRequired,
-  isFetching: PropTypes.bool.isRequired,
 };
 
 const mapStateToProps = (state) => ({
