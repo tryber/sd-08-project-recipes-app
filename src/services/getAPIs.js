@@ -61,7 +61,7 @@ export const getDrinkByFirstLetter = async (FirstLetter) => {
 export const getMealsDetails = async (byId) => {
   const Url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${byId}`;
   const { meals } = await fetch(Url).then((response) => response.json());
-  return meals;
+  return meals[0];
 };
 
 export const getDrinksDetails = async (byId) => {

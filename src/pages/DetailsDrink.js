@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useContext, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getDrinksDetails } from '../services/getAPIs';
+import { LoginAndFoodContext } from '../context/ContextFood';
 import shareIcon from '../images/shareIcon.svg';
 import whiteHeartIcon from '../images/whiteHeartIcon.svg';
 import './DetailsDrink.css';
 
 function DetailsDrink() {
+  const dataFood = useContext(LoginAndFoodContext);
+  const { meals } = dataFood;
   const Params = useParams();
   const [drinkDetail, setDrinkDetail] = useState([]);
   useEffect(() => {
-    console.log('montou');
-    console.log(Params.id);
-
     async function fetchDetails() {
       const saveDetail = await getDrinksDetails(Params.id);
       console.log(saveDetail);
@@ -19,6 +19,10 @@ function DetailsDrink() {
     }
     fetchDetails();
   }, []);
+
+  const sizeOfLength = 3;
+  const startOfSlice = 0;
+  const endOfSlice = 2;
 
   return (
     <div>
@@ -59,11 +63,24 @@ function DetailsDrink() {
             />
           </video>
           <h4>Recomendadas</h4>
+          {meals.length > sizeOfLength
+            && meals
+              .slice(startOfSlice, endOfSlice)
+              .map((meal, index) => (
+                <img
+                  key={ meal.idMeal }
+                  data-testid={ `${index}-recomendation-card` }
+                  src={ meal.strMealsThumb }
+                  alt="recomendations"
+                />
+              ))}
+          {/*
+
           <img
             // data-testid={ `${index}-recomendation-card` }
             src=""
             alt="recomendations"
-          />
+          /> */}
           <button data-testid="start-recipe-btn" type="button">
             Iniciar Receita
           </button>
