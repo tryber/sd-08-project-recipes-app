@@ -9,15 +9,17 @@ import SearchBar from '../../components/SearchBar';
 import MealCard from '../../components/MealCard';
 import CategoryBar from '../../components/CategoryBar';
 import { LIMIT_OF_CARDS } from '../../common/defs';
+import Footer from '../../components/Footer';
 
 export default function Meals() {
   const { meals, isShow, setMeal } = useContext(RecipesContext);
 
   return (
-    <div>
+    <div className="meals-page">
       <Header title="Comidas" />
       {isShow && <SearchBar type="meals" />}
       <CategoryBar type="meals" />
+      <SearchBar type="meals" />
       {meals.map((meal, index) => {
         if (meals.length === 1 && !meals[0].idMeal === '52968') {
           return <Redirect to={ `/comidas/${meals[0].idMeal}` } />;
@@ -29,6 +31,7 @@ export default function Meals() {
         }
         return null;
       })}
+      <Footer />
     </div>
   );
 }
