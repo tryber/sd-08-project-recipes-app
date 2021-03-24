@@ -25,14 +25,13 @@ class Drinks extends Component {
 
   render() {
     const { listDrinks, isFetching } = this.props;
-
-    if (isFetching) return <Loading />;
     if (listDrinks && listDrinks.length === 1) {
       return <Redirect to={ `/bebidas/${listDrinks[0].idDrink}` } />;
     }
     return (
       <div>
         <Header title="Bebidas" />
+        {isFetching && <Loading />}
         <div className="container">
 
           {listDrinks && listDrinks.reduce((acc, cur, index) => {

@@ -25,7 +25,6 @@ class Foods extends Component {
 
   render() {
     const { listFoods, isFetching } = this.props;
-    if (isFetching) return <Loading />;
     if (listFoods && listFoods.length === 1) {
       return <Redirect to={ `/comidas/${listFoods[0].idMeal}` } />;
     }
@@ -33,6 +32,7 @@ class Foods extends Component {
     return (
       <div>
         <Header title="Comidas" />
+        {isFetching && <Loading />}
         <div className="container">
 
           { listFoods && listFoods.reduce((acc, cur, index) => {
