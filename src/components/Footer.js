@@ -12,7 +12,7 @@ import '../styles/components/Footer.css';
 class Footer extends Component {
   render() {
     return (
-      <div className="footerContainer" data-testid="footer">
+      <footer className="footerContainer" data-testid="footer">
         <Link to="/bebidas">
           <button
             type="button"
@@ -45,7 +45,7 @@ class Footer extends Component {
             <img src={ mealIcon } alt="Menu de comidas" />
           </button>
         </Link>
-      </div>
+      </footer>
     );
   }
 }
