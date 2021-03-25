@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import RecipesContext from './RecipesContext';
 import fetchFood from '../services/Api';
+import fetchFood2 from '../services/IdApiFood';
+import fetchCockt from '../services/idApiCocktail';
 
 const searchParams = {
   selectedParam: '',
