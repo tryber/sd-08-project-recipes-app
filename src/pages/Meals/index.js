@@ -19,7 +19,7 @@ export default function Meals() {
       {isShow && <SearchBar type="meals" />}
       <CategoryBar type="meals" />
       {meals.map((meal, index) => {
-        if (meals.length === 1 && !meals[0].idMeal === '52968') {
+        if (meals.length === 1 && !meals[0].idMeal) {
           return <Redirect to={ `/comidas/${meals[0].idMeal}` } />;
         }
         if (index < LIMIT_OF_CARDS) {

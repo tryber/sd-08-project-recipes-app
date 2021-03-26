@@ -90,3 +90,9 @@
 .ingredient-item {
   text-decoration: line-through;
 }
+
+.start-recipe-btn {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+}
