@@ -1,10 +1,8 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import RecipesContext from '../context/RecipesContext';
 
 function MealCard({ index, meal }) {
-  // const { meal } = useContext(RecipesContext);
   const { strMeal, strMealThumb, idMeal } = meal;
 
   return (
@@ -22,13 +20,13 @@ function MealCard({ index, meal }) {
     </Link>);
 }
 
-// MealCard.propTypes = {
-//   meal: PropTypes.shape({
-//     strMeal: PropTypes.string,
-//     strMealThumb: PropTypes.string,
-//     idMeal: PropTypes.string,
-//   }).isRequired,
-//   index: PropTypes.number.isRequired,
-// };
+MealCard.propTypes = {
+  meal: PropTypes.shape({
+    strMeal: PropTypes.string,
+    strMealThumb: PropTypes.string,
+    idMeal: PropTypes.string,
+  }).isRequired,
+  index: PropTypes.number.isRequired,
+};
 
 export default MealCard;

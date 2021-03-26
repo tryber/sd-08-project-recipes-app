@@ -10,7 +10,6 @@ function Recomendations({ recipeType }) {
     async function getRecomendations() {
       const data = await fetch(url);
       const response = await data.json();
-      console.log(response);
       const key = Object.keys(response)[0];
       setRecomendations(response[key]);
     }

@@ -86,3 +86,7 @@
   height: 95%;
   width: 95%;
 }
+
+.ingredient-item {
+  text-decoration: line-through;
+}

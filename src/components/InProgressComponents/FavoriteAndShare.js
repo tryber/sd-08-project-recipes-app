@@ -5,11 +5,11 @@ import shareIcon from '../../assets/images/shareIcon.svg';
 export default function FavoriteAndShare() {
   return (
     <section>
-      <button type="button" data-testid="favorite-btn">
-        <img src={ favoriteIcon } alt="favorite" />
+      <button type="button">
+        <img src={ favoriteIcon } alt="favorite" data-testid="favorite-btn" />
       </button>
-      <button type="button" data-testid="share-btn">
-        <img src={ shareIcon } alt="share" />
+      <button type="button">
+        <img src={ shareIcon } alt="share" data-testid="share-btn" />
       </button>
     </section>
   );

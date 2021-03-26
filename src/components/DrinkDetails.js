@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-
-const MAX_INGREDIENTS_NUMBER = 15;
-const UNITARY_INCREMENT = 1;
+import { MAX_INGREDIENTS_NUMBER, UNITARY_INCREMENT } from '../common/defs';
+import FavoriteAndShare from './InProgressComponents/FavoriteAndShare';
 
 function DrinkDetails({ drink }) {
   const [ingredients, setIngredients] = useState([]);
@@ -12,6 +11,7 @@ function DrinkDetails({ drink }) {
       const arrayOfIngredients = [];
       for (let index = 1; index <= MAX_INGREDIENTS_NUMBER; index += UNITARY_INCREMENT) {
         if (drink[`strIngredient${index}`] !== null
+          && drink[`strIngredient${index}`] !== undefined
           && drink[`strIngredient${index}`] !== '') {
           const ingredientObject = {
             ingredient: drink[`strIngredient${index}`],
@@ -26,10 +26,9 @@ function DrinkDetails({ drink }) {
 
   return (
     <div>
-      <h2 data-testid="recipe-title">{drink.strDrink}</h2>
       <img src={ drink.strDrinkThumb } alt="drink" data-testid="recipe-photo" />
-      <button type="button" data-testid="share-btn">Share</button>
-      <button type="button" data-testid="favorite-btn">Favorite</button>
+      <h2 data-testid="recipe-title">{drink.strDrink}</h2>
+      <FavoriteAndShare />
       <p data-testid="recipe-category">
         {drink.strCategory}
         {'  -  '}

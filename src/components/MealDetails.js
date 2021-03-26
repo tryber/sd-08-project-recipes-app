@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-
-const MAX_INGREDIENTS_NUMBER = 20;
-const UNITARY_INCREMENT = 1;
+import { MAX_INGREDIENTS_NUMBER, UNITARY_INCREMENT } from '../common/defs';
+import FavoriteAndShare from './InProgressComponents/FavoriteAndShare';
 
 function MealDetails({ meal }) {
   const [ingredients, setIngredients] = useState([]);
@@ -37,10 +36,9 @@ function MealDetails({ meal }) {
   }
   return (
     <div>
-      <h2 data-testid="recipe-title">{meal.strMeal}</h2>
       <img src={ meal.strMealThumb } alt="meal" data-testid="recipe-photo" />
-      <button type="button" data-testid="share-btn">Share</button>
-      <button type="button" data-testid="favorite-btn">Favorite</button>
+      <h2 data-testid="recipe-title">{meal.strMeal}</h2>
+      <FavoriteAndShare />
       <p data-testid="recipe-category">{meal.strCategory}</p>
       {ingredients.map((ingredient, index) => (
         <p
