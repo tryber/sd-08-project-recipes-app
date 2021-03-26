@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { MAX_INGREDIENTS_NUMBER, UNITARY_INCREMENT } from '../common/defs';
-import FavoriteAndShare from './InProgressComponents/FavoriteAndShare';
+import ShareButtonDrink from './ShareButtonDrink';
+import FavoriteButton from './FavoriteButton';
 
 function DrinkDetails({ drink }) {
   const [ingredients, setIngredients] = useState([]);
+  const [drinksState, setDrinkState] = useState({
+    drink: [],
+    favorite: false,
+  });
 
   useEffect(() => {
     if (drink !== undefined) {
@@ -28,7 +33,14 @@ function DrinkDetails({ drink }) {
     <div>
       <img src={ drink.strDrinkThumb } alt="drink" data-testid="recipe-photo" />
       <h2 data-testid="recipe-title">{drink.strDrink}</h2>
-      <FavoriteAndShare />
+      <br />
+      <ShareButtonDrink drink={ drink } />
+      <FavoriteButton
+        beforeState={ drinksState }
+        setFavorite={ setDrinkState }
+        recipe={ drink }
+        type="bebida"
+      />
       <p data-testid="recipe-category">
         {drink.strCategory}
         {'  -  '}

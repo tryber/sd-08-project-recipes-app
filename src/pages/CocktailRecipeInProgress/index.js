@@ -3,12 +3,13 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { MAX_INGREDIENTS_NUMBER, UNITARY_INCREMENT } from '../../common/defs';
 import Category from '../../components/InProgressComponents/Category';
-import FavoriteAndShare from '../../components/InProgressComponents/FavoriteAndShare';
 import Hero from '../../components/InProgressComponents/Hero';
 import IngredientsList from '../../components/InProgressComponents/IngredientsList';
 import Instructions from '../../components/InProgressComponents/Instructions';
 import Title from '../../components/InProgressComponents/Title';
 import RecipesContext from '../../context/RecipesContext';
+import ShareButtonDrink from '../../components/ShareButtonDrink';
+import FavoriteButton from '../../components/FavoriteButton';
 
 export default function DrinkRecipeInProgress({ match }) {
   const { isFinished } = useContext(RecipesContext);
@@ -23,6 +24,10 @@ export default function DrinkRecipeInProgress({ match }) {
       id: 'id',
     },
   );
+  const [drinksState, setDrinkState] = useState({
+    drink: [],
+    favorite: false,
+  });
 
   const { strDrink, strDrinkThumb, strCategory, strInstructions } = drink;
   const { id } = match.params;
@@ -58,7 +63,13 @@ export default function DrinkRecipeInProgress({ match }) {
     <section>
       <Hero src={ strDrinkThumb } name={ strDrink } />
       <Title name={ strDrink } />
-      <FavoriteAndShare />
+      <ShareButtonDrink drink={ drink } />
+      <FavoriteButton
+        beforeState={ drinksState }
+        setFavorite={ setDrinkState }
+        recipe={ drink }
+        type="bebida"
+      />
       <Category category={ strCategory } />
       <IngredientsList listFromProps={ ingredients } id={ id } type="cocktails" />
       <Instructions instructions={ strInstructions } />

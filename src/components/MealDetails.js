@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { MAX_INGREDIENTS_NUMBER, UNITARY_INCREMENT } from '../common/defs';
-import FavoriteAndShare from './InProgressComponents/FavoriteAndShare';
+import ShareButtonMeal from './ShareButtonMeal';
+import FavoriteButton from './FavoriteButton';
 
 function MealDetails({ meal }) {
-  const [ingredients, setIngredients] = useState([]);
+  const [mealsState, setMealState] = useState({
+    meal: [],
+    favorite: false,
+  });
 
   useEffect(() => {
     if (meal !== undefined) {
@@ -18,7 +22,7 @@ function MealDetails({ meal }) {
           arrayOfIngredients.push(ingredientObject);
         }
       }
-      setIngredients(arrayOfIngredients);
+      setMealState({ ...mealsState, meal: arrayOfIngredients });
     }
   }, [meal]);
 
@@ -38,9 +42,16 @@ function MealDetails({ meal }) {
     <div>
       <img src={ meal.strMealThumb } alt="meal" data-testid="recipe-photo" />
       <h2 data-testid="recipe-title">{meal.strMeal}</h2>
-      <FavoriteAndShare />
+      <br />
+      <ShareButtonMeal meal={ meal } />
+      <FavoriteButton
+        beforeState={ mealsState }
+        setFavorite={ setMealState }
+        recipe={ meal }
+        type="comida"
+      />
       <p data-testid="recipe-category">{meal.strCategory}</p>
-      {ingredients.map((ingredient, index) => (
+      {mealsState.meal.map((ingredient, index) => (
         <p
           key={ index }
           data-testid={ `${index}-ingredient-name-and-measure` }

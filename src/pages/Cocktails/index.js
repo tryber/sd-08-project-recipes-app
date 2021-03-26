@@ -9,6 +9,7 @@ import Header from '../../components/Header';
 import DrinkCard from '../../components/DrinkCard';
 import CategoryBar from '../../components/CategoryBar';
 import { LIMIT_OF_CARDS } from '../../common/defs';
+import Footer from '../../components/Footer';
 
 export default function Cocktails({ history }) {
   const { drinks, isShow } = useContext(RecipesContext);
@@ -34,6 +35,7 @@ export default function Cocktails({ history }) {
         }
         return null;
       })}
+      <Footer />
     </div>
   );
 }

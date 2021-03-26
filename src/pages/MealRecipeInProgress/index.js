@@ -3,12 +3,13 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { MAX_INGREDIENTS_NUMBER, UNITARY_INCREMENT } from '../../common/defs';
 import Category from '../../components/InProgressComponents/Category';
-import FavoriteAndShare from '../../components/InProgressComponents/FavoriteAndShare';
 import Hero from '../../components/InProgressComponents/Hero';
 import IngredientsList from '../../components/InProgressComponents/IngredientsList';
 import Instructions from '../../components/InProgressComponents/Instructions';
 import Title from '../../components/InProgressComponents/Title';
 import RecipesContext from '../../context/RecipesContext';
+import ShareButtonMeal from '../../components/ShareButtonMeal';
+import FavoriteButton from '../../components/FavoriteButton';
 
 export default function MealRecipeInProgress({ match }) {
   const { isFinished } = useContext(RecipesContext);
@@ -23,6 +24,10 @@ export default function MealRecipeInProgress({ match }) {
       id: 'id',
     },
   );
+  const [mealsState, setMealState] = useState({
+    meal: [],
+    favorite: false,
+  });
 
   const { strMeal, strMealThumb, strCategory, strInstructions } = meal;
   const { id } = match.params;
@@ -51,6 +56,7 @@ export default function MealRecipeInProgress({ match }) {
         }
       }
       setIngredients(arrayOfIngredients);
+      setMealState({ ...mealsState, meal: arrayOfIngredients });
     }
   }, [meal]);
 
@@ -58,7 +64,14 @@ export default function MealRecipeInProgress({ match }) {
     <section>
       <Hero src={ strMealThumb } name={ strMeal } />
       <Title name={ strMeal } />
-      <FavoriteAndShare />
+      <br />
+      <ShareButtonMeal meal={ meal } />
+      <FavoriteButton
+        beforeState={ mealsState }
+        setFavorite={ setMealState }
+        recipe={ meal }
+        type="comida"
+      />
       <Category category={ strCategory } />
       <IngredientsList listFromProps={ ingredients } id={ id } type="meals" />
       <Instructions instructions={ strInstructions } />
