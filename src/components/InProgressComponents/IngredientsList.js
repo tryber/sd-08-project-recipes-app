@@ -57,18 +57,8 @@ export default function IngredientsList({ listFromProps, id, type }) {
     if (isClicked) {
       const newCheckboxList = document.querySelectorAll('.checkbox-ingredient');
       setCheckboxList(newCheckboxList);
-    }
-  }, [isClicked]);
-
-  useEffect(() => {
-    if (isClicked) {
       const newCheckedList = document.querySelectorAll('.ingredient-item');
       setCheckedList(newCheckedList);
-    }
-  }, [isClicked]);
-
-  useEffect(() => {
-    if (isClicked) {
       const newLabels = document.querySelectorAll('label');
       setLabels(newLabels);
     }

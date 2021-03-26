@@ -21,11 +21,15 @@ export default function IngredientItem({
 
   useEffect(() => {
     if (boxChecked) return setIsChecked(boxChecked);
-  }, [boxChecked]);
+  }, []);
 
   return (
     <li>
-      <label htmlFor="ingredient" className={ className } data-testid={ `${index}-ingredient-step` }>
+      <label
+        htmlFor="ingredient"
+        className={ className }
+        data-testid={ `${index}-ingredient-step` }
+      >
         <input
           type="checkbox"
           name="ingredient"

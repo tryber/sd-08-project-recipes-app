@@ -1,18 +1,16 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import { MAX_INGREDIENTS_NUMBER, UNITARY_INCREMENT } from '../../common/defs';
 import Category from '../../components/InProgressComponents/Category';
 import Hero from '../../components/InProgressComponents/Hero';
 import IngredientsList from '../../components/InProgressComponents/IngredientsList';
 import Instructions from '../../components/InProgressComponents/Instructions';
 import Title from '../../components/InProgressComponents/Title';
-import RecipesContext from '../../context/RecipesContext';
 import ShareButtonMeal from '../../components/ShareButtonMeal';
 import FavoriteButton from '../../components/FavoriteButton';
+import Button from '../../components/InProgressComponents/Button';
 
 export default function MealRecipeInProgress({ match }) {
-  const { isFinished } = useContext(RecipesContext);
   const [ingredients, setIngredients] = useState([]);
   const [meal, setMeal] = useState(
     {
@@ -75,24 +73,7 @@ export default function MealRecipeInProgress({ match }) {
       <Category category={ strCategory } />
       <IngredientsList listFromProps={ ingredients } id={ id } type="meals" />
       <Instructions instructions={ strInstructions } />
-      {isFinished ? (
-        <Link
-          to="/receitas-feitas"
-          data-testid="finish-recipe-btn"
-          enable
-        >
-          Finalizar Receita
-        </Link>
-      )
-        : (
-          <button
-            type="button"
-            data-testid="finish-recipe-btn"
-            disabled
-          >
-            Finalizar Receita
-          </button>
-        )}
+      <Button />
     </section>
   );
 }
