@@ -12,6 +12,8 @@ import Button from '../../components/InProgressComponents/Button';
 
 export default function MealRecipeInProgress({ match }) {
   const [ingredients, setIngredients] = useState([]);
+  const [shouldRender, setShouldRender] = useState(false);
+
   const [meal, setMeal] = useState(
     {
       strMeal: 'Title',
@@ -38,6 +40,10 @@ export default function MealRecipeInProgress({ match }) {
     }
     getMealById(id);
   }, [id]);
+
+  useEffect(() => {
+    if (ingredients.length > 0) setShouldRender(true);
+  }, [ingredients.length]);
 
   useEffect(() => {
     if (meal !== undefined) {
@@ -71,7 +77,8 @@ export default function MealRecipeInProgress({ match }) {
         type="comida"
       />
       <Category category={ strCategory } />
-      <IngredientsList listFromProps={ ingredients } id={ id } type="meals" />
+      {shouldRender
+        && <IngredientsList listFromProps={ ingredients } id={ id } type="meals" />}
       <Instructions instructions={ strInstructions } />
       <Button />
     </section>

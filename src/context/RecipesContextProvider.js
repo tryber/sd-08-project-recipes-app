@@ -7,6 +7,7 @@ function RecipesContextProvider({ children }) {
   const [drinks, setDrinks] = useState([]);
   const [isShow, setIsShow] = useState(false);
   const [isFinished, setIsFinished] = useState(false);
+  const [finishButtonState, setFinishButtonState] = useState(false);
 
   function setShow() {
     const invert = !isShow;
@@ -22,6 +23,8 @@ function RecipesContextProvider({ children }) {
     isShow,
     isFinished,
     setIsFinished,
+    finishButtonState,
+    setFinishButtonState,
   };
 
   return (

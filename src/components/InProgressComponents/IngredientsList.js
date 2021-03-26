@@ -4,13 +4,37 @@ import RecipesContext from '../../context/RecipesContext';
 import IngredientItem from './IngredientItem';
 
 export default function IngredientsList({ listFromProps, id, type }) {
-  const { setIsFinished } = useContext(RecipesContext);
+  const { setIsFinished, setFinishButtonState } = useContext(RecipesContext);
   const [isClicked, setIsClicked] = useState(false);
   const [ingredientsList, setIngredientsList] = useState([]);
   const [listFromStorage, setListFromStorage] = useState([]);
   const [checkboxList, setCheckboxList] = useState([]);
   const [checkedList, setCheckedList] = useState([]);
   const [labels, setLabels] = useState([]);
+
+  useEffect(() => {
+    if (checkedList.length === listFromProps.length) setFinishButtonState(true);
+    const ingredientsOnPage = Array
+      .from(document.querySelectorAll('.checkbox-ingredient'));
+    const checkedCondition = ingredientsOnPage
+      .every((ingredient) => ingredient.checked === true);
+    if (!checkedCondition) setFinishButtonState(false);
+  }, [checkedList, listFromProps, setFinishButtonState]);
+
+  useEffect(() => {
+    console.log(type);
+    const getLocalStorage = JSON
+      .parse(localStorage.getItem('InProgressRecipes'));
+    const progressInLocalStorage = (getLocalStorage)
+      ? getLocalStorage[type] : { [id]: [] };
+    const ingredientsOnPage = (document.querySelectorAll('.checkbox-ingredient'));
+    if (ingredientsOnPage.length === progressInLocalStorage.length) {
+      const checkedCondition = progressInLocalStorage
+        .every((ingredient) => ingredient.checked === true);
+      if (checkedCondition) setFinishButtonState(true);
+      else setFinishButtonState(false);
+    }
+  }, [ingredientsList]);
 
   const handleClick = () => {
     setIsClicked(true);
