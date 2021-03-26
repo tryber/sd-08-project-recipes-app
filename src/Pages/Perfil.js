@@ -9,7 +9,6 @@ function Perfil() {
   return (
     <>
       <Header title="Perfil" searchType="none" />
-      {/* <h2>{ emailStorage.email }</h2> */}
       <Container fluid>
         <Row>
           <Link to="/receitas-feitas">
