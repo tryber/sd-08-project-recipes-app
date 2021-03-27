@@ -17,7 +17,7 @@ function RecipesFood() {
         recipeMeals
         && recipeMeals.map((recipe, i) => (
           i < cardMaximun
-           && <FoodCard key={ i } recipes={ recipe } />
+           && <FoodCard key={ i } order={ i } recipes={ recipe } />
         ))
       }
       <Footer />
