@@ -8,27 +8,20 @@ const searchParams = {
   selectedParam: '',
   inputSearch: '',
 };
-
 function RecipesProvider({ children }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [recipes, setRecipes] = useState([]);
   const [cocktails, setCocktails] = useState([]);
   const [searchParam, setSearchParam] = useState(searchParams);
-
   const handleEmail = ({ target: { value } }) => {
     setEmail(value);
   };
-
   const handlePassword = ({ target: { value } }) => {
     setPassword(value);
   };
-
-  console.log(recipes);
-
   useEffect(() => {
     const { selectedParam, inputSearch } = searchParam;
-
     switch (selectedParam) {
     case 'ingredient':
       fetchFood(`filter.php?i=${inputSearch}`)
@@ -43,13 +36,13 @@ function RecipesProvider({ children }) {
         .then((response) => setRecipes(response));
       break;
     default:
+      fetchFood('search.php?s=')
+        .then((response) => setRecipes(response));
       break;
     }
   }, [searchParam]);
-
   useEffect(() => {
     const { selectedParam, inputSearch } = searchParam;
-
     switch (selectedParam) {
     case 'ingredient':
       fetchDrink(`filter.php?i=${inputSearch}`)
@@ -64,10 +57,11 @@ function RecipesProvider({ children }) {
         .then((response) => setCocktails(response));
       break;
     default:
+      fetchDrink('search.php?s=')
+        .then((response) => setCocktails(response));
       break;
     }
   }, [searchParam]);
-
   const provide = {
     email,
     password,
@@ -78,16 +72,13 @@ function RecipesProvider({ children }) {
     recipes,
     cocktails,
   };
-
   return (
     <RecipesContext.Provider value={ provide }>
       {children}
     </RecipesContext.Provider>
   );
 }
-
 RecipesProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
-
 export default RecipesProvider;

@@ -9,6 +9,7 @@ function Cocktails() {
 
   const cocktailsRecipes = cocktails.drinks;
   const cardMaximun = 12;
+
   return (
     <>
       <Header title="Bebidas" search="" />
@@ -16,12 +17,11 @@ function Cocktails() {
         cocktailsRecipes
         && cocktailsRecipes.map((recipe, i) => (
           i < cardMaximun
-           && <CocktailCard key={ i } recipes={ recipe } />
+           && <CocktailCard key={ i } order={ i } recipes={ recipe } />
         ))
       }
       <Footer />
     </>
   );
 }
-
 export default Cocktails;
