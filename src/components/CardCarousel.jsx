@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../styles/card.css';
 
 const CardCarousel = ({ id, imagePath, title, category, index }) => (
   <div

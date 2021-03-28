@@ -5,15 +5,14 @@ import { Link } from 'react-router-dom';
 
 const Card = ({ id, imagePath, title, category, subCategory, index }) => (
   <Link
-    to={ `/${category === 'food' ? 'comidas' : 'bebidas'}/${id}` }
+    to={ `/${category === 'food'
+      ? 'comidas' : 'bebidas'}/${id}` }
     data-testid={ `${index}-recipe-card` }
   >
     <section className="card">
       <img src={ imagePath } alt={ title } data-testid={ `${index}-card-img` } />
       <p className="card-category">{subCategory}</p>
-      <p className="card-title" data-testid={ `${index}-card-name` }>
-        {title}
-      </p>
+      <p className="card-title" data-testid={ `${index}-card-name` }>{title}</p>
     </section>
   </Link>
 );

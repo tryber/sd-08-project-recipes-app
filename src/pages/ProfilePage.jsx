@@ -1,7 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
+import Layout from '../components/Layout';
 
 function ProfilePage() {
   const history = useHistory();
@@ -17,39 +16,42 @@ function ProfilePage() {
   };
 
   return (
-    <div className="div-foods">
-      <Header label="Perfil" Search={ () => '' } />
-      <section className="profile-main">
-        <div data-testid="profile-email">
-          {getUser()}
-        </div>
-        <button
-          type="button"
-          data-testid="profile-done-btn"
-          onClick={ () => history.push('/receitas-feitas') }
-        >
-          Receitas Feitas
+    <Layout
+      label="Perfil"
+      Search={ () => '' }
+    >
+      <section className="content">
+        <section className="profile">
+          <div data-testid="profile-email">
+            {getUser()}
+          </div>
+          <button
+            type="button"
+            data-testid="profile-done-btn"
+            onClick={ () => history.push('/receitas-feitas') }
+          >
+            Receitas Feitas
 
-        </button>
-        <button
-          type="button"
-          data-testid="profile-favorite-btn"
-          onClick={ () => history.push('/receitas-favoritas') }
-        >
-          Receitas Favoritas
+          </button>
+          <button
+            type="button"
+            data-testid="profile-favorite-btn"
+            onClick={ () => history.push('/receitas-favoritas') }
+          >
+            Receitas Favoritas
 
-        </button>
-        <button
-          type="button"
-          data-testid="profile-logout-btn"
-          onClick={ handleLogout }
-        >
-          Sair
+          </button>
+          <button
+            type="button"
+            data-testid="profile-logout-btn"
+            onClick={ handleLogout }
+          >
+            Sair
 
-        </button>
+          </button>
+        </section>
       </section>
-      <Footer />
-    </div>
+    </Layout>
   );
 }
 

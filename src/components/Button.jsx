@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../styles/buttons.css';
 
 const Button = ({ name, ...rest }) => (
   <button type="button" { ...rest }>

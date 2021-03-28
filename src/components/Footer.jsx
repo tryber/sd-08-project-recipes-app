@@ -1,13 +1,13 @@
 import React from 'react';
 
 import FooterButton from './FooterButton';
-import '../styles/footer.css';
-import { drinkIcon, exploreIcon, mealIcon } from '../common/svgStore';
+import { drinkIcon, exploreIcon, mealIcon } from '../constants/Icons';
 
 function Footer() {
   return (
     <footer className="footer" data-testid="footer">
       <FooterButton
+        className="drink-btn"
         src={ drinkIcon }
         alt="Ícone Bebidas"
         data-testid="drinks-bottom-btn"
@@ -20,6 +20,7 @@ function Footer() {
         path="/explorar"
       />
       <FooterButton
+        className="food-btn"
         src={ mealIcon }
         alt="Ícone Comidas"
         data-testid="food-bottom-btn"

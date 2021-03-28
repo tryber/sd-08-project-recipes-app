@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import ProfileButton from './ProfileButton';
 import PageTitle from './PageTitle';
-import '../styles/header.css';
+
 import SearchHeader from './SearchHeader';
 
 function Header({ label, Search, page }) {
@@ -19,7 +19,10 @@ function Header({ label, Search, page }) {
         <PageTitle text={ label } />
         <Search callback={ handleClick } />
       </header>
-      <section>{searchInput ? <SearchHeader page={ page } /> : ''}</section>
+      {/* ----- WRAPPER ----- */}
+      <div className="header-wrap" />
+      {/* ------------------- */}
+      {searchInput ? <SearchHeader page={ page } /> : ''}
     </>
   );
 }

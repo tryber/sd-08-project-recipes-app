@@ -1,9 +1,13 @@
 import React from 'react';
-import Header from '../components/Header';
+import Layout from '../components/Layout';
 
 function FavoritesRecipes() {
   return (
-    <Header label="Receitas Favoritas" Search={ () => '' } />
+    <Layout label="Receitas Favoritas" Search={ () => '' }>
+      <section className="content">
+        Receitas Favoritas
+      </section>
+    </Layout>
   );
 }
 

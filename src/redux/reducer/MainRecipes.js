@@ -1,4 +1,4 @@
-import { MAIN_DRINKS, MAIN_FOODS } from '../actions';
+import { MAIN_DRINKS, MAIN_FOODS } from '../../constants/ActionTypes';
 
 const INITIAL_STATE = {
   mainFoods: [],

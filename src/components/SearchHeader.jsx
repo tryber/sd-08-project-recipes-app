@@ -5,8 +5,7 @@ import { actionFilteredFoods, actionFilteredDrinks } from '../redux/actions';
 import {
   requestsForSearchHeaderFoods,
   requestsForSearchHeaderDrinks,
-} from '../common/requestsForSearchHeader';
-import '../styles/searchHeader.css';
+} from '../helpers/requestsForSearchHeader';
 
 function SearchHeader({ page }) {
   const [searchText, setSearchText] = useState('');
@@ -50,14 +49,13 @@ function SearchHeader({ page }) {
   };
 
   return (
-    <form className="search-header-form">
+    <section className="search-header-form">
       <input
         type="text"
         placeholder="Buscar Receita"
         data-testid="search-input"
         onChange={ handleChangeInput }
       />
-      <br />
       <section>
         <label htmlFor="ingredient">
           <input
@@ -90,11 +88,10 @@ function SearchHeader({ page }) {
           Primeira letra
         </label>
       </section>
-      <br />
       <button type="button" data-testid="exec-search-btn" onClick={ onClick }>
         Buscar
       </button>
-    </form>
+    </section>
   );
 }
 

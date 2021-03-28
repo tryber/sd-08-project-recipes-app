@@ -1,3 +1,5 @@
+// FIXME: Isso é uma constante, deveria estar em constants
+
 const TAG_ARRAY_LENGTH = 5;
 const TAG_ARRAY_LENGTH_SIX = 6;
 

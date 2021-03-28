@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { shareIcon, whiteHeartIcon } from '../common/svgStore';
+import { shareIcon, whiteHeartIcon } from '../constants/Icons';
 
 const HeaderRecipeDetails = ({ imgPath, title, category }) => (
   <section>

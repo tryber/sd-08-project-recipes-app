@@ -1,14 +1,15 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import Header from '../components/Header';
+
 import SearchButton from '../components/SearchButton';
 import Card from '../components/Card';
-import Footer from '../components/Footer';
+
 import { actionThunkMainFoods } from '../redux/actions';
 import CategoriesContainer from '../components/CategoriesContainer';
 
-import { infinity } from '../common/svgStore';
+import { infinity } from '../constants/Icons';
+import Layout from '../components/Layout';
 
 function Foods() {
   const MAX_ARRAY_SIZE = 12;
@@ -65,28 +66,26 @@ function Foods() {
     return mapCards(foodsToMap);
   };
   return (
-    <div className="div-foods">
-      {isLoading ? (
-        <section className="loading-section">
-          <img src={ infinity } className="loading-logo" alt="Infinity Logo" />
-        </section>
-      ) : (
-        <div>
-          <Header
-            label="Comidas"
-            Search={ SearchButton }
-            page="Comidas"
-          />
-          <main className="main-container">
+    <Layout
+      label="Comidas"
+      Search={ SearchButton }
+      page="Comidas"
+    >
+      <section className="content">
+        {isLoading ? (
+          <section className="loading">
+            <img src={ infinity } className="loading-logo" alt="Infinity Logo" />
+          </section>
+        ) : (
+          <section className="foods">
             <CategoriesContainer page="Comidas" />
             <div className="card-food">
               {showCards()}
             </div>
-          </main>
-          <Footer />
-        </div>
-      )}
-    </div>
+          </section>
+        )}
+      </section>
+    </Layout>
   );
 }
 

@@ -18,6 +18,7 @@ function DrinkDetails({
     }
     requestApi();
   }, []);
+
   return (
     <section>
       {isLoading ? (

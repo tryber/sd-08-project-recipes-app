@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-// import shareIcon from '../images/shareIcon.svg';
-// import whiteHearticon from '../images/whiteHeartIcon.svg';
 import ContainerRecipeDetails from '../components/ContainerRecipeDetails';
 import { requestFoodById } from '../services/requestFoodsAPI';
 

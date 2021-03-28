@@ -1,15 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import CardCarousel from './CardCarousel';
-import '../styles/cardCarousel.css';
 
 const RecommendedRecipeDetails = ({ recommendedRecipes, page }) => {
-  console.log(recommendedRecipes);
   const showCards = () => {
     if (page === 'Comidas') {
       return recommendedRecipes.map((recommended, index) => (
         <CardCarousel
-          id={ recommended.idMeal }
+          id={ recommended.idDrink }
           imagePath={ recommended.strDrinkThumb }
           title={ recommended.strDrink }
           category={ recommended.strAlcoholic }
@@ -21,7 +19,7 @@ const RecommendedRecipeDetails = ({ recommendedRecipes, page }) => {
     if (page === 'Bebidas') {
       return recommendedRecipes.map((recommended, index) => (
         <CardCarousel
-          id={ recommended.idDrink }
+          id={ recommended.idMeal }
           imagePath={ recommended.strMealThumb }
           title={ recommended.strMeal }
           category={ recommended.strCategory }

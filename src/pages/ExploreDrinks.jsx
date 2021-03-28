@@ -1,30 +1,27 @@
 import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import Button from '../components/Button';
-import { requestRandomMeal } from '../services/requestFoodsAPI';
+import { requestRandomDrink } from '../services/requestDrinksAPI';
 import Layout from '../components/Layout';
 
-function ExploreFood() {
+function ExploreDrinks() {
   const history = useHistory();
 
-  const getRandonMeal = async () => {
-    const idMeal = await requestRandomMeal();
-    return idMeal;
+  const getRandonDrink = async () => {
+    const idDrink = await requestRandomDrink();
+    return idDrink;
   };
 
   const handleClick = async () => {
-    const id = await getRandonMeal();
-    history.push(`/comidas/${id}`);
+    const id = await getRandonDrink();
+    history.push(`/bebidas/${id}`);
   };
 
   return (
-    <Layout label="Explorar Comidas" Search={ () => '' }>
+    <Layout label="Explorar Bebidas" Search={ () => '' }>
       <section className="content">
-        <Link to="/explorar/comidas/ingredientes">
+        <Link to="/explorar/bebidas/ingredientes">
           <Button name="Por Ingredientes" data-testid="explore-by-ingredient" />
-        </Link>
-        <Link to="/explorar/comidas/area">
-          <Button name="Por Local de Origem" data-testid="explore-by-area" />
         </Link>
         <Button
           name="Me Surpreenda!"
@@ -36,4 +33,4 @@ function ExploreFood() {
   );
 }
 
-export default ExploreFood;
+export default ExploreDrinks;

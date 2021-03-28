@@ -1,9 +1,13 @@
 import React from 'react';
-import Header from '../components/Header';
+import Layout from '../components/Layout';
 
 function ReadyMadeRecipes() {
   return (
-    <Header label="Receitas Feitas" Search={ () => '' } />
+    <Layout label="Receitas Feitas" Search={ () => '' }>
+      <section className="content">
+        Receitas Feitas
+      </section>
+    </Layout>
   );
 }
 

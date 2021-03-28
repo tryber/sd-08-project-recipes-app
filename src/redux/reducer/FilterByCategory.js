@@ -2,7 +2,7 @@ import {
   CATEGORIES_FOODS_FILTER,
   CATEGORIES_DRINKS_FILTER,
   RESET_STATE,
-} from '../actions';
+} from '../../constants/ActionTypes';
 
 const INITIAL_STATE = {
   foodsFilterCategories: [],

@@ -1,4 +1,4 @@
-import { FILTERED_FOODS, FILTERED_DRINKS } from '../actions';
+import { FILTERED_FOODS, FILTERED_DRINKS } from '../../constants/ActionTypes';
 
 const INITIAL_STATE = {
   foods: [],

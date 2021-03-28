@@ -14,6 +14,7 @@ const ContainerRecipeDetails = ({ recipe, page }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [recommended, setRecommended] = useState([]);
   const [recipeInfo, setRecipeInfo] = useState({});
+
   const getIngredientsMeasure = (ingredientsSize) => {
     const arrayIngredients = [];
     for (let i = 1; i <= ingredientsSize; i += 1) {
@@ -109,7 +110,7 @@ const ContainerRecipeDetails = ({ recipe, page }) => {
       {isLoading ? (
         <h1>Loading...</h1>
       ) : (
-        <main>
+        <section>
           <HeaderRecipeDetails
             title={ name }
             category={ category }
@@ -129,7 +130,7 @@ const ContainerRecipeDetails = ({ recipe, page }) => {
               className="start-recipe-btn"
             />
           </Link>
-        </main>
+        </section>
       )}
     </div>
   );

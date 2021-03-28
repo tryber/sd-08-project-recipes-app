@@ -1,3 +1,20 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
 :root {
 
   --gray: gray;
@@ -74,6 +91,8 @@
   }
 }
 
+/* Login */
+
 .login {
   align-items: center;
   background-image: url('https://images.unsplash.com/photo-1495461199391-8c39ab674295?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80');
@@ -92,6 +111,8 @@
   justify-content: center;
 }
 
+/*  */
+
 @media only screen and ( max-width : 400px ) {
 
   .login {
@@ -100,31 +121,47 @@
   }
 }
 
-.main-container {
-  padding: 80px 0;
+
+/* .card-item img {
+  width: 150px;
+} */
+
+
+@media screen and ( min-width : 680px ) {
+
+  .card-item {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.div-button {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+@media screen and ( min-width : 1040px ) {
+
+  .card-item {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
-.div-button button {
-  margin-right: 10px;
-  margin-top: 10px;
+@media screen and ( min-width : 1400px ) {
+
+  .card-item {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
-.div-foods {
-  background-color: var(--white);
+
+/* Card */
+
+.card {
+  box-shadow: 1px 1px 5px 2px gray;
+  margin-bottom: 20px;
+  margin-right: 5px;
+  min-width: 50%;
+  padding: 5px;
+  width: 300px;
 }
 
-.card-food {
-  align-items: center;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  margin-top: 35px;
+.card > img {
+  object-fit: cover;
   width: 100%;
 }
 
@@ -149,91 +186,28 @@
   margin-left: 5px;
 }
 
-@media screen and ( min-width : 680px ) {
-
-  .card-item {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media screen and ( min-width : 1040px ) {
-
-  .card-item {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media screen and ( min-width : 1400px ) {
-
-  .card-item {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-
-.start-recipe-btn {
-  bottom: 0;
-  margin-left: 10%;
-  position: fixed;
-  width: 80%;
-}
-
-
-.card {
-  box-shadow: 1px 1px 5px 2px gray;
-  margin-bottom: 20px;
-  margin-right: 5px;
-  min-width: 50%;
-  padding: 5px;
-  width: 300px;
-}
-
-.card > img {
-  object-fit: cover;
+.card-food {
+  align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin-top: 10px;
   width: 100%;
 }
+
+/*  */
 
 .div-carousel {
   display: flex;
   overflow-x: scroll;
 }
 
-.loading-section {
-  align-content: center;
-  display: flex;
-  height: 100vh;
-  justify-content: center;
-}
-
-.loading-logo {
-  width: 75%;
-}
-
-.profile-btn {
-  margin-left: 20px;
-}
-
-.search-btn {
-  margin-right: 20px;
-}
-
-.search-header-form {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  margin-top: 70px;
-  padding: 5px;
-}
-
-.search-header-form input {
-  margin-left: 5px;
-  margin-right: 5px;
-}
-
 .image-details {
   margin: 5px;
   width: 60%;
 }
+
+/* Header */
 
 .header {
   background: #b1a7a6;
@@ -253,6 +227,25 @@
   width: 45px;
 }
 
+.header-wrap {
+  height: 60px;
+}
+
+/* Search */
+
+.search-header-form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.search-header-form * {
+  margin: 4px;
+}
+
+/* Footer */
+
 .footer {
   background: #b1a7a6;
   bottom: 0;
@@ -264,6 +257,12 @@
   width: 100%;
 }
 
+/* Buttons */
+
+.search-btn {
+  margin-right: 20px;
+}
+
 .drink-btn {
   margin-left: 20px;
 }
@@ -272,16 +271,78 @@
   margin-right: 20px;
 }
 
-.profile-main {
-  border: 2px solid green;
-  display: flex;
-  flex-direction: column;
-  margin-top: 120px;
+.profile-btn {
+  margin-left: 20px;
 }
 
-.explore-main {
-  border: 2px solid green;
+.start-recipe-btn {
+  bottom: 0;
+  margin-left: 10%;
+  position: fixed;
+  width: 80%;
+}
+
+/* Categories */
+
+main {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.categories {
   display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2px;
+}
+
+.categories-btn {
+  align-self: center;
+  margin: 2px;
+  min-width: 60px;
+  padding: 4px 10px;
+}
+
+
+/* Loading */
+
+.loading {
+  align-content: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}
+
+.loading-logo {
+  width: 75%;
+}
+
+/* Pages */
+
+.content {
+  padding: 4px;
+  background-color: var(--white);
+}
+
+.foods {
+  display:flex;
   flex-direction: column;
-  margin-top: 120px;
+}
+
+
+.drinks {
+  display:flex;
+  flex-direction: column;
+}
+
+.profile {
+  display:flex;
+  flex-direction: column;
+}
+
+.explore {
+  display:flex;
+  flex-direction: column;
 }

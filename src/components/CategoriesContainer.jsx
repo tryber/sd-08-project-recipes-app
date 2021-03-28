@@ -54,6 +54,7 @@ const CategoriesContainer = ({ page }) => {
     }
     return buttons.map((button) => (
       <Button
+        className="btn btn-secondary categories-btn"
         name={ button.strCategory }
         key={ button.strCategory }
         data-testid={ `${button.strCategory}-category-filter` }
@@ -61,7 +62,7 @@ const CategoriesContainer = ({ page }) => {
       />
     ));
   };
-  return <section>{showCategoriesButtons()}</section>;
+  return <section className="categories">{showCategoriesButtons()}</section>;
 };
 
 CategoriesContainer.propTypes = {
