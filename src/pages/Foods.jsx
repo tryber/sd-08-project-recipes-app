@@ -9,7 +9,6 @@ import { actionThunkMainFoods } from '../redux/actions';
 import CategoriesContainer from '../components/CategoriesContainer';
 
 import { infinity } from '../common/svgStore';
-import '../styles/loading.css';
 
 function Foods() {
   const MAX_ARRAY_SIZE = 12;
@@ -30,7 +29,7 @@ function Foods() {
   }, []);
 
   const mapCards = (array) => (
-    <section>
+    <section className="card-item">
       {array.map((food, index) => (
         <Card
           index={ index }
@@ -38,7 +37,8 @@ function Foods() {
           id={ food.idMeal }
           imagePath={ food.strMealThumb }
           title={ food.strMeal }
-          category={ food.strCategory }
+          category="food"
+          subCategory={ food.strCategory }
         />
       ))}
     </section>
@@ -65,18 +65,26 @@ function Foods() {
     return mapCards(foodsToMap);
   };
   return (
-    <div>
+    <div className="div-foods">
       {isLoading ? (
         <section className="loading-section">
           <img src={ infinity } className="loading-logo" alt="Infinity Logo" />
         </section>
       ) : (
-        <>
-          <Header label="Comidas" Search={ SearchButton } page="Comidas" />
-          <CategoriesContainer page="Comidas" />
-          {showCards()}
+        <div>
+          <Header
+            label="Comidas"
+            Search={ SearchButton }
+            page="Comidas"
+          />
+          <main className="main-container">
+            <CategoriesContainer page="Comidas" />
+            <div className="card-food">
+              {showCards()}
+            </div>
+          </main>
           <Footer />
-        </>
+        </div>
       )}
     </div>
   );

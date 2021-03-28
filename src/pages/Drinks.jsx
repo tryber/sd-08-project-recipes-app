@@ -4,10 +4,11 @@ import { Redirect } from 'react-router-dom';
 import Header from '../components/Header';
 import SearchButton from '../components/SearchButton';
 import Card from '../components/Card';
-import '../styles/card.css';
 import Footer from '../components/Footer';
 import { actionThunkMainDrinks } from '../redux/actions';
 import CategoriesContainer from '../components/CategoriesContainer';
+
+import { infinity } from '../common/svgStore';
 
 function Drinks() {
   const MAX_ARRAY_SIZE = 12;
@@ -24,7 +25,7 @@ function Drinks() {
   }, []);
 
   const mapCards = (array) => (
-    <section>
+    <section className="card-item">
       {array.map((drink, index) => (
         <Card
           index={ index }
@@ -32,7 +33,8 @@ function Drinks() {
           id={ drink.idDrink }
           imagePath={ drink.strDrinkThumb }
           title={ drink.strDrink }
-          category={ drink.strCategory }
+          category="drink"
+          subCategory={ drink.strCategory }
         />
       ))}
     </section>
@@ -58,16 +60,26 @@ function Drinks() {
     return mapCards(drinksToMap);
   };
   return (
-    <div>
+    <div className="div-foods">
       {isLoading ? (
-        <h1>Loading...</h1>
+        <section className="loading-section">
+          <img src={ infinity } className="loading-logo" alt="Infinity Logo" />
+        </section>
       ) : (
-        <>
-          <Header label="Bebidas" Search={ SearchButton } page="Bebidas" />
-          <CategoriesContainer page="Bebidas" />
-          {showCards()}
+        <div>
+          <Header
+            label="Bebidas"
+            Search={ SearchButton }
+            page="Bebidas"
+          />
+          <main className="main-container">
+            <CategoriesContainer page="Bebidas" />
+            <div className="card-food">
+              {showCards()}
+            </div>
+          </main>
           <Footer />
-        </>
+        </div>
       )}
     </div>
   );

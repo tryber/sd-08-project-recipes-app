@@ -1,3 +1,10 @@
+:root {
+
+  --gray: gray;
+
+  --white: white;
+}
+
 .meals {
   align-items: center;
   background: #0fa36b;
@@ -65,4 +72,206 @@
   100% {
     transform: rotate(-10deg);
   }
+}
+
+.login {
+  align-items: center;
+  background-image: url('https://images.unsplash.com/photo-1495461199391-8c39ab674295?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80');
+  background-size: cover;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  margin: 0;
+  width: 100%;
+}
+
+.login form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media only screen and ( max-width : 400px ) {
+
+  .login {
+    background-image: url('https://cdn.discordapp.com/attachments/822564174428110883/825021234646876210/unknown.png');
+    background-size: cover;
+  }
+}
+
+.main-container {
+  padding: 80px 0;
+}
+
+.div-button {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.div-button button {
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.div-foods {
+  background-color: var(--white);
+}
+
+.card-food {
+  align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin-top: 35px;
+  width: 100%;
+}
+
+/* .card-item img {
+  width: 150px;
+} */
+
+.card-item {
+  display: grid;
+  grid-gap: 1rem;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.card-category {
+  color: var(--gray);
+  font-size: 1.2;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+.card-title {
+  color: var(--gray);
+  font-size: 1.7em;
+  font-weight: 700;
+  margin-left: 5px;
+}
+
+@media screen and ( min-width : 680px ) {
+
+  .card-item {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and ( min-width : 1040px ) {
+
+  .card-item {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and ( min-width : 1400px ) {
+
+  .card-item {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+
+.start-recipe-btn {
+  bottom: 0;
+  margin-left: 10%;
+  position: fixed;
+  width: 80%;
+}
+
+
+.card {
+  box-shadow: 1px 1px 5px 2px gray;
+  margin-bottom: 20px;
+  margin-right: 5px;
+  min-width: 50%;
+  padding: 5px;
+  width: 300px;
+}
+
+.card > img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.div-carousel {
+  display: flex;
+  overflow-x: scroll;
+}
+
+.loading-section {
+  align-content: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}
+
+.loading-logo {
+  width: 75%;
+}
+
+.profile-btn {
+  margin-left: 20px;
+}
+
+.search-btn {
+  margin-right: 20px;
+}
+
+.search-header-form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 70px;
+  padding: 5px;
+}
+
+.search-header-form input {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.image-details {
+  margin: 5px;
+  width: 60%;
+}
+
+.header {
+  background: #b1a7a6;
+  display: flex;
+  height: 60px;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  overflow: hidden;
+  padding: 3px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.header input {
+  width: 45px;
+}
+
+.footer {
+  background: #b1a7a6;
+  bottom: 0;
+  display: flex;
+  height: 8%;
+  justify-content: space-between;
+  left: 0;
+  position: fixed;
+  width: 100%;
+}
+
+.drink-btn {
+  margin-left: 20px;
+}
+
+.food-btn {
+  margin-right: 20px;
 }
