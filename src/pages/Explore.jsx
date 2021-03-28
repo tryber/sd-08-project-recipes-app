@@ -8,12 +8,14 @@ function Explore() {
   return (
     <>
       <Header label="Explorar" Search={ () => '' } page="Explorar" />
-      <Link to="/explorar/comidas">
-        <Button name="Explorar Comidas" data-testid="explore-food" />
-      </Link>
-      <Link to="/explorar/bebidas">
-        <Button name="Explorar Bebidas" data-testid="explore-drinks" />
-      </Link>
+      <section className="explore-main">
+        <Link to="/explorar/comidas">
+          <Button name="Explorar Comidas" data-testid="explore-food" />
+        </Link>
+        <Link to="/explorar/bebidas">
+          <Button name="Explorar Bebidas" data-testid="explore-drinks" />
+        </Link>
+      </section>
       <Footer />
     </>
   );

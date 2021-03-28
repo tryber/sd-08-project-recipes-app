@@ -11,7 +11,9 @@ const Card = ({ id, imagePath, title, category, subCategory, index }) => (
     <section className="card">
       <img src={ imagePath } alt={ title } data-testid={ `${index}-card-img` } />
       <p className="card-category">{subCategory}</p>
-      <p className="card-title" data-testid={ `${index}-card-name` }>{title}</p>
+      <p className="card-title" data-testid={ `${index}-card-name` }>
+        {title}
+      </p>
     </section>
   </Link>
 );

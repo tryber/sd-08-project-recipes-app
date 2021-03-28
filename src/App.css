@@ -128,10 +128,6 @@
   width: 100%;
 }
 
-/* .card-item img {
-  width: 150px;
-} */
-
 .card-item {
   display: grid;
   grid-gap: 1rem;
@@ -274,4 +270,18 @@
 
 .food-btn {
   margin-right: 20px;
+}
+
+.profile-main {
+  border: 2px solid green;
+  display: flex;
+  flex-direction: column;
+  margin-top: 120px;
+}
+
+.explore-main {
+  border: 2px solid green;
+  display: flex;
+  flex-direction: column;
+  margin-top: 120px;
 }
