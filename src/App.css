@@ -58,8 +58,8 @@ header {
 }
 
 .carousel-item {
-  max-height: 150px;
   margin-bottom: 10px;
+  max-height: 150px;
   min-width: 100%;
   padding: 0 50px;
   scroll-snap-align: center;
@@ -78,8 +78,8 @@ header {
 .card {
   background-color: rgb(237, 242, 247);
   border-radius: 10px;
-  padding: 80px 40px 40px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  padding: 80px 40px 40px;
   z-index: 1;
 }
 
@@ -90,16 +90,16 @@ header {
 
 .carousel .btn {
   height: 30px;
-  position: absolute;
   margin-top: 20px;
-  top: 50%;
+  position: absolute;
   background-color: rgba(95, 106, 117, 0.3);
-  width: 30px;
+  top: 50%;
   border-radius: 15px;
-  line-height: 30px;
+  width: 30px;
   color: white;
-  z-index: 1;
+  line-height: 30px;
   font-weight: bold;
+  z-index: 1;
   text-align: center;
 }
 
