@@ -41,6 +41,100 @@ header {
   font-weight: 900;
 }
 
+
+.carousel {
+  max-width: 800px;
+  margin: auto;
+  display: flex;
+  padding: 15px;
+  text-align: center;
+  position: relative;
+}
+
+.scroller {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+}
+
+.carousel-item {
+  min-width: 100%;
+  max-height: 150px;
+  scroll-snap-align: center;
+  margin-bottom: 10px;
+  padding: 0 50px;
+}
+
+.carousel-item img {
+  margin: 15px auto -60px;
+  width: 200px;
+  height: 200px;
+  border: solid 4px #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+
+.card {
+  background-color: rgb(237, 242, 247);
+  padding: 80px 40px 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.card p {
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.carousel .btn {
+  position: absolute;
+  top: 50%;
+  margin-top: 20px;
+  height: 30px;
+  width: 30px;
+  border-radius: 15px;
+  background-color: rgba(95, 106, 117, 0.3);
+  z-index: 1;
+  line-height: 30px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+
+.carousel .btn:hover{
+  background-color: rgba(95, 106, 117, 0.5);
+  cursor: pointer;
+}
+
+.carousel .btn.next {
+  right: 15px;
+}
+
+.carousel .btn.prev {
+  left: 15px;
+}
+
+.fixed-btn {
+  left: 50%;
+  bottom: 0;
+  position: fixed;
+}
+
+.btn-favorite-right {
+  float: right;
+}
+
+.tooltip-text {
+  display: none;
+}
+
+.btn-share {
+  background-image: url('./images/shareIcon.svg');
+  bottom: 0;
+  position: fixed;
+}
 @keyframes shake {
 
   0% {
