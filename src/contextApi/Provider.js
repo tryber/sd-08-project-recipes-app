@@ -7,6 +7,7 @@ function Login({ children }) {
   const [password, setPassword] = useState();
   const [searchBar, setSearchBar] = useState(false);
   const [results, setResults] = useState([]);
+  const [favoriteRecipes, setFavoriteRecipes] = useState([]);
   const [checkbox,setCheckbox] = useState()
   const [productDetails, setProductDetails] = useState(
     {object: "",
@@ -40,7 +41,10 @@ function Login({ children }) {
     inProgressRecipes,
     setProgressRecipes,
     checkbox,
-    setCheckbox
+    setCheckbox,
+    favoriteRecipes,
+     setFavoriteRecipes
+   
   };
   return <Context.Provider value={ OBJVALUE }>{children}</Context.Provider>;
 }
