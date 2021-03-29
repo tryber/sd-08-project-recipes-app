@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import RecipesContext from '../context/ContextRecipes';
-import {} from '../services/BuscaNasAPIs';
+import BuscaBebidas from '../services/BuscaBebidas';
+import BuscaComidas from '../services/BuscaComidas';
 
 import shareIcon from '../images/shareIcon.svg';
 import whiteHeartIcon from '../images/whiteHeartIcon.svg';
@@ -39,8 +40,8 @@ function DetalhesComidas() {
     const location = window.location.pathname;
     const size = 9;
     const RecipeID = location.slice(size, location.length);
-    API('foodDetail', setFoodDetail, RecipeID);
-    API('name', setRecomendedDrink, foodDetail.strMeal);
+    BuscaComidas('foodDetail', setFoodDetail, RecipeID);
+    BuscaBebidas('name', setRecomendedDrink, foodDetail.strMeal);
     isFavorited();
   }, []);
 
