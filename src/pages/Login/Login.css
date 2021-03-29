@@ -1,0 +1,23 @@
+.login-container {
+  align-items: center;
+  display: flex;
+  height: 640px;
+  justify-content: center;
+}
+
+.login-container form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+}
+
+.login-container form label {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-container form button {
+  padding: 10px 15px;
+}

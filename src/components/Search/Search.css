@@ -1,0 +1,12 @@
+.search-container {
+  padding: 10px;
+}
+
+.input-search {
+  padding: 5px 10px;
+  width: 100%;
+}
+
+.search-container label {
+  margin: 2px 0 0 10px;
+}

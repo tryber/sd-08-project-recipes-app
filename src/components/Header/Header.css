@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+}
+
+.header-container {
+  background-color: #e1e1e1;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  width: 100%;
+}
+
+.header-container button {
+  border: none;
+}
+
