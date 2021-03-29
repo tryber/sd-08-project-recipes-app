@@ -96,8 +96,8 @@ header {
   line-height: 30px;
   margin-top: 20px;
   position: absolute;
-  top: 50%;
   text-align: center;
+  top: 50%;
   width: 30px;
   z-index: 1;
 }
