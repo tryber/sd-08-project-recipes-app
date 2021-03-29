@@ -91,16 +91,16 @@ header {
 .carousel .btn {
   height: 30px;
   margin-top: 20px;
-  position: absolute;
   background-color: rgba(95, 106, 117, 0.3);
-  top: 50%;
+  position: absolute;
   border-radius: 15px;
-  width: 30px;
+  top: 50%;
   color: white;
-  line-height: 30px;
+  width: 30px;
   font-weight: bold;
-  z-index: 1;
+  line-height: 30px;
   text-align: center;
+  z-index: 1;
 }
 
 .carousel .btn:hover {
