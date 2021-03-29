@@ -8,7 +8,7 @@ import blackHeartIcon from '../images/blackHeartIcon.svg';
 
 import '../App.css';
 
-function FoodDetails() {
+function DetalhesComidas() {
   // state que guarda o retorno da requisição
   const {
     foodDetail,
@@ -222,7 +222,7 @@ function FoodDetails() {
   );
 }
 
-export default FoodDetails;
+export default DetalhesComidas;
 
 /* const DetalhesComidas = () => (
   <section className="w-100">
