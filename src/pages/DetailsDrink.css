@@ -1,0 +1,73 @@
+.container-card-drink-details {
+  display: flex;
+  flex-flow: row wrap;
+  height: 80%;
+  justify-content: space-around;
+  margin: 2% auto;
+  overflow: scroll;
+  width: 90%;
+}
+
+.card-drink-details {
+  border-radius: 4px;
+  box-shadow: 0 0 8px orangered;
+  display: flex;
+  flex-direction: column;
+  height: 35%;
+  margin-top: 2%;
+  padding: 2px;
+  width: 90%;
+}
+
+.card-drink-details img {
+  align-self: center;
+  border-radius: 4px;
+  margin-top: 2%;
+  width: 90%;
+}
+
+.card-drink-details h2 {
+  align-self: center;
+  font-size: 25px;
+  margin-top: 2%;
+}
+
+.carousel-class-drinks {
+  display: flex;
+  flex-wrap: nowrap;
+  list-style: none;
+  overflow-x: auto;
+
+  /* width: 315%; */
+}
+
+.share-favorite-btn {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 70px;
+  width: 100%;
+}
+
+.start-recipe-btn {
+  align-items: center;
+  align-self: center;
+  background-color: blue;
+  bottom: 0;
+  color: white;
+  display: flex;
+  font-size: x-large;
+  height: 9%;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+}
+
+.recomendation-img {
+  flex: none;
+  height: 200px;
+  width: 50%;
+}
+
+.paragraph-cards {
+  font-size: 10px;
+}

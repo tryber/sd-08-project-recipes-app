@@ -1,0 +1,12 @@
+.footer-food {
+  align-items: center;
+  background-color: gray;
+  bottom: 0;
+  display: flex;
+  font-size: xx-large;
+  height: 10%;
+  justify-content: space-around;
+  position: fixed;
+  text-align: center;
+  width: 100vw;
+}

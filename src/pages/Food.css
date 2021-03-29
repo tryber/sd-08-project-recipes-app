@@ -1,0 +1,117 @@
+.container {
+  align-items: center;
+  background-color: #ddd;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
+.header-food {
+  align-items: center;
+  background-color: gray;
+  display: flex;
+  font-size: xx-large;
+  height: 10%;
+  justify-content: space-around;
+  text-align: center;
+  width: 100vw;
+}
+
+.container button {
+  background-color: transparent;
+  border: none;
+  font-size: unset;
+  line-height: unset;
+  margin-top: unset;
+  padding: unset;
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2%;
+  width: 100%;
+}
+
+.search-input {
+  margin-top: 2%;
+  width: 100%;
+}
+
+label {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  font-size: 0.8em;
+  margin: 0 1%;
+  margin-top: 2%;
+  width: 32%;
+}
+
+.search-radios {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.radio {
+  width: 20%;
+}
+
+.container .exec-search-btn {
+  background-color: gray;
+  margin-top: 2%;
+}
+
+.container-card-meal {
+  display: flex;
+  flex-flow: wrap;
+  flex-direction: row;
+  gap: 2%;
+  height: 70%;
+  justify-content: space-around;
+  margin-top: 2%;
+  overflow: scroll;
+  width: 100%;
+}
+
+.card-meal {
+  border-radius: 4px;
+  box-shadow: 0 0 8px orangered;
+  height: 35%;
+  margin-top: 2%;
+  overflow: scroll;
+  padding: 2px;
+  width: 45%;
+}
+
+.card-meal img {
+  border-radius: 4px;
+  height: 80%;
+  margin-top: 2%;
+  width: 100%;
+}
+
+.card-meal h2 {
+  font-size: 15px;
+  margin-top: 2%;
+}
+
+.category-filter {
+  background-color: palegreen;
+  display: flex;
+  flex-flow: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 2%;
+  width: 100vw;
+}
+
+.category-filter button {
+  background-color: pink;
+  margin-bottom: 2%;
+  margin-right: 2px;
+  width: 25%;
+}

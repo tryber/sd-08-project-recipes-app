@@ -1,0 +1,50 @@
+.container {
+  align-items: center;
+  background-color: #ddd;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
+.header-explore {
+  align-items: center;
+  background-color: gray;
+  display: flex;
+  flex-direction: row;
+  font-size: xx-large;
+  height: 10%;
+  width: 100vw;
+}
+
+.header-explore img {
+  margin-left: 2%;
+}
+
+.header-explore h2 {
+  align-self: center;
+  margin-left: 25%;
+}
+
+.main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  width: 100%;
+}
+
+.main a {
+  border-radius: 8px;
+  box-shadow: 0 0 16px black;
+  color: black;
+  font-size: xx-large;
+  height: 20%;
+  margin-bottom: 2%;
+  text-align: center;
+  width: 90%;
+}
+
+.main a:focus {
+  outline: none;
+}
