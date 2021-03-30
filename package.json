@@ -2,25 +2,6 @@
   "name": "recipes-app-test",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@sheerun/mutationobserver-shim": "^0.3.3",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "axios": "^0.21.1",
-    "bootstrap": "^4.5.3",
-    "clipboard-copy": "^3.1.0",
-    "history": "^5.0.0",
-    "lodash": "^4.17.15",
-    "prop-types": "^15.7.2",
-    "react": "^16.13.1",
-    "react-bootstrap": "^1.4.0",
-    "react-dom": "^16.13.1",
-    "react-logger": "^1.1.0",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.1",
-    "websocket-extensions": ">=0.1.4"
-  },
   "scripts": {
     "cy": "cypress run",
     "cy:open": "cypress open",
@@ -46,6 +27,40 @@
       "last 1 safari version"
     ]
   },
+  "jest": {
+    "coveragePathIgnorePatterns": [
+      "index.js",
+      "serviceWorker.js"
+    ],
+    "coverageReporters": [
+      "json",
+      "lcovonly",
+      "text",
+      "clover"
+    ]
+  },
+  "dependencies": {
+    "@sheerun/mutationobserver-shim": "^0.3.3",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "axios": "^0.21.1",
+    "bootstrap": "^4.5.3",
+    "clipboard-copy": "^3.1.0",
+    "history": "^5.0.0",
+    "lodash": "^4.17.15",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-bootstrap": "^1.4.0",
+    "react-dom": "^16.13.1",
+    "react-logger": "^1.1.0",
+    "react-redux": "^7.2.3",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.4.1",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.3.0",
+    "websocket-extensions": ">=0.1.4"
+  },
   "devDependencies": {
     "clipboardy": "^2.1.0",
     "cypress": "^3.7.0",
@@ -58,19 +73,8 @@
     "mochawesome": "^6.1.1",
     "mochawesome-merge": "^4.1.0",
     "mochawesome-report-generator": "^5.1.0",
+    "redux-devtools": "^3.7.0",
     "stylelint": "^13.8.0",
     "stylelint-order": "^4.1.0"
-  },
-  "jest": {
-    "coveragePathIgnorePatterns": [
-      "index.js",
-      "serviceWorker.js"
-    ],
-    "coverageReporters": [
-      "json",
-      "lcovonly",
-      "text",
-      "clover"
-    ]
   }
 }
