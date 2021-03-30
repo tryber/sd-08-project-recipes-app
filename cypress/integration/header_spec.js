@@ -24,7 +24,7 @@ describe('10 - Implemente um ícone para a tela de perfil, um título e um ícon
 
     cy.get('[data-testid="page-title"]').contains(title);
 
-    if (withSearchButton){
+    if (withSearchButton) {
       cy.get('[data-testid="search-top-btn"]')
         .should('have.attr', 'src')
         .should('include', 'searchIcon');

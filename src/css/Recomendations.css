@@ -1,0 +1,28 @@
+.recommendationList {
+  list-style: none;
+  margin: 0;
+  overflow: auto;
+  overflow-x: scroll;
+  padding: 0;
+  white-space: nowrap;
+}
+
+.recommendationList li {
+  display: inline-block;
+  width: 48%;
+}
+
+.recommendationList li:not( :last-child ) {
+  margin-right: 10px;
+}
+
+.carouselImage {
+  width: 50%;
+}
+
+.start-recipe-btn {
+  bottom: 0;
+  margin-left: 10%;
+  position: fixed;
+  width: 80%;
+}

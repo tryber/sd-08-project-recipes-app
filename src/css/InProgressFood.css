@@ -1,0 +1,29 @@
+.inProgressDiv {
+  overflow: hidden;
+  width: 100%;
+}
+
+.inProgressImg {
+  width: 100%;
+}
+
+.ingredientsSteps {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+}
+
+.ingredientStep {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
+
+.ingredientStep input {
+  height: 30px;
+  width: 30px;
+}
+
+.ingredientStep input:checked + label {
+  text-decoration: line-through;
+}
