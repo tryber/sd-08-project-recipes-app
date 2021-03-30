@@ -35,7 +35,7 @@ function ExplorarOrigem() {
     areaCategoriesNew.push({ strArea: 'All' });
     return (
       <>
-        <Header title="Comidas" />
+        <Header title="Explorar Origem" />
         <Container fluid>
           <Row style={ { justifyContent: 'space-around' } }>
             <Form>
