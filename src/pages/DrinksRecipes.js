@@ -20,12 +20,15 @@ function DrinksRecipes() {
   const ifilter = useSelector((state) => state.search.ingredientFilter);
   useEffect(() => {
     const fetchData = (inputf, typef) => dispatch(fetchDrinkThunk(inputf, typef));
+    fetchData(input, type);
+  }, [input, type]);
+
+  useEffect(() => {
     const ingredientFilter = (filteri) => dispatch(fetchDrinkIFilterThunk(filteri));
     const fetchDataCat = (filterf) => dispatch(fetchRecipesDrinkCatsThunk(filterf));
-    if (!ifilter && !filter) fetchData(input, type);
     if (filter) fetchDataCat(filter);
     if (ifilter && !filter) ingredientFilter(ifilter);
-  }, [input, type, filter, ifilter]);
+  }, [filter, ifilter]);
 
   useEffect(() => () => {
     dispatch(clearRecipesAction());
@@ -33,13 +36,18 @@ function DrinksRecipes() {
   }, []);
 
   useEffect(() => {
-    if (drinks.length === 1) return <Redirect to={ `/bebidas/${drinks[0].idDrink}` } />;
+    if (drinks.length === 1) {
+      return (<Redirect
+        push
+        to={ `/bebidas/${drinks[0].idDrink}` }
+      />);
+    }
   }, []);
 
   return (
     <main>
       { drinks && drinks.length === 1
-        && <Redirect to={ `/bebidas/${drinks[0].idDrink}` } />}
+        && <Redirect push to={ `/bebidas/${drinks[0].idDrink}` } />}
       <Header />
       <DrinkCatsButtons />
       { drinks && drinks.map((elem, index) => (

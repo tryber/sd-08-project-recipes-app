@@ -20,12 +20,15 @@ function MealsRecipes() {
   const ifilter = useSelector((state) => state.search.ingredientFilter);
   useEffect(() => {
     const fetchData = (inputf, typef) => dispatch(fetchMealThunk(inputf, typef));
+    fetchData(input, type);
+  }, [input, type]);
+
+  useEffect(() => {
     const ingredientFilter = (filteri) => dispatch(fetchMealIFilterThunk(filteri));
     const fetchDataCat = (filterf) => dispatch(fetchRecipesMealCatsThunk(filterf));
-    if (!ifilter && !filter) fetchData(input, type);
     if (filter) fetchDataCat(filter);
     if (ifilter && !filter) ingredientFilter(ifilter);
-  }, [input, type, filter, ifilter]);
+  }, [filter, ifilter]);
 
   useEffect(() => () => {
     const clearDispatch = () => {
@@ -36,7 +39,7 @@ function MealsRecipes() {
   }, []);
 
   useEffect(() => {
-    if (meals.length === 1) return <Redirect to={ `/comidas/${meals[0].idMeal}` } />;
+    if (meals.length === 1) return <Redirect push to={ `/comidas/${meals[0].idMeal}` } />;
   }, []);
 
   console.log('meals', meals);
@@ -44,7 +47,7 @@ function MealsRecipes() {
   return (
     <main>
       {(meals && meals.length === 1 && filter === '')
-      && <Redirect to={ `/comidas/${meals[0].idMeal}` } />}
+      && <Redirect push to={ `/comidas/${meals[0].idMeal}` } />}
       <Header />
       <MealCatsButtons />
       { meals && meals.map((elem, index) => (
