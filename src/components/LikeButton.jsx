@@ -29,7 +29,7 @@ export default function LikeButton() {
     if (likedToogle) {
       dispatch(favoriteRecipesAction(recipeStorage));
     }
-  }, [likedToogle, recipeStorage]);
+  }, [likedToogle]);
 
   function handleClick() {
     if (!likedToogle) {
