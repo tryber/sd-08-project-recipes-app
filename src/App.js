@@ -6,6 +6,7 @@ import {
   Details,
 } from './Pages';
 import ReceitasProgresso from './Pages/RecipesProgress/ReceitasProgresso';
+import NotFound from './Pages/NotFound';
 
 function App() {
   return (
@@ -20,16 +21,20 @@ function App() {
         <Route exact path="/comidas/:id" component={ Details } />
         <Route exact path="/comidas/:id/in-progress" component={ ReceitasProgresso } />
         <Route exact path="/bebidas/:id/in-progress" component={ ReceitasProgresso } />
-        <Route path="/explorar/comidas/ingredientes" component={ ExplorarIngredientes } />
-        <Route path="/explorar/comidas/area" component={ ExplorarOrigem } />
+        <Route
+          exact
+          path="/explorar/comidas/ingredientes"
+          component={ ExplorarIngredientes }
+        />
+        <Route exact path="/explorar/comidas/area" component={ ExplorarOrigem } />
         <Route path="/bebidas/:id" component={ Details } />
         <Route path="/bebidas/:id/in-progress" />
         <Route path="/explorar/bebidas/ingredientes" component={ ExplorarIngredientes } />
         <Route path="/perfil" component={ Perfil } />
         <Route path="/receitas-feitas" component={ ReceitasFeitas } />
         <Route path="/receitas-favoritas" component={ ReceitasFavoritas } />
+        <Route path="*" component={ NotFound } />
       </Switch>
-      {/* <Route path="**" /> */}
     </BrowserRouter>
   );
 }
