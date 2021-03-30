@@ -1,6 +1,6 @@
 import {
   // requestDrinkByName,
-  // requestDrinkByIngredient,
+  requestDrinkByIngredient,
   // requestDrinkByFirstLetter,
   requestMainDrinks,
   requestCategoriesDrinks,
@@ -8,7 +8,7 @@ import {
 } from '../../services/requestDrinksAPI';
 import {
   // requestByName,
-  // requestByIngredient,
+  requestByIngredient,
   // requestByFirstLetter,
   requestMainFoods,
   requestCategoriesMeals,
@@ -153,3 +153,37 @@ export const actionResetFilteredByCategory = (category) => ({
     category,
   },
 });
+
+// ACTION THUNK FILTER BY INGREDIENTS
+
+export const INGREDIENTS_FOODS_FILTER = 'INGREDIENTS_FOODS_FILTER';
+
+export const actionFilterByIngredientsFoods = (foods) => ({
+  type: INGREDIENTS_FOODS_FILTER,
+  payload: {
+    foods,
+  },
+});
+
+export const actionThunkIngredientsFoods = (ingredient) => async (dispatch) => {
+  dispatch(actionIsLoading(true));
+  const filterByIngredient = await requestByIngredient(ingredient);
+  dispatch(actionFilterByIngredientsFoods(filterByIngredient));
+  dispatch(actionIsLoading(false));
+};
+
+export const INGREDIENTS_DRINKS_FILTER = 'INGREDIENTS_DRINKS_FILTER';
+
+export const actionFilterByIngredientsDrinks = (drinks) => ({
+  type: INGREDIENTS_DRINKS_FILTER,
+  payload: {
+    drinks,
+  },
+});
+
+export const actionThunkIngredientsDrinks = (ingredient) => async (dispatch) => {
+  dispatch(actionIsLoading(true));
+  const filterByIngredient = await requestDrinkByIngredient(ingredient);
+  dispatch(actionFilterByIngredientsDrinks(filterByIngredient));
+  dispatch(actionIsLoading(false));
+};
