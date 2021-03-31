@@ -1,0 +1,47 @@
+.container {
+  align-items: center;
+  background-color: #ddd;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
+.header-favorite-recipes {
+  align-items: center;
+  background-color: gray;
+  display: flex;
+  flex-direction: row;
+  font-size: xx-large;
+  height: 10%;
+  width: 100vw;
+}
+
+.header-favorite-recipes img {
+  margin-left: 2%;
+}
+
+.header-favorite-recipes h2 {
+  align-self: center;
+  margin-left: 10%;
+}
+
+.main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  width: 100%;
+}
+
+.main button {
+  border-radius: 8px;
+  box-shadow: 0 0 16px black;
+  font-size: xx-large;
+  height: 20%;
+  width: 90%;
+}
+
+.main button:focus {
+  outline: none;
+}

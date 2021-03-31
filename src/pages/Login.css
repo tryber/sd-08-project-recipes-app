@@ -1,0 +1,41 @@
+body {
+  background-color: darkcyan;
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  border: 1px solid aquamarine;
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  margin-top: 50%;
+  padding: 4%;
+  width: 100%;
+}
+
+.container-form-login {
+  background-color: #648b8b;
+}
+
+.label-login-form {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 800;
+}
+
+button {
+  background-color: aliceblue;
+  margin-top: 10%;
+}
+
+.password-input {
+  -webkit-text-security: disc;
+}

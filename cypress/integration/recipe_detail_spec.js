@@ -32,7 +32,6 @@ describe('33 - Implemente os elementos da tela de detalhes de uma receita respei
         win.fetch = fetchMock;
       },
     });
-
     cy.get('[data-testid="recipe-photo"]');
     cy.get('[data-testid="recipe-title"]');
     cy.get('[data-testid="share-btn"]');

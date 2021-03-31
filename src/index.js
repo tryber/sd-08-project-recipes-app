@@ -1,10 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import FoodContext from './context/ContextFood';
+import DrinksContext from './context/ContextDrinks';
+import HeaderContext from './context/HeaderContext';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+  <BrowserRouter>
+    <HeaderContext>
+      <FoodContext>
+        <DrinksContext>
+          <App />
+        </DrinksContext>
+      </FoodContext>
+    </HeaderContext>
+  </BrowserRouter>,
+  document.getElementById('root'),
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

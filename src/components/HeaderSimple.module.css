@@ -1,0 +1,32 @@
+.containerHeaderSimple {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+}
+
+.containerHeaderSimple:before {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 10vh;
+  width: 100vw;
+}
+
+.headerSimple {
+  align-items: center;
+  background-color: gray;
+  display: flex;
+  font-size: xx-large;
+  text-align: center;
+  width: 100vw;
+}
+
+.headerSimple img {
+  margin-left: 2%;
+}
+
+.headerSimple h2 {
+  align-self: center;
+  margin-left: 6%;
+}
