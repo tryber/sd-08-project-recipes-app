@@ -33,7 +33,10 @@ function HeaderSimple() {
   };
 
   return (
-    <div className={ styles.containerHeaderSimple }>
+    <div
+      data-testid="container-header-simple"
+      className={ styles.containerHeaderSimple }
+    >
       <div className={ styles.headerSimple }>
         <img
           data-testid="profile-top-btn"

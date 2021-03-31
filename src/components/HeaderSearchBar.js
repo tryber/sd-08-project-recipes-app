@@ -45,7 +45,10 @@ function HeaderSearchBar() {
   };
 
   return (
-    <div className="container-header-search">
+    <div
+      data-testid="container-header-search"
+      className="container-header-search"
+    >
       <div className="header">
         <button type="button" onClick={ handleClickTProfile }>
           <img
