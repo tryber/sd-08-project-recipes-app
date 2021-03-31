@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import recomendationThunk from '../redux/actions/recomendationAction';
+import recomendationThunkMeals from '../redux/actions/recomendationAction';
 import recomendationThunkDrinks from '../redux/actions/recomendationDrinks';
 
 function Recomendation() {
@@ -16,7 +16,7 @@ function Recomendation() {
   useEffect(() => {
     let fetchData = '';
     if (arrayRecipes === 'bebidas') {
-      fetchData = () => dispatch(recomendationThunk(''));
+      fetchData = () => dispatch(recomendationThunkMeals(''));
     }
     if (arrayRecipes === 'comidas') {
       fetchData = () => dispatch(recomendationThunkDrinks(''));

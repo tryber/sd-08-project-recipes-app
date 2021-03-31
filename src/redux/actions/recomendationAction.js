@@ -1,4 +1,5 @@
-import { fetchMealByName } from '../../services/MealAPI';
+// import { fetchMealByName } from '../../services/MealAPI';
+import { fetchMealBySearch } from '../../services/mealsAPIfetch';
 import { FETCH_RECOMENDATION } from './index';
 
 const recomendationAction = (value) => (
@@ -17,10 +18,10 @@ const filterToSix = (list) => {
   return filteredList;
 };
 
-const recomendationThunk = () => async (dispatch) => {
-  const { meals } = await fetchMealByName('');
+const recomendationThunkMeals = () => async (dispatch) => {
+  const { meals } = await fetchMealBySearch('', 's');
   const result = filterToSix(meals);
   dispatch(recomendationAction(result));
 };
 
-export default recomendationThunk;
+export default recomendationThunkMeals;

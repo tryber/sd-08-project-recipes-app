@@ -1,4 +1,5 @@
-import { fetchFistMealCats } from '../../services/MealAPI';
+// import { fetchFistMealCats } from '../../services/MealAPI';
+import { fetchMealByList } from '../../services/mealsAPIfetch';
 import { FETCH_CATEGORIES } from './index';
 
 const fetchMealCatsAction = (categories) => ({
@@ -8,9 +9,9 @@ const fetchMealCatsAction = (categories) => ({
   },
 });
 
-const fetchDrinkCatsThunk = () => async (dispatch) => {
-  const MealCats = await fetchFistMealCats();
+const fetchMealCatsThunk = () => async (dispatch) => {
+  const MealCats = await fetchMealByList('c');
   dispatch(fetchMealCatsAction(MealCats));
 };
 
-export default fetchDrinkCatsThunk;
+export default fetchMealCatsThunk;

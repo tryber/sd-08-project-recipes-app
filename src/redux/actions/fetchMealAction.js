@@ -1,6 +1,7 @@
-import { fetchAreaMeal, fetchMealByFirstLetter,
-  fetchMealByIngredients, fetchMealByName } from '../../services/MealAPI';
+// import { fetchAreaMeal, fetchMealByFirstLetter,
+//   fetchMealByIngredients, fetchMealByName } from '../../services/MealAPI';
 import { FETCH_API } from './index';
+import { fetchMealBySearch, fetchMealByFilters } from '../../services/mealsAPIfetch';
 
 export const fetchMealAction = (recipes) => ({
   type: FETCH_API,
@@ -29,30 +30,30 @@ const alertIfNull = (list) => {
 
 const fetchMealThunk = (input, type) => async (dispatch) => {
   if (!type && !input) {
-    const { meals } = await fetchMealByName(input);
+    const { meals } = await fetchMealBySearch(input, 's');
     const result = filterToTwelve(meals);
     dispatch(fetchMealAction(result));
   }
   if (type === 'name') {
-    const { meals } = await fetchMealByName(input);
+    const { meals } = await fetchMealBySearch(input, 's');
     const verifiedMeal = alertIfNull(meals);
     const result = filterToTwelve(verifiedMeal);
     dispatch(fetchMealAction(result));
   }
   if (type === 'ingredient') {
-    const { meals } = await fetchMealByIngredients(input);
+    const { meals } = await fetchMealByFilters(input, 'i');
     const verifiedMeal = alertIfNull(meals);
     const result = filterToTwelve(verifiedMeal);
     dispatch(fetchMealAction(result));
   }
   if (type === 'first-letter') {
-    const { meals } = await fetchMealByFirstLetter(input);
+    const { meals } = await fetchMealBySearch(input, 'f');
     const verifiedMeal = alertIfNull(meals);
     const result = filterToTwelve(verifiedMeal);
     dispatch(fetchMealAction(result));
   }
   if (type === 'area') {
-    const { meals } = await fetchAreaMeal(input);
+    const { meals } = await fetchMealByFilters(input, 'a');
     const verifiedMeal = alertIfNull(meals);
     const result = filterToTwelve(verifiedMeal);
     dispatch(fetchMealAction(result));
@@ -60,3 +61,35 @@ const fetchMealThunk = (input, type) => async (dispatch) => {
 };
 
 export default fetchMealThunk;
+
+// const fetchMealThunk = (input, type) => async (dispatch) => {
+//   if (!type && !input) {
+//     const { meals } = await fetchMealByName(input);
+//     const result = filterToTwelve(meals);
+//     dispatch(fetchMealAction(result));
+//   }
+//   if (type === 'name') {
+//     const { meals } = await fetchMealByName(input);
+//     const verifiedMeal = alertIfNull(meals);
+//     const result = filterToTwelve(verifiedMeal);
+//     dispatch(fetchMealAction(result));
+//   }
+//   if (type === 'ingredient') {
+//     const { meals } = await fetchMealByIngredients(input);
+//     const verifiedMeal = alertIfNull(meals);
+//     const result = filterToTwelve(verifiedMeal);
+//     dispatch(fetchMealAction(result));
+//   }
+//   if (type === 'first-letter') {
+//     const { meals } = await fetchMealByFirstLetter(input);
+//     const verifiedMeal = alertIfNull(meals);
+//     const result = filterToTwelve(verifiedMeal);
+//     dispatch(fetchMealAction(result));
+//   }
+//   if (type === 'area') {
+//     const { meals } = await fetchAreaMeal(input);
+//     const verifiedMeal = alertIfNull(meals);
+//     const result = filterToTwelve(verifiedMeal);
+//     dispatch(fetchMealAction(result));
+//   }
+// };

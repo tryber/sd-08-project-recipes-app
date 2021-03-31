@@ -8,7 +8,8 @@ import fetchRecipesDrinkCatsThunk from '../redux/actions/fetchDrinkCatRecipesAct
 import clearRecipesAction from '../redux/actions/clearRecipesAction';
 import clearSearchAction from '../redux/actions/clearSearchAction';
 import DrinkCatsButtons from '../components/DrinkCatsButtons';
-import { fetchDrinkIFilterThunk } from '../redux/actions/fetchIngridientsAction';
+// import { fetchDrinkIFilterThunk } from '../redux/actions/fetchIngridientsAction';
+import { fetchDrinkIngredientThunk } from '../redux/actions/fetchDrinkIngredientThunk';
 
 function DrinksRecipes() {
   const dispatch = useDispatch();
@@ -18,17 +19,15 @@ function DrinksRecipes() {
   const drinks = useSelector((state) => state.recipes.recipes);
   const filter = useSelector((state) => state.search.drinkFilter);
   const ifilter = useSelector((state) => state.search.ingredientFilter);
-  useEffect(() => {
-    const fetchData = (inputf, typef) => dispatch(fetchDrinkThunk(inputf, typef));
-    fetchData(input, type);
-  }, [input, type]);
 
   useEffect(() => {
-    const ingredientFilter = (filteri) => dispatch(fetchDrinkIFilterThunk(filteri));
+    const fetchData = (inputf, typef) => dispatch(fetchDrinkThunk(inputf, typef));
+    const ingredientFilter = (filteri) => dispatch(fetchDrinkIngredientThunk(filteri));
     const fetchDataCat = (filterf) => dispatch(fetchRecipesDrinkCatsThunk(filterf));
+    if (!ifilter && !filter) fetchData(input, type);
     if (filter) fetchDataCat(filter);
     if (ifilter && !filter) ingredientFilter(ifilter);
-  }, [filter, ifilter]);
+  }, [input, type, filter, ifilter]);
 
   useEffect(() => () => {
     dispatch(clearRecipesAction());

@@ -3,14 +3,14 @@ import user from './loginReducer';
 import search from './searchReducer';
 import recipes from './recipesReducer';
 import recomendation from './recomendationReducers';
-import favoriteRecipes from './FavoriteRecipesReducer';
+import favoritesReducer from './favoritesReducer';
 
 const appReducer = combineReducers({
   user,
   search,
   recipes,
   recomendation,
-  favoriteRecipes,
+  favoritesReducer,
 });
 
 export default appReducer;

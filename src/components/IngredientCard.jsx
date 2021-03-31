@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router';
 import { useDispatch } from 'react-redux';
-import { IngridientFilterAction } from '../redux/actions/fetchIngridientsAction';
+import { IngridientFilterAction } from '../redux/actions/fetchMealIngredientThunk';
 
 function IngredientCard({ index, ingredient, recipe }) {
   const history = useHistory();

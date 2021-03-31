@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import fetchMealThunk from '../redux/actions/fetchMealAction';
 import fetchMealCatsThunk from '../redux/actions/fetchMealCatsAction';
 import filterMealCatsAction from '../redux/actions/filterMealCatAction';
 
@@ -32,7 +31,7 @@ function MealCatsButtons() {
       <button
         type="button"
         data-testid="All-category-filter"
-        onClick={ () => dispatch(fetchMealThunk('', '')) }
+        onClick={ () => dispatch(filterMealCatsAction('')) }
       >
         All
       </button>

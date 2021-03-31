@@ -1,4 +1,5 @@
-import { fetchAreaOptions } from '../../services/MealAPI';
+// import { fetchAreaOptions } from '../../services/MealAPI';
+import { fetchMealByList } from '../../services/mealsAPIfetch';
 import { FETCH_AREA_API } from './index';
 
 const fetchAreaAction = (area) => ({
@@ -9,7 +10,7 @@ const fetchAreaAction = (area) => ({
 });
 
 const fetchAreaThunk = () => async (dispatch) => {
-  const { meals } = await fetchAreaOptions('');
+  const { meals } = await fetchMealByList('a');
   dispatch(fetchAreaAction(meals));
 };
 

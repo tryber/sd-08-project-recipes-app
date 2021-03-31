@@ -1,4 +1,5 @@
-import { fetchFistDrinkCats } from '../../services/CocktailAPI';
+// import { fetchFistDrinkCats } from '../../services/CocktailAPI';
+import { fetchDrinkByList } from '../../services/drinkAPIfetch';
 import { FETCH_CATEGORIES } from './index';
 
 const fetchDrinkCatsAction = (categories) => ({
@@ -9,7 +10,7 @@ const fetchDrinkCatsAction = (categories) => ({
 });
 
 const fetchDrinkCatsThunk = () => async (dispatch) => {
-  const drinkCats = await fetchFistDrinkCats();
+  const drinkCats = await fetchDrinkByList('c');
   dispatch(fetchDrinkCatsAction(drinkCats));
 };
 

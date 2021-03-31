@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import searchAction from '../redux/actions/searchAction';
+import clearSearchAction from '../redux/actions/clearSearchAction';
 
 export default function RecipeSearchBar() {
   const [inputValue, setInputValue] = useState('');
@@ -13,6 +14,7 @@ export default function RecipeSearchBar() {
     if (inputType === 'first-letter' && inputValue.length !== 1) {
       alert('Sua busca deve conter somente 1 (um) caracter');
       setInputValue('');
+      dispatch(clearSearchAction());
     } else {
       dispatch(searchAction(search));
     }

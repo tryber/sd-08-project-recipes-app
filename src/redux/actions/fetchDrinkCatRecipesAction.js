@@ -1,4 +1,5 @@
-import { fetchRecipesDrinkCats } from '../../services/CocktailAPI';
+// import { fetchRecipesDrinkCats } from '../../services/CocktailAPI';
+import { fetchDrinkByFilters, fetchDrinkBySearch } from '../../services/drinkAPIfetch';
 import { FETCH_CAT_RECIPES } from './index';
 
 const filterToTwelve = (list) => {
@@ -18,9 +19,16 @@ const fetchRecipesDrinkCatsAction = (filteredRecipes) => ({
 });
 
 const fetchRecipesDrinkCatsThunk = (filter) => async (dispatch) => {
-  const { drinks } = await fetchRecipesDrinkCats(filter);
-  const result = filterToTwelve(drinks);
-  dispatch(fetchRecipesDrinkCatsAction(result));
+  if (!filter) {
+    const { drinks } = await fetchDrinkBySearch('', 's');
+    const result = filterToTwelve(drinks);
+    dispatch(fetchRecipesDrinkCatsAction(result));
+  }
+  if (filter) {
+    const { drinks } = await fetchDrinkByFilters(filter, 'c');
+    const result = filterToTwelve(drinks);
+    dispatch(fetchRecipesDrinkCatsAction(result));
+  }
 };
 
 export default fetchRecipesDrinkCatsThunk;

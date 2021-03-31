@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import IngredientCard from '../components/IngredientCard';
-import { fetchDrinkIngredientThunk } from '../redux/actions/fetchIngridientsAction';
+import { fetchDrinkIngredientThunk } from '../redux/actions/fetchDrinkIngredientThunk';
 
 function DrinkIngredient() {
   const dispatch = useDispatch();
