@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router';
 import { useLocation } from 'react-router-dom';
 import fetchMealActionId from '../redux/actions/fetchMealId';
 import fetchDrinkActionId from '../redux/actions/fetchDrink';
 import ShareButton from '../components/ShareButton';
 import LikeButton from '../components/LikeButton';
 import Recomendation from '../components/Recomendation';
+import { clearSingleRecipe } from '../redux/actions/clearRecipesAction';
 import IngredientList from '../components/IngredientList';
 
 function FoodDetail() {
@@ -15,16 +17,16 @@ function FoodDetail() {
   const arrayRecipes = pathname.split('/')[1];
   const recipes = useSelector((state) => state.recipes.singleRecipe);
 
+  const history = useHistory();
+
   useEffect(() => {
-    let fetchData = '';
-    if (arrayRecipes === 'comidas') {
-      fetchData = (id) => dispatch(fetchMealActionId(id));
-    }
-    if (arrayRecipes === 'bebidas') {
-      fetchData = (id) => dispatch(fetchDrinkActionId(id));
-    }
-    fetchData(arrayId);
+    const fetchMeal = (id) => dispatch(fetchMealActionId(id));
+    const fetchDrink = (id) => dispatch(fetchDrinkActionId(id));
+    if (arrayRecipes === 'comidas' && recipes.length === 0) fetchMeal(arrayId);
+    if (arrayRecipes === 'bebidas' && recipes.length === 0) fetchDrink(arrayId);
   }, []);
+
+  useEffect(() => () => dispatch(clearSingleRecipe()), []);
 
   const recipe = recipes && recipes[0];
 
@@ -62,7 +64,13 @@ function FoodDetail() {
       }
       Recomendadas
       <Recomendation />
-      <button data-testid="start-recipe-btn" type="button">Iniciar Receita</button>
+      <button
+        onClick={ () => history.push(`/${arrayRecipes}/${arrayId}/in-progress`) }
+        data-testid="start-recipe-btn"
+        type="button"
+      >
+        Iniciar Receita
+      </button>
     </div>
   );
 

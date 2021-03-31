@@ -1,7 +1,7 @@
-import { CLEAR_RECIPES } from './index';
+import { CLEAR_RECIPES, CLEAR_SINGLE_RECIPE } from './index';
 
-const clearRecipesAction = () => ({
+export const clearRecipesAction = () => ({
   type: CLEAR_RECIPES,
 });
 
-export default clearRecipesAction;
+export const clearSingleRecipe = () => ({ type: CLEAR_SINGLE_RECIPE });

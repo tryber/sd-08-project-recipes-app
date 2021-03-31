@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 import fetchDrinkThunk from '../redux/actions/fetchDrinkAction';
 import fetchRecipesDrinkCatsThunk from '../redux/actions/fetchDrinkCatRecipesAction';
-import clearRecipesAction from '../redux/actions/clearRecipesAction';
+import { clearRecipesAction } from '../redux/actions/clearRecipesAction';
 import clearSearchAction from '../redux/actions/clearSearchAction';
 import DrinkCatsButtons from '../components/DrinkCatsButtons';
 // import { fetchDrinkIFilterThunk } from '../redux/actions/fetchIngridientsAction';
