@@ -1,0 +1,24 @@
+.food-image {
+  border-radius: 6px;
+  height: 200px;
+  max-width: 300px;
+  width: 100%;
+}
+
+.comidas-body .card, .bebidas-body .card {
+  backdrop-filter: blur(5px);
+  background-color: rgba(202, 202, 202, 0.452);
+  border-radius: 6px;
+  box-shadow: 0 0 15px rgb(177, 177, 177);
+  margin: 20px;
+  padding: 20px;
+}
+
+.card .food-title {
+  background: rgb(80, 80, 80);
+  border: white 2px solid;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}

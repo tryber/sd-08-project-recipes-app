@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Diplomata&display=swap') ;
+
+.login-body {
+  align-items: center;
+  background-image: url('../images/login-wallpaper.jpg');
+  background-size: cover;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 100vw;
+}
+
+.login-content {
+  background-color: rgba(0, 0, 0, 0.616);
+  box-shadow: 1px 1px 10px;
+  display: flex;
+  flex-direction: column;
+  max-width: 90%;
+  padding: 20px;
+}
+
+.login-content .title {
+  color: white;
+  text-align: center;
+}
+
+.login-content .title h1 {
+  font-family: Diplomata , cursive;
+}
+
+.login-content input {
+  background: none;
+  border: none;
+  border-bottom: white 2px solid;
+  border-radius: 15px;
+  color: white;
+  margin: 10px;
+  padding: 5px 30px;
+}
+
+.login-content input:-webkit-input-placeholder {
+  color: white;
+  text-align: center;
+}
+
+.login-content button {
+  background-color: rgb(38, 90, 38);
+  border-radius: 6px;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 10px;
+  padding: 5px 10px;
+}
+
+.login-content button:disabled {
+  background: red;
+}
+
+.login-content button:hover {
+  filter: brightness(1.5);
+}

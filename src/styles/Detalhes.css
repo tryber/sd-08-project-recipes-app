@@ -1,0 +1,73 @@
+.details {
+  padding: 30px 20px 50px;
+}
+
+.details p {
+  padding: 10px;
+  text-align: justify;
+}
+
+.details img {
+  height: 200px;
+  margin: auto;
+  width: 100%;
+}
+
+.details .start-recipe-btn {
+  background-color: green;
+  bottom: 0;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  left: 0;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+}
+
+.details .icons {
+  position: absolute;
+  right: 5px;
+  text-align: end;
+  top: 5px;
+  width: 100px;
+}
+
+.details .favorite-btn {
+  margin-left: 10px;
+}
+
+.details .copied-link {
+  background-color: white;
+  font-size: 16px;
+  position: absolute;
+  right: -5px;
+  text-align: center;
+  top: -5px;
+  width: 80px;
+}
+
+.ingredient-list li {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ingredient-list li label {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 30px;
+  width: 100%;
+}
+
+.ingredient-list {
+  padding: 20px;
+}
+
+.selected-li {
+  background-color: rgb(221, 221, 221);
+  border-radius: 6px;
+  text-decoration: line-through;
+}

@@ -1,0 +1,32 @@
+.explorar-body {
+  height: 79vh;
+}
+
+.explorar-body .options {
+  align-items: center;
+  display: flex;
+  height: 50%;
+  justify-content: center;
+}
+
+.explorar-body .options.food {
+  background-image: url('../images/comidas.jpg');
+  background-size: cover;
+  border-bottom: 2px white solid;
+}
+
+.explorar-body .options.drink {
+  background-image: url('../images/bebidas.jpeg');
+  background-size: cover;
+  border-top: 2px white solid;
+}
+
+.explorar-body .options .button {
+  background: rgba(2, 2, 2, 0.795);
+  border: white 4px solid;
+  color: white;
+  font-size: 30px;
+  font-weight: 700;
+  padding: 5px 20px;
+  text-align: center;
+}

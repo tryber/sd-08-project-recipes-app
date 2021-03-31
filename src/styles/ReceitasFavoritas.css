@@ -1,0 +1,12 @@
+.fav-recipes-body .title {
+  font-weight: 700;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.fav-recipes-body .head {
+  background: rgb(236, 83, 83);
+  color: white;
+  padding-bottom: 20px;
+  text-shadow: black 1px 1px 5px;
+}

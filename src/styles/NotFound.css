@@ -1,0 +1,55 @@
+.not-found-body {
+  align-items: center;
+  background: url('../images/notfound.gif');
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  padding-bottom: 30px;
+  width: 100vw;
+}
+
+.message {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.message h1 {
+  animation: blur 3s linear infinite;
+  font-size: 150px;
+  font-weight: 700;
+  opacity: 0.4;
+}
+
+.message p {
+  font-size: 30px;
+  opacity: 0.5;
+  text-align: center;
+  width: 70%;
+}
+
+.message button {
+  background: #0a66c2;
+  border-radius: 6px;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 5px 40px;
+}
+
+@keyframes blur {
+
+  0% {
+    filter: blur(4px);
+  }
+
+  50% {
+    filter: blur(10px);
+    opacity: 0.7;
+  }
+
+  100% {
+    filter: blur(4px);
+  }
+}

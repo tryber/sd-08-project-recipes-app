@@ -1,0 +1,29 @@
+.search-body {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.search-body input {
+  margin: 5px 0;
+  padding: 1px 10px;
+  width: 100%;
+}
+
+.search-body label {
+  padding: 0 15px;
+}
+
+.search-body button {
+  background-color: red;
+  border-radius: 5px;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  margin: auto;
+  margin-top: 15px;
+  padding: 5px 10px;
+  width: 50%;
+}

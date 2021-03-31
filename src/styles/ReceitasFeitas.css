@@ -1,0 +1,44 @@
+.done-recipes-body .title {
+  font-weight: 700;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.done-recipes-body .head {
+  background: rgb(236, 83, 83);
+  color: white;
+  padding-bottom: 20px;
+  text-shadow: black 1px 1px 5px;
+}
+
+.done-button-content {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.done-button-content button {
+  background: white;
+  border: 2px rgb(236, 83, 83) solid;
+  border-radius: 6px;
+  color: rgb(236, 83, 83);
+  font-weight: 600;
+  width: 30%;
+}
+
+.done-button-content .selected-btn {
+  background: rgb(236, 83, 83);
+  border: white 2px solid;
+  color: white;
+}
+
+.background-color {
+  background: rgb(236, 83, 83);
+  height: 100%;
+  position: absolute;
+  right: 0;
+  width: 20%;
+  z-index: -999;
+}

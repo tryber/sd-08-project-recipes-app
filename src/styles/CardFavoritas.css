@@ -1,0 +1,112 @@
+.fav-card-body {
+  align-items: center;
+  animation: glass 0.1s linear infinite;
+  backdrop-filter: blur(10px);
+  background: rgba(231, 231, 231);
+  border-radius: 10px;
+  box-shadow: 2px 3px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px;
+  padding: 20px;
+  position: relative;
+}
+
+.fav-card-body a {
+  align-items: center;
+  display: flex;
+  margin: 10px;
+  width: 40%;
+}
+
+.fav-card-body .card-btn {
+  align-items: center;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+}
+
+.fav-card-body .card-content {
+  align-items: space;
+  display: flex;
+  justify-content: space-between;
+  text-align: end;
+}
+
+.fav-card-body .card-content section {
+  padding-top: 12px;
+  text-align: center;
+  width: 50%;
+}
+
+.fav-card-body .card-content section a {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  width: 100%;
+}
+
+.fav-card-body:nth-child( odd ) .card-content {
+  display: flex;
+  flex-direction: row-reverse;
+  text-align: left;
+}
+
+.fav-card-body img {
+  border-radius: 6px;
+  width: 100%;
+}
+
+.fav-card-body p {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.fav-card-body .title {
+  color: black;
+  font-size: 20px;
+  font-weight: 600;
+  z-index: 1000;
+}
+
+.fav-card-body h3 {
+  font-size: 20px;
+}
+
+.fav-card-body .tags {
+  background-color: rgb(48, 40, 156);
+  border-radius: 6px;
+  color: white;
+  font-weight: 600;
+  margin: 5px;
+  padding: 2px 10px;
+}
+
+/*
+.fav-card-body .share-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+} */
+
+/* .fav-card-body .copied-link {
+  background: rgb(226, 226, 226);
+  font-size: 15px;
+  padding-bottom: 20px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  z-index: 999;
+} */
+
+@keyframes glass {
+
+  0% {
+    background: rgba(180, 180, 180, 0.6);
+  }
+
+  100% {
+    background: rgba(181, 180, 180, 0.6);
+  }
+}

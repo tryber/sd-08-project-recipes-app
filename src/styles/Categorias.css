@@ -1,0 +1,26 @@
+.categorias {
+  background-color: rgb(255, 255, 110);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: 0 20px;
+  padding-bottom: 20px;
+}
+
+.comidas-body .categorias button {
+  background-color: white;
+  border: none;
+  font-size: 14px;
+  margin-top: 5px;
+  padding: 5px 10px;
+  width: 30%;
+}
+
+.bebidas-body .categorias button {
+  background-color: white;
+  border: none;
+  font-size: 13px;
+  margin-top: 5px;
+  padding: 5px 0;
+  width: 32%;
+}

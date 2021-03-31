@@ -1,0 +1,26 @@
+.loading-body {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  position: absolute;
+  width: 100vw;
+}
+
+
+.loading {
+  animation: loading 2s linear infinite;
+  border-left: 2px solid black;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
+
+@keyframes loading {
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}

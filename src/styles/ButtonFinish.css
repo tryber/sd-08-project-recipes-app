@@ -1,0 +1,14 @@
+.button-finish {
+  background-color: red;
+  bottom: 0;
+  color: white;
+  font-weight: 600;
+  left: 0;
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+}
+
+.button-finish:disabled {
+  background-color: rgb(121, 121, 121);
+}

@@ -1,0 +1,104 @@
+.done-card-body {
+  align-items: center;
+  animation: glass 0.5s linear infinite;
+  backdrop-filter: blur(10px);
+  background: rgba(231, 231, 231);
+  border-radius: 10px;
+  box-shadow: 2px 3px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px;
+  padding: 20px;
+  position: relative;
+}
+
+.done-card-body .card-content {
+  align-items: space;
+  display: flex;
+  justify-content: space-between;
+  text-align: end;
+}
+
+.done-card-body .card-content section {
+  padding-top: 12px;
+  text-align: start;
+}
+
+.done-card-body:nth-child( odd ) .card-content {
+  display: flex;
+  flex-direction: row-reverse;
+  text-align: left;
+}
+
+.done-card-body img {
+  border-radius: 6px;
+  width: 100%;
+}
+
+.done-card-body a {
+  margin: 10px;
+  width: 40%;
+}
+
+.done-card-body p {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.done-card-body h1 {
+  font-size: 30px;
+  font-weight: 600;
+  z-index: 1000;
+}
+
+.done-card-body h3 {
+  font-size: 20px;
+}
+
+.done-card-body .tags {
+  background-color: rgb(48, 40, 156);
+  border-radius: 6px;
+  color: white;
+  font-weight: 600;
+  margin: 5px;
+  padding: 2px 10px;
+}
+
+/*
+.done-card-body .share-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+} */
+
+/* .done-card-body .copied-link {
+  background: rgb(226, 226, 226);
+  font-size: 15px;
+  padding-bottom: 20px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  z-index: 999;
+} */
+
+.done-card-body .finish-date {
+  bottom: 0;
+  position: absolute;
+  right: 20px;
+}
+
+.done-card-body:nth-child( odd ) .finish-date {
+  left: 20px;
+}
+
+@keyframes glass {
+
+  0% {
+    background: rgba(180, 180, 180, 0.6);
+  }
+
+  100% {
+    background: rgba(180, 180, 180, 0.6);
+  }
+}
