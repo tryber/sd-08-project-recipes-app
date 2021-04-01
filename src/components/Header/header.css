@@ -1,0 +1,18 @@
+.header {
+  background-color: rgb(132, 178, 41);
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+.header span {
+  font-size: 20px;
+  font-weight: 600;
+  margin: auto;
+}
+
+.header button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}

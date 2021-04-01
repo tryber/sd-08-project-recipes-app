@@ -1,0 +1,33 @@
+import React, { useContext, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import Header from '../../components/Header/Header';
+import SearchBar from '../../components/SearchBar/SearchBar';
+import Context from '../../contextApi/Context';
+import List from '../../components/List/List';
+import Footer from '../../components/Footer/Footer';
+import Categories from '../../components/Categories/Categories';
+import { getAllRecipes } from '../../services/FoodsDrinksRequests';
+
+const Home = ({ title }) => {
+  const { searchBar, results, setResults, setALL } = useContext(Context);
+
+  useEffect(() => {
+    getAllRecipes(title).then((response) => {
+      setResults(response);
+      setALL(response);
+    });
+  }, [title]);
+
+  return (
+    <>
+      <Header title={ title } />
+      {searchBar && <SearchBar title={ title } />}
+      <Categories title={ title } />
+      { results && <List title={ title } results={ results } />}
+      <Footer />
+    </>
+  );
+};
+Home.propTypes = { title: PropTypes.string.isRequired };
+
+export default Home;

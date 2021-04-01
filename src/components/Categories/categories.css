@@ -1,0 +1,11 @@
+.btn-categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-categories button {
+  font-weight: 600;
+  margin: 4px;
+  min-width: 100px;
+}

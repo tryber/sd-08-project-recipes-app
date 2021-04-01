@@ -1,0 +1,12 @@
+.btn-filters {
+  display: flex;
+  margin: 5px;
+}
+
+.btn-filters button {
+  font-size: 18px;
+  font-weight: 600;
+  height: 35px;
+  padding-bottom: 35px;
+  width: 100px;
+}
