@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
-import clearRecipesAction from '../redux/actions/clearRecipesAction';
+import { clearRecipesAction } from '../redux/actions/clearRecipesAction';
 import fetchMealThunk from '../redux/actions/fetchMealAction';
 
 function ExploreOrigin() {

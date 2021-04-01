@@ -43,8 +43,6 @@ function MealsRecipes() {
     if (meals.length === 1) return <Redirect push to={ `/comidas/${meals[0].idMeal}` } />;
   }, []);
 
-  console.log('meals', meals);
-
   return (
     <main>
       {(meals && meals.length === 1 && filter === '')
