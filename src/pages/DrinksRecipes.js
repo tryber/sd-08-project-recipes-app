@@ -1,15 +1,17 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect, useHistory } from 'react-router';
+
 import Footer from '../components/Footer';
 import Header from '../components/Header';
+import DrinkCatsButtons from '../components/DrinkCatsButtons';
+
 import fetchDrinkThunk from '../redux/actions/fetchDrinkAction';
 import fetchRecipesDrinkCatsThunk from '../redux/actions/fetchDrinkCatRecipesAction';
+import { fetchDrinkIngredientThunk } from '../redux/actions/fetchDrinkIngredientThunk';
+
 import clearRecipesAction from '../redux/actions/clearRecipesAction';
 import clearSearchAction from '../redux/actions/clearSearchAction';
-import DrinkCatsButtons from '../components/DrinkCatsButtons';
-// import { fetchDrinkIFilterThunk } from '../redux/actions/fetchIngridientsAction';
-import { fetchDrinkIngredientThunk } from '../redux/actions/fetchDrinkIngredientThunk';
 
 function DrinksRecipes() {
   const dispatch = useDispatch();
