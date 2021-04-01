@@ -129,7 +129,7 @@ describe('27 - Implemente os botões de categoria para serem utilizados como fil
   });
 });
 
-describe('28 - Implemente o filtro das receitas através da API ao clicar no filtro de categoria', () => {
+describe.only('28 - Implemente o filtro das receitas através da API ao clicar no filtro de categoria', () => {
   it('Caso as receitas sejam de comida e a categoria seja "Beef", deve-se carregar as 12 primeiras receitas de "Beef"', () => {
     cy.visit('http://localhost:3000/comidas', {
       onBeforeLoad(win) {

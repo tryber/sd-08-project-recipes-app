@@ -38,7 +38,7 @@ describe('71 - Desenvolva 3 botões: um para explorar por ingrediente, um para e
   });
 });
 
-describe('72 - Redirecione a pessoa usuária ao clicar em "Por Ingredientes", a rota deve mudar para a tela de explorar por ingredientes', () => {
+describe.only('72 - Redirecione a pessoa usuária ao clicar em "Por Ingredientes", a rota deve mudar para a tela de explorar por ingredientes', () => {
   it('Ao clicar no botão "Por Ingredientes" da tela de explorar comidas a rota muda para a página de explorar comidas por ingrediente', () => {
     cy.visit('http://localhost:3000/explorar/comidas');
 
