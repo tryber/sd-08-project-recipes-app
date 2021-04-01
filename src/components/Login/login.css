@@ -1,0 +1,9 @@
+.form-login {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-login input {
+  height: 35px;
+  min-width: 300px;
+}

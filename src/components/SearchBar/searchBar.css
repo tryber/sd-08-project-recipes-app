@@ -1,0 +1,15 @@
+.search-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.radio-group {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px;
+}
+
+.radio-group input {
+  margin-right: 4px;
+}

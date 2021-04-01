@@ -1,0 +1,42 @@
+.card-recipe {
+  align-items: center;
+  box-shadow: 5px 5px 5px darkgray;
+  display: flex;
+  height: 180px;
+  margin: 8px;
+  padding: 8px;
+}
+
+.left {
+  width: 50%;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-recipe-image {
+  width: 140px;
+}
+
+.card-category {
+  color: darkgray;
+}
+
+.card-name {
+  font-weight: 600;
+}
+
+.card-tag {
+  display: flex;
+  justify-content: center;
+}
+
+.card-icon-share {
+  margin-left: 8px;
+}
+
+.card-tag span {
+  margin: 4px;
+}
