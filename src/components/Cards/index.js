@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useHistory, useRouteMatch } from 'react-router';
 import { Card } from 'react-bootstrap';
 import './styles.css';
-import { useHistory, useRouteMatch } from 'react-router';
 
 function Cards(props) {
   const { name, thumbSrc, index, id } = props;
@@ -16,7 +16,12 @@ function Cards(props) {
     }
   };
   return (
-    <Card className="card mb-3" data-testid={ `${index}-recipe-card` }>
+    <Card
+      className="card mb-3"
+      data-testid={ `${index}-recipe-card` }
+      onClick={ goToDetailsPage }
+      style={ { cursor: 'pointer' } }
+    >
       <Card.Img
         variant="top"
         className="card-img"

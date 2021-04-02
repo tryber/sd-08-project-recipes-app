@@ -9,6 +9,7 @@ function CardsArea({ type }) {
   const { meals } = useSelector((state) => state.foods);
   const { drinks } = useSelector((state) => state.drinks);
   const TWELVE_CARDS = 12;
+
   if (type === 'foods') {
     return (
       <Container
