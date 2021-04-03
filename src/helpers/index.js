@@ -51,7 +51,7 @@ export async function fetchDrinkApiById(id) {
 }
 
 export async function fetchDrinkApiByIngredient(ingredient) {
-  const { drinks } = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?i=${ingredient}`)
+  const { drinks } = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${ingredient}`)
     .then((response) => response.json());
   return drinks;
 }

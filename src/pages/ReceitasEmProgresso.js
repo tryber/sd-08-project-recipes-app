@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import copy from 'clipboard-copy';
 import PropTypes from 'prop-types';
 import shareIcon from '../images/shareIcon.svg';
@@ -18,14 +19,7 @@ class ReceitasEmProgresso extends Component {
       currentRecipe: '',
       isDone: '',
     };
-    this.fetchDrinkRecipe = this.fetchDrinkRecipe.bind(this);
-    this.fetchFoodRecipe = this.fetchFoodRecipe.bind(this);
-    this.handleChangeChecked = this.handleChangeChecked.bind(this);
-    this.fetchApi = this.fetchApi.bind(this);
-    this.updateStorage = this.updateStorage.bind(this);
-    this.share = this.share.bind(this);
     this.favoriteThisItem = this.favoriteThisItem.bind(this);
-    this.isDisable = this.isDisable.bind(this);
   }
 
   componentDidMount() {
@@ -50,49 +44,32 @@ class ReceitasEmProgresso extends Component {
     });
   }
 
-  fetchApi() {
+  async fetchApi() {
     const { match: { params: { id } } } = this.props;
     const { location } = window;
     const { href } = location;
+    let recipe = '';
     if (href.includes('comida')) {
-      this.fetchFoodRecipe(id);
+      recipe = await fetchFoodApiById(id);
     }
     if (href.includes('bebida')) {
-      this.fetchDrinkRecipe(id);
+      recipe = await fetchDrinkApiById(id);
     }
-  }
-
-  async fetchDrinkRecipe(drinkId) {
-    const storage = JSON.parse(localStorage.getItem('isDone'));
-    const recipe = await fetchDrinkApiById(drinkId);
     const ingredients = getIngredientList(recipe);
     const arrIngredientes = Object.values(ingredients);
-    const isDone = storage || arrIngredientes.reduce((acc, crr) => {
+    const storage = JSON.parse(localStorage.getItem('isDone'));
+    const obj = arrIngredientes.reduce((acc, crr) => {
       acc = { ...acc, [crr.item]: false };
       return acc;
     }, {});
-
-    const isFavorite = isFavoriteRecipe(drinkId);
-    this.setState({
-      isDone,
-      ingredientList: arrIngredientes,
-      currentRecipe: recipe,
-      favoriteRecipe: isFavorite,
-    });
-    this.isDisable();
-  }
-
-  async fetchFoodRecipe(foodId) {
-    const storage = JSON.parse(localStorage.getItem('isDone'));
-    const recipe = await fetchFoodApiById(foodId);
-    const ingredients = getIngredientList(recipe);
-    const arrIngredientes = Object.values(ingredients);
-    const isDone = storage || arrIngredientes.reduce((acc, crr) => {
-      acc = { ...acc, [crr.item]: false };
-      return acc;
-    }, {});
-
-    const isFavorite = isFavoriteRecipe(foodId);
+    let isDone;
+    if (storage !== null
+          && JSON.stringify(Object.keys(storage)) === JSON.stringify(Object.keys(obj))) {
+      isDone = storage;
+    } else {
+      isDone = obj;
+    }
+    const isFavorite = isFavoriteRecipe(id);
     this.setState({
       isDone,
       ingredientList: arrIngredientes,
@@ -121,7 +98,7 @@ class ReceitasEmProgresso extends Component {
   inputCards() {
     const { ingredientList, isDone, displayShareMesage,
       favoriteRecipe, disable, currentRecipe } = this.state;
-    const { history } = this.props;
+    const { history, addRecipe } = this.props;
     let thumb = '';
     let h1 = '';
     if (history.location.pathname.includes('bebida')) {
@@ -131,6 +108,7 @@ class ReceitasEmProgresso extends Component {
       thumb = currentRecipe.strMealThumb;
       h1 = currentRecipe.strMeal;
     }
+
     return (
       <div className="card">
         <center>
@@ -165,7 +143,6 @@ class ReceitasEmProgresso extends Component {
           />
         </button>
         <p data-testid="recipe-category" />
-        {}
         {ingredientList.map((obj, index) => (
           <div key={ index }>
 
@@ -198,7 +175,10 @@ class ReceitasEmProgresso extends Component {
           type="button"
           data-testid="finish-recipe-btn"
           disabled={ disable }
-          onClick={ () => history.push('/receitas-feitas') }
+          onClick={ () => {
+            history.push('/receitas-feitas');
+            addRecipe(currentRecipe);
+          } }
         >
           Finish
         </button>
@@ -216,7 +196,6 @@ class ReceitasEmProgresso extends Component {
 
   isDisable() {
     const { isDone } = this.state;
-    console.log('oi');
     if (isDone === '') return;
     const str = JSON.stringify(isDone);
     if (str.includes('false')) {
@@ -235,7 +214,6 @@ class ReceitasEmProgresso extends Component {
     );
   }
 }
-
 ReceitasEmProgresso.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
@@ -243,6 +221,9 @@ ReceitasEmProgresso.propTypes = {
     }),
   }).isRequired,
   history: PropTypes.shape.isRequired,
+  addRecipe: PropTypes.func.isRequired,
 };
-
-export default ReceitasEmProgresso;
+const mapDispatchToProps = (dispatch) => ({
+  addRecipe: (recipe) => dispatch({ type: 'ADD_RECIPE', payload: recipe }),
+});
+export default connect(null, mapDispatchToProps)(ReceitasEmProgresso);

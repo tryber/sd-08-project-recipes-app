@@ -25,6 +25,11 @@ const reducer = (state = initialState, action) => {
       ...state,
       Breakfast: action.payload,
     };
+  case 'INGREDIENT_FILTER':
+    return {
+      ...state,
+      ingredienteFilter: action.payload,
+    };
   case 'FETCH_CHICKEN_MEALS':
     return {
       ...state,

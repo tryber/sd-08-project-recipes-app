@@ -215,7 +215,7 @@ class SearchBar extends Component {
 
 SearchBar.propTypes = {
   location: PropTypes.shape.isRequired,
-  history: PropTypes.shape.isRequired,
+  history: PropTypes.func.isRequired,
 };
 
 const SearchBarLocation = withRouter(SearchBar);

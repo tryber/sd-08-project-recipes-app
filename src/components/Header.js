@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import profileIcon from '../images/profileIcon.svg';
 import searchIcon from '../images/searchIcon.svg';
@@ -56,12 +57,15 @@ class Header extends Component {
   }
 
   invertHidden() {
+    const { bool } = this.props;
     const { hidden } = this.state;
     if (hidden === true) {
       this.setState({ hidden: false });
+      bool(true);
     }
     if (hidden === false) {
       this.setState({ hidden: true });
+      bool(false);
     }
   }
 
@@ -110,7 +114,7 @@ class Header extends Component {
 }
 
 const HeaderLocation = withRouter(Header);
-export default HeaderLocation;
+// export default HeaderLocation;
 
 Header.propTypes = {
   location: PropTypes.shape({
@@ -119,7 +123,14 @@ Header.propTypes = {
   history: PropTypes.shape({
     push: PropTypes.func.isRequired,
   }).isRequired,
+  bool: PropTypes.bool.isRequired,
 };
+
+const mapDispatchToProps = (dispatch) => ({
+  bool: (bool) => dispatch({ type: 'BOOLEANO', payload: bool }),
+});
+
+export default connect(null, mapDispatchToProps)(HeaderLocation);
 
 // a solução para generalização do Header foi inspirada e adaptada a partir da resolução
 // do grupo 11 da T07 https://github.com/tryber/sd-07-project-recipes-app/tree/main-group-11

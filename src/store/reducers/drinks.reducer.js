@@ -39,6 +39,11 @@ const reducer = (state = initialState, action) => {
       ...state,
       cocoa: action.payload,
     };
+  case 'DRINKS_INGREDIENT_FILTER':
+    return {
+      ...state,
+      ingredienteFilter: action.payload,
+    };
   default:
     return state;
   }

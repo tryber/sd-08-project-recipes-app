@@ -53,9 +53,35 @@ class Bebidas extends Component {
     }
   }
 
+  inputButtons() {
+    const { categories, bool } = this.props;
+    return (
+      categories.drinksCategories.map((category, index) => {
+        if (index < MAX_CATEGORIES && bool === false) {
+          return (
+            <button
+              type="submit"
+              onClick={ () => this.handleClick(category.strCategory) }
+              data-testid={ `${category.strCategory}-category-filter` }
+            >
+              {category.strCategory}
+            </button>
+          );
+        }
+        return null;
+      })
+    );
+  }
+
   render() {
-    const { categories: { drinksCategories }, drinks: { drinks } } = this.props;
+    const { drinks, bool } = this.props;
     const { selectedCategory } = this.state;
+    let cards = '';
+    if (!drinks.ingredienteFilter) {
+      cards = drinks.drinks;
+    } else {
+      cards = drinks.ingredienteFilter;
+    }
     if (!selectedCategory) {
       return (
         <div>
@@ -65,29 +91,15 @@ class Bebidas extends Component {
             onClick={ (event) => this.handleClick(event.target.name) }
             name="All"
             data-testid="All-category-filter"
+            hidden={ bool }
           >
             All
           </button>
-          {
-            drinksCategories.map((category, index) => {
-              if (index < MAX_CATEGORIES) {
-                return (
-                  <button
-                    type="submit"
-                    onClick={ () => this.handleClick(category.strCategory) }
-                    data-testid={ `${category.strCategory}-category-filter` }
-                  >
-                    {category.strCategory}
-                  </button>
-                );
-              }
-              return null;
-            })
-          }
-          {
+          {this.inputButtons()}
 
-            drinks.map((drink, index) => {
-              if (index < MAX_CARDS) {
+          {
+            cards.map((drink, index) => {
+              if (index < MAX_CARDS && bool === false) {
                 return (
                   <Link
                     to={ `/bebidas/${drink.idDrink}` }
@@ -121,27 +133,11 @@ class Bebidas extends Component {
         >
           All
         </button>
-        {
-          drinksCategories.map((category, index) => {
-            if (index < MAX_CATEGORIES) {
-              return (
-                <button
-                  type="button"
-                  onClick={ () => this.handleClick(category.strCategory) }
-                  data-testid={ `${category.strCategory}-category-filter` }
-                >
-                  {category.strCategory}
-                </button>
-              );
-            }
-            return null;
-          })
-        }
-
+        {this.inputButtons()}
         {
 
           selectedCategory.map((drink, index) => {
-            if (index < MAX_CARDS) {
+            if (index < MAX_CARDS && bool === false) {
               return (
                 <Link
                   to={ `/bebidas/${drink.idDrink}` }
@@ -166,6 +162,7 @@ class Bebidas extends Component {
 }
 
 const mapStateToProps = (state) => ({
+  bool: state.user.bool,
   categories: state.categories,
   drinks: state.drinks,
   selectedCategory: state.selectedCategory,
@@ -174,6 +171,7 @@ const mapStateToProps = (state) => ({
 Bebidas.propTypes = {
   drinks: PropTypes.arrayOf(Array).isRequired,
   categories: PropTypes.arrayOf(Array).isRequired,
+  bool: PropTypes.bool.isRequired,
 };
 
 export default connect(mapStateToProps)(Bebidas);
