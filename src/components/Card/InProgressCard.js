@@ -2,46 +2,74 @@ import React, { useEffect, useState } from 'react';
 
 import './InProgressCard.css';
 import PropTypes from 'prop-types';
-
+//  comentario
 const InProgressCard = (props) => {
   const { url,
     id, category, title, img, ingredients, alcohol, instructions } = props;
   const [isDrinkOrFood, setIsDrinkOrFood] = useState('');
-  const [forMap, setForMap] = useState([]);
+  const [inProgress, setInProgress] = useState([]);
 
   useEffect(() => {
-    setForMap(ingredients.filter((noTwoSpace) => noTwoSpace !== '  ')
-      .map((element) => ({ name: element, checked: false })));
-  }, [ingredients]);
+    localStorage
+      .setItem('inProgressRecipes', JSON.stringify({
+        cocktails: {}, meals: { [id]: [{ idx: 0, name: 'ingrediente', checked: false }] },
+      }));
+  }, []);
 
-  const consoleFunction1 = () => {
-    // console.log(forMap);
-    const favorites = JSON.parse(localStorage.getItem('favoriteRecipes'));
-    console.log(favorites);
-  };
+  useEffect(() => {
+    const progressStatus = localStorage.getItem('inProgressRecipes');
+    const progressList = progressStatus ? JSON.parse(progressStatus) : [];
+    console.log('progress list: ', progressList);
+    setInProgress(progressList);
+  }, []);
 
-  const consoleFunction2 = () => console.log(ingredients, forMap);
+  function setLocalStorage() {
+    localStorage.setItem('inProgressRecipes', JSON.stringify(inProgress));
+  }
 
-  const theButton1 = <button type="button" onClick={ consoleFunction1 }>BOTÃO1</button>;
-  const theButton2 = <button type="button" onClick={ consoleFunction2 }>BOTÃO2</button>;
-  const onChangeCB = ({ target }) => {
-    const reInsertAtCorrectPos = (array, position, ...elementToInsert) => {
-      array.splice(position, 0, ...elementToInsert);
+  useEffect(() => {
+    setLocalStorage();
+  }, [inProgress]);
+
+  const onChangeCB = ({ target }, index) => {
+    const novoEstado = {
+      ...inProgress,
+      meals: {
+        ...inProgress.meals,
+        [id]: [
+          ...inProgress.meals[id],
+        ],
+
+      },
     };
-
-    const theIndex = forMap.findIndex((position) => position.name === target.name);
-    const inserting = { name: target.name, checked: target.checked };
-    const theMap = forMap.filter(((filtered) => filtered.name !== target.name));
-
-    reInsertAtCorrectPos(theMap, theIndex, inserting);
-
-    // const newMap = [...oldMap, { name: target.name, checked: target.checked }];
-    // forMap.map((element) => (element.name === target.name ? element.checked = target.checked : element));
-
-    console.log(theMap);
-    localStorage.setItem('test', JSON.stringify(theMap));
-    // localStorage.setItem(JSON.stringify(fromLocalStorage));
+    if (novoEstado.meals[id][index]) {
+      const Teste = inProgress.meals[id][index].checked;
+      novoEstado.meals[id][index].checked = !Teste;
+    } else {
+      novoEstado.meals[id][index] = { idx: index, name: target.name, checked: true };
+    }
+    setInProgress(novoEstado);
+    // console.log('teste: ', Teste);
+    // inProgress.meals[id][index].checked = !Teste;
+    // console.log('inProgress mudado:', inProgress);
   };
+
+  //   localStorage.setItem('recipeProgressStatus', JSON.stringify(inProgress));
+  //   };
+
+  //   const theIndex = forMap.findIndex((position) => position.name === target.name);
+  //   const inserting = { name: target.name, checked: target.checked };
+  //   const theMap = forMap.filter(((filtered) => filtered.name !== target.name));
+
+  //   reInsertAtCorrectPos(theMap, theIndex, inserting);
+
+  //   // const newMap = [...oldMap, { name: target.name, checked: target.checked }];
+  //   // forMap.map((element) => (element.name === target.name ? element.checked = target.checked : element));
+
+  //   console.log(theMap);
+  //   localStorage.setItem('test', JSON.stringify(theMap));
+  //   // localStorage.setItem(JSON.stringify(fromLocalStorage));
+  // };
 
   useEffect(() => {
     if (url.includes('bebidas')) {
@@ -57,7 +85,7 @@ const InProgressCard = (props) => {
           name={ ingredient }
           type="checkbox"
           value={ ingredient }
-          onChange={ onChangeCB }
+          onChange={ (e) => onChangeCB(e, index) }
         />
         <label htmlFor={ `id-${index}` }>
           {ingredient}
@@ -153,8 +181,6 @@ const InProgressCard = (props) => {
 
   return (
     <main>
-      {theButton1}
-      {theButton2}
       {isDrinkOrFood === 'Drink' ? renderDrink() : renderFood()}
 
     </main>

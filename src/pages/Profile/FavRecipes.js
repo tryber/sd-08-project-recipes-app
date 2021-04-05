@@ -5,8 +5,9 @@ import Header from '../../components/Header';
 function FavRecipes() {
   const [filter, setFilter] = useState('');
   const [, forceUpdate] = useState('');
-  const favorites = JSON.parse(localStorage.getItem('favoriteRecipes'));
-  console.log(favorites);
+  const getFavorites = JSON.parse(localStorage.getItem('favoriteRecipes'));
+  const favorites = getFavorites || [];
+  console.log('favoritos: ', favorites);
 
   const removeFavorite = (idx, id) => {
     console.log(idx);
