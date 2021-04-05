@@ -1,0 +1,37 @@
+.bigCardHeader {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.bigCardHeader a {
+  color: black;
+  text-decoration: none;
+}
+
+.name {
+  font-size: 1.3rem;
+}
+
+.category {
+  margin-bottom: 2px;
+  opacity: 0.5;
+}
+
+.shareButton {
+  cursor: pointer;
+  font-size: 0;
+  position: absolute;
+  right: 2px;
+  top: -2px;
+}
+
+.shareButton img {
+  padding: 10px;
+}
+
+.row {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}

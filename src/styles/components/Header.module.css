@@ -1,0 +1,37 @@
+.header {
+  align-items: center;
+  background-color: #ccc;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  height: 60px;
+  justify-items: center;
+  left: 0;
+  padding: 10px;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.header a, .header button {
+  align-items: center;
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  width: 40px;
+}
+
+.header h1 {
+  font-size: 1.7rem;
+  padding: 0 10px;
+}
+
+.header button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}

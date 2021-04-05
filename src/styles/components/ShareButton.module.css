@@ -1,0 +1,31 @@
+.shareButton {
+  align-self: flex-start;
+  background: none;
+  border: none;
+  padding: 0 5px;
+}
+
+.copiedLink {
+  animation-duration: 2s;
+  animation-name: copied;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 4px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+  color: white;
+  display: none;
+  font-size: 1.4rem;
+  left: 50%;
+  padding: 20px;
+  position: fixed;
+  text-align: center;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 80%;
+}
+
+@keyframes copied {
+
+  to {
+    opacity: 0;
+  }
+}

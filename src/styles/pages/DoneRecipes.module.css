@@ -1,0 +1,7 @@
+.doneRecipesContainer {
+  padding: 15px;
+}
+
+.doneRecipesContainer > *:not( :last-child ) {
+  margin-bottom: 15px;
+}

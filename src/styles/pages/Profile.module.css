@@ -1,0 +1,31 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 20px;
+}
+
+.profile *:not( :last-child ) {
+  margin-bottom: 10px;
+}
+
+.profile button {
+  border: none;
+}
+
+.profile a, .profile p, .profile button {
+  border-radius: 4px;
+  color: black;
+  font-size: 1.3rem;
+  font-weight: 500;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.profile p {
+  padding-bottom: 30px;
+}
+
+.profile a, .profile button {
+  background-color: #ccc;
+}

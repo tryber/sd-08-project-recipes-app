@@ -1,0 +1,14 @@
+.recommendations h2 {
+  margin-bottom: 10px;
+}
+
+.recommendationsContainer {
+  display: flex;
+  overflow-x: auto;
+  padding: 2px;
+}
+
+.recommendationsContainer > * {
+  margin-right: 10px;
+  min-width: calc(50% - 5px);
+}

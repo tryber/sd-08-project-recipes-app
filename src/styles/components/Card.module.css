@@ -1,0 +1,41 @@
+.card {
+  border-radius: 8px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  display: inline-flex;
+  flex-direction: column;
+  max-height: 250px;
+  min-width: 100px;
+  overflow: hidden;
+}
+
+.card p {
+  display: flex;
+  flex: 1;
+  min-height: 15px;
+}
+
+.header {
+  font-size: 1rem;
+}
+
+.card p:not( :last-child ) {
+  margin-bottom: 5px;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+.card img {
+  min-width: 80px;
+  transition: transform 0.2s;
+  width: 100%;
+}
+
+.category {
+  font-size: 0.8rem;
+  opacity: 0.4;
+}

@@ -1,0 +1,13 @@
+.recipesFilter {
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.recipesFilter button {
+  background: #ccc;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  padding: 10px;
+}

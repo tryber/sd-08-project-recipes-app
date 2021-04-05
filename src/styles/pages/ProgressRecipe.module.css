@@ -1,0 +1,11 @@
+.photo {
+  width: 100%;
+}
+
+.progressRecipe {
+  padding: 10px;
+}
+
+.progressRecipe > *:not( :last-child ) {
+  margin-bottom: 20px;
+}

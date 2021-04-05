@@ -1,0 +1,48 @@
+.mealsDetails {
+  margin-bottom: 60px;
+}
+
+.photo {
+  width: 100%;
+}
+
+.mealsDetailsContainer {
+  padding: 10px;
+}
+
+.mealsDetailsContainer > *:not( :last-child ) {
+  margin-bottom: 20px;
+}
+
+.homeButton {
+  background: white;
+  border-radius: 50%;
+  box-shadow: -1px -1px 5px rgba(255, 255, 255, 0.3);
+  color: white;
+  font-family: monospace;
+  font-size: 0;
+  font-weight: 700;
+  left: 0;
+  margin: 15px;
+  position: fixed;
+  top: 0;
+}
+
+.homeButton img {
+  color: white;
+  left: -1px;
+  position: relative;
+  top: -1px;
+  transform: scale(1.1);
+  width: 40px;
+}
+
+.floatButton {
+  background: white;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}

@@ -1,0 +1,22 @@
+.exploreContainer {
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: 1fr 1fr;
+  padding: 15px;
+}
+
+.exploreContainer a, .exploreContainer button {
+  align-items: center;
+  background-color: #fefefe;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  color: black;
+  cursor: pointer;
+  display: flex;
+  font-size: 1.4rem;
+  height: 100px;
+  justify-content: flex-start;
+  padding: 10px;
+  text-align: left;
+}

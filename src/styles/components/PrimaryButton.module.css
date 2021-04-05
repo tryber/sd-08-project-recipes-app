@@ -1,0 +1,15 @@
+.primaryButton {
+  background: #6ce34f;
+  border: none;
+  border-radius: 4px;
+  color: black;
+  cursor: pointer;
+  font-size: 1.6rem;
+  padding: 20px;
+  width: 100%;
+}
+
+.primaryButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}

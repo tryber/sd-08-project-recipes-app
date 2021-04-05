@@ -1,0 +1,9 @@
+.controls {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.controls * {
+  align-self: unset;
+}

@@ -1,0 +1,22 @@
+.container {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.cLoader {
+  animation: is-rotating 1s infinite;
+  border: 5px solid #e5e5e5;
+  border-radius: 50%;
+  border-top-color: #858585;
+  height: 70px;
+  width: 70px;
+}
+
+@keyframes is-rotating {
+
+  to {
+    transform: rotate(1turn);
+  }
+}

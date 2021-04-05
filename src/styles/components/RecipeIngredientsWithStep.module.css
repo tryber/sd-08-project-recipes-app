@@ -1,0 +1,25 @@
+.ingredientsContainer h2 {
+  margin-bottom: 10px;
+}
+
+.ingredients {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.ingredients > *:not( :last-child ) {
+  margin-bottom: 10px;
+}
+
+.ingredients label {
+  align-items: center;
+  display: flex;
+}
+
+.ingredients input {
+  margin-right: 10px;
+  transform: scale(1.5);
+}

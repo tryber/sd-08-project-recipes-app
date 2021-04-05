@@ -1,0 +1,30 @@
+.div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.buttons {
+  align-items: center;
+  background-color: #fefefe;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  color: black;
+  cursor: pointer;
+  display: flex;
+  font-size: 1.4rem;
+  height: 100px;
+  justify-content: center;
+  padding: 0 60px;
+  text-align: center;
+}
+
+.buttons:not( :last-child ) {
+  margin-bottom: 15px;
+}

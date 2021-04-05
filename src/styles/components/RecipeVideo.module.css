@@ -1,0 +1,8 @@
+.videoContainer h2 {
+  margin-bottom: 10px;
+}
+
+.videoContainer iframe {
+  border-radius: 4px;
+  width: 100%;
+}

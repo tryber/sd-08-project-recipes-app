@@ -1,0 +1,9 @@
+.instructionsContainer h2 {
+  margin-bottom: 10px;
+}
+
+.instructions {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  padding: 10px;
+}

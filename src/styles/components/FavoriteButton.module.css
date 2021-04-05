@@ -1,0 +1,11 @@
+.favoriteButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  padding: 5px;
+}
+
+.favoriteButton img {
+  width: 25px;
+}

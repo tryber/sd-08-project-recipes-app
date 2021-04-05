@@ -1,0 +1,7 @@
+.favoriteRecipesContainer {
+  padding: 15px;
+}
+
+.favoriteRecipesContainer > *:not( :last-child ) {
+  margin-bottom: 15px;
+}

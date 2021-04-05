@@ -1,0 +1,20 @@
+.filterContainer {
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  padding: 10px;
+}
+
+.filterButton {
+  align-items: center;
+  background: #c4c4c4;
+  border: none;
+  display: flex;
+  font-weight: 700;
+  height: 28px;
+  justify-content: flex-start;
+  padding: 10px;
+  width: 100%;
+}

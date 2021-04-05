@@ -1,0 +1,12 @@
+.dropdownContainer {
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+  display: flex;
+}
+
+.dropdown {
+  flex: 1;
+  font-size: 1.2rem;
+  margin: 15px;
+  max-height: 300px;
+  padding: 10px;
+}

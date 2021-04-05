@@ -1,0 +1,33 @@
+.bigCardContainer {
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+}
+
+.bigCardImageContainer {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 10px 5px;
+}
+
+.bigCardImageContainer a {
+  display: flex;
+  justify-content: center;
+}
+
+.bigCardImageContainer img {
+  border-radius: 25%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  width: 85%;
+}
+
+.bigCardInfo {
+  padding: 10px 5px;
+}
+
+.bigCardInfo > *:not( :last-child ) {
+  margin-bottom: 10px;
+}
