@@ -1,0 +1,49 @@
+body {
+  background-color: #d0cccc;
+  max-height: 640px;
+  max-width: 360px;
+}
+
+.box {
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.center {
+  align-items: center;
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  justify-content: center;
+  width: 100vw;
+}
+
+.email {
+  font-size: 20px;
+}
+
+.imagem {
+  background-color: #d0cccc;
+  height: 50%;
+  margin: 20%;
+  width: 50%;
+}
+
+.titulo {
+  height: 20%;
+  margin-bottom: 10%;
+  width: 100%;
+}
+
+@media screen and ( max-width : 360px ) {
+
+  .box, .container {
+    width: 100%;
+  }
+}
