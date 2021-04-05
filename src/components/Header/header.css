@@ -1,0 +1,18 @@
+header {
+  background-color: #92b2db;
+  color: white;
+  width: 100%;
+}
+
+header > nav > h1 {
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+
+header > nav {
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 5px;
+}

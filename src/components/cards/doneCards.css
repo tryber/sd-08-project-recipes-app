@@ -1,0 +1,45 @@
+.filters {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 15px;
+}
+
+.filter {
+  width: 90px;
+}
+
+.cards {
+  justify-content: space-evenly;
+}
+
+.doneCard {
+  background-color: #ddd;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  height: 150px;
+  margin: 10px;
+}
+
+.recipeImage {
+  height: 150px;
+  width: 45%;
+}
+
+.recipeImage img {
+  border-radius: 5px 0 0 5px;
+  height: 150px;
+  width: 100%;
+}
+
+.recipeInfo {
+  width: 55%;
+}
+
+a {
+  text-decoration: none;
+}
+
+h3 {
+  margin: 5px;
+}

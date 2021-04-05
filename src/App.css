@@ -1,12 +1,16 @@
+.app {
+  height: 100vh;
+}
+
 .meals {
   align-items: center;
-  background: #0fa36b;
   color: #464646;
-  display: flex;
-  flex-direction: column;
+  column-gap: 2px;
+  display: grid;
   font-family: sans-serif;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   height: 100vh;
-  justify-content: center;
+  row-gap: 2px;
   width: 100%;
 }
 

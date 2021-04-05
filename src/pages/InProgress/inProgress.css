@@ -1,0 +1,23 @@
+.recipe-details .image-container {
+  display: flex;
+  max-height: 25vh;
+}
+
+.recipe-details .image-container img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.recipe-details .recommendations-details .carousel-details-scroll {
+  background-color: gray;
+  display: flex;
+  flex-flow: row nowrap;
+  height: 150px;
+  overflow: hidden;
+  width: 265px;
+}
+
+.recipe-details .start-recipe {
+  bottom: 0;
+  position: fixed;
+}
