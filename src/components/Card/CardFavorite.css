@@ -1,0 +1,33 @@
+.cardFav-container {
+  box-shadow: 1px 2px 8px #aaa;
+  display: flex;
+  margin: 20px;
+}
+
+.cardFav-container .imagem-fav {
+  width: 165px;
+}
+
+.cardFav-content {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 100%;
+}
+
+.cardFav-content p {
+  color: #aaa;
+}
+
+.cardFav-content h4 {
+  margin: -15px 0 0;
+}
+
+.iconFav {
+  display: flex;
+  justify-content: space-around;
+}
+
+.icon-fav {
+  width: 40px;
+}

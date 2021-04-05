@@ -1,4 +1,4 @@
-/// <reference types="cypress" />
+//<reference types="cypress" />
 
 describe('2 - Crie todos os elementos que devem respeitar os atributos descritos no protótipo para a tela de login', () => {
   it('Tem os data-testids email-input, password-input e login-submit-btn', () => {

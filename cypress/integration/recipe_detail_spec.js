@@ -301,6 +301,7 @@ describe('40 - Implemente a solução de modo que caso a receita tenha sido inic
       },
     });
 
+    console.log('teste das comidas :', cy.get('[data-testid="start-recipe-btn"]'))
     cy.get('[data-testid="start-recipe-btn"]').contains('Continuar Receita');
   });
 
@@ -316,7 +317,8 @@ describe('40 - Implemente a solução de modo que caso a receita tenha sido inic
         win.fetch = fetchMock;
       },
     });
-
+    console.log('teste das bebidas :', cy.get('[data-testid="start-recipe-btn"]'))
+    console.log('local storage: ', localStorage.getItem('inProgressRecipes'));
     cy.get('[data-testid="start-recipe-btn"]').contains('Continuar Receita');
   });
 });
