@@ -91,7 +91,6 @@ describe('15 - Busque na API de comidas caso a pessoa esteja na página de comid
         cy.spy(win, 'fetch');
       },
     });
-console.log('object');
     cy.get('[data-testid="search-top-btn"]').click();
     cy.get('[data-testid="ingredient-search-radio"]').click();
     cy.get('[data-testid="search-input"]').type('lemon');

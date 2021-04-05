@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useHistory } from 'react-router-dom';
 import ProfileIcon from '../images/profileIcon.svg';
 import styles from './HeaderSimple.module.css';
 
@@ -31,15 +31,31 @@ function HeaderSimple() {
       return 'Receitas Favoritas';
     }
   };
+  const history = useHistory();
+  const handleClickTProfile = () => {
+    history.push('/perfil');
+  };
 
   return (
-    <div className={ styles.containerHeaderSimple }>
+    <div
+      data-testid="container-header-simple"
+      className={ styles.containerHeaderSimple }
+    >
       <div className={ styles.headerSimple }>
+        <button type="button" onClick={ handleClickTProfile }>
+          <img
+            data-testid="profile-top-btn"
+            src={ ProfileIcon }
+            alt="user-profile"
+          />
+        </button>
+        {/*
+
         <img
           data-testid="profile-top-btn"
           src={ ProfileIcon }
           alt="user-profile"
-        />
+        /> */}
         <h2 data-testid="page-title">{title()}</h2>
       </div>
     </div>

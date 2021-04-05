@@ -19,7 +19,7 @@ function HeaderSearchBar() {
     handleSearchByName,
     handleClickSearch,
     nameSearchRadio,
-    ingredientSearchRadio,
+    // ingredientSearchRadio,
     firstLetterSearchRadio,
     searchInputMeal,
   } = mealsContext;
@@ -29,7 +29,7 @@ function HeaderSearchBar() {
     handleSearchByIngredientsDrink,
     handleSearchByFirstLetterDrink,
     nameSearchRadioDrink,
-    ingredientSearchRadioDrink,
+    // ingredientSearchRadioDrink,
     firstLetterSearchRadioDrink,
     handleClickSearchDrink,
     handleChangeSearchDrink,
@@ -43,9 +43,11 @@ function HeaderSearchBar() {
   const changeVisible = () => {
     setIsvisible(!isVisible);
   };
-
   return (
-    <div className="container-header-search">
+    <div
+      data-testid="container-header-search"
+      className="container-header-search"
+    >
       <div className="header">
         <button type="button" onClick={ handleClickTProfile }>
           <img
@@ -54,7 +56,7 @@ function HeaderSearchBar() {
             alt="user-profile"
           />
         </button>
-        <h2 data-testid="page-title">{title}</h2>
+        <h2 data-testid="page-title">{title()}</h2>
         <button type="button" onClick={ changeVisible }>
           <img data-testid="search-top-btn" src={ SearchIcon } alt="seach-icon" />
         </button>
@@ -73,11 +75,11 @@ function HeaderSearchBar() {
           <div className="search-radios">
             <label htmlFor="ingredient-search-radio">
               <input
-                checked={
-                  location.pathname === '/comidas'
-                    ? ingredientSearchRadio
-                    : ingredientSearchRadioDrink
-                }
+                // checked={
+                //   location.pathname === '/comidas'
+                //     ? ingredientSearchRadio
+                //     : ingredientSearchRadioDrink
+                // }
                 name="ingredient-search-radio"
                 value={
                   location.pathname === '/comidas'

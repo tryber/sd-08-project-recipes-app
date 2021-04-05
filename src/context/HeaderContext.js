@@ -6,13 +6,25 @@ export const DataHeaderContext = createContext();
 
 function HeaderContext(props) {
   const location = useLocation();
-  const zero = 0;
-  const one = 1;
-  const loc = location.pathname;
-  const v = loc.includes('-') ? loc.replace('-', ' ') : loc;
-  const d = v.includes('/') ? v.replace(/[/]/g, '') : v;
-  const j = d.substring(zero, one).toLocaleUpperCase().concat(d.substring(one));
-  const title = j === 'Explorarcomidasarea' ? 'Explorar Origem' : j;
+  // const zero = 0;
+  // const one = 1;
+  // const loc = location.pathname;
+  // const v = loc.includes('-') ? loc.replace('-', ' ') : loc;
+  // const d = v.includes('/') ? v.replace(/[/]/g, '') : v;
+  // const j = d.substring(zero, one).toLocaleUpperCase().concat(d.substring(one));
+  // const title = j === 'Explorarcomidasarea' ? 'Explorar Origem' : j;
+
+  const title = () => {
+    if (location.pathname === '/comidas') {
+      return 'Comidas';
+    }
+    if (location.pathname === '/explorar/comidas/area') {
+      return 'Explorar Origem';
+    }
+    if (location.pathname === '/bebidas') {
+      return 'Bebidas';
+    }
+  };
 
   const { children } = props;
   return (

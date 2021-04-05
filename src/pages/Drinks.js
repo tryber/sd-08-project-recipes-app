@@ -7,11 +7,7 @@ import HeaderSearchBar from '../components/HeaderSearchBar';
 
 export default function Drinks() {
   const dataContext = useContext(DataDrinksContext);
-  const {
-    drinks,
-    categoriesDrinks,
-    handleByCategoryDrink,
-  } = dataContext;
+  const { drinks, categoriesDrinks, handleByCategoryDrink } = dataContext;
 
   const sizeOfLength = 12;
   const startOfSlice = 0;

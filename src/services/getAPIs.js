@@ -65,6 +65,7 @@ export const getDrinksByCategory = async (byCategory) => {
 };
 
 export const getDrinkByIngredients = async (ingredient) => {
+  console.log('object');
   const Url = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${ingredient}`;
   const { drinks } = await fetch(Url).then((response) => response.json());
   return drinks;
