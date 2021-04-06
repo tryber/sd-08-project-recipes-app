@@ -5,6 +5,7 @@ import Profile from './pages/Profile';
 import Explorer from './pages/Explorer';
 import Meals from './pages/Meals';
 import MealRecipeDetails from './pages/MealRecipeDetails';
+import InProgressMeal from './pages/InProgressMeal';
 import CocktailRecipeDetails from './pages/CocktailRecipeDetails';
 import MealsExplorer from './pages/MealsExplorer';
 import DrinksExplorer from './pages/DrinksExplorer';
@@ -14,6 +15,9 @@ import MealsOrigin from './pages/MealsOrigin';
 import Cocktails from './pages/Cocktails';
 import RecipesDone from './pages/RecipesDone';
 import FavoriteRecipes from './pages/FavoriteRecipes';
+import InProgressCocktails from './pages/InProgressCocktails';
+
+import './App.css';
 
 function App() {
   const notFount = () => <div>Not Found</div>;
@@ -27,7 +31,9 @@ function App() {
       <Route exact path="/comidas" component={ Meals } />
       <Route exact path="/bebidas" component={ Cocktails } />
       <Route exact path="/comidas/:id" component={ MealRecipeDetails } />
+      <Route exact path="/comidas/:id/in-progress" component={ InProgressMeal } />
       <Route exact path="/bebidas/:id" component={ CocktailRecipeDetails } />
+      <Route exact path="/bebidas/:id/in-progress" component={ InProgressCocktails } />
       <Route exact path="/explorar/comidas" component={ MealsExplorer } />
       <Route exact path="/explorar/bebidas" component={ DrinksExplorer } />
       <Route exact path="/explorar/comidas/ingredientes" component={ MealsIngredients } />

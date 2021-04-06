@@ -125,6 +125,7 @@ class MealRecipeDetails extends Component {
     } = meals.meals[0];
     const youtubeId = strYoutube.substring(strYoutube.indexOf('=') + 1);
 
+    console.log(ingredients);
     return (
       <div className="recipe-details">
         <img
