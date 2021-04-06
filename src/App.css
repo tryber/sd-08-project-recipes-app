@@ -1,3 +1,277 @@
+.details-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.explore-ingredients-card {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 62px;
+}
+
+.explore-ingredients-card button {
+  background-color: white;
+  border: solid 2px #5a2864;
+  border-radius: 7px;
+  color: #5a2864;
+  margin-bottom: 5px;
+}
+
+.favorite-container {
+  display: flex;
+}
+
+.favorite-container button {
+  background-color: white;
+  border: solid 2px #5a2864;
+  border-radius: 7px;
+  color: #5a2864;
+}
+
+.favorite-info-card {
+  margin-top: 8px;
+}
+
+.ul-ingredients {
+  background-color: #ffc800;
+  border-radius: 7px;
+  list-style: none;
+  padding: 40px;
+}
+
+.recipe-instructions {
+  padding: 10px;
+  text-align: justify;
+}
+
+.share-favorite-btn {
+  display: flex;
+}
+
+.share-favorite-btn input {
+  margin: 0 5px;
+}
+
+.explore-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin-top: 40%;
+}
+
+.explore-container button {
+  background-color: white;
+  border: solid 2px #5a2864;
+  border-radius: 7px;
+  color: #5a2864;
+  height: 50px;
+  margin: 10px;
+  width: 250px;
+}
+
+.explore-food-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin-top: 22%;
+}
+
+.explore-food-container button {
+  background-color: white;
+  border: solid 2px #5a2864;
+  border-radius: 7px;
+  color: #5a2864;
+  height: 50px;
+  margin: 10px;
+  width: 250px;
+}
+
+.title {
+  color: #5a2864;
+  font-size: 1.9rem;
+  margin-top: 6px;
+}
+
+.filters-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.filters-container button {
+  background-color: white;
+  border: solid 2px #5a2864;
+  border-radius: 7px;
+  color: #5a2864;
+  margin: 5px;
+}
+
+.recipes-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+
+.container {
+  align-items: center;
+  background-color: #ffc800;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.container img {
+  height: 200px;
+  margin-top: 25%;
+  width: 200px;
+}
+
+.container input {
+  display: block;
+  padding: 5px;
+}
+
+.container label {
+  color: #5a2864;
+  font-weight: 700;
+}
+
+.container button {
+  background-color: #5a2864;
+  border: solid 2px white;
+  border-radius: 7px;
+  color: white;
+  font-weight: 700;
+  padding: 5px 10px;
+}
+
+.select-container {
+  display: flex;
+  justify-content: center;
+}
+
+.select-origin {
+  margin-top: 5px;
+  width: 80%;
+}
+
+.normal {
+  text-decoration: none;
+}
+
+.riscado {
+  text-decoration: line-through;
+}
+
+.recipe-card {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ingredient-item input:checked + label {
+  text-decoration: line-through;
+}
+
+.card-image {
+  border: solid 2px white;
+  border-radius: 15px;
+  height: 150px;
+  margin: 5px;
+  width: 150px;
+}
+
+.scroll-menu {
+  list-style: none;
+  overflow: auto;
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+
+.recommended-meals {
+  display: inline-block;
+  padding: 14px;
+  text-align: center;
+  width: 48%;
+}
+
+.recommended-meals li:not( :last-child ) {
+  margin-right: 16px;
+}
+
+.recommended-drinks {
+  display: inline-block;
+  padding: 20px;
+  text-align: center;
+  width: 48%;
+}
+
+.recommended-drinks li:not( :last-child ) {
+  margin-right: 16px;
+}
+
+.start {
+  background-color: white;
+  border: solid 2px #5a2864;
+  border-radius: 7px;
+  bottom: 0;
+  color: #5a2864;
+  position: fixed;
+}
+
+.header {
+  background-color: #ffc800;
+  display: flex;
+  justify-content: space-between;
+  top: 0;
+}
+
+.header button {
+  background-color: #ffc800;
+  border: none;
+  width: 60px;
+}
+
+.footer {
+  background-color: #ffc800;
+  bottom: 0;
+  padding: 10px 0;
+  position: fixed;
+}
+
+.footer button {
+  background-color: #ffc800;
+  border: none;
+}
+
+.drink-icon {
+  margin-right: 102px;
+}
+
+.meal-icon {
+  margin-left: 102px;
+}
+
+.footer-div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-bar {
+  display: flex;
+  flex-direction: column;
+}
+
+.search-bar-radio-btn {
+  display: flex;
+}
+
 .meals {
   align-items: center;
   background: #0fa36b;
