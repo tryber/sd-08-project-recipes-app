@@ -7,7 +7,9 @@ function BotaoDetalhes({ nome, id }) {
     <Link
       data-testid="start-recipe-btn"
       to={ `${id}/in-progress` }
-      style={ { position: 'fixed', bottom: 0 } }
+      style={ { position: 'fixed',
+        bottom: 0 } }
+      className="btn-iniciar-receita"
     >
       {nome}
     </Link>

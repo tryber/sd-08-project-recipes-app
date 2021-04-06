@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap') ;
+
+@import url('https://fonts.googleapis.com/css2?family=Molengo&display=swap') ;
+
+.botao-filtro {
+  align-self: center;
+  background-color: rgb(250, 216, 103);
+  border: 1px solid black;
+  border-radius: 3px;
+  color: black;
+  font-weight: 400;
+  margin: 3%;
+  width: 50%;
+}
+
+.btn-category {
+  color: black;
+  font-family: Molengo , sans-serif;
+  font-weight: 300;
+  padding: 2%;
+}
+
+.btn-category-bebidas {
+  color: black;
+  font-family: Molengo , sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  height: 55px;
+  overflow: hidden;
+  width: auto;
+}
+
+.card-comidas {
+  align-items: center;
+  background-color: rgb(255, 255, 255, 0.5);
+  border: 1px solid black;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  justify-content: center;
+  margin: 1%;
+  padding: 1%;
+  width: 30%;
+}
+
+.divHeader {
+  display: flex;
+  flex-direction: column;
+}
+
+.div-botoes {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+}
+
+.div-cards {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+}
+
+.div-filtros {
+  color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+
+.form-filtros {
+  align-content: center;
+  background-color: rgb(236, 159, 5);
+  display: flex;
+  flex-direction: column;
+}
+
+.iconePerfil {
+  display: flex;
+  justify-content: center;
+  padding: 2%;
+}
+
+.imagem-card {
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: 5px 5px 5px 2px rgb(58, 58, 58);
+  margin: 5%;
+  padding: 2px;
+  width: 85%;
+}
+
+input [ type = 'radio' ] {
+  display: none;
+}
+
+input [ type = 'text' ] {
+  align-self: center;
+  background-color: rgb(253, 232, 163, 0.999);
+  border: 1px solid black;
+  border-radius: 3px;
+  margin: 1%;
+  width: 80%;
+
+}
+
+.input-radio {
+  background-color: rgb(253, 232, 163);
+  border: 1px solid black;
+  border-radius: 3px;
+  color: black;
+  font-weight: 400;
+  margin: 1%;
+  padding: 2%;
+}
+
+.title {
+  color: rgb(191, 49, 0);
+  font-family: Dancing Script , cursive;
+  font-size: 20vw;
+  text-align: center;
+}
+
+.titulo-card {
+  color: rgb(191, 49, 0);
+  font-family: Molengo , sans-serif;
+  font-size: 5vw;
+  text-align: center;
+  text-indent: 1%;
+}
+

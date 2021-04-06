@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import ContextReceitas from '../context/ContextReceitas';
+import '../styles/paginas.css';
 
 function BarraPesquisa() {
   const {
@@ -20,59 +21,63 @@ function BarraPesquisa() {
   }
 
   return (
-    <form>
+    <form className="form-filtros">
       <input
         type="text"
         name="search"
         data-testid="search-input"
         onChange={ changeHandle }
+        placeholder="Digite"
       />
-      <label
-        className="search"
-        htmlFor="i"
-      >
-        Ingrediente
-        <input
-          id="i"
-          type="radio"
-          name="type"
-          value="i"
-          data-testid="ingredient-search-radio"
-          onChange={ changeHandle }
-        />
-      </label>
-      <label
-        className="search"
-        htmlFor="s"
-      >
-        Nome
-        <input
-          id="s"
-          type="radio"
-          name="type"
-          value="s"
-          data-testid="name-search-radio"
-          onChange={ changeHandle }
-        />
-      </label>
-      <label
-        className="search"
-        htmlFor="f"
-      >
-        Primeira Letra
-        <input
-          id="f"
-          type="radio"
-          name="type"
-          value="f"
-          data-testid="first-letter-search-radio"
-          onChange={ changeHandle }
-        />
-      </label>
+      <div className="div-filtros">
+        <label
+          className="search input-radio"
+          htmlFor="i"
+        >
+          Ingrediente
+          <input
+            id="i"
+            type="radio"
+            name="type"
+            value="i"
+            data-testid="ingredient-search-radio"
+            onChange={ changeHandle }
+          />
+        </label>
+        <label
+          className="search input-radio"
+          htmlFor="s"
+        >
+          Nome
+          <input
+            id="s"
+            type="radio"
+            name="type"
+            value="s"
+            data-testid="name-search-radio"
+            onChange={ changeHandle }
+          />
+        </label>
+        <label
+          className="search input-radio"
+          htmlFor="f"
+        >
+          Primeira Letra
+          <input
+            id="f"
+            type="radio"
+            name="type"
+            value="f"
+            data-testid="first-letter-search-radio"
+            onChange={ changeHandle }
+          />
+        </label>
+      </div>
       <button
         type="button"
         onClick={ handleClick }
         data-testid="exec-search-btn"
+        className="btn btn-secondary btn-category botao-filtro"
       >
         {' '}
         PROCURAR

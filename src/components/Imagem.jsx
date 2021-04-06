@@ -1,15 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../styles/detalhesReceitas.css';
 
 function Imagem({ testid, src, alt }) {
-  const CEM = 100;
-
   return (
     <img
       data-testid={ testid }
       alt={ alt }
       src={ src }
-      width={ `${CEM}vh` }
+      className="img-detalhes"
     />
 
   );

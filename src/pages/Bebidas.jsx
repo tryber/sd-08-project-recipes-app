@@ -62,31 +62,39 @@ function Bebidas() {
   return (
     <div>
       <Header />
-      {!categoriasBebidas
-        ? <h1>Carregando ...</h1>
-        : categoriasBebidas.map(({ strCategory }) => (
-          <button
-            type="button"
-            key={ strCategory }
-            name={ strCategory }
-            data-testid={ `${strCategory}-category-filter` }
-            id={ strCategory }
-            onClick={ handleClick }
-          >
-            {strCategory}
-          </button>))}
-      <button
-        type="button"
-        key="all"
-        name="all"
-        id="all"
-        data-testid="All-category-filter"
-        onClick={ handleClickAll }
-      >
-        All
-      </button>
+      <div className="btn-group div-botoes" role="group">
+        {!categoriasBebidas
+          ? <h1>Carregando ...</h1>
+          : categoriasBebidas.map(({ strCategory }) => (
+            <button
+              type="button"
+              key={ strCategory }
+              name={ strCategory }
+              data-testid={ `${strCategory}-category-filter` }
+              id={ strCategory }
+              onClick={ handleClick }
+              className="btn btn-secondary btn-category-bebidas"
+              style={ { backgroundColor: ' rgb(236, 159, 5)', border: 'none' } }
+            >
+              {strCategory}
+            </button>))}
+        <button
+          type="button"
+          key="all"
+          name="all"
+          id="all"
+          data-testid="All-category-filter"
+          onClick={ handleClickAll }
+          className="btn btn-secondary btn-category-bebidas"
+          style={ { backgroundColor: ' rgb(236, 159, 5)', border: 'none' } }
+        >
+          All
+        </button>
+      </div>
 
-      { renderCards() }
+      <div className="div-cards">
+        {renderCards()}
+      </div>
       {apiResult !== null
       && apiResult.length === 1
       && tituloDaPagina === 'Bebidas'

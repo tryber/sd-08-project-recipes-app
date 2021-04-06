@@ -6,6 +6,7 @@ import ContextReceitas from '../context/ContextReceitas';
 
 import CartaoDetalhesComidas from '../components/CartaoDetalhesComidas';
 import CartaoDetalhesBebidas from '../components/CartaoDetalhesBebidas';
+import '../styles/detalhesReceitas.css';
 
 function DetalhesReceita(props) {
   const { match: { params: { id } } } = props;

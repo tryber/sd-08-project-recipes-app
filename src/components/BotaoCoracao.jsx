@@ -10,10 +10,14 @@ function BotaoCoracao({ testid, src, func, name }) {
       data-testid={ testid }
       onClick={ func }
       src={ src }
-      style={ { background: `url(${src})`,
+      style={ {
+        backgroundColor: 'rgb(245, 187, 0)',
+        backgroundImage: `url(${src})`,
         backgroundSize: 'cover',
-        width: '50px',
-        height: '50px' } }
+        border: 'none',
+        height: '10vw',
+        width: '10vw',
+      } }
     >
       { ' ' }
     </button>

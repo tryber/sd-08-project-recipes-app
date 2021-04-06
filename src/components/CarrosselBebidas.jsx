@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import '../styles/detalhesReceitas.css';
 
 function CarrosselBebidas({ listItem }) {
   const [tamanhoCarrossel, setTamanhoCarrossel] = useState({
@@ -16,36 +17,62 @@ function CarrosselBebidas({ listItem }) {
     }));
   }
   return (
-    <>
-      <button type="button" name="mais" onClick={ clickHandle }>PRA CIMA</button>
+    <div className="div-corrossel">
+      <button
+        type="button"
+        name="mais"
+        onClick={ clickHandle }
+        className="btn-carrossel"
+      >
+        {'<'}
+      </button>
       { listItem.map((element, index) => (
         index <= tamanhoCarrossel.max && index >= tamanhoCarrossel.min
           ? (
-            <div>
+            <div className="card-comidas">
+              <p
+                data-testid={ `${index}-recomendation-title` }
+                className="titulo-card"
+              >
+                {element.strDrink}
+              </p>
               <img
                 src={ element.strDrinkThumb }
                 data-testid={ `${index}-recomendation-card` }
                 width="50"
                 height="50"
                 alt={ element.strDrink }
+                className="imagem-card"
               />
-              <p data-testid={ `${index}-recomendation-title` }>{element.strDrink}</p>
             </div>)
           : (
-            <div hidden>
+            <div hidden className="card-comidas">
+              <p
+                data-testid={ `${index}-recomendation-title` }
+                className="titulo-card"
+              >
+                {element.strDrink}
+              </p>
               <img
                 src={ element.strDrinkThumb }
                 data-testid={ `${index}-recomendation-card` }
                 alt={ element.strDrink }
+                className="imagem-card"
               />
 
-              <p data-testid={ `${index}-recomendation-title` }>{element.strDrink}</p>
             </div>
           )
       )) }
-      <button type="button" name="menos" onClick={ clickHandle }>PRA BAIXO</button>
+      <button
+        type="button"
+        name="menos"
+        onClick={ clickHandle }
+        className="btn-carrossel"
+      >
+        {'>'}
+      </button>
 
-    </>
+    </div>
   );
 }
 

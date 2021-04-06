@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap') ;
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap') ;
+
+@import url('https://fonts.googleapis.com/css2?family=Molengo&display=swap') ;
+
+.btn-carrossel {
+  background-color: transparent;
+  border: none;
+  color: rgb(224, 214, 195);
+  padding: 0%;
+}
+
+.btn-iniciar-receita {
+  background-color: rgb(124, 179, 43);
+  border: 1px solid black;
+  border-radius: 5px;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  height: 5%;
+  margin-bottom: 2%;
+  margin-left: 15%;
+  text-align: center;
+  text-transform: uppercase;
+  width: 70%;
+}
+
+.detalhe-categoria {
+  color: rgb(191, 49, 0);
+  font-family: Pacifico , cursive;
+  text-align: center;
+}
+
+.div-btn-fav-comp {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-right: 2%;
+}
+
+.div-corrossel {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 15%;
+  width: 100%;
+}
+
+.div-img-e-btn {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 5%;
+}
+
+.imagem-anterior {
+  height: auto;
+  padding: 0%;
+  transform: scaleX(-1);
+  width: 20px;
+}
+
+.imagem-proxima {
+  height: auto;
+  padding: 0%;
+  width: 20px;
+}
+
+.img-detalhes {
+  border-radius: 20px;
+  box-shadow: 10px 10px 10px 5px rgb(34, 33, 33);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.ingredientes {
+  color: black;
+  font-family: Molengo , sans-serif;
+  margin-left: 5%;
+}
+
+
+h4 {
+  color: rgb(215, 106, 3);
+  font-family: Dancing Script , cursive;
+  margin-bottom: 5%;
+  margin-left: 5%;
+}
+
+.preparo {
+  font-family: Molengo , sans-serif;
+  margin-left: 5%;
+  text-align: justify;
+}
+
+.title-detalhes {
+  color: rgb(191, 49, 0);
+  font-family: Dancing Script , cursive;
+  font-size: 20vw;
+  text-align: center;
+}

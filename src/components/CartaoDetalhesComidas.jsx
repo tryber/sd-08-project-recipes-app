@@ -11,6 +11,7 @@ import CarrosselBebidas from './CarrosselBebidas';
 import BotaoDetalhes from './BotaoDetalhes';
 import BotaoCoracao from './BotaoCoracao';
 import { objectToArrayComidas, clickButton } from '../services/funcoesRandom';
+import '../styles/detalhesReceitas.css';
 
 const UM_SEGUNDO = 1000;
 const CINCO_SEGUNDO = 5000;
@@ -61,37 +62,57 @@ function CartaoDetalhesComidas({ path }) {
 
   return (
     <>
-      <Imagem
-        testid="recipe-photo"
-        src={ detalhesComidas.strMealThumb }
-        alt={ detalhesComidas.strMeal }
-      />
-      <h1 data-testid="recipe-title">{ detalhesComidas.strMeal }</h1>
-      {visibility && <h1>Link copiado!</h1>}
-      <Botao
-        testid="share-btn"
-        tipo="Compartilhar"
-        src={ shareIcon }
-        func={ aparecerDica }
-      />
-      <BotaoCoracao
-        testid="favorite-btn"
-        tipo="Favoritar"
-        src={ cor ? whiteHeartIcon : blackHeartIcon }
-        func={ coracao }
-      />
+      <h1
+        data-testid="recipe-title"
+        className="title-detalhes"
+      >
+        { detalhesComidas.strMeal }
+      </h1>
+      <div className="div-img-e-btn">
+        <Imagem
+          testid="recipe-photo"
+          src={ detalhesComidas.strMealThumb }
+          alt={ detalhesComidas.strMeal }
+        />
+        {visibility && <h1>Link copiado!</h1>}
+        <div className="div-btn-fav-comp">
+          <Botao
+            testid="share-btn"
+            tipo="Compartilhar"
+            src={ shareIcon }
+            func={ aparecerDica }
+          />
+          <BotaoCoracao
+            testid="favorite-btn"
+            tipo="Favoritar"
+            src={ cor ? whiteHeartIcon : blackHeartIcon }
+            func={ coracao }
+          />
+        </div>
+      </div>
 
-      <h2 data-testid="recipe-category">{ detalhesComidas.strCategory }</h2>
+      <h2
+        data-testid="recipe-category"
+        className="detalhe-categoria"
+      >
+        { detalhesComidas.strCategory }
+      </h2>
       { objectToArrayComidas(detalhesComidas) }
-      <span data-testid="instructions">{ detalhesComidas.strInstructions }</span>
+      <h4>Method of preparation: </h4>
+      <span
+        data-testid="instructions"
+        className="preparo"
+      >
+        { detalhesComidas.strInstructions }
+      </span>
       <iframe
         data-testid="video"
         src={ detalhesComidas.strYoutube
           ? detalhesComidas.strYoutube.replace(/com/i, 'com/embed') : '' }
-        width="420"
-        height="315"
+        width="340"
+        height="200"
         title="YouTube"
-        allowFullScreen
+        style={ { margin: '10px' } }
       />
       <CarrosselBebidas listItem={ recomendacaoLocal } />
       <BotaoDetalhes

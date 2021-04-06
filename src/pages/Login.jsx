@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Redirect } from 'react-router';
 import ContextReceitas from '../context/ContextReceitas';
 import '../styles/login.css';
+import logo from '../images/logo.png';
 
 function Login() {
   const [info, setInfo] = useState({ email: '', password: '' });
@@ -23,15 +24,13 @@ function Login() {
     setLoged(true);
   }
 
-  const url = 'https://image.flaticon.com/icons/png/512/1969/1969225.png';
-  const url2 = 'http://fazendasantaignacia.com.br/wp-content/uploads/2014/08/receitas.png';
   return (
     <>
       <form>
         <div className="container">
           <div className="box">
-            <img src={ url2 } alt="imagem titulo" className="titulo" />
-            <img src={ url } alt="imagem recipe" className="imagem" />
+            <h1 className="titulo">Receitas</h1>
+            <img src={ logo } alt="imagem recipe" className="imagem" />
             <input
               type="email"
               name="email"
@@ -57,8 +56,7 @@ function Login() {
               data-testid="login-submit-btn"
               disabled={ verificaEmailESenha(info.email, info.password.length) }
               onClick={ handleClick }
-              className="btn btn-primary center"
-
+              className="btn btn-light button-color"
             >
               Entrar
             </button>

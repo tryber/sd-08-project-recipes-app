@@ -1,15 +1,24 @@
 import React from 'react';
+import '../styles/detalhesReceitas.css';
 
 function objectToArrayComidas(detalhes) {
   const ingredientes = Object.entries(detalhes).filter((e) => e[0]
     .includes('strIngredient') && e[1] !== null);
   const medidas = Object.entries(detalhes).filter((e) => e[0].includes('strMeasure'));
-  return ingredientes.map((e, i) => (
-    <p key={ e[0] } data-testid={ `${i}-ingredient-name-and-measure` }>
-      {`${e[1]} ${medidas[i][1] === null
-        ? 'A gosto' : medidas[i][1]}`}
-    </p>
-  ));
+  return (
+    <div>
+      <h4>Ingredients: </h4>
+      { ingredientes.map((e, i) => (
+        <p
+          key={ e[0] }
+          data-testid={ `${i}-ingredient-name-and-measure` }
+          className="ingredientes"
+        >
+          {`${e[1]} ${medidas[i][1] === null
+            ? 'A gosto' : medidas[i][1]}`}
+        </p>
+      )) }
+    </div>);
 }
 
 function clickButton(detalhesComidas) {

@@ -15,20 +15,6 @@
   max-height: 80vh;
 }
 
-/*
-#iceLeft {
-  animation: clink .8s infinite ease;
-  opacity: 0.6;
-  transform-origin: 36px 66px;
-}
-
-#iceRight {
-  animation: clink .8s .2s infinite ease;
-  opacity: 0.6;
-  transform-origin: 60px 78px;
-}
-*/
-
 .meals > .logo {
   animation: shake 1.5s infinite ease;
   color: aliceblue;
@@ -67,33 +53,8 @@
   }
 }
 
-
-/* .login {
-  font-size: 10px;
-  margin-left: 20px;
-  margin-top: 20px;
-}
-
-.search {
-  font-size: 12px;
-  margin-left: 10px;
-  margin-top: 10px;
-}
-
-.searchInput {
-  display: block;
-  font-size: 5px;
-  margin-bottom: 20px;
-  margin-left: 10px;
-  margin-top: 10px;
-}
 .footer {
-  bottom: 0;
-  position: fixed;
-} */
-
-.footer {
-  background-color: gray;
+  background-color: rgb(236, 159, 5);
   bottom: 0;
   display: flex;
   height: 50px;
@@ -101,8 +62,3 @@
   position: fixed;
   width: 100%;
 }
-
-/* .zTry {
-  margin: 10px;
-  z-index: 1;
-} */

@@ -11,6 +11,7 @@ import CarrosselComidas from './CarrosselComidas';
 import BotaoDetalhes from './BotaoDetalhes';
 import BotaoCoracao from './BotaoCoracao';
 import { clickButtonBebidas, objectToArrayComidas } from '../services/funcoesRandom';
+import '../styles/detalhesReceitas.css';
 
 const UM_SEGUNDO = 1000;
 const CINCO_SEGUNDO = 5000;
@@ -61,28 +62,48 @@ function CartaoDetalhesBebidas({ path }) {
 
   return (
     <>
-      <Imagem
-        testid="recipe-photo"
-        alt={ detalhesBebidas.strDrink }
-        src={ detalhesBebidas.strDrinkThumb }
-      />
-      <h1 data-testid="recipe-title">{ detalhesBebidas.strDrink }</h1>
-      {visibility && <h1>Link copiado!</h1>}
-      <Botao
-        testid="share-btn"
-        tipo="Compartilhar"
-        src={ shareIcon }
-        func={ aparecerDica }
-      />
-      <BotaoCoracao
-        testid="favorite-btn"
-        tipo="Favoritar"
-        src={ cor ? whiteHeartIcon : blackHeartIcon }
-        func={ coracao }
-      />
-      <h2 data-testid="recipe-category">{ detalhesBebidas.strAlcoholic }</h2>
+      <h1
+        data-testid="recipe-title"
+        className="title-detalhes"
+      >
+        { detalhesBebidas.strDrink }
+      </h1>
+      <div className="div-img-e-btn">
+        <Imagem
+          testid="recipe-photo"
+          alt={ detalhesBebidas.strDrink }
+          src={ detalhesBebidas.strDrinkThumb }
+        />
+        {visibility && <h1>Link copiado!</h1>}
+        <div className="div-btn-fav-comp">
+          <Botao
+            testid="share-btn"
+            tipo="Compartilhar"
+            src={ shareIcon }
+            func={ aparecerDica }
+          />
+          <BotaoCoracao
+            testid="favorite-btn"
+            tipo="Favoritar"
+            src={ cor ? whiteHeartIcon : blackHeartIcon }
+            func={ coracao }
+          />
+        </div>
+      </div>
+      <h2
+        data-testid="recipe-category"
+        className="detalhe-categoria"
+      >
+        { detalhesBebidas.strAlcoholic }
+      </h2>
       { objectToArrayComidas(detalhesBebidas) }
-      <span data-testid="instructions">{ detalhesBebidas.strInstructions }</span>
+      <h4>Method of preparation: </h4>
+      <span
+        data-testid="instructions"
+        className="preparo"
+      >
+        { detalhesBebidas.strInstructions }
+      </span>
       <CarrosselComidas listItem={ recomendacaoLocal } />
       <BotaoDetalhes
         nome={ clickButtonBebidas(detalhesBebidas) }

@@ -6,6 +6,7 @@ import { buscarComidasPorCategoria } from '../services/buscarCategoriasComidas';
 import CartaoReceitaComidas from '../components/CartaoReceitaComidas';
 import ContextReceitas from '../context/ContextReceitas';
 import { fetchComidasAPI } from '../services/fetchComidas';
+import '../styles/paginas.css';
 
 function Comidas() {
   const {
@@ -60,31 +61,40 @@ function Comidas() {
   return (
     <div>
       <Header />
-      {!categoriasComidas
-        ? <h1>Carregando ...</h1>
-        : categoriasComidas.map(({ strCategory }) => (
-          <button
-            type="button"
-            key={ strCategory }
-            name={ strCategory }
-            id={ strCategory }
-            data-testid={ `${strCategory}-category-filter` }
-            onClick={ handleClick }
-          >
-            {strCategory}
-          </button>))}
-      <button
-        type="button"
-        key="all"
-        name="all"
-        id="all"
-        data-testid="All-category-filter"
-        onClick={ handleClickAll }
-      >
-        All
-      </button>
+      <div className="btn-group div-botoes" role="group">
+        {!categoriasComidas
+          ? <h1>Carregando ...</h1>
 
-      {renderCards()}
+          : categoriasComidas.map(({ strCategory }) => (
+            <button
+              type="button"
+              key={ strCategory }
+              name={ strCategory }
+              id={ strCategory }
+              data-testid={ `${strCategory}-category-filter` }
+              onClick={ handleClick }
+              className="btn btn-secondary btn-category"
+              style={ { backgroundColor: ' rgb(236, 159, 5)', border: 'none' } }
+            >
+              {strCategory}
+            </button>))}
+
+        <button
+          type="button"
+          key="all"
+          name="all"
+          id="all"
+          data-testid="All-category-filter"
+          onClick={ handleClickAll }
+          className="btn btn-secondary btn-category"
+          style={ { backgroundColor: ' rgb(236, 159, 5)', border: 'none' } }
+        >
+          All
+        </button>
+      </div>
+      <div className="div-cards">
+        {renderCards()}
+      </div>
 
       {apiResult !== null
       && apiResult.length === 1

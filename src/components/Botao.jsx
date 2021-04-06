@@ -8,6 +8,12 @@ function Botao({ testid, tipo, src, func }) {
       type="button"
       data-testid={ testid }
       onClick={ func }
+      style={ {
+        backgroundColor: 'rgb(245, 187, 0)',
+        border: 'none',
+        height: '15vw',
+        width: '15vw',
+      } }
     >
       <img
         alt={ `Ícone do Botão de ${tipo}` }
