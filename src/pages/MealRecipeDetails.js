@@ -9,7 +9,7 @@ import favIconDisabled from '../images/whiteHeartIcon.svg';
 import CarouselCocktails from '../components/CarouselCoktails';
 import row from '../images/spacer.png';
 
-class MealRecipeDetails extends Component {
+export default class MealRecipeDetails extends Component {
   constructor() {
     super();
 
@@ -246,5 +246,3 @@ MealRecipeDetails.propTypes = {
     }).isRequired,
   }).isRequired,
 };
-
-export default MealRecipeDetails;
