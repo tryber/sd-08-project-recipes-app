@@ -8,7 +8,7 @@ class Footer extends Component {
   render() {
     const arr = [];
     return (
-      <div className="footer" data-testid="footer">
+      <div className="icons d-flex p-2 bd-highlight" data-testid="footer">
         <Link to="/bebidas">
           <img src={ drinkIcon } alt="drinkIcon" data-testid="drinks-bottom-btn" />
         </Link>

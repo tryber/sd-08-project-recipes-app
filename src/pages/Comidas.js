@@ -58,6 +58,7 @@ class Comidas extends Component {
       return (
         <div>
           <HeaderLocation />
+
           <button
             type="button"
             onClick={ (event) => this.handleClick(event.target.name) }

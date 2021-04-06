@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Login from './pages/Login';
+import Login from './pages/Login/Login';
 import Comidas from './pages/Comidas';
 import Bebidas from './pages/Bebidas';
 import Expĺorar from './pages/Explorar';
