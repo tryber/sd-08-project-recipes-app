@@ -66,3 +66,7 @@
     transform: rotate(-10deg);
   }
 }
+
+.checkbox-ingredient {
+  text-decoration-line: line-through;
+}
