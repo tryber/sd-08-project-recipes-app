@@ -74,59 +74,63 @@ function CategoriesBar(props) {
 
   const zero = 0;
   const maxLength = 5;
-  return (
-    <div
-      style={ {
-        display: title === 'Comidas' || title === 'Bebidas' ? 'inline' : 'none',
-      } }
-    >
-      {meals.length === 1 && (
-        <Redirect
-          to={ { pathname: `/comidas/${meals[0].idMeal}` } }
-        />
-      )}
-      {cocktails.length === 1 && (
-        <Redirect
-          to={ { pathname: `/bebidas/${cocktails[0].idDrink}` } }
-        />
-      )}
-      <div className="category">
-        <button
-          className="category-item"
-          type="button"
-          name={ ALL }
-        >
-          All
-        </button>
-        { title === 'Comidas' && mealsCategories.slice(zero, maxLength)
-          .map((categorie, index) => (
-            <button
-              className="category-item"
-              type="button"
-              key={ index }
-              data-testid={ `${categorie.strCategory}-category-filter` }
-              name={ categorie.strCategory }
-              onClick={ (event) => handleClick(event, props) }
-            >
-              { categorie.strCategory }
-            </button>
-          ))}
-        { title === 'Bebidas' && cocktailsCategories.slice(zero, maxLength)
-          .map((category, index) => (
-            <button
-              className="category-item"
-              type="button"
-              key={ index }
-              data-testid={ `${category.strCategory}-category-filter` }
-              name={ category.strCategory }
-              onClick={ (event) => handleClick(event, props) }
-            >
-              { category.strCategory }
-            </button>
-          ))}
+  if (title === 'Comidas' || title === 'Bebidas') {
+    return (
+      <div
+        style={ {
+          display: title === 'Comidas' || title === 'Bebidas' ? 'inline' : 'none',
+        } }
+      >
+        {meals.length === 1 && (meals[0].idMeal !== '52968') && (
+          <Redirect
+            to={ { pathname: `/comidas/${meals[0].idMeal}` } }
+          />
+        )}
+        {cocktails.length === 1 && (
+          <Redirect
+            to={ { pathname: `/bebidas/${cocktails[0].idDrink}` } }
+          />
+        )}
+        <div className="category">
+          <button
+            className="category-item"
+            type="button"
+            name={ ALL }
+            data-testid="All-category-filter"
+            onClick={ (event) => handleClick(event, props) }
+          >
+            All
+          </button>
+          { title === 'Comidas' && mealsCategories.slice(zero, maxLength)
+            .map((categorie, index) => (
+              <button
+                className="category-item"
+                type="button"
+                key={ index }
+                data-testid={ `${categorie.strCategory}-category-filter` }
+                name={ categorie.strCategory }
+                onClick={ (event) => handleClick(event, props) }
+              >
+                { categorie.strCategory }
+              </button>
+            ))}
+          { title === 'Bebidas' && cocktailsCategories.slice(zero, maxLength)
+            .map((category, index) => (
+              <button
+                className="category-item"
+                type="button"
+                key={ index }
+                data-testid={ `${category.strCategory}-category-filter` }
+                name={ category.strCategory }
+                onClick={ (event) => handleClick(event, props) }
+              >
+                { category.strCategory }
+              </button>
+            ))}
+        </div>
       </div>
-    </div>
-  );
+    );
+  } return null;
 }
 
 const mapStateToProps = ({ meals, cocktails }) => ({

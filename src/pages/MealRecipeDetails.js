@@ -19,17 +19,20 @@ class MealRecipeDetails extends Component {
       isLoading: true,
       ingredients: '',
       measures: [],
+      isDone: false,
     };
 
     this.handleFavoriteButton = this.handleFavoriteButton.bind(this);
     this.fetchAPI = this.fetchAPI.bind(this);
     this.setStorage = this.setStorage.bind(this);
     this.verifyFavorite = this.verifyFavorite.bind(this);
+    this.verifyRecipeDone = this.verifyRecipeDone.bind(this);
   }
 
   componentDidMount() {
     this.fetchAPI();
     this.verifyFavorite();
+    this.verifyRecipeDone();
   }
 
   handleFavoriteButton() {
@@ -89,6 +92,17 @@ class MealRecipeDetails extends Component {
     }
   }
 
+  verifyRecipeDone() {
+    const { match: { params: { id } } } = this.props;
+    const recipesFromStorage = JSON.parse(localStorage.getItem('doneRecipes')) || [];
+    const recipeIsDone = recipesFromStorage.some((recipe) => recipe.id === id);
+    if (recipeIsDone) {
+      this.setState({
+        isDone: true,
+      });
+    }
+  }
+
   async fetchAPI() {
     const { match: { params: { id } } } = this.props;
     const results = await getMealsDetailsById(id);
@@ -113,7 +127,13 @@ class MealRecipeDetails extends Component {
   }
 
   render() {
-    const { meals, isLoading, favorite, ingredients, measures } = this.state;
+    const { meals, isLoading, favorite, ingredients, measures, isDone } = this.state;
+    const { match: { params: { id } } } = this.props;
+    const recipesFromStorage = (JSON
+      .parse(localStorage.getItem('inProgressRecipes'))) || { meals: {} };
+    const buttonText = (recipesFromStorage.meals[id] !== undefined)
+      ? 'Continuar Receita' : 'Iniciar Receita';
+
     if (isLoading) return <p>Loading...</p>;
     const {
       idMeal,
@@ -203,13 +223,16 @@ class MealRecipeDetails extends Component {
           <CarouselCocktails />
         </div>
         <div className="start-btn">
-          <Link
-            data-testid="start-recipe-btn"
-            className="start-recipe-btn"
-            to={ `${idMeal}/in-progress` }
-          >
-            Iniciar receita
-          </Link>
+          {!isDone
+          && (
+            <Link
+              data-testid="start-recipe-btn"
+              className="start-recipe-btn"
+              to={ `${idMeal}/in-progress` }
+            >
+              {buttonText}
+            </Link>
+          )}
         </div>
       </div>
     );

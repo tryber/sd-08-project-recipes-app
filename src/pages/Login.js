@@ -61,7 +61,7 @@ export default function Login() {
           <button
             type="button"
             data-testid="login-submit-btn"
-            disabled={ (!REGEX.test(email)) || (password.length < '6') }
+            disabled={ (!REGEX.test(email)) || (password.length <= '6') }
             onClick={ handleClick }
             className="form-button"
           >

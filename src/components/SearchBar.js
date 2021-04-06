@@ -104,7 +104,7 @@ function SearchBar(props) {
 
   return (
     <div className="search-container" style={ { display: toggle ? 'inline' : 'none' } }>
-      {meals.length === 1 && (
+      {meals.length === 1 && (meals[0].idMeal !== '52968') && (
         <Redirect
           to={ { pathname: `/comidas/${meals[0].idMeal}` } }
         />
