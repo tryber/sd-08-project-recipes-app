@@ -1,3 +1,7 @@
+body {
+  background-color: rgb(40, 40, 40);
+}
+
 .meals {
   align-items: center;
   background: #0fa36b;
@@ -13,6 +17,11 @@
 .rocksGlass {
   animation: shake 1s infinite ease;
   max-height: 80vh;
+}
+
+.loading-data-animation {
+  display: block;
+  margin: 40vw auto;
 }
 
 /*

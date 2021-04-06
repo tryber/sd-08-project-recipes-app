@@ -1,0 +1,43 @@
+.search-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+.search-bar .search-btn {
+  color: rgb(240, 240, 240);
+  margin-bottom: 20px;
+}
+
+.search-bar .food-search {
+  background-color: rgb(224, 41, 41);
+}
+
+.search-bar .food-search:hover, .search-bar .food-search:focus {
+  background-color: rgb(244, 61, 61);
+}
+
+.search-bar .origin-search {
+  background-color: maroon;
+}
+
+.search-bar .origin-search:hover, .search-bar .food-search:focus {
+  background-color: maroon;
+}
+
+.search-bar .drink-search {
+  background-color: rgb(12, 88, 150);
+}
+
+.search-bar .drink-search:hover, .search-bar .drink-search:focus {
+  background-color: rgb(12, 88, 150);
+}
+
+.search-bar .search-radio-group {
+  padding: 5px 10px;
+}

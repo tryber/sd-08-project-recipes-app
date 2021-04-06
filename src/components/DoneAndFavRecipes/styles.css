@@ -1,0 +1,37 @@
+.done-recipe-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 50%;
+}
+
+.done-recipes-filter {
+  margin: 10px 0;
+  padding: 0 10px;
+}
+
+.MuiGrid-spacing-xs-2.MuiGrid-container {
+  margin: 0;
+  width: 100%;
+}
+
+.MuiIconButton-root.MuiButtonBase-root {
+  padding: 0;
+}
+
+.copy-to-clip-board-alert {
+  bottom: 6px;
+  left: 6px;
+  position: absolute;
+  z-index: 10;
+}
+
+.MuiButtonBase-root.MuiButton-root.active-button-done {
+  background-color: rgb(6, 100, 72);
+  color: white;
+}
+
+.MuiButtonBase-root.MuiButton-root.active-button-fav {
+  background-color: rgb(255, 81, 0);
+  color: white;
+}

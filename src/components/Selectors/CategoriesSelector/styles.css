@@ -1,0 +1,26 @@
+.selector-grid {
+  padding: 10px 5px 0;
+}
+
+.MuiButton-root {
+  margin: 5px;
+}
+
+.MuiGrid-spacing-xs-1.MuiGrid-container {
+  margin: 0;
+  width: 100%;
+}
+
+.drink-button {
+  height: 50px;
+}
+
+.MuiButtonBase-root.MuiButton-root.active-button-food {
+  background-color: rgb(224, 41, 41);
+  color: white;
+}
+
+.MuiButtonBase-root.MuiButton-root.active-button-drink {
+  background-color: rgb(12, 88, 150);
+  color: white;
+}

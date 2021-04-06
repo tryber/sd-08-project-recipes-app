@@ -1,0 +1,19 @@
+.main {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}
+
+.Button-explorer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px;
+  margin-top: 100px;
+}
+
+.Button-Logout {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}

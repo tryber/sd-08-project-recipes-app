@@ -1,0 +1,18 @@
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  padding-top: 10px;
+}
+
+
+.slide {
+  color: red;
+  display: inline;
+  margin: 30px;
+}
+
+.flow-btns {
+  height: 30px;
+}
