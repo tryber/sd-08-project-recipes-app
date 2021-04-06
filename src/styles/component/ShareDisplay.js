@@ -8,9 +8,10 @@ const StyledSharedDisplay = styled.span`
     background-color: initial;
     border: none;
     margin: 5px;
+    width: 30px;
 
     img {
-      width: 30px;
+      width: 100%;
     }
   }
 `;

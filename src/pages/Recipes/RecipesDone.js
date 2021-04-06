@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import copy from 'clipboard-copy';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import Header from '../../component/Header';
 import shareIcon from '../../images/shareIcon.svg';
+import StyledProfile from '../../styles/RecipesDone';
 
 export default function RecipesDone() {
   const storedDone = JSON.parse(localStorage.getItem('doneRecipes')) || [];
   const [copied, setCopied] = useState(false);
   const [doneRecipes, setDoneRecipes] = useState(storedDone);
+  const history = useHistory();
 
   const filterRecipes = (filter) => {
     const filtered = !filter
@@ -21,10 +23,13 @@ export default function RecipesDone() {
     setCopied(true);
   };
 
+  const goToLink = (type, id) => history.push(`/${type}s/${id}`);
+
   return (
-    <>
+    <StyledProfile>
       <Header pageTitle="Receitas Feitas" showSearchButton={ false } />
-      <div>
+
+      <div className="filter-buttons">
         <button
           type="button"
           data-testid="filter-by-all-btn"
@@ -47,45 +52,61 @@ export default function RecipesDone() {
           Bebidas
         </button>
       </div>
-      <div>
+
+      <div className="done-recipes-container">
         {doneRecipes.map((eachRecipe, index) => (
-          <div key={ eachRecipe.id }>
-            <Link to={ `/${eachRecipe.type}s/${eachRecipe.id}` }>
+          <div key={ eachRecipe.id } className="recipe">
+            <button
+              type="button"
+              onClick={ () => goToLink(eachRecipe.type, eachRecipe.id) }
+              className="recipe-image-container"
+            >
               <img
-                style={ { width: '100vw' } }
                 src={ eachRecipe.image }
                 data-testid={ `${index}-horizontal-image` }
                 alt={ eachRecipe.name }
               />
-            </Link>
-            <p data-testid={ `${index}-horizontal-top-text` }>
-              {eachRecipe.type === 'comida'
-                ? `${eachRecipe.area} - ${eachRecipe.category}`
-                : `${eachRecipe.alcoholicOrNot}`}
-            </p>
-            <Link
-              to={ `/${eachRecipe.type}s/${eachRecipe.id}` }
-              data-testid={ `${index}-horizontal-name` }
-            >
-              {eachRecipe.name}
-            </Link>
-            <button type="button" onClick={ () => copyLink(eachRecipe) }>
-              <img
-                src={ shareIcon }
-                data-testid={ `${index}-horizontal-share-btn` }
-                alt="Share Button"
-              />
-              {copied && <p>Link copiado!</p>}
             </button>
-            <p data-testid={ `${index}-horizontal-done-date` }>{eachRecipe.doneDate}</p>
-            {eachRecipe.tags.map((eachTag) => (
-              <span key={ eachTag } data-testid={ `${index}-${eachTag}-horizontal-tag` }>
-                {eachTag}
-              </span>
-            ))}
+
+            <div className="recipe-data">
+              <p data-testid={ `${index}-horizontal-top-text` }>
+                {eachRecipe.type === 'comida'
+                  ? `${eachRecipe.area} - ${eachRecipe.category}`
+                  : `${eachRecipe.alcoholicOrNot}`}
+              </p>
+              <button
+                type="button"
+                onClick={ () => goToLink(eachRecipe.type, eachRecipe.id) }
+                data-testid={ `${index}-horizontal-name` }
+                className="recipe-name"
+              >
+                {eachRecipe.name}
+              </button>
+
+              <button type="button" onClick={ () => copyLink(eachRecipe) }>
+                <img
+                  src={ shareIcon }
+                  data-testid={ `${index}-horizontal-share-btn` }
+                  alt="Share Button"
+                />
+                {copied && <p>Link copiado!</p>}
+              </button>
+
+              <p data-testid={ `${index}-horizontal-done-date` }>{eachRecipe.doneDate}</p>
+              <div className="recipe-tags">
+                {eachRecipe.tags.map((eachTag) => (
+                  <span
+                    key={ eachTag }
+                    data-testid={ `${index}-${eachTag}-horizontal-tag` }
+                  >
+                    {eachTag}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         ))}
       </div>
-    </>
+    </StyledProfile>
   );
 }
