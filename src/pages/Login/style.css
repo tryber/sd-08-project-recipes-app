@@ -1,0 +1,22 @@
+.color {
+  background-color: #f7c838;
+  height: 100vh;
+  width: 100vw;
+}
+
+img {
+  margin-top: 150px;
+  width: 450px;
+}
+
+input {
+  height: 52px;
+  padding: 20px;
+  width: 100%;
+}
+
+button {
+  height: 47px;
+  margin: -11px;
+}
+

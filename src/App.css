@@ -1,3 +1,55 @@
+* {
+  box-sizing: border-box;
+}
+
+.alert {
+  background-color: rgba(57, 62, 65, 0.9);
+  border-radius: 10px;
+  color: whitesmoke;
+  float: right;
+  left: 50%;
+  position: fixed;
+  top: 10%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.cardNameSearchBar {
+  background-color: rgba(53, 49, 49, 0.3);
+}
+
+.checkboxInProgress {
+  margin-left: 10px;
+}
+
+.checkboxInProgressChecked {
+  text-decoration: line-through solid black;
+}
+
+.linkImage {
+  border: 3px solid rgb(18, 53, 41);
+  justify-content: center;
+  margin-top: 10px;
+  width: 90%;
+}
+
+.linkVideo {
+  border: 3px solid rgb(18, 53, 41);
+  margin-top: 10px;
+  width: 98%;
+}
+
+.card {
+  background-color: rgba(101, 138, 65, 0.3);
+  border: 3px solid black;
+  margin: 10px;
+}
+
+.btn-login {
+  margin-left: 140px;
+  margin-top: 10px;
+}
+
 .meals {
   align-items: center;
   background: #0fa36b;
@@ -12,7 +64,40 @@
 
 .rocksGlass {
   animation: shake 1s infinite ease;
-  max-height: 80vh;
+}
+
+.tags {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+/* .login {
+  align-content: center;
+  align-items: center;
+  background-image: url('./login1.jpg');
+  background-size: cover;
+  border: 3px solid black;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+} */
+
+.input-text {
+  align-self: center;
+  border-radius: 5px;
+  display: flex;
+  margin-left: 70px;
+  margin-top: 30px;
+}
+
+.login-btn {
+  align-self: center;
+  border-radius: 5px;
+  display: flex;
+  margin-left: 140px;
+  margin-top: 30px;
 }
 
 /*
@@ -28,6 +113,25 @@
   transform-origin: 60px 78px;
 }
 */
+
+.footer {
+  background-color: rgba(57, 62, 65, 0.3);
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  width: 50vw;
+}
+
+.notFound {
+  background-image: url('https://zlionbrasil.com.br/img/icons/404.png');
+  background-size: cover;
+  color: rgb(16, 135, 190);
+  font-size: 50px;
+  height: 100vh;
+  text-align: center;
+  width: 100vw;
+}
 
 .meals > .logo {
   animation: shake 1.5s infinite ease;
