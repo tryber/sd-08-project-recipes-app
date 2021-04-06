@@ -104,7 +104,6 @@ label {
   flex-flow: wrap;
   flex-direction: row;
   justify-content: space-around;
-  margin-top: 2%;
   width: 100vw;
 }
 

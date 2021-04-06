@@ -25,7 +25,7 @@ function DrinksContext(props) {
   const [categoryDrinks, setCategoryDrinks] = useState([]);
   const [categoriesDrinks, setCategoriesDrinks] = useState([]);
 
-  const [searchInputDrink, setSearchInputDrink] = useState([]);
+  const [searchInputDrink, setSearchInputDrink] = useState('');
   const myCustomAlert = (text) => {
     const myAlert = window.alert;
     myAlert(text);
@@ -53,7 +53,7 @@ function DrinksContext(props) {
     if (!!firstLetterSearchRadioDrink && searchInputDrink.length !== 1) {
       myCustomAlert('Sua busca deve conter somente 1 (um) caracter');
     }
-    if (ingredientSearchRadioDrink) {
+    if (ingredientSearchRadioDrink && searchInputDrink) {
       const res = await getDrinkByIngredients(searchInputDrink);
       setDrinks(res);
     }

@@ -7,7 +7,7 @@ import ExploreIcon from '../images/exploreIcon.svg';
 
 function Footer() {
   const history = useHistory();
-
+  console.log('.');
   return (
     <div data-testid="footer" className="footer-food">
       <button type="button" onClick={ () => history.push('/bebidas') }>

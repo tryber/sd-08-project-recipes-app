@@ -100,18 +100,23 @@ label {
 }
 
 .category-filter {
-  background-color: palegreen;
+  background-image: url('../images/food-366875_1280.jpg');
+  background-repeat: no-repeat;
+  background-size: 360px auto;
   display: flex;
   flex-flow: wrap;
   flex-direction: row;
+  height: 70px;
   justify-content: space-around;
-  margin-top: 2%;
   width: 100vw;
 }
 
 .category-filter button {
-  background-color: pink;
+  background-color: aqua;
+  color: black;
   margin-bottom: 2%;
   margin-right: 2px;
   width: 25%;
+  word-wrap: break-word;
 }
+

@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import { Button } from 'react-bootstrap';
 import { useHistory, useLocation } from 'react-router-dom';
 import SearchIcon from '../images/searchIcon.svg';
 import ProfileIcon from '../images/profileIcon.svg';
@@ -103,7 +104,7 @@ function HeaderSearchBar() {
                     ? nameSearchRadio
                     : nameSearchRadioDrink
                 }
-                name="name-search-radio"
+                name="ingredient-search-radio"
                 value={
                   location.pathname === '/comidas'
                     ? searchInputMeal
@@ -133,7 +134,7 @@ function HeaderSearchBar() {
                     ? firstLetterSearchRadio
                     : firstLetterSearchRadioDrink
                 }
-                name="first-letter-search-radio"
+                name="ingredient-search-radio"
                 onClick={
                   location.pathname === '/comidas'
                     ? (e) => handleSearchByFirstLetter(e.target.value)
@@ -148,7 +149,7 @@ function HeaderSearchBar() {
             </label>
           </div>
           <div className="exec-search">
-            <button
+            <Button
               onClick={
                 location.pathname === '/comidas'
                   ? () => handleClickSearch()
@@ -159,7 +160,7 @@ function HeaderSearchBar() {
               data-testid="exec-search-btn"
             >
               Buscar
-            </button>
+            </Button>
           </div>
         </div>
       )}

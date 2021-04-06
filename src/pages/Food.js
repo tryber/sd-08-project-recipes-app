@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Food.css';
 import { LoginAndFoodContext } from '../context/ContextFood';
@@ -16,24 +17,26 @@ function Food() {
     <div className="container">
       <HeaderSearchBar />
       <div className="category-filter">
-        <button
+        <Button
+          variant="outline-light"
           onClick={ () => handleByCategoryMeal('all') }
           data-testid="All-category-filter"
           type="button"
         >
           All
-        </button>
+        </Button>
         {categoriesMeals
           .slice(startOfSlice, endOfSliceOfCategories)
           .map((category) => (
-            <button
+            <Button
+              variant="outline-light"
               onClick={ () => handleByCategoryMeal(category.strCategory) }
               data-testid={ `${category.strCategory}-category-filter` }
               type="button"
               key={ category.strCategory }
             >
               {category.strCategory}
-            </button>
+            </Button>
           ))}
       </div>
       <div className="container-card-meal">

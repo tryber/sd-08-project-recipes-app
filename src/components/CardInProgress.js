@@ -7,7 +7,6 @@ import whiteHeartIcon from '../images/whiteHeartIcon.svg';
 import shareIcon from '../images/shareIcon.svg';
 import { PageProgress } from '../context/ContextProgress';
 import { saveDoneRecipes } from '../localStorage/doneRecipes';
-
 import {
   saveRecipeFavorites,
   getRecipeFavoriteById } from '../localStorage/recipeFavorite';

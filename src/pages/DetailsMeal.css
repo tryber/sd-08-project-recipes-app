@@ -1,16 +1,16 @@
 .container-card-meal-details {
+  background-image: url('../images/vintage-1557993_960_720.webp');
+  color: aliceblue;
   display: flex;
   flex-flow: row wrap;
   height: 80%;
   justify-content: space-around;
-  margin-top: 2%;
   overflow: scroll;
   width: 100%;
 }
 
 .card-meal-details {
   border-radius: 4px;
-  box-shadow: 0 0 8px orangered;
   display: flex;
   flex-direction: column;
   height: 35%;
