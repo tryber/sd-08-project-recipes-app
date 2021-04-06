@@ -13,3 +13,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.recommendation {
+  display: flex;
+  overflow-x: auto;
+}
+
+.recommendation::-webkit-scrollbar {
+  display: none;
+}
+
+.recommendation .recommendation-item {
+  min-width: 180px;
+}
+
+.recommendation .recommendation-item img {
+  height: 100px;
+  margin: 10px;
+  min-width: 150px;
+  object-fit: contain;
+}

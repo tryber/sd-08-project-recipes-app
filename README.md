@@ -928,10 +928,12 @@ A barra de busca deve ficar logo abaixo do header e deve possuir 3 _radio button
 
   Mostre as receitas em cards como as da tela principal, caso mais de uma receita seja encontrada.
 
-  **ObservaçÕes técnicas**
-
-  * Caso mais de uma comida seja encontrada, mostrar as 12 primeiras (ou menos, se não hoverem 12);
+   **Observações técnicas**
+  * Cada card deve conter o `data-testid="${index}-recipe-card"`.
+  * Cada imagem deve conter o `data-testid="${index}-card-img"`.
+  * Cada tag com o nome da receita deve ter o `data-testid="${index}-card-name"`.
   * Caso mais de uma bebida seja encontrada, mostrar as 12 primeiras (ou menos, se não hoverem 12).
+
 
   O que será verificado:
   ```

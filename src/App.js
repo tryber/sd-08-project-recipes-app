@@ -8,17 +8,17 @@ import Routes from './Routes';
 
 function App() {
   return (
-    // gif inicial da Trybe
-    // <div className="meals">
-    //   <span className="logo">TRYBE</span>
-    //   <object
-    //     className="rocksGlass"
-    //     type="image/svg+xml"
-    //     data={ rockGlass }
-    //   >
-    //     Glass
-    //   </object>
-    // </div>
+  // gif inicial da Trybe
+  // <div className="meals">
+  //   <span className="logo">TRYBE</span>
+  //   <object
+  //     className="rocksGlass"
+  //     type="image/svg+xml"
+  //     data={ rockGlass }
+  //   >
+  //     Glass
+  //   </object>
+  // </div>
     <RecipesProvider>
       <Routes />
     </RecipesProvider>
