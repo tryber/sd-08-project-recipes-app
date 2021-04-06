@@ -30,7 +30,7 @@ export default function Comidas() {
   }, []);
 
   const handleCLickFood = async ({ target: { value } }) => {
-    if (categoryName === undefined) {
+    if (categoryName !== value) {
       setCard(true);
       setArrayOfFoodCategories(await getFoodCategory(value));
       setCategoryName(value);

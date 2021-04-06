@@ -30,7 +30,7 @@ export default function Bebidas() {
   }, []);
 
   const handleClickDrink = async ({ target: { value } }) => {
-    if (categoryName === undefined) {
+    if (categoryName !== value) {
       setCard(true);
       setArrayOfDrinksCategories(await getDrinkCategory(value));
       setCategoryName(value);
