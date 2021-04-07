@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@sheerun/mutationobserver-shim": "^0.3.3",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
@@ -54,6 +55,7 @@
     "eslint-config-trybe-frontend": "1.2.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "fs-extra": "^9.0.1",
+    "jest-environment-jsdom-sixteen": "^1.0.3",
     "mocha": "^8.0.1",
     "mochawesome": "^6.1.1",
     "mochawesome-merge": "^4.1.0",
