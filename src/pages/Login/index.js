@@ -11,15 +11,9 @@ export default function Login() {
 
   const changeStorage = () => {
     const userEmail = { email };
-    const IN_PROGRESS_RECIPES = {
-      cocktails: {},
-      meals: {},
-    };
-
     setLocalStorage('mealsToken', 1);
     setLocalStorage('cocktailsToken', 1);
     setLocalStorage('user', userEmail);
-    setLocalStorage('inProgressRecipes', IN_PROGRESS_RECIPES);
     setRedirect(true);
   };
 
