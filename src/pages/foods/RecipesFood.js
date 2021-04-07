@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import { isNull } from 'lodash-es';
 import { Link } from 'react-router-dom';
+import { isNull } from 'lodash-es';
 import FoodCategoryButton from '../../components/FoodCategoryButton';
-import FoodCard from '../../components/FoodCard';
+import FoodCard from '../../components/cards/FoodCard';
 import Footer from '../../components/footer/Footer';
 import Header from '../../components/Header';
 import RecipesContext from '../../ContextApi/RecipesContext';
@@ -22,15 +22,16 @@ function RecipesFood() {
   if (isNull(recipeMeals)) {
     alert('Sinto muito, não encontramos nenhuma receita para esses filtros.');
   }
+
   return (
     <div>
-      <Header title="Receitas Feitas" search="" />
+      <Header title="Comidas" search="" />
       <FoodCategoryButton />
       { recipeMeals
         && recipeMeals.map((recipe, i) => (
           i < cardMaximun
              && (
-               <Link to={ recipe.idMeal }>
+               <Link to={ `comidas/${recipe.idMeal}` }>
                  <FoodCard key={ i } order={ i } recipes={ recipe } />
                </Link>
              )

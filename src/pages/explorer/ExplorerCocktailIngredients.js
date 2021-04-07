@@ -14,7 +14,7 @@ export default function ExplorerCocktailIngredients() {
   useEffect(() => {
     async function apiIngredientesDrink() {
       const apiIngredientes = await fetch(urlIngredientesDrink)
-        .then((json) => json.json())
+        .then((resp) => resp.json())
         .then((data) => data.drinks)
         .catch((error) => console.log(error));
 

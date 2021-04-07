@@ -8,6 +8,7 @@ function DoneRecipes() {
   const [doneRecipesList, setDoneRecipesList] = useState([]);
   const [copied, setCopied] = useState(false);
   const [filteredDoneRecipes, setFilteredDoneRecipes] = useState([]);
+
   useEffect(() => {
     function checkDoneRecipes() {
       const localData = localStorage.getItem('doneRecipes');
@@ -16,9 +17,10 @@ function DoneRecipes() {
       setFilteredDoneRecipes(doneRecipes);
     }
     checkDoneRecipes();
-    console.log('liste de receitas feitas', doneRecipesList);
-    console.log('lista de receitas filtradas', filteredDoneRecipes);
+    // console.log('liste de receitas feitas', doneRecipesList);
+    // console.log('lista de receitas filtradas', filteredDoneRecipes);
   }, []);
+  // filteredDoneRecipes, doneRecipesList
 
   function copyDetailsPageLink(recipe) {
     copy(`http://localhost:3000/${recipe.type}s/${recipe.id}`);
@@ -139,7 +141,7 @@ function DoneRecipes() {
 
   return (
     <div>
-      <Header name="Receitas Feitas" icon="false" />
+      <Header title="Receitas Feitas" search="false" />
       <button
         type="button"
         className="filter-btn"

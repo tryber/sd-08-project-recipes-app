@@ -3,13 +3,12 @@ import CardFavorites from '../../components/CardFavorites';
 import Header from '../../components/Header';
 
 export default function FavoriteRecipes() {
-  const [filter, setFilter] = useState('');
+  const [filtered, setFilter] = useState('');
   const [, forceUpdate] = useState('');
   const favorites = JSON.parse(localStorage.getItem('favoriteRecipes'));
   console.log(favorites);
 
   const removeFavorite = (idx, id) => {
-    console.log(idx);
     const newLocalStorage = favorites.filter((_, index) => index !== idx);
     localStorage.setItem('favoriteRecipes', JSON.stringify(newLocalStorage));
     forceUpdate(id);
@@ -46,11 +45,11 @@ export default function FavoriteRecipes() {
         </button>
       </div>
       <main>
-        {
-          favorites
+        { favorites
+          && favorites
             .filter((item) => {
-              if (filter === '') return item;
-              return item.type === filter;
+              if (filtered === '') return item;
+              return item.type === filtered;
             })
             .map((card, index) => {
               console.log('o item map', card);
@@ -70,8 +69,7 @@ export default function FavoriteRecipes() {
                     : `${card.area} - ${card.category}` }
                 />
               );
-            })
-        }
+            })}
       </main>
     </div>
   );

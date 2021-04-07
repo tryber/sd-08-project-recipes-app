@@ -7,7 +7,7 @@ import Cocktails from './pages/drinks/Cocktails';
 import FoodDetails from './pages/foods/FoodDetails';
 import FoodInProgress from './pages/foods/FoodInProgress';
 import CocktailDetails from './pages/drinks/CocktailDetails';
-import CocktailsInProgress from './pages/drinks/CocktailInProgress';
+import CocktailsInProgress from './pages/drinks/CocktailsInProgress';
 import Explorer from './pages/explorer/Explorer';
 import ExploreFood from './pages/explorer/ExploreFood';
 import ExplorerCocktails from './pages/explorer/ExplorerCocktails';
@@ -27,8 +27,8 @@ export default function Routes() {
       <Route exact path="/bebidas" component={ Cocktails } />
       <Route exact path="/comidas/:id" component={ FoodDetails } />
       <Route exact path="/bebidas/:id" component={ CocktailDetails } />
-      <Route path="/comidas/:id/in-progress" componente={ FoodInProgress } />
-      <Route path="/bebidas/:id/in-progress" componente={ CocktailsInProgress } />
+      <Route path="/comidas/:id/in-progress" component={ FoodInProgress } />
+      <Route path="/bebidas/:id/in-progress" component={ CocktailsInProgress } />
       <Route exact path="/explorar" component={ Explorer } />
       <Route exact path="/explorar/comidas" component={ ExploreFood } />
       <Route exact path="/explorar/bebidas" component={ ExplorerCocktails } />

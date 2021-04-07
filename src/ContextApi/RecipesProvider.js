@@ -10,6 +10,7 @@ import fetchCocktailCategories from '../services/CocktailCategoriesApi';
 const searchParams = {
   selectedParam: '',
   inputSearch: '',
+  id: '',
 };
 const RecipesAll = 'search.php?s=';
 
@@ -21,6 +22,7 @@ function RecipesProvider({ children }) {
   const [FoodCategories, setCategories] = useState([]);
   const [DrinkCategories, setDrinkCategories] = useState([]);
   const [searchParam, setSearchParam] = useState(searchParams);
+  const [recipeDetails, setRecipeDetails] = useState();
   const [foodIngredients, setfoodIngredients] = useState([]);
   const [listArea, setListArea] = useState([]);
   const history = useHistory();
@@ -35,7 +37,7 @@ function RecipesProvider({ children }) {
   };
 
   useEffect(() => {
-    const { selectedParam, inputSearch } = searchParam;
+    const { selectedParam, inputSearch, id } = searchParam;
 
     switch (selectedParam) {
     case 'ingredient':
@@ -50,6 +52,10 @@ function RecipesProvider({ children }) {
       fetchFood(`search.php?f=${inputSearch}`)
         .then((response) => setRecipes(response));
       break;
+    case 'food-details':
+      fetchFood(`lookup.php?i=${id}`)
+        .then((response) => setRecipeDetails(response.meals[0]));
+      break;
     case 'option':
       fetchFood(`filter.php?a=${inputSearch}`)
         .then((response) => setRecipes(response));
@@ -61,7 +67,8 @@ function RecipesProvider({ children }) {
   }, [searchParam, pathName]);
 
   useEffect(() => {
-    const { selectedParam, inputSearch } = searchParam;
+    const { selectedParam, inputSearch, id } = searchParam;
+
     switch (selectedParam) {
     case 'ingredient':
       fetchDrink(`filter.php?i=${inputSearch}`)
@@ -74,6 +81,10 @@ function RecipesProvider({ children }) {
     case 'first-letter':
       fetchDrink(`search.php?f=${inputSearch}`)
         .then((response) => setCocktails(response));
+      break;
+    case 'drink-details':
+      fetchDrink(`lookup.php?i=${id}`)
+        .then((response) => setRecipeDetails(response.drinks[0]));
       break;
     default:
       fetchDrink(RecipesAll).then((response) => setCocktails(response));
@@ -123,6 +134,7 @@ function RecipesProvider({ children }) {
     setCocktails,
     FoodCategories,
     DrinkCategories,
+    recipeDetails,
     foodIngredients,
     history,
     listArea,

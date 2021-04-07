@@ -4,7 +4,7 @@ import Footer from '../../components/footer/Footer';
 import Header from '../../components/Header';
 
 export default function Profile() {
-  const emailLocalStorage = window.localStorage.getItem('user');
+  const emailLocalStorage = localStorage.getItem('user');
   const emailObject = JSON.parse(emailLocalStorage);
 
   return (
@@ -37,7 +37,7 @@ export default function Profile() {
           <button
             type="button"
             data-testid="profile-logout-btn"
-            onClick={ () => window.localStorage.clear() }
+            onClick={ () => localStorage.clear() }
           >
             Sair
           </button>
