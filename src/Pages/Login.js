@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
 import { Form } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
@@ -15,22 +15,10 @@ function Login() {
   const redirect = useSelector((state) => state.login.redirect);
   const dispatch = useDispatch();
 
-  let timer = null;
-  const quinhentos = 500;
-
-  const debounce = () => {
-    // limpamos o timer
-    clearTimeout(timer);
-    // armazenamos o timer novamente
-    timer = setTimeout(() => {
-      const six = 6;
-      if (email.match(/\S+@\S+\.\S+/) && senha.length >= six) {
-        setButton(false);
-      } else {
-        setButton(true);
-      }
-    }, quinhentos);
-  };
+  useEffect(() => {
+    const MIN_PASSWORD_LENGTH = 6;
+    setButton(!(email.match(/\S+@\S+\.\S+/) && senha.length >= MIN_PASSWORD_LENGTH));
+  }, [email, senha]);
 
   const handelClick = () => {
     localStorage.setItem('user', JSON.stringify({ email }));
@@ -56,14 +44,14 @@ function Login() {
             type="text"
             value={ email }
             name="email"
-            onChange={ (e) => setEmail(e.target.value) || debounce() }
+            onChange={ (e) => setEmail(e.target.value) }
             dataId="email-input"
           />
           <Input
             type="password"
             name="senha"
             value={ senha }
-            onChange={ (e) => setSenha(e.target.value) || debounce() }
+            onChange={ (e) => setSenha(e.target.value) }
             dataId="password-input"
           />
           <Button

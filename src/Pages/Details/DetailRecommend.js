@@ -19,7 +19,7 @@ function DetailRecommend(props) {
     dispatch(fetchRecommend(endpoint));
   }, [isParentFood, dispatch]);
 
-  if (isLoading) return <Spinner animation="border" />;
+  if (isLoading) return <Spinner data-testid="status" animation="border" />;
 
   function cardGen(item, index) {
     return (

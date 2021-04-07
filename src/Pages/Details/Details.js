@@ -48,7 +48,7 @@ function Details() {
     dispatch(fetchItem(endpoint));
   }, [isFood, id, dispatch]);
 
-  if (isLoading) return <Spinner animation="border" />;
+  if (isLoading) return <Spinner data-testid="status" animation="border" />;
 
   return (
     <main>

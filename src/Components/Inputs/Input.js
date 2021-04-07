@@ -4,7 +4,7 @@ import { Form } from 'react-bootstrap';
 
 function Input({ type, name, value, onChange, dataId }) {
   return (
-    <Form.Group controlId="emailInput">
+    <Form.Group controlId={ `${name}Input` }>
       <Form.Label>{ name }</Form.Label>
       <Form.Control
         type={ type }

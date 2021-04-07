@@ -109,7 +109,7 @@ function DetailsProgress() {
     setLocal(isFood, id, checkbox);
   }, [checkbox, isFood, id]);
 
-  if (isLoading) return <Spinner animation="border" />;
+  if (isLoading) return <Spinner data-testid="status" animation="border" />;
 
   return (
     <main>

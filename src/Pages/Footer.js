@@ -16,17 +16,17 @@ function Footer() {
       >
         <Nav.Link as={ Link } to="/bebidas">
           <Col>
-            <img src={ drinkIcon } alt="Perfil" data-testid="drinks-bottom-btn" />
+            <img src={ drinkIcon } alt="Drinks" data-testid="drinks-bottom-btn" />
           </Col>
         </Nav.Link>
         <Nav.Link as={ Link } to="/explorar">
           <Col>
-            <img src={ exploreIcon } alt="Perfil" data-testid="explore-bottom-btn" />
+            <img src={ exploreIcon } alt="Explorar" data-testid="explore-bottom-btn" />
           </Col>
         </Nav.Link>
         <Nav.Link as={ Link } to="/comidas">
           <Col>
-            <img src={ mealIcon } alt="Perfil" data-testid="food-bottom-btn" />
+            <img src={ mealIcon } alt="Comidas" data-testid="food-bottom-btn" />
           </Col>
         </Nav.Link>
       </Row>
