@@ -102,11 +102,15 @@ const ProgressRecipe = ({ isMeal, addFavoriteRecipe, removeFavoriteRecipe,
   );
 };
 
+ProgressRecipe.defaultProps = {
+  isMeal: false,
+};
+
 ProgressRecipe.propTypes = {
   addFavoriteRecipe: PropTypes.func.isRequired,
   removeFavoriteRecipe: PropTypes.func.isRequired,
   addDoneRecipe: PropTypes.func.isRequired,
-  isMeal: PropTypes.bool.isRequired,
+  isMeal: PropTypes.bool,
 };
 
 const mapDispatchToProps = (dispatch) => ({

@@ -1,6 +1,6 @@
 import React from 'react';
-import renderWithStoreAndRouter from '../helpers/renderWithStoreAndRouter';
-import Header from '../components/Header';
+import renderWithStoreAndRouter from '../../helpers/renderWithStoreAndRouter';
+import Header from '../../components/Header';
 
 const testIds = {
   profileTopBtn: 'profile-top-btn',

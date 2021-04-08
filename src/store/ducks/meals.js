@@ -5,9 +5,11 @@ import ingredients from './mealIngredients';
 import categories from './mealCategories';
 import areas from './mealAreas';
 
-export default combineReducers({
+const meals = combineReducers({
   recipes,
   ingredients,
   categories,
   areas,
 });
+
+export default meals;

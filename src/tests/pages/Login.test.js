@@ -1,7 +1,7 @@
 import React from 'react';
 import userEvent from '@testing-library/user-event';
-import renderWithStoreAndRouter from '../helpers/renderWithStoreAndRouter';
-import Login from '../pages/Login';
+import renderWithStoreAndRouter from '../../helpers/renderWithStoreAndRouter';
+import Login from '../../pages/Login';
 
 const testIds = {
   emailInput: 'email-input',
