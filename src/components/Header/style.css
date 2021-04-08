@@ -1,0 +1,9 @@
+.searchBarControl {
+  display: none;
+  position: absolute;
+}
+
+.searchIcon {
+  cursor: pointer;
+  margin-bottom: 0;
+}
