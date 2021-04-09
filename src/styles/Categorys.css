@@ -1,0 +1,21 @@
+.category-btn-container {
+  align-items: center;
+  background-color: rgba(255, 165, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.category-btn-container button {
+  background-color: red;
+  color: orange;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: 1s;
+  width: 50%;
+}
+
+.category-btn-container button:hover {
+  background-color: orange;
+  color: red;
+}

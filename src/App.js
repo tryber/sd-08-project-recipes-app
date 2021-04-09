@@ -1,20 +1,14 @@
 import React from 'react';
+import Provider from './context/Provider';
+import Routes from './routes';
 import './App.css';
-import rockGlass from './images/rockGlass.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <div className="meals">
-      <span className="logo">TRYBE</span>
-      <object
-        className="rocksGlass"
-        type="image/svg+xml"
-        data={ rockGlass }
-      >
-        Glass
-      </object>
-    </div>
+    <Provider>
+      <Routes />
+    </Provider>
   );
 }
 

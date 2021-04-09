@@ -1,0 +1,25 @@
+.footerContainer {
+  align-items: center;
+  background-color: orange;
+  bottom: 0;
+  color: red;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  position: fixed;
+  width: 360px;
+}
+
+.footerContainer button:last-child {
+  background-color: transparent;
+  border: none;
+  margin-left: 1rem;
+}
+
+.footerContainer h3 {
+  font-size: 2rem;
+}
+
+.footerContainer img {
+  height: 1.5rem;
+}

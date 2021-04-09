@@ -1,0 +1,30 @@
+.cardsDone {
+  display: flex;
+}
+
+.cardsDoneImg {
+  width: 49%;
+}
+
+.cardsDoneImg img {
+  width: 100%;
+}
+
+.tags {
+  border: 1px solid black;
+  border-radius: 15px;
+  margin: 2px;
+  padding: 0 7px;
+}
+
+.btn {
+  background-image: url('../images/shareIcon.svg');
+  height: 28px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.testes {
+  position: relative;
+}

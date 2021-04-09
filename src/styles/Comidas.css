@@ -1,0 +1,7 @@
+.comidasContainer {
+  align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  max-width: 360px;
+}

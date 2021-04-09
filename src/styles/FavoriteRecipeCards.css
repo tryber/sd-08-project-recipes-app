@@ -1,0 +1,32 @@
+/* .cardsDone {
+  display: flex;
+} */
+
+.cardsDoneImg {
+  width: 49%;
+}
+
+.cardsDoneImg img {
+  width: 100%;
+}
+
+.tags {
+  border: 1px solid black;
+  border-radius: 15px;
+  margin: 2px;
+  padding: 0 7px;
+}
+
+.btn {
+  background-image: url('../images/shareIcon.svg');
+  background-repeat: no-repeat;
+  height: 28px;
+  width: 50px;
+}
+
+.btn-favorite {
+  background-image: url('../images/blackHeartIcon.svg');
+  background-repeat: no-repeat;
+  height: 28px;
+  width: 50px;
+}
