@@ -17,7 +17,8 @@ import RecipesDone from './pages/RecipesDone';
 import FavoriteRecipes from './pages/FavoriteRecipes';
 import InProgressCocktails from './pages/InProgressCocktails';
 
-import './App.css';
+import './css/bootstrap.min.css';
+import './css/App.css';
 
 function App() {
   const notFount = () => <div>Not Found</div>;

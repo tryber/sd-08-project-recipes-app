@@ -8,11 +8,11 @@ import favIconEnabled from '../images/blackHeartIcon.svg';
 import favIconDisabled from '../images/whiteHeartIcon.svg';
 import CarouselMeals from '../components/CarouselMeals';
 import row from '../images/spacer.png';
+import Loading from '../components/Loading';
 
-class CocktailRecipeDetails extends Component {
+export default class CocktailRecipeDetails extends Component {
   constructor() {
     super();
-
     this.state = {
       favorite: false,
       cocktails: '',
@@ -21,7 +21,6 @@ class CocktailRecipeDetails extends Component {
       measures: [],
       isDone: false,
     };
-
     this.handleFavoriteButton = this.handleFavoriteButton.bind(this);
     this.fetchAPI = this.fetchAPI.bind(this);
     this.setStorage = this.setStorage.bind(this);
@@ -38,13 +37,9 @@ class CocktailRecipeDetails extends Component {
   handleFavoriteButton() {
     const { favorite } = this.state;
     if (!favorite) {
-      this.setState({
-        favorite: true,
-      });
+      this.setState({ favorite: true });
     } else {
-      this.setState({
-        favorite: false,
-      });
+      this.setState({ favorite: false });
     }
     this.setStorage();
   }
@@ -91,13 +86,9 @@ class CocktailRecipeDetails extends Component {
     if (fav.length) {
       const { favorite } = this.state;
       if (!favorite) {
-        this.setState({
-          favorite: true,
-        });
+        this.setState({ favorite: true });
       } else {
-        this.setState({
-          favorite: false,
-        });
+        this.setState({ favorite: false });
       }
     }
   }
@@ -107,9 +98,7 @@ class CocktailRecipeDetails extends Component {
     const recipesFromStorage = JSON.parse(localStorage.getItem('doneRecipes')) || [];
     const recipeIsDone = recipesFromStorage.some((recipe) => recipe.id === id);
     if (recipeIsDone) {
-      this.setState({
-        isDone: true,
-      });
+      this.setState({ isDone: true });
     }
   }
 
@@ -144,7 +133,7 @@ class CocktailRecipeDetails extends Component {
     const buttonText = (recipesFromStorage.cocktails[id] !== undefined)
       ? 'Continuar Receita' : 'Iniciar Receita';
 
-    if (isLoading) return <p>Loading...</p>;
+    if (isLoading) return <Loading />;
     const {
       idDrink,
       strDrink,
@@ -154,17 +143,17 @@ class CocktailRecipeDetails extends Component {
     } = cocktails.drinks[0];
 
     return (
-      <div className="recipe-details">
+      <div className="recipe-details container container-fluid widthM800">
         <img
           src={ strDrinkThumb }
           alt="Cocktails Thumbnail"
           data-testid="recipe-photo"
-          className="recipe-photo"
+          className="recipe-photo img-fluid width50"
         />
-        <div className="recipe-header box-content">
+        <div className="rrecipe-header container d-flex justify-content-between px-1">
           <h1
             data-testid="recipe-title"
-            className="recipe-title"
+            className="recipe-title font-mountains display-4"
           >
             {strDrink}
           </h1>
@@ -172,22 +161,26 @@ class CocktailRecipeDetails extends Component {
             <button
               type="button"
               data-testid="share-btn"
-              className="action-button"
+              className="action-button btn mt-3 p-1"
               onClick={ () => this.copyLink(idDrink) }
             >
-              <img src={ shareIcon } alt="share" />
+              <img
+                src={ shareIcon }
+                alt="share"
+                className="favorite-icon icon"
+              />
             </button>
             <p id="link" style={ { display: 'none' } }>Link copiado!</p>
             <button
               type="button"
               onClick={ this.handleFavoriteButton }
-              className="action-button"
+              className="action-button btn mt-3 p-1"
             >
               <img
                 src={ (favorite) ? favIconEnabled : favIconDisabled }
                 alt="favorite"
                 data-testid="favorite-btn"
-                className="favorite-icon"
+                className="favorite-icon icon"
               />
             </button>
           </div>
@@ -195,9 +188,9 @@ class CocktailRecipeDetails extends Component {
         <span data-testid="recipe-category" className="recipe-category">
           { strAlcoholic }
         </span>
-        <img src={ row } alt="row" className="spacer" />
-        <div className="box-content">
-          <h2>Ingredients</h2>
+        <img src={ row } alt="row" className="spacer row-1 img-fluid" />
+        <div className="box-content white70 p-2">
+          <h2 className="txt-shdw1">Ingredients</h2>
           <ul>
             {ingredients
               .filter((item) => item !== '' && item !== null)
@@ -211,12 +204,12 @@ class CocktailRecipeDetails extends Component {
               ))}
           </ul>
         </div>
-        <img src={ row } alt="row" className="spacer" />
-        <div>
-          <h2>Instructions</h2>
+        <img src={ row } alt="row" className="spacer row-2 img-fluid" />
+        <div className="box-content white70 p-2">
+          <h2 className="txt-shdw1">Instructions</h2>
           <p data-testid="instructions">{strInstructions}</p>
         </div>
-        <img src={ row } alt="row" className="spacer" />
+        <img src={ row } alt="row" className="spacer row-1 img-fluid" />
         <div>
           <CarouselMeals />
         </div>
@@ -224,7 +217,7 @@ class CocktailRecipeDetails extends Component {
           {!isDone && (
             <Link
               data-testid="start-recipe-btn"
-              className="start-recipe-btn"
+              className="start-recipe-btn btn btn-danger"
               to={ `${idDrink}/in-progress` }
             >
               {buttonText}
@@ -243,5 +236,3 @@ CocktailRecipeDetails.propTypes = {
     }).isRequired,
   }).isRequired,
 };
-
-export default CocktailRecipeDetails;

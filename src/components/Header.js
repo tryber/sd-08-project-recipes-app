@@ -13,18 +13,26 @@ import CategoriesBar from './CategoriesBar';
 function Header({ title, toggle, toggleAction }) {
   return (
     <header>
-      <div className="headerContainer">
-        <div>
+      <div
+        className="
+          header-container
+          container
+          white70
+          widthM800
+          widthM360
+          font-mountains"
+      >
+        <div className="profile-link-container">
           <Link to="/perfil">
             <img
-              className="headerButton"
+              className="headerButton mt-n2"
               data-testid="profile-top-btn"
               src={ ProfileIcon }
               alt="perfil"
             />
           </Link>
         </div>
-        <div>
+        <div className="page-title-container">
           <h1 data-testid="page-title">
             { title }
           </h1>
@@ -36,7 +44,7 @@ function Header({ title, toggle, toggleAction }) {
         ) && (
           <div>
             <button
-              className="headerButton"
+              className="headerButton btn btn-link mt-n2"
               type="button"
               onClick={ () => toggleAction(!toggle) }
             >
@@ -50,12 +58,6 @@ function Header({ title, toggle, toggleAction }) {
     </header>
   );
 }
-
-Header.propTypes = {
-  title: PropTypes.string.isRequired,
-  toggle: PropTypes.bool.isRequired,
-  toggleAction: PropTypes.func.isRequired,
-};
 
 const mapStateToProps = ({ searchToggleReducer }) => ({
   toggle: searchToggleReducer,

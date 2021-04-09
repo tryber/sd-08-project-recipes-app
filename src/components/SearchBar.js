@@ -103,7 +103,10 @@ function SearchBar(props) {
   }, [meals, cocktails, title]);
 
   return (
-    <div className="search-container" style={ { display: toggle ? 'inline' : 'none' } }>
+    <div
+      className="search-container container  white70 flex-column widthM800"
+      style={ { display: toggle ? 'flex' : 'none' } }
+    >
       {meals.length === 1 && (meals[0].idMeal !== '52968') && (
         <Redirect
           to={ { pathname: `/comidas/${meals[0].idMeal}` } }
@@ -114,18 +117,30 @@ function SearchBar(props) {
           to={ { pathname: `/bebidas/${cocktails[0].idDrink}` } }
         />
       )}
-      <label htmlFor="busca">
-        <input
-          className="input-search"
-          id="busca"
-          name="word"
-          value={ word }
-          data-testid={ `${toggle ? 'search-input' : ''}` }
-          onChange={ (event) => setWord(event.target.value) }
-        />
-      </label>
-      <div>
-        <label htmlFor="ingredient" className="label-search">
+      <div className="input-group mb-3">
+        <label htmlFor="busca">
+          <input
+            className="input-search form-control"
+            id="busca"
+            name="word"
+            value={ word }
+            data-testid={ `${toggle ? 'search-input' : ''}` }
+            onChange={ (event) => setWord(event.target.value) }
+          />
+        </label>
+        <div className="input-group-append">
+          <button
+            className="button-search btn btn-danger btn-sm py-0"
+            type="button"
+            data-testid="exec-search-btn"
+            onClick={ handlerSubmit }
+          >
+            Buscar
+          </button>
+        </div>
+      </div>
+      <div className="form-check form-check-inline d-flex justify-content-around">
+        <label htmlFor="ingredient" className="label-search form-check-label">
           <input
             id="ingredient"
             value={ INGREDIENT }
@@ -133,10 +148,11 @@ function SearchBar(props) {
             name="options"
             onChange={ (event) => setOptions(event.target.value) }
             data-testid="ingredient-search-radio"
+            className="form-check-input"
           />
           Ingrediente
         </label>
-        <label htmlFor="name" className="label-search">
+        <label htmlFor="name" className="label-search form-check-label">
           <input
             id="name"
             value={ NAME }
@@ -144,10 +160,11 @@ function SearchBar(props) {
             name="options"
             onChange={ (event) => setOptions(event.target.value) }
             data-testid="name-search-radio"
+            className="form-check-input"
           />
           Nome
         </label>
-        <label htmlFor="first-letter" className="label-search">
+        <label htmlFor="first-letter" className="label-search form-check-label">
           <input
             id="first-letter"
             value={ FIRSTLETTER }
@@ -155,18 +172,11 @@ function SearchBar(props) {
             name="options"
             onChange={ (event) => setOptions(event.target.value) }
             data-testid="first-letter-search-radio"
+            className="form-check-input"
           />
           Primeira letra
         </label>
       </div>
-      <button
-        className="button-search"
-        type="button"
-        data-testid="exec-search-btn"
-        onClick={ handlerSubmit }
-      >
-        Buscar
-      </button>
     </div>
   );
 }

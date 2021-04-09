@@ -46,19 +46,19 @@ const handleClick = (event, props) => {
   if (title === 'Comidas') {
     if (className === 'selected') {
       searchByMeals(ALL, props);
-      event.target.className = '';
+      event.target.classList.remove('select');
     } else {
       searchByMeals(name, props);
-      event.target.className = 'selected';
+      event.target.classList.add('select');
     }
   }
   if (title === 'Bebidas') {
     if (className === 'selected') {
       searchByCocktails(ALL, props);
-      event.target.className = '';
+      event.target.classList.remove('select');
     } else {
       searchByCocktails(name, props);
-      event.target.className = 'selected';
+      event.target.classList.add('select');
     }
   }
 };
@@ -91,9 +91,15 @@ function CategoriesBar(props) {
             to={ { pathname: `/bebidas/${cocktails[0].idDrink}` } }
           />
         )}
-        <div className="category">
+        <div className="widthM800 widthM360 mx-auto">
           <button
-            className="category-item"
+            className="
+            category-item
+            btn
+            btn-warning
+            active
+            container-fluid
+            font-weight-bold"
             type="button"
             name={ ALL }
             data-testid="All-category-filter"
@@ -101,10 +107,12 @@ function CategoriesBar(props) {
           >
             All
           </button>
+        </div>
+        <div className="category widthM800 widthM360 mx-auto btn-group btn-group-toggle d-flex">
           { title === 'Comidas' && mealsCategories.slice(zero, maxLength)
             .map((categorie, index) => (
               <button
-                className="category-item"
+                className="category-item btn btn-warning px-1 font-weight-bold"
                 type="button"
                 key={ index }
                 data-testid={ `${categorie.strCategory}-category-filter` }
@@ -117,7 +125,7 @@ function CategoriesBar(props) {
           { title === 'Bebidas' && cocktailsCategories.slice(zero, maxLength)
             .map((category, index) => (
               <button
-                className="category-item"
+                className="category-item btn btn-warning px-1 font-weight-bold"
                 type="button"
                 key={ index }
                 data-testid={ `${category.strCategory}-category-filter` }

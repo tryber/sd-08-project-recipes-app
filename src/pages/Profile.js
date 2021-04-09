@@ -18,38 +18,61 @@ class Profile extends Component {
     return (
       <div>
         <Header title="Perfil" />
-        <p data-testid="profile-email">{ this.getEmailFromStorage() }</p>
-        <Link
-          to="/receitas-feitas"
+        <p className="hello font-mountains mt-3 mx-3 txt-shdw1 h1">Olá,</p>
+        <p
+          data-testid="profile-email"
+          className="user font-mountains mt-0 mx-5 txt-shdw1 h1"
         >
-          <button
-            type="button"
-            data-testid="profile-done-btn"
-          >
-            Receitas Feitas
-          </button>
-        </Link>
-        <Link
-          to="/receitas-favoritas"
+          { this.getEmailFromStorage() }
+          !
+        </p>
+        <div
+          className="
+            widthM800
+            widthM360
+            mx-auto
+            mt-3
+            btn-group
+            btn-group-lg
+            btn-group-toggle
+            d-flex
+            justify-content-center"
         >
-          <button
-            type="button"
-            data-testid="profile-favorite-btn"
+          <Link
+            to="/receitas-feitas"
           >
-            Receitas Favoritas
-          </button>
-        </Link>
-        <Link
-          to="/"
-        >
-          <button
-            type="button"
-            data-testid="profile-logout-btn"
-            onClick={ () => localStorage.clear() }
+            <button
+              type="button"
+              data-testid="profile-done-btn"
+              className="btn-profile btn btn-warning px-1 font-weight-bold"
+            >
+              Receitas Feitas
+            </button>
+          </Link>
+          <Link
+            to="/receitas-favoritas"
           >
-            Sair
-          </button>
-        </Link>
+            <button
+              type="button"
+              data-testid="profile-favorite-btn"
+              className="btn-profile btn btn-warning px-1 font-weight-bold"
+            >
+              Receitas Favoritas
+            </button>
+          </Link>
+          <Link
+            to="/"
+          >
+            <button
+              type="button"
+              data-testid="profile-logout-btn"
+              onClick={ () => localStorage.clear() }
+              className="btn-profile btn btn-warning px-1 font-weight-bold"
+            >
+              Sair
+            </button>
+          </Link>
+        </div>
         <Footer />
       </div>
     );

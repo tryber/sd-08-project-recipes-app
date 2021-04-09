@@ -7,6 +7,7 @@ import ImageInProgres from '../components/ImageInProgress';
 import ShareButton from '../components/ShareButton';
 import FavoriteButton from '../components/FavoriteButton';
 import FinishButton from '../components/FinishButton';
+import Loading from '../components/Loading';
 
 export default class InProgressCocktails extends Component {
   constructor() {
@@ -194,7 +195,7 @@ export default class InProgressCocktails extends Component {
       checkeds,
       isDone,
     } = this.state;
-    if (isLoading) return <p>Loading...</p>;
+    if (isLoading) return <Loading />;
     const {
       idDrink,
       strDrinkThumb,
@@ -204,10 +205,15 @@ export default class InProgressCocktails extends Component {
     } = cocktails.drinks[0];
 
     return (
-      <div className="recipe-details">
+      <div className="recipe-details container">
         <ImageInProgres strThumb={ strDrinkThumb } />
-        <div className="recipe-header box-content">
-          <h1 data-testid="recipe-title" className="recipe-title">{strDrink}</h1>
+        <div className="recipe-header container d-flex justify-content-between px-1">
+          <h1
+            data-testid="recipe-title"
+            className="recipe-title font-mountains display-4"
+          >
+            {strDrink}
+          </h1>
           <div className="actions">
             <ShareButton id={ idDrink } type="cocktail" />
             <FavoriteButton handleFavBtn={ this.handleFavoriteBtn } fav={ favorite } />
@@ -216,9 +222,9 @@ export default class InProgressCocktails extends Component {
         <span data-testid="recipe-category" className="recipe-category">
           { strCategory }
         </span>
-        <img src={ row } alt="row" className="spacer" />
-        <div className="box-content">
-          <h2>Ingredients</h2>
+        <img src={ row } alt="row" className="spacer row-1 img-fluid" />
+        <div className="box-content white70 p-2">
+          <h2 className="txt-shdw1">Ingredients</h2>
           <ul>
             <IngredientsList
               ingredients={ ingredients }
@@ -228,12 +234,12 @@ export default class InProgressCocktails extends Component {
             />
           </ul>
         </div>
-        <img src={ row } alt="row" className="spacer" />
-        <div className="box-content">
-          <h2>Instructions</h2>
+        <img src={ row } alt="row" className="spacer row-2 img-fluid" />
+        <div className="box-content white70 p-2">
+          <h2 className="txt-shdw1">Instructions</h2>
           <p data-testid="instructions">{strInstructions}</p>
         </div>
-        <img src={ row } alt="row" className="spacer" />
+        <img src={ row } alt="row" className="spacer row-1 img-fluid" />
         <div className="start-btn">
           <FinishButton isDone={ isDone } />
         </div>

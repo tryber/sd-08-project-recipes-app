@@ -7,7 +7,7 @@ export default function ImageInProgres({ strThumb }) {
       src={ strThumb }
       alt="Meal Thumbnail"
       data-testid="recipe-photo"
-      className="recipe-photo"
+      className="recipe-photo img-fluid width50"
     />
   );
 }

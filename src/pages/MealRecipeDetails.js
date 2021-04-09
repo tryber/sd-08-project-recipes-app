@@ -8,11 +8,11 @@ import favIconEnabled from '../images/blackHeartIcon.svg';
 import favIconDisabled from '../images/whiteHeartIcon.svg';
 import CarouselCocktails from '../components/CarouselCoktails';
 import row from '../images/spacer.png';
+import Loading from '../components/Loading';
 
 export default class MealRecipeDetails extends Component {
   constructor() {
     super();
-
     this.state = {
       favorite: false,
       meals: '',
@@ -21,7 +21,6 @@ export default class MealRecipeDetails extends Component {
       measures: [],
       isDone: false,
     };
-
     this.handleFavoriteButton = this.handleFavoriteButton.bind(this);
     this.fetchAPI = this.fetchAPI.bind(this);
     this.setStorage = this.setStorage.bind(this);
@@ -81,13 +80,9 @@ export default class MealRecipeDetails extends Component {
     if (fav.length) {
       const { favorite } = this.state;
       if (!favorite) {
-        this.setState({
-          favorite: true,
-        });
+        this.setState({ favorite: true });
       } else {
-        this.setState({
-          favorite: false,
-        });
+        this.setState({ favorite: false });
       }
     }
   }
@@ -97,9 +92,7 @@ export default class MealRecipeDetails extends Component {
     const recipesFromStorage = JSON.parse(localStorage.getItem('doneRecipes')) || [];
     const recipeIsDone = recipesFromStorage.some((recipe) => recipe.id === id);
     if (recipeIsDone) {
-      this.setState({
-        isDone: true,
-      });
+      this.setState({ isDone: true });
     }
   }
 
@@ -134,7 +127,7 @@ export default class MealRecipeDetails extends Component {
     const buttonText = (recipesFromStorage.meals[id] !== undefined)
       ? 'Continuar Receita' : 'Iniciar Receita';
 
-    if (isLoading) return <p>Loading...</p>;
+    if (isLoading) return <Loading />;
     const {
       idMeal,
       strMealThumb,
@@ -146,35 +139,40 @@ export default class MealRecipeDetails extends Component {
     const youtubeId = strYoutube.substring(strYoutube.indexOf('=') + 1);
 
     return (
-      <div className="recipe-details">
+      <div className="recipe-details container container-fluid widthM800">
         <img
           src={ strMealThumb }
           alt="Meal Thumbnail"
           data-testid="recipe-photo"
-          className="recipe-photo"
+          className="recipe-photo img-fluid width50"
         />
-        <div className="recipe-header box-content">
-          <h1 data-testid="recipe-title" className="recipe-title">{strMeal}</h1>
+        <div className="recipe-header container d-flex justify-content-between px-1">
+          <h1
+            data-testid="recipe-title"
+            className="recipe-title font-mountains display-4"
+          >
+            {strMeal}
+          </h1>
           <div className="actions">
             <button
               type="button"
               data-testid="share-btn"
-              className="action-button"
+              className="action-button btn mt-3 p-1"
               onClick={ () => this.copyLink(idMeal) }
             >
-              <img src={ shareIcon } alt="share" />
+              <img src={ shareIcon } alt="share" className="icon" />
             </button>
             <p id="link" style={ { display: 'none' } }>Link copiado!</p>
             <button
               type="button"
               onClick={ this.handleFavoriteButton }
-              className="action-button"
+              className="action-button btn mt-3 p-1"
             >
               <img
                 src={ (favorite) ? favIconEnabled : favIconDisabled }
                 alt="favorite"
                 data-testid="favorite-btn"
-                className="favorite-icon"
+                className="favorite-icon icon"
               />
             </button>
           </div>
@@ -182,9 +180,9 @@ export default class MealRecipeDetails extends Component {
         <span data-testid="recipe-category" className="recipe-category">
           { strCategory }
         </span>
-        <img src={ row } alt="row" className="spacer" />
-        <div className="box-content">
-          <h2>Ingredients</h2>
+        <img src={ row } alt="row" className="spacer row-1 img-fluid" />
+        <div className="box-content white70 p-2">
+          <h2 className="txt-shdw1">Ingredients</h2>
           <ul>
             {ingredients
               .filter((item) => item !== '' && item !== null).map((item, index) => (
@@ -197,18 +195,19 @@ export default class MealRecipeDetails extends Component {
               ))}
           </ul>
         </div>
-        <img src={ row } alt="row" className="spacer" />
-        <div className="box-content">
-          <h2>Instructions</h2>
+        <img src={ row } alt="row" className="spacer row-2 img-fluid" />
+        <div className="box-content white70 p-2">
+          <h2 className="txt-shdw1">Instructions</h2>
           <p data-testid="instructions">{strInstructions}</p>
         </div>
-        <img src={ row } alt="row" className="spacer" />
-        <div className="video-content">
-          <h2 className="box-content">Video</h2>
+        <img src={ row } alt="row" className="spacer row-1 img-fluid" />
+        <div className="video-content mx-auto">
+          <h2 className="h2 txt-shdw1 center">Video</h2>
           <iframe
             data-testid="video"
+            className="iframe-video"
             title={ strMeal }
-            width="360"
+            width="330"
             height="202.5"
             src={ `https://www.youtube.com/embed/${youtubeId}` }
             frameBorder="0"
@@ -217,7 +216,7 @@ export default class MealRecipeDetails extends Component {
             allowFullScreen
           />
         </div>
-        <img src={ row } alt="row" className="spacer" />
+        <img src={ row } alt="row" className="spacer row-1 img-fluid" />
         <div>
           <CarouselCocktails />
         </div>
@@ -226,7 +225,7 @@ export default class MealRecipeDetails extends Component {
           && (
             <Link
               data-testid="start-recipe-btn"
-              className="start-recipe-btn"
+              className="start-recipe-btn btn btn-danger"
               to={ `${idMeal}/in-progress` }
             >
               {buttonText}

@@ -12,9 +12,11 @@ class CarouselCocktails extends React.Component {
 
     this.state = {
       initialState: 0,
+      numShow: 0,
     };
 
     this.handleClick = this.handleClick.bind(this);
+    this.toggleShow = this.toggleShow.bind(this);
   }
 
   componentDidMount() {
@@ -28,47 +30,61 @@ class CarouselCocktails extends React.Component {
     }));
   }
 
-  render() {
+  carouselGen() {
     const { cocktails } = this.props;
-    const { initialState } = this.state;
+    const { initialState, numShow } = this.state;
     const maxLength = 2;
+    const list = cocktails.slice(initialState, maxLength).map((item, index) => (
+      <Link
+        to={ `/bebidas/${item.idDrink}` }
+        key={ index }
+        className="carousel-content"
+        data-testid={ `${index}-recomendation-card` }
+      >
+        <div className="carousel-items d-flex flex-column container-fluid">
+          <img
+            src={ item.strDrinkThumb }
+            alt={ item.strDrink }
+            className="carousel-item-image"
+          />
+          <span className="recipe-category">{item.strAlcoholic}</span>
+          <span className="carousel-title txt-shdw1 font-mountains">{item.strDrink}</span>
+        </div>
+      </Link>
+    ));
+    return list[numShow];
+  }
+
+  toggleShow() {
+    const { numShow } = this.state;
+    if (numShow === 0) {
+      this.setState({ numShow: 1 });
+    } else {
+      this.setState({ numShow: 0 });
+    }
+  }
+
+  render() {
     return (
       <div>
-        <h2 className="box-content">Recomendadas</h2>
-        <div className="carousel">
-          {
-            cocktails.slice(initialState, maxLength).map((item, index) => (
-              <Link
-                to={ `/bebidas/${item.idDrink}` }
-                key={ index }
-                className="carousel-content"
-                data-testid={ `${index}-recomendation-card` }
-              >
-                <img
-                  src={ item.strDrinkThumb }
-                  alt={ item.strDrink }
-                  className="carousel-item-image"
-                />
-                <div className="carousel-items">
-                  <span className="recipe-category">{item.strAlcoholic}</span>
-                  <span className="carousel-title">{item.strDrink}</span>
-                </div>
-              </Link>
-            ))
-          }
-        </div>
-        <div className="buttons">
+        <h2 className="box-content text-left txt-shdw1">Recomendadas</h2>
+        <div className="carousel-container d-flex">
           <button
             type="button"
-            className="carousel-button"
+            className="carousel-button btn btn-left"
+            onClick={ this.toggleShow }
           >
-            <img src={ arrowLeft } alt="arrow-left" />
+            <img src={ arrowLeft } alt="arrow-left" className="arrow arrow-left" />
           </button>
+          <div className="carousel">
+            { this.carouselGen() }
+          </div>
           <button
             type="button"
-            className="carousel-button"
+            className="carousel-button btn btn-right"
+            onClick={ this.toggleShow }
           >
-            <img src={ arrowRight } alt="arrow-right" />
+            <img src={ arrowRight } alt="arrow-right" className="arrow arrow-right" />
           </button>
         </div>
       </div>

@@ -20,10 +20,10 @@ export default function ShareButton({ id, type }) {
       <button
         type="button"
         data-testid="share-btn"
-        className="action-button"
+        className="action-button btn mt-3 p-1"
         onClick={ () => copyLink(id, type) }
       >
-        <img src={ shareIcon } alt="share" />
+        <img src={ shareIcon } alt="share" className="share-icon icon" />
       </button>
       <p id="link" style={ { display: 'none' } }>Link copiado!</p>
     </>

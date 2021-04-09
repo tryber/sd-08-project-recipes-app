@@ -9,13 +9,13 @@ export default function FavoriteButton({ handleFavBtn, fav }) {
     <button
       type="button"
       onClick={ handleFavBtn }
-      className="action-button"
+      className="action-button btn mt-3 p-1"
     >
       <img
         src={ (fav) ? favIconEnabled : favIconDisabled }
         alt="favorite"
         data-testid="favorite-btn"
-        className="favorite-icon"
+        className="favorite-icon icon"
       />
     </button>
   );

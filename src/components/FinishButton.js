@@ -8,7 +8,7 @@ export default function FinishButton({ isDone }) {
       <button
         type="button"
         data-testid="finish-recipe-btn"
-        className="finish-recipe-btn"
+        className="finish-recipe-btn btn btn-danger"
         disabled={ !isDone }
       >
         Finalizar receita
