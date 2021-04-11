@@ -7,7 +7,9 @@ import {
   getComidasByPrimeiraLetra,
   getBebidasByName,
   getBebidasByingredientes,
-  getBebidasByPrimeiraLetra } from '../services/BuscaNasAPIs';
+  getBebidasByPrimeiraLetra,
+  getIngredientsFoodList,
+  getIngredientsDrinkList } from '../services/BuscaNasAPIs';
 
 function ProviderRecipes({ children }) {
   const headerInfoInitial = {
@@ -26,6 +28,8 @@ function ProviderRecipes({ children }) {
   const [isFetching, setIsFetching] = useState(false);
   const [favoriteRecipes, setFavoriteRecipes] = useState([]);
   const [userEmail, setUserEmail] = useState('');
+  const [ingredientsList, setIngredientsList] = useState([]);
+  const [type, setType] = useState('');
 
   const fetchDataComidas = useCallback(async () => {
     const { input, radio } = barraBuscar;
@@ -76,6 +80,19 @@ function ProviderRecipes({ children }) {
     }
   }, [barraBuscar, headerInfo.pageTitle, fetchDataComidas, fetchDataBebidas]);
 
+  useEffect(() => {
+    async function getIngredients() {
+      if (type === 'bebidas') {
+        const list = await getIngredientsDrinkList();
+        setIngredientsList(list.drinks);
+      } else if (type === 'comidas') {
+        const list = await getIngredientsFoodList();
+        setIngredientsList(list.meals);
+      }
+    }
+    getIngredients();
+  }, [type]);
+
   return (
     <ContextRecipes.Provider
       value={
@@ -90,7 +107,9 @@ function ProviderRecipes({ children }) {
           favoriteRecipes,
           setFavoriteRecipes,
           userEmail,
-          setUserEmail }
+          setUserEmail,
+          ingredientsList,
+          setType }
       }
     >
       {children}

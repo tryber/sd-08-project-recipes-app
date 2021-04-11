@@ -1,36 +1,25 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { CardDeck, Card } from 'react-bootstrap';
 import { useHistory } from 'react-router';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import {
-  getIngredientsFoodList,
-  getIngredientsDrinkList } from '../services/BuscaNasAPIs';
 import ContextRecipes from '../context/ContextRecipes';
 
 const MAX_CARDS = 12;
 
 const ExplorarIngredientes = () => {
-  const { setBarraBuscar, setHeaderInfo } = useContext(ContextRecipes);
-  const [ingredientsList, setIngredientsList] = useState();
+  const {
+    setBarraBuscar, setHeaderInfo, ingredientsList, setType,
+  } = useContext(ContextRecipes);
   const history = useHistory();
   const type = history.location.pathname.includes('bebidas') ? 'bebidas' : 'comidas';
 
-  useEffect(() => {
-    async function getIngredients() {
-      if (type === 'bebidas') {
-        const list = await getIngredientsDrinkList();
-        setIngredientsList(list.drinks);
-      } else {
-        const list = await getIngredientsFoodList();
-        setIngredientsList(list.meals);
-      }
-    }
-    getIngredients();
-  }, [type]);
-
   const url = type === 'bebidas' ? 'thecocktaildb' : 'themealdb';
   const one = type === 'bebidas' ? 1 : '';
+
+  useEffect(() => {
+    setType(type);
+  }, [type, setType]);
 
   function onClickHandler(food) {
     setBarraBuscar(food);

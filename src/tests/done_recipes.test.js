@@ -28,6 +28,7 @@ const doneRecipes = [
     tags: [],
   },
 ];
+
 beforeEach(() => {
   localStorage.setItem('doneRecipes', JSON.stringify(doneRecipes));
 });
