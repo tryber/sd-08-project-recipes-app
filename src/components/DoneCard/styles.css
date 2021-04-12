@@ -1,0 +1,16 @@
+.message {
+  align-items: center;
+  background-color: #0fa36b;
+  border-radius: 5px;
+  flex-direction: column;
+  height: 3rem;
+  left: 50%;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  width: 10rem;
+}
+
+.message p {
+  margin: auto 0;
+}
