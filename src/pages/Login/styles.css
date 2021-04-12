@@ -1,7 +1,17 @@
-.login-form {
+.login-page-content {
   align-items: center;
+  background-image: url('../../images/269.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   height: 100vh;
   justify-content: center;
 }
 
+.login-form {
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  width: 20rem;
+}

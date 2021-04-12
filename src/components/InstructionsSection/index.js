@@ -22,7 +22,7 @@ function InstructionsSection(props) {
           const finalIngredient = (measure && name) ? `${name} - ${measure}` : name;
           return (
             <p
-              key={ name }
+              key={ index }
               data-testid={ `${index}-ingredient-name-and-measure` }
               className="m-0"
             >

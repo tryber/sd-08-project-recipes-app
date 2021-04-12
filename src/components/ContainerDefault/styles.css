@@ -1,5 +1,9 @@
 .template {
+  align-items: center;
   background-color: #242325;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   min-height: 100vh;
 }
 

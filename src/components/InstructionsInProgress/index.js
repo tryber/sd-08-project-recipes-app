@@ -41,7 +41,7 @@ function InstructionsInProgress(props) {
             );
             return (
               <li
-                key={ name }
+                key={ index }
                 style={ { listStyle: 'none' } }
                 className="m-0"
                 data-testid={ `${index}-ingredient-step` }

@@ -9,6 +9,7 @@ import DetailsHeader from '../../components/DetailsHeader';
 import InstructionsSection from '../../components/InstructionsSection';
 import Recomendations from '../../components/Recomendations';
 import RecipeButton from '../../components/RecipeButton';
+import './styles.css';
 
 function FoodDetails() {
   const { id: idPage } = useParams();
@@ -42,7 +43,7 @@ function FoodDetails() {
   const { strMeal, strCategory, strMealThumb, strYoutube, strArea } = mealData[0];
   if (isFetching) return <Loading />;
   return (
-    <Container className="m-0 p-0 d-flex justify-content-center flex-column mb-5" fluid>
+    <Container className="p-0 d-flex justify-content-center flex-column detail" fluid>
       <Container className="m-0 p-0">
         <DetailsHeader
           title={ strMeal }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, NavbarBrand } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { useHistory } from 'react-router';
 import ContainerDefault from '../../components/ContainerDefault';
 import { getRandomDrink } from '../../services/theCockTailDB';
@@ -17,18 +17,16 @@ function ExploreDrinks() {
   };
   return (
     <ContainerDefault title="Explorar Bebidas">
-      <NavbarBrand href="/explorar/bebidas/ingredientes" className="mx-0">
-        <Button
-          type="button"
-          className="mb-3"
-          data-testid="explore-by-ingredient"
-          size="block"
-        >
-          Por Ingredientes
-        </Button>
-      </NavbarBrand>
-      { // Necessario alterar href depois
-      }
+      <Button
+        type="button"
+        className="mb-3"
+        data-testid="explore-by-ingredient"
+        size="block"
+        disabled={ isLoading }
+        onClick={ () => history.push('/explorar/bebidas/ingredientes') }
+      >
+        Por Ingredientes
+      </Button>
       <Button
         type="button"
         className="mb-3 mx-0"

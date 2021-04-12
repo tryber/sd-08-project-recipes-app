@@ -24,7 +24,7 @@ function Recomendations(props) {
     );
   return (
     <Container className="mt-3">
-      <h5>Recomendações</h5>
+      <h5 className="text-center">Recomendações</h5>
       <Carousel>
         <Carousel.Item>
           <img

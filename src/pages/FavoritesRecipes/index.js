@@ -46,7 +46,6 @@ function FavoritesRecipes() {
         currentFilter={ useCurrentFilter }
         setCurrentFilter={ setUseCurrentFilter }
       />
-      { console.log(useCurrentRecipes)}
       { !isLoading && useCurrentRecipes.map(
         ({ id, area, category, alcoholicOrNot, name, image, type }, index) => (
           <CardFavorites

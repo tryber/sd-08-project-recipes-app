@@ -5,7 +5,7 @@ import
   GET_FILTER_BTN_DRINK,
   ERROR_REQUEST_API_DRINKS,
   GET_DRINKS_BY_INGREDIENT,
-
+  GET_DRINKS_BY_SEARCH,
 } from '../actions/types';
 
 const INITIALSTATE = {
@@ -17,10 +17,7 @@ const INITIALSTATE = {
 const drinks = (state = INITIALSTATE, action) => {
   switch (action.type) {
   case FETCH_API_DRINKS:
-    return {
-      ...state,
-      isFetching: true,
-    };
+    return { ...state, isFetching: true };
   case GET_API_DRINKS:
     return { ...state,
       drinks: action.payload.drinks,
@@ -32,6 +29,12 @@ const drinks = (state = INITIALSTATE, action) => {
       drinks: action.payload,
       isFetching: false,
       onClickFilter: true,
+    };
+  case GET_DRINKS_BY_SEARCH:
+    return {
+      ...state,
+      drinks: action.payload.drinks,
+      isFetching: false,
     };
   case GET_DRINKS_BY_INGREDIENT:
     return { ...state,

@@ -14,6 +14,7 @@ function DrinksProcess() {
   const [isFetching, setIsFetching] = useState(true);
   const [instructions, setInstructions] = useState([]);
   const [checkedInstructions, setCheckedInstructions] = useState([]);
+
   useEffect(() => {
     const fetchDetails = async () => {
       try {
@@ -61,13 +62,8 @@ function DrinksProcess() {
 
   if (isFetching) return <Loading />;
 
-  const { strDrink, strCategory, strDrinkThumb, strAlcoholic } = drinkData ? drinkData[0]
-    : {
-      strDrink: ' ',
-      strCategory: ' ',
-      strDrinkThumb: ' ',
-      strAlcoholic: ' ',
-    };
+  const { idDrink, strDrink, strCategory,
+    strDrinkThumb, strAlcoholic, strTags } = drinkData && drinkData[0];
 
   const allDrinkData = drinkData && drinkData[0];
 
@@ -81,18 +77,28 @@ function DrinksProcess() {
           alcoholic={ strAlcoholic }
         />
       </Container>
-      { drinkData && (
-        <InstructionsInProgress
-          allData={ allDrinkData }
-          setCheckedInstructions={ setCheckedInstructions }
-          checkedInstructions={ checkedInstructions }
-          ingredientKeys={ instructions }
-        />
+      { allDrinkData && !isFetching && (
+        <>
+          <InstructionsInProgress
+            allData={ allDrinkData }
+            setCheckedInstructions={ setCheckedInstructions }
+            checkedInstructions={ checkedInstructions }
+            ingredientKeys={ instructions }
+          />
+          <FinishButton
+            checkedInstructions={ checkedInstructions }
+            instructions={ instructions }
+            id={ idDrink }
+            type="bebida"
+            area=""
+            category={ strCategory }
+            alcoholicOrNot={ strAlcoholic }
+            name={ strDrink }
+            image={ strDrinkThumb }
+            tags={ strTags }
+          />
+        </>
       )}
-      <FinishButton
-        checkedInstructions={ checkedInstructions }
-        instructions={ instructions }
-      />
     </Container>
   );
 }

@@ -1,11 +1,17 @@
 import React from 'react';
 import { Spinner } from 'react-bootstrap';
-
-// import { Container } from './styles';
+import './styles.css';
 
 function Loading() {
   return (
-    <Spinner animation="border" variant="primary" className="mx-auto" />
+    <div className="loader-div">
+      <Spinner
+        animation="border"
+        variant="success"
+        className="m-auto loader"
+        style={ { width: '3rem', height: '3rem', borderWidth: '7px' } }
+      />
+    </div>
   );
 }
 

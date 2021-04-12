@@ -33,6 +33,8 @@ import {
   RENDER_MEALS_BY_INGREDIENT,
   RENDER_DRINKS_BY_ORIGIN,
   RENDER_MEALS_BY_ORIGIN,
+  GET_DRINKS_BY_SEARCH,
+  GET_MEALS_BY_SEARCH,
 } from './types';
 
 const setFood = (data) => ({
@@ -42,6 +44,16 @@ const setFood = (data) => ({
 
 const setDrinks = (data) => ({
   type: GET_API_DRINKS,
+  payload: data,
+});
+
+const setDrinksBySearch = (data) => ({
+  type: GET_DRINKS_BY_SEARCH,
+  payload: data,
+});
+
+const setMealsBySearch = (data) => ({
+  type: GET_MEALS_BY_SEARCH,
   payload: data,
 });
 
@@ -119,8 +131,8 @@ export const fetchMealsByFilter = (radio, inputName) => async (dispatch) => {
   dispatch(isFetchingFoods());
   try {
     const apiData = await FecthMeals(radio, inputName);
-    const data = { meals: apiData, categories: [] };
-    dispatch(setFood(data));
+    const data = { meals: apiData };
+    dispatch(setMealsBySearch(data));
   } catch (error) {
     dispatch(errorFetchingFoods(error));
   }
@@ -130,8 +142,8 @@ export const fetchDrinksByFilter = (radio, inputName) => async (dispatch) => {
   dispatch(isFetchingDrinks());
   try {
     const apiData = await FecthDrinks(radio, inputName);
-    const data = { drinks: apiData, categories: [] };
-    dispatch(setDrinks(data));
+    const data = { drinks: apiData };
+    dispatch(setDrinksBySearch(data));
   } catch (error) {
     dispatch(errorFetchingDrinks(error));
   }

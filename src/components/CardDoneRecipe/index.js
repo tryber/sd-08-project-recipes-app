@@ -43,7 +43,7 @@ function CardDoneRecipe(props) {
       />
       <Card.Body>
         <Row>
-          <Col xs="7">
+          <Col xs="9">
             <Card.Title
               data-testid={ `${index}-horizontal-name` }
               onClick={ goToDetailsPage }
@@ -51,7 +51,7 @@ function CardDoneRecipe(props) {
               { name }
             </Card.Title>
           </Col>
-          <Col xs="5">
+          <Col xs="3">
             <input
               type="image"
               src={ shareIcon }
@@ -66,19 +66,25 @@ function CardDoneRecipe(props) {
         <Card.Subtitle data-testid={ `${index}-horizontal-top-text` }>
           { area ? `${area} - ${category}` : alcoholicOrNot }
         </Card.Subtitle>
-        <Row data-testid={ `${index}-horizontal-done-date` }>{ doneDate }</Row>
-        <Row>
+        <Card.Text data-testid={ `${index}-horizontal-done-date` }>
+          { doneDate }
+        </Card.Text>
+        <Card.Text>
           Tags:
-          { tags && tags.map((tag) => (
+          { tags ? tags.map((tag) => (
             <Badge key={ tag } data-testid={ `${index}-${tag}-horizontal-tag` }>
               {tag}
             </Badge>
-          ))}
-        </Row>
+          )) : <Badge data-testid="0-">Não a tags para essa receita</Badge>}
+        </Card.Text>
       </Card.Body>
     </Card>
   );
 }
+
+CardDoneRecipe.defaultProps = {
+  tags: ['Não a tags para essa receita '],
+};
 
 CardDoneRecipe.propTypes = {
   id: PropTypes.string.isRequired,
@@ -89,7 +95,7 @@ CardDoneRecipe.propTypes = {
   name: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   doneDate: PropTypes.string.isRequired,
-  tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+  tags: PropTypes.arrayOf(PropTypes.string),
   index: PropTypes.number.isRequired,
   showAlert: PropTypes.func.isRequired,
 };

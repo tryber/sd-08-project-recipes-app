@@ -22,7 +22,7 @@ function Foods() {
   return (
     <ContainerDefault title="Comidas">
       {
-        isFetching && meals.length === 0 ? <Loading />
+        isFetching && meals && meals.length === 0 ? <Loading />
           : (
             <>
               <FilterButtonsSection />

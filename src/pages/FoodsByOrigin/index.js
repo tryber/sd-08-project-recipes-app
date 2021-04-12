@@ -12,7 +12,6 @@ function FoodsByOrigin() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(foodsOnMount());
-    console.log('entrei');
   }, [dispatch]);
 
   const { isFetching, areas, isFetchingAreas } = useSelector((state) => state.foods);

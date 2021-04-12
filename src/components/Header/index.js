@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import { Container, Navbar } from 'react-bootstrap';
 import PropTypes from 'prop-types';
-import { useRouteMatch } from 'react-router';
+import { useHistory, useRouteMatch } from 'react-router';
 import profileIcon from '../../images/profileIcon.svg';
 import searchIcon from '../../images/searchIcon.svg';
 import './style.css';
 import SeekBar from '../SeekBar';
 
 export default function Header(props) {
-  const [showSeachbar, setShowSeachbar] = useState(false);
   const { title } = props;
+  const [showSeachbar, setShowSeachbar] = useState(false);
   const match = useRouteMatch();
+  const history = useHistory();
   const currentPage = (match.url === '/comidas' || match.url === '/bebidas'
   || match.url === '/explorar/comidas/area');
 
@@ -22,11 +23,12 @@ export default function Header(props) {
   function renderSearchBarIcon() {
     if (currentPage) {
       return (
-        <label htmlFor="searchBarControl" className="navbar-brand searchIcon">
+        <label htmlFor="searchBarControl" className="searchIcon">
           <img
             src={ searchIcon }
             alt="Link para a barra de pesquisa"
             data-testid="search-top-btn"
+            width="30px"
           />
           <input
             type="checkbox"
@@ -40,15 +42,16 @@ export default function Header(props) {
     return <span>{' '}</span>;
   }
   return (
-    <Container className="px-0" fluid>
+    <Container className="px-0 mb-3" fluid>
       <Navbar className="justify-content-around align-items-center bg-warning header">
-        <Navbar.Brand href="/perfil">
-          <img
-            src={ profileIcon }
-            alt="Link para o perfil"
-            data-testid="profile-top-btn"
-          />
-        </Navbar.Brand>
+        <input
+          type="image"
+          src={ profileIcon }
+          alt="Link para o perfil"
+          data-testid="profile-top-btn"
+          onClick={ () => history.push('/perfil') }
+          width="30px"
+        />
         <h1 className="m-0 h5" data-testid="page-title">{title}</h1>
         { renderSearchBarIcon() }
       </Navbar>

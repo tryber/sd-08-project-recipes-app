@@ -64,8 +64,8 @@ function FoodProcess() {
 
   if (isFetching) return <Loading />;
 
-  const { strMeal,
-    strCategory, strMealThumb, strAlcoholic, strArea } = mealData && mealData[0];
+  const { idMeal, strMeal, strCategory,
+    strMealThumb, strAlcoholic, strArea, strTags } = mealData && mealData[0];
 
   const allMealData = mealData && mealData[0];
 
@@ -80,18 +80,28 @@ function FoodProcess() {
           area={ strArea }
         />
       </Container>
-      { mealData && (
-        <InstructionsInProgress
-          allData={ allMealData }
-          setCheckedInstructions={ setCheckedInstructions }
-          checkedInstructions={ checkedInstructions }
-          ingredientKeys={ instructions }
-        />
+      { allMealData && !isFetching && (
+        <>
+          <InstructionsInProgress
+            allData={ allMealData }
+            setCheckedInstructions={ setCheckedInstructions }
+            checkedInstructions={ checkedInstructions }
+            ingredientKeys={ instructions }
+          />
+          <FinishButton
+            checkedInstructions={ checkedInstructions }
+            instructions={ instructions }
+            id={ idMeal }
+            type="comida"
+            area={ strArea }
+            category={ strCategory }
+            alcoholicOrNot={ strAlcoholic }
+            name={ strMeal }
+            image={ strMealThumb }
+            tags={ strTags }
+          />
+        </>
       )}
-      <FinishButton
-        checkedInstructions={ checkedInstructions }
-        instructions={ instructions }
-      />
     </Container>
   );
 }

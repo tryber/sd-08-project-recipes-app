@@ -1,0 +1,10 @@
+.card {
+  cursor: pointer;
+  margin: 3px;
+  width: 7rem;
+}
+
+div .card-body-custom {
+  min-height: 70px;
+  padding: 0.5rem;
+}

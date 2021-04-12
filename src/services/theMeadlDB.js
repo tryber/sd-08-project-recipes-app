@@ -70,11 +70,6 @@ export async function getMealsByArea(country) {
   return meals;
 }
 
-export function imgIngrediente(img) {
-  const URL = `https://www.themealdb.com/images/ingredients/${img}-Small.png`;
-  return URL;
-}
-
 export async function getMealsByIngredient(ingredient) {
   const URL = `https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredient}`;
   const response = await fetch(URL);

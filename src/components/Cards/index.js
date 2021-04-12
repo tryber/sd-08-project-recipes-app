@@ -31,7 +31,7 @@ function Cards(props) {
           data-testid={ `${index}-card-name` }
           className="text-center m-0 h6"
         >
-          <mark>{name}</mark>
+          {name}
         </Card.Title>
       </Card.Body>
     </Card>

@@ -3,6 +3,7 @@ import { Redirect } from 'react-router';
 import { Button, Form, Container } from 'react-bootstrap';
 import { setLocalStorage } from '../../services/localStorage';
 import './styles.css';
+import logo from '../../images/cuscuz-redux-logo.png';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -35,8 +36,9 @@ export default function Login() {
 
   if (redirect) return <Redirect to="/comidas" />;
   return (
-    <Container fluid className="login-form">
-      <Form>
+    <Container fluid className="login-page-content">
+      <Form className="login-form">
+        <img src={ logo } alt="cuscuz redux logo" className="mb-3" />
         <Form.Group controlId="email-input">
           <Form.Label>
             Email

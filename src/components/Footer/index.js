@@ -13,13 +13,16 @@ function Footer() {
   const history = useHistory();
   const { path } = useRouteMatch();
 
-  const goToMealsPage = () => {
+  const goToMealsPage = (e) => {
+    e.preventDefault();
     dispatch(renderByMealsOrigin());
     if (path !== '/comidas') {
       history.push('/comidas');
     }
   };
-  const goToDrinksPage = () => {
+
+  const goToDrinksPage = (e) => {
+    e.preventDefault();
     dispatch(renderByDrinksOrigin());
     if (path !== '/bebidas') {
       history.push('/bebidas');
@@ -37,14 +40,14 @@ function Footer() {
           width="40px"
           onClick={ goToDrinksPage }
         />
-        <Navbar.Brand href="/explorar" className="m-0">
-          <img
-            src={ exploreIcon }
-            alt="Link para exploração"
-            data-testid="explore-bottom-btn"
-            width="40px"
-          />
-        </Navbar.Brand>
+        <input
+          type="image"
+          src={ exploreIcon }
+          alt="Link para exploração"
+          data-testid="explore-bottom-btn"
+          width="40px"
+          onClick={ () => history.push('/explorar') }
+        />
         <input
           type="image"
           src={ mealIcon }

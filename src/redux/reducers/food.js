@@ -8,6 +8,7 @@ import {
   FETCH_AREAS,
   GET_FILTER_BTN_FOOD,
   GET_MEALS_BY_INGREDIENT,
+  GET_MEALS_BY_SEARCH,
 } from '../actions/types';
 
 const INITIALSTATE = {
@@ -21,14 +22,14 @@ const INITIALSTATE = {
 const food = (state = INITIALSTATE, action) => {
   switch (action.type) {
   case FETCH_API_FOODS:
-    return {
-      ...state,
-      isFetching: true,
-    };
+    return { ...state, isFetching: true };
   case FETCH_API_CATEGORIES:
+    return { ...state, isFetchingCategories: true };
+  case GET_MEALS_BY_SEARCH:
     return {
       ...state,
-      isFetchingCategories: true,
+      meals: action.payload.meals,
+      isFetching: false,
     };
   case GET_FILTER_BTN_FOOD:
     return { ...state,
