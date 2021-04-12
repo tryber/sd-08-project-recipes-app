@@ -1,0 +1,51 @@
+.loginFormContainer {
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.09);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 600px;
+  padding: 8%;
+  width: 80%;
+}
+
+.loginFormContainer > div {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.loginFormContainer > div > img {
+  width: 60%;
+}
+
+.loginFormContainer > div > h1 {
+  color: var(--login-text-color);
+  font-family: Kaushan Script , cursive;
+}
+
+.loginFormContainer > div > small {
+  color: var(--login-text-color);
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding-top: 0.5rem;
+}
+
+.loginFormContainer > label {
+  margin-bottom: 4px;
+  width: 100%;
+}
+
+.loginFormContainer > button {
+  margin-top: 10px;
+}
+
+.start-btn {
+  background-color: #fd951f;
+  bottom: 0;
+  font-size: 40px;
+  position: fixed;
+}

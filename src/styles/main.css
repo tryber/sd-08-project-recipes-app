@@ -1,0 +1,67 @@
+:root {
+
+  --login-background: linear-gradient(to bottom right, #fd951f, #eea564);
+
+  --login-text-color: #edd6c4;
+
+  --login-btn-background: #eea564;
+
+  --login-btn-text-disable: rgba(0, 0, 0, 0.9);
+
+  --color-borders: #323238;
+
+  --color-black: #0d0d0f;
+}
+
+* {
+  box-sizing: border-box;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Ubuntu , sans-serif;
+  font-size: 0.8rem;
+  height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  width: 100vw;
+}
+
+button, input, select {
+  border: none;
+  border-radius: 4px;
+  font-family: Ubuntu , sans-serif;
+  padding: 6px;
+  width: 100%;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+h1 {
+  font-family: Kaushan Script , cursive;
+  font-size: 1.6rem;
+}
+
+h3 {
+  font-size: 1.4rem;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+a {
+  font-size: 1.2;
+}
+
+span {
+  font-size: 1.4rem;
+}
+
+img {
+  max-width: 200px;
+}

@@ -135,3 +135,11 @@ export function unregister() {
     });
   }
 }
+
+
+
+export function alertSearch(req) {
+  if( req === '14')  return  alert('Sua busca deve conter somente 1 (um) caracter')
+  return alert('Sinto muito, não encontramos nenhuma receita para esses filtros.')
+}
+

@@ -1,0 +1,40 @@
+.searchBarContainer {
+  background-color: #e9e5df;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  width: 100%;
+}
+
+.searchBarContainer > div {
+  display: flex;
+  padding: 6px;
+  width: 100%;
+}
+
+.searchBarContainer > div > input {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 5px solid var(#fd951f);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.05);
+  display: flex;
+  width: 100%;
+}
+
+.searchBarContainer > .searchBarRadios {
+  display: flex;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.searchBarContainer > .searchBarRadios > label {
+  display: flex;
+  width: 80%;
+}
+
+.searchBarContainer > button {
+  background-color: #fd951f;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-around;
+}
+
