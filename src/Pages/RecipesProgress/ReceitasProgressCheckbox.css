@@ -1,0 +1,4 @@
+.form-check-input:checked + .form-check-label {
+  margin-bottom: 0;
+  text-decoration: line-through;
+}
