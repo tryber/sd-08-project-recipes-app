@@ -1,0 +1,86 @@
+/* https://www.youtube.com/watch?v=WCHKsqStQXA */
+* {
+  box-sizing: border-box;
+  font-family: Poppins , sans-serif;
+  margin: 0;
+}
+
+.login-form {
+  background-attachment: fixed;
+  background-image: url('../images/wallpaper.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+form {
+  background-color: white;
+  border: 6px solid rgb(243, 213, 199);
+  border-radius: 50px;
+  box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.2);
+  font-size: 20px;
+  height: 390px;
+  justify-content: center;
+  margin: 115px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  width: 300px;
+}
+
+h1 {
+  color: #a76a82;
+  font-size: 25px;
+  margin-bottom: 20px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.btn-submit {
+  background-color: #c8aab6;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.2);
+  color: rgb(77, 74, 74);
+  display: inline-block;
+  margin-left: 60px;
+  margin-top: 35px;
+  padding: 5px 10px;
+  text-decoration: none;
+  width: 50%;
+}
+
+.btn-submit:hover {
+  background-color: #ca9bae;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.2);
+  color: rgb(77, 74, 74);
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 60px;
+  margin-top: 35px;
+  padding: 5px 10px;
+  text-decoration: none;
+  width: 50%;
+}
+
+.btn-submit:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.btn-submit:disabled {
+  background-color: #dad5d7;
+  box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.2);
+  color: rgb(77, 74, 74);
+  cursor: not-allowed;
+  margin-top: 35px;
+}
+
+.email-password {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid black;
+  height: 30px;
+  outline: none;
+  width: 230px;
+}

@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+  font-family: Poppins , sans-serif;
+  margin: 0;
+}
+
+.ingredients-main-container {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.ingredient-card {
+  background: radial-gradient(white, #ccacb9);
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  color: rgb(77, 74, 74);
+  display: block;
+  font-size: 12px;
+  height: 180px;
+  margin: 3px;
+  width: 150px;
+}
+
+.ingredient-card:hover {
+  background: #ca9bae;
+}
+
+.ingredient-img {
+  display: flex;
+  height: 80px;
+}
+
+.ingredientImg {
+  margin-left: 20px;
+}

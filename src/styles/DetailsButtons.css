@@ -1,0 +1,9 @@
+.disable {
+  pointer-events: none;
+}
+
+.details-btns {
+  background-color: blue;
+  display: flex;
+
+}

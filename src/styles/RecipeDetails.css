@@ -1,0 +1,25 @@
+.container-recipe-details {
+  margin-bottom: 100px;
+}
+
+.last-btn {
+  background-color: white;
+  border: 1px solid black;
+  bottom: 0;
+  color: black;
+  left: 4%;
+  position: fixed;
+  text-align: center;
+  text-decoration: none;
+  width: 330px;
+}
+
+.favorite-btn {
+  background: none;
+  border: none;
+}
+
+.share-btn {
+  background: none;
+  border: none;
+}
