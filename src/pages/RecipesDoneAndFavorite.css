@@ -1,0 +1,44 @@
+.fav-done-btn {
+  margin: 5px;
+  width: 97vw;
+}
+
+.custom-btn {
+  color: white;
+  font-weight: 600;
+}
+
+.nav-catogories {
+  text-align: center;
+}
+
+.nav-catogories button {
+  margin: 2px;
+  width: 48%;
+}
+
+.fav-done-img {
+  margin: 10px 0;
+  width: 100vw;
+}
+
+.fav-done-title {
+  font-size: x-large;
+  margin-left: 10px;
+}
+
+.fav-done-body {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.fav-done-info {
+  font-size: medium;
+  font-weight: 500;
+}
+
+.icon-container {
+  bottom: 30px;
+  position: relative;
+}

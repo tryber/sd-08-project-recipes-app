@@ -1,0 +1,38 @@
+/* .card-row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.card-col {
+  margin: 10px 0 0 10px;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.card-col:nth-child( 2n ) {
+  margin-left: 0;
+} */
+
+.cards-container {
+  display: flex;
+  flex-flow: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-bottom: 15vh;
+  margin-top: 10px;
+}
+
+.cards-main {
+  height: auto;
+  margin-bottom: 10px;
+  width: 48%;
+}
+
+.nav-catogories {
+  text-align: center;
+}
+
+.nav-catogories button {
+  margin: 2px;
+  width: 48%;
+}

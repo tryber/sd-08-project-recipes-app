@@ -1,0 +1,16 @@
+.card {
+  height: 36vh;
+}
+
+.card-img {
+  height: 20vh;
+}
+
+.card-body {
+  min-height: 1.5rem;
+  padding: 0.5rem 1rem;
+}
+
+.recipe-name {
+  font-size: 15px;
+}

@@ -1,0 +1,16 @@
+.container-404 {
+  align-items: center;
+  background-image: url('../images/alimentos-ricos-em-fibras.jpg.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+}
+
+.container-404-title {
+  font-weight: 900;
+  text-shadow: 2px 2px darkgray;
+}

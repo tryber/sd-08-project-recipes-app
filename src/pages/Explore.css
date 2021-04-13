@@ -1,0 +1,50 @@
+.explore-button {
+  display: flex;
+  flex-direction: column;
+  height: 70vh;
+  justify-content: center;
+}
+
+.explore-button a {
+  margin: 20px;
+}
+
+.surprise-me {
+  margin: 20px;
+}
+
+.custom-btn-explore {
+  color: white;
+  font-weight: 600;
+  padding: 20px;
+}
+
+.cards-container {
+  display: flex;
+  flex-flow: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 10px;
+}
+
+.card-explore {
+  height: auto;
+  margin-bottom: 10px;
+  width: 45%;
+}
+
+.card-explore button {
+  background-image: url('../images/food-ingredients.jpg');
+  background-position-x: center;
+  background-position-y: bottom;
+  background-repeat: no-repeat;
+  background-size: 220px 240px;
+  height: 100%;
+}
+
+.ingredients-img {
+  height: auto;
+  max-height: 150px;
+  max-width: 200px;
+  width: auto;
+}

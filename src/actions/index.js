@@ -1,0 +1,14 @@
+export const REQUEST_RECIPES = 'REQUEST_RECIPES';
+export const ADD_RECIPES = 'ADD_RECIPES';
+export const ADD_CATEGORIES = 'ADD_CATEGORIES';
+export const ADD_FILTER = 'ADD_FILTER';
+export const ADD_RECOMMENDATIONS = 'ADD_RECOMMENDATIONS';
+export const ADD_TOKEN_MEAL = 'ADD_TOKEN_MEAL';
+export const ADD_TOKEN_DRINK = 'ADD_TOKEN_DRINK';
+export const ADD_USER = 'ADD_USER';
+export const ADD_BYINGREDIENT = 'ADD_BYINGREDIENT';
+export const START_RECIPE = 'START_RECIPE';
+export const END_RECIPE = 'END_RECIPE';
+export const ADD_FAVORITE = 'ADD_FAVORITE';
+export const RM_FAVORITE = 'RM_FAVORITE';
+export const ADD_COUNTRIES = 'ADD_COUNTRIES';

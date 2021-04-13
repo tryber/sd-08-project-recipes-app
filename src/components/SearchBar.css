@@ -1,0 +1,15 @@
+.search-bar {
+  background-color: orangered;
+  border-radius: 5px;
+  color: white;
+  font-weight: 600;
+  line-height: 30px;
+  margin: 10px;
+  padding: 15px;
+}
+
+.search-bar-btn {
+  color: white;
+  font-weight: 600;
+}
+
