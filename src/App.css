@@ -10,34 +10,22 @@
   width: 100%;
 }
 
-.rocksGlass {
-  animation: shake 1s infinite ease;
-  max-height: 80vh;
-}
-
-/*
-#iceLeft {
-  animation: clink .8s infinite ease;
-  opacity: 0.6;
-  transform-origin: 36px 66px;
-}
-
-#iceRight {
-  animation: clink .8s .2s infinite ease;
-  opacity: 0.6;
-  transform-origin: 60px 78px;
-}
-*/
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  } */
 
 .meals > .logo {
-  animation: shake 1.5s infinite ease;
+
+  /* animation: shake 1.5s infinite ease; */
   color: aliceblue;
   font-family: Montserrat , sans-serif;
   font-size: 3em;
   font-weight: 900;
 }
 
-@keyframes shake {
+/* @keyframes shake {
 
   0% {
     transform: rotate(5deg);
@@ -65,4 +53,14 @@
   100% {
     transform: rotate(-10deg);
   }
+} */
+
+.btnStyle {
+  bottom: 0;
+  position: fixed;
+  z-index: 1;
+}
+
+body .Login {
+  background-image: url('./images/legumesefrutas.jpg');
 }

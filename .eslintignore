@@ -1,3 +1,5 @@
 src/App.test.js
 src/serviceWorker.js 
 cypress/*
+src/__tests__/
+src/mocks/

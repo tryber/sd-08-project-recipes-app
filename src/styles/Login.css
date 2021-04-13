@@ -1,0 +1,70 @@
+.pageContainer {
+  align-items: center;
+  background: url('../images/legumesefrutas.jpg') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  position: absolute;
+  width: 100vw;
+  z-index: 0;
+}
+
+.pageOpacity {
+  backdrop-filter: blur(1.3px);
+  background-color: rgba(255, 255, 255, 0.2);
+  height: 100vh;
+  position: absolute;
+  width: 100vw;
+  z-index: -1;
+}
+
+.formContainer {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 12px;
+  padding: 60px 40px;
+}
+
+.inputContainer {
+  align-items: center;
+  background-color: #fefefe;
+  border-radius: 8px;
+  display: flex;
+  height: 50px;
+  margin-bottom: 16px;
+  width: 250px;
+}
+
+.inputContainer input {
+  border: 0;
+  color: #3d495c;
+  font-size: 18px;
+  font-weight: 600;
+  width: 190px;
+}
+
+.inputContainer svg {
+  color: #3d495c;
+  margin: 0 12px 0 8px;
+}
+
+.loginBtn {
+  background-color: rgb(255, 255, 57);
+  border: 0;
+  border-radius: 8px;
+  color: #3d495c;
+  font-size: 20px;
+  font-weight: 600;
+  height: 50px;
+  transition: background-color 0.2s;
+  width: 250px;
+}
+
+.loginBtn:disabled {
+  background-color: rgb(255, 255, 140);
+}
+
+.loginBtn:enabled:hover {
+  background-color: rgb(255, 208, 56);
+}
