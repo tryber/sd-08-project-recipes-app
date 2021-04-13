@@ -11,3 +11,111 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.g6-header {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.g6-header-row {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.g6-header-button {
+  background-color: white;
+  border: none;
+}
+
+.g6-footer {
+  background-color: gray;
+  bottom: 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  left: 0;
+  padding: 10px;
+  position: fixed;
+  right: 0;
+}
+
+.g6-footer-button {
+  background-color: gray;
+  border: none;
+}
+
+.g6-start-recipe-btn {
+  bottom: 0;
+  position: fixed;
+}
+
+.g6-img-detail {
+  margin: 0 auto;
+  max-width: 300px;
+}
+
+.g6-card {
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(25, 30, 50, 0.25);
+  height: 250px;
+  margin: 15px auto;
+  max-width: 300px;
+  overflow: hidden;
+}
+
+.g6-card img {
+  width: 300px;
+}
+
+.g6-card h3 {
+  padding: 10px;
+}
+
+.g6-caroussel {
+  display: flex;
+  margin: 0 auto;
+  max-width: 325px;
+  overflow-x: auto;
+}
+
+.g6-caroussel .g6-card {
+  height: 125px;
+  margin-right: 25px;
+  min-width: 150px;
+}
+
+.g6-caroussel .g6-card h3 {
+  font-size: 25px;
+  padding: 10px 0 0 10px;
+}
+
+.g6-caroussel .g6-card img {
+  width: 150px;
+}
+
+.g6-ingredient-card-display {
+  align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+  width: 320px;
+}
+
+.g6-ingredient-card {
+  box-shadow: 0 2px 8px rgba(25, 30, 50, 0.25);
+  margin: 5px;
+  max-width: 150px;
+  padding: 25px;
+  text-align: center;
+}
+
+.notRisked {
+  text-decoration: none;
+}
+
+.risked {
+  text-decoration: line-through;
+}
+
+
