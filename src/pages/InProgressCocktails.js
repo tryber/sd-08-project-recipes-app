@@ -235,7 +235,7 @@ export default class InProgressCocktails extends Component {
         </div>
         <img src={ row } alt="row" className="spacer" />
         <div className="start-btn">
-          <FinishButton isDone={ isDone } />
+          <FinishButton isDone={ isDone } recipe={ cocktails.drinks[0] } />
         </div>
       </div>
     );
