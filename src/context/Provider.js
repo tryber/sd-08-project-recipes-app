@@ -28,13 +28,6 @@ function Provider({ children }) {
   const [comidas, setComidas] = useState([]);
   const [bebidas, setBebidas] = useState([]);
 
-  // async function requestApiData(endpoint) {
-  //   const searchType = radioValue === 'i' ? 'filter' : 'search';
-  //   setIsFetching(true);
-  //   setApiReturn([await fetchRecipes(endpoint, searchType, radioValue, inputText)]);
-  //   setIsFetching(false);
-  // }
-
   const requestApiData = useCallback(async (endpoint) => {
     const searchType = radioValue === 'i' ? 'filter' : 'search';
     setIsFetching(true);

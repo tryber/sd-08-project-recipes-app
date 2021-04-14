@@ -1,17 +1,22 @@
 .container-recipe-details {
-  margin-bottom: 100px;
+  margin-bottom: 38px;
 }
 
 .last-btn {
-  background-color: white;
-  border: 1px solid black;
+  border: none;
   bottom: 0;
-  color: black;
   left: 4%;
+  min-width: 92%;
   position: fixed;
   text-align: center;
-  text-decoration: none;
-  width: 330px;
+}
+
+.btn {
+  background-color: #a76a82;
+}
+
+.btn:disabled {
+  background-color: #a76a82;
 }
 
 .favorite-btn {
@@ -22,4 +27,24 @@
 .share-btn {
   background: none;
   border: none;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.recipe-thumb {
+  margin-left: -15px;
+  margin-right: -15px;
+  max-height: 200px;
+  min-width: 360px;
+}
+
+.recommendations {
+  text-shadow: 1px 1px black;
+}
+
+.instructions {
+  font-size: 0.9rem;
 }

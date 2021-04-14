@@ -33,7 +33,6 @@ function OrigemComidas() {
   }, [activeArea]);
 
   useEffect(() => {
-    getRecipes();
     getAreasApi();
   }, []);
 

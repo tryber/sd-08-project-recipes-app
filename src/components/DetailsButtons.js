@@ -4,8 +4,6 @@ import { Link, Redirect } from 'react-router-dom';
 import Context from '../context/Context';
 // import { saveState } from '../services/LocalStorage';
 
-import '../styles/DetailsButtons.css';
-
 function SaveFinishedRecipes(id, recipeDetails, route) {
   const date = new Date();
   const currentDate = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
@@ -91,12 +89,12 @@ function DetailsButtons({ route, id, page }) {
   if (shouldRedirect === id) return <Redirect to="/receitas-feitas" />;
 
   return (
-    <div className="details-btns">
+    <div className="d-grid gap-2 details-btns">
       {
         page === 'details' ? (
           <Link
             to={ `/${route}/${id}/in-progress` }
-            className="last-btn"
+            className="last-btn btn btn-secondary"
             data-testid="start-recipe-btn"
             style={ { display: 'none' } }
             id="start-recipe-btn"
@@ -111,7 +109,8 @@ function DetailsButtons({ route, id, page }) {
           <button
             to="/receitas-feitas"
             type="submit"
-            className={ disableButton ? 'last-btn disable' : 'last-btn' }
+            className={ disableButton ? 'last-btn disable btn btn-primary'
+              : 'last-btn btn btn-primary' }
             data-testid="finish-recipe-btn"
             id="finish-recipe-btn"
             disabled={ disableButton }

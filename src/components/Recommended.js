@@ -19,13 +19,16 @@ function Recommended({ recipeType }) {
                   className="d-block w-100"
                   alt="Recipe thumbnail"
                   src={ item.strMealThumb }
-                  height="120"
+                  height="150"
                 />
                 <Carousel.Caption>
-                  <h6>
+                  <h6 className="recommendations">
                     { item.strCategory }
                   </h6>
-                  <h5 data-testid={ `${index}-recomendation-title` }>
+                  <h5
+                    data-testid={ `${index}-recomendation-title` }
+                    className="recommendations"
+                  >
                     { item.strMeal }
                   </h5>
                 </Carousel.Caption>
@@ -36,9 +39,10 @@ function Recommended({ recipeType }) {
             index < SIX_RECOMMENDATIONS ? (
               <Carousel.Item key={ index } data-testid={ `${index}-recomendation-card` }>
                 <img
+                  className="d-block w-100"
                   alt="Recipe thumbnail"
                   src={ item.strDrinkThumb }
-                  height="100"
+                  height="150"
                 />
                 <Carousel.Caption>
                   <h6>

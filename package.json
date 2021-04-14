@@ -11,6 +11,7 @@
     "bootstrap": "^4.5.3",
     "clipboard-copy": "^3.2.0",
     "history": "^5.0.0",
+    "jest-fetch-mock": "^3.0.3",
     "lodash": "^4.17.15",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",

@@ -1,0 +1,2 @@
+test('Farewell, front-end', () => {
+});

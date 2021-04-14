@@ -34,12 +34,10 @@ function DetailsHeader({ recipeType, recipe }) {
     favoritesArray = JSON.parse(localStorage.getItem('favoriteRecipes')) || [];
 
     if (favoritesArray.some((item) => item.id === id)) {
-      console.log('repeteco');
       favoritesArray = favoritesArray.filter((item) => item.id !== id);
       document.getElementById('favorite-btn').setAttribute('src', whiteHeartIcon);
     } else {
       favoritesArray.push(newFavorite);
-      console.log('sou novo aqui');
       document.getElementById('favorite-btn').setAttribute('src', blackHeartIcon);
     }
     localStorage.setItem('favoriteRecipes', JSON.stringify(favoritesArray));
@@ -50,38 +48,42 @@ function DetailsHeader({ recipeType, recipe }) {
       <img
         alt="Recipe thumbnail"
         data-testid="recipe-photo"
+        className="recipe-thumb"
         src={ recipe[`str${recipeType}Thumb`] }
-        height="100"
       />
-      <h1 data-testid="recipe-title">
-        { recipe[`str${recipeType}`] }
-      </h1>
-      <input
-        type="image"
-        alt="Share image"
-        data-testid="share-btn"
-        className="share-btn"
-        id="share-btn"
-        src={ shareIcon }
-        onClick={ () => shareLink() }
-      />
-      <input
-        type="image"
-        alt="Favorite image"
-        data-testid="favorite-btn"
-        className="favorite-btn"
-        id="favorite-btn"
-        src={ localStorage.getItem('favoriteRecipes')
+      <div className="row justify-content-between">
+        <h1 data-testid="recipe-title" className="d-inline mt-3 mb-0 ms-3">
+          { recipe[`str${recipeType}`] }
+        </h1>
+        <div>
+          <input
+            type="image"
+            alt="Share image"
+            data-testid="share-btn"
+            className="share-btn d-inline mt-3 mx-2"
+            id="share-btn"
+            src={ shareIcon }
+            onClick={ () => shareLink() }
+          />
+          <input
+            type="image"
+            alt="Favorite image"
+            data-testid="favorite-btn"
+            className="favorite-btn d-inline mt-3"
+            id="favorite-btn"
+            src={ localStorage.getItem('favoriteRecipes')
             && JSON.parse(localStorage.getItem('favoriteRecipes'))
               .some((item) => item.id === recipe[`id${recipeType}`])
-          ? blackHeartIcon : whiteHeartIcon }
-        onClick={ () => favoriteRecipe() }
-      />
-      { copyURL ? <p>Link copiado!</p> : null }
-      <h5 data-testid="recipe-category">
+              ? blackHeartIcon : whiteHeartIcon }
+            onClick={ () => favoriteRecipe() }
+          />
+          { copyURL ? <p data-testid="share-message">Link copiado!</p> : null }
+        </div>
+      </div>
+      <h6 data-testid="recipe-category" className="text-black-50 ">
         { recipe.strCategory }
         {recipeType === 'Drink' ? recipe.strAlcoholic : null}
-      </h5>
+      </h6>
     </section>
   );
 }

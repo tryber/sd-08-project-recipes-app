@@ -17,7 +17,7 @@ function RecipeDetails({ recipeType, page }) {
     return (
       <section
         key={ recipe[`id${recipeType}`] }
-        className="container-recipe-details"
+        className="container-recipe-details container-fluid"
       >
         <DetailsHeader recipe={ recipe } recipeType={ recipeType } />
         <Ingredients page={ page } id={ recipe[`id${recipeType}`] } />
@@ -29,6 +29,7 @@ function RecipeDetails({ recipeType, page }) {
                 title="Youtube video"
                 data-testid="video"
                 src={ recipe.strYoutube.replace('watch?v=', 'embed/') }
+                width="330"
               >
                 <track kind="captions" />
               </iframe>
