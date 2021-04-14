@@ -1,0 +1,110 @@
+.logo-container {
+  background-color: white;
+  border-radius: 50%;
+  height: 250px;
+  margin-bottom: 10px;
+  position: relative;
+  width: 250px;
+}
+
+.hat {
+  animation: balance 3.2s linear 4s infinite;
+  height: 200px;
+  opacity: 0;
+  position: absolute;
+  right: 55px;
+  top: -20px;
+  width: 200px;
+}
+
+.do {
+  animation: roll 2s linear 2s;
+  animation-fill-mode: forwards;
+  float: right;
+  position: absolute;
+  right: 25px;
+  top: -20px;
+  width: 250px;
+}
+
+.it {
+  animation: rotate 2s linear 2s;
+  animation-fill-mode: forwards;
+  position: absolute;
+  right: -60px;
+  top: 15px;
+  width: 250px;
+}
+
+.ea {
+  animation: fade 3.2s linear 2s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  position: absolute;
+  right: -15px;
+  top: 38px;
+  width: 250px;
+}
+
+.cookie {
+  animation: fade 3.2s linear 2s;
+  animation-fill-mode: forwards;
+  height: 200px;
+  opacity: 0;
+  position: absolute;
+  right: 46px;
+  top: 55px;
+  width: 250px;
+}
+
+@keyframes rotate {
+
+  100% {
+    right: -70px;
+    top: 26px;
+    transform: rotate(180deg);
+    transition: 3s ease;
+  }
+
+}
+
+@keyframes roll {
+
+  100% {
+    right: 5px;
+    top: -20px;
+  }
+
+}
+
+@keyframes fade {
+
+  100% {
+    opacity: 1;
+    transition: 3s ease;
+  }
+
+}
+
+@keyframes balance {
+
+  0% {
+    opacity: 1;
+    transform: rotate(-5deg);
+    transition: 3s ease;
+  }
+
+  50% {
+    opacity: 1;
+    transform: rotate(3deg);
+    transition: 3s ease;
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotate(-5deg);
+    transition: 3s ease;
+  }
+
+}
+
