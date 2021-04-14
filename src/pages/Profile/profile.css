@@ -1,0 +1,18 @@
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  justify-content: center;
+}
+
+.profile-container h1 {
+  font-size: 30px;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.profile-container button {
+  font-size: 25px;
+  font-weight: 600;
+  height: 50px;
+}

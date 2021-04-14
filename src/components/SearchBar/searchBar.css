@@ -1,0 +1,22 @@
+.search-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.radio-group {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px;
+}
+
+.radio-group input {
+  margin-right: 4px;
+}
+
+.btn-danger {
+  background-color: rgb(166, 45, 67);
+  border: none;
+  padding-bottom: 7px;
+  padding-top: 0;
+}

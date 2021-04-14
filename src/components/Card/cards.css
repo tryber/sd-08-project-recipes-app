@@ -1,0 +1,29 @@
+.card-ingredient {
+  align-items: center;
+  border: none;
+  height: 150px;
+  width: 150px;
+}
+
+.card-ingredient-image {
+  padding-top: 20px;
+  width: 50px;
+}
+
+.card-title {
+  font-size: 20px;
+  text-align: center;
+}
+
+a {
+  color: rgb(31, 35, 56);
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(166, 45, 67);
+}
+
+a:active {
+  color: rgb(166, 45, 67);
+}

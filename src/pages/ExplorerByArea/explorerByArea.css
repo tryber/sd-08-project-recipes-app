@@ -1,0 +1,26 @@
+@media ( min-width : 361px ) {
+
+  .list-area {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 20px;
+    margin-bottom: 80px;
+  }
+}
+
+.list-area button {
+  background-color: transparent;
+  border: none;
+}
+
+.list-select {
+  color: rgb(166, 45, 67);
+  margin: 8px;
+  width: 96%;
+}
+
+.list-select:focus {
+  border-color: rgb(166, 45, 67);
+  box-shadow: none;
+}

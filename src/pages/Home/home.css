@@ -1,0 +1,15 @@
+@media ( min-width : 361px ) {
+
+  .list-recipes {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 20px;
+    margin-bottom: 80px;
+  }
+}
+
+.list-recipes {
+  margin: 10px;
+  margin-bottom: 80px;
+}

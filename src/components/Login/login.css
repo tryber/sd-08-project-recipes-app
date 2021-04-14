@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Coiny&family=Montserrat&display=swap') ;
+
+body {
+  font-family: Coiny , cursive;
+}
+
+.form-login {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-login input {
+  height: 35px;
+  min-width: 300px;
+}
+
+.login-button {
+  background-color: rgb(31, 35, 56);
+  border: none;
+  color: white;
+}
+
+.login-button:disabled {
+  background-color: rgb(217, 218, 217);
+  color: rgb(31, 35, 56);
+}
+
+.login-button:hover:enabled {
+  background-color: rgb(166, 45, 67);
+}

@@ -1,0 +1,12 @@
+.btn-categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-categories button {
+  background-color: rgb(166, 45, 67);
+  font-weight: 600;
+  margin: 4px;
+  min-width: 100px;
+}

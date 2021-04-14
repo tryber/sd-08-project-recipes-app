@@ -1,0 +1,13 @@
+.btn-recipe {
+  bottom: 0;
+  position: fixed;
+}
+
+.card-detail h4 {
+  margin: 15px 0;
+  text-align: center;
+}
+
+.instructions li {
+  font-family: Montserrat , sans-serif;
+}

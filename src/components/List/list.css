@@ -1,0 +1,43 @@
+.list-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-bottom: 80px;
+  width: 100%;
+}
+
+.card-container {
+  box-shadow: 5px 5px 5px darkgray;
+  margin: 4px 0;
+}
+
+.remove-button {
+  background: rgb(200, 35, 51);
+  border: none;
+  border-radius: 50%;
+  box-sizing: border-box;
+  font-size: small;
+  font-weight: 600;
+  margin-left: 2px;
+  padding: 0 5px 3px;
+}
+
+.filtered-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: 4px;
+}
+
+.filtered-content {
+  margin: 4px;
+}
+
+.card-button {
+  font-weight: 900;
+}
+
+.spinner {
+  margin-bottom: -10px;
+  margin-top: 5px;
+}

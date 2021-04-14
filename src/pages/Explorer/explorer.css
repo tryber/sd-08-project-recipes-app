@@ -1,0 +1,11 @@
+.explorer-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.explorer-page button {
+  height: 50px;
+  margin: 8px;
+}
