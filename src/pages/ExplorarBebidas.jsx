@@ -18,18 +18,20 @@ function ExplorarBebidas() {
   return (
     <div>
       <Header title="Explorar Bebidas" disableBtn={ BOOLEAN_TRUE } />
-      <Button
-        type="button"
-        label="Por Ingredientes"
-        datatestid="explore-by-ingredient"
-        onClick={ () => history.push('bebidas/ingredientes') }
-      />
-      <Button
-        type="button"
-        label="Me Surpreenda!"
-        datatestid="explore-surprise"
-        onClick={ () => getRandomRecipe() }
-      />
+      <section className="explore-container">
+        <Button
+          type="button"
+          label="Por Ingredientes"
+          datatestid="explore-by-ingredient"
+          onClick={ () => history.push('bebidas/ingredientes') }
+        />
+        <Button
+          type="button"
+          label="Me Surpreenda!"
+          datatestid="explore-surprise"
+          onClick={ () => getRandomRecipe() }
+        />
+      </section>
       <Footer />
     </div>
   );

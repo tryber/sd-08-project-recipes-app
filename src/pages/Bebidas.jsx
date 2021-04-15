@@ -53,22 +53,26 @@ const Bebidas = () => {
   return (
     <>
       <Header title="Bebidas" disableBtn={ BOOLEAN_FALSE } />
-      <Button
-        datatestid="All-category-filter"
-        label="All"
-        onClick={ filterAll }
-      />
-      { drinksCategories.map(({ strCategory: category }, index) => (
+      <section className="filter-buttons">
         <Button
-          datatestid={ `${category}-category-filter` }
-          label={ category }
-          key={ index }
-          onClick={ (event) => filterByCategory(category, event) }
+          datatestid="All-category-filter"
+          label="All"
+          onClick={ filterAll }
         />
-      ))}
-      { drinks.map((drink, index) => (
-        <FoodCard index={ index } food={ drink } key={ index } />
-      )) }
+        { drinksCategories.map(({ strCategory: category }, index) => (
+          <Button
+            datatestid={ `${category}-category-filter` }
+            label={ category }
+            key={ index }
+            onClick={ (event) => filterByCategory(category, event) }
+          />
+        ))}
+      </section>
+      <section className="recipe-list">
+        { drinks.map((drink, index) => (
+          <FoodCard index={ index } food={ drink } key={ index } />
+        )) }
+      </section>
       <Footer />
     </>
   );

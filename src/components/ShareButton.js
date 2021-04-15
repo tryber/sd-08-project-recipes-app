@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import shareIcon from '../images/shareIcon.svg';
+import shareIcon from '../images/share.svg';
 
 const copy = require('clipboard-copy');
 
@@ -10,7 +10,10 @@ function ShareButton(props) {
 
   function renderMessage() {
     return (
-      <span>Link copiado!</span>
+      <>
+        <span className="pink-color">Link copiado!</span>
+        <br />
+      </>
     );
   }
 

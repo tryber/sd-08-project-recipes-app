@@ -22,20 +22,25 @@ function IngredientesBebidas() {
   return (
     <div>
       <Header title="Explorar Ingredientes" disableBtn={ BOOLEAN_TRUE } />
-      { ingredients.map((dat, index) => (
-        <div data-testid={ `${index}-ingredient-card` } key={ index }>
-          <input
-            type="image"
-            data-testid={ `${index}-card-img` }
-            src={ `https://www.thecocktaildb.com/images/ingredients/${dat.strIngredient1}-Small.png` }
-            alt="ingrediente"
-            name={ dat.strIngredient1 }
-            width="100%"
+      <section className="recipe-list">
+        { ingredients.map((dat, index) => (
+          <button
+            type="button"
+            data-testid={ `${index}-ingredient-card` }
+            key={ index }
             onClick={ () => setMain(dat.strIngredient1) || history.push('../../bebidas') }
-          />
-          <p data-testid={ `${index}-card-name` }>{ dat.strIngredient1 }</p>
-        </div>
-      ))}
+          >
+            <img
+              data-testid={ `${index}-card-img` }
+              src={ `https://www.thecocktaildb.com/images/ingredients/${dat.strIngredient1}-Small.png` }
+              alt="ingrediente"
+              name={ dat.strIngredient1 }
+              width="100%"
+            />
+            <p data-testid={ `${index}-card-name` }>{ dat.strIngredient1 }</p>
+          </button>
+        ))}
+      </section>
       <Footer />
     </div>
   );

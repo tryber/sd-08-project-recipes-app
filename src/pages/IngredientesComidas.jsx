@@ -22,20 +22,25 @@ function IngredientesComidas() {
   return (
     <div>
       <Header title="Explorar Ingredientes" disableBtn={ BOOLEAN_TRUE } />
-      { ingredients.map((data, index) => (
-        <div data-testid={ `${index}-ingredient-card` } key={ index }>
-          <input
-            type="image"
-            data-testid={ `${index}-card-img` }
-            src={ `https://www.themealdb.com/images/ingredients/${data.strIngredient}-Small.png` }
-            alt="ingrediente"
-            name={ data.strIngredient }
-            width="100%"
+      <section className="recipe-list">
+        { ingredients.map((data, index) => (
+          <button
+            type="button"
+            data-testid={ `${index}-ingredient-card` }
+            key={ index }
             onClick={ () => setMain(data.strIngredient) || history.push('../../comidas') }
-          />
-          <p data-testid={ `${index}-card-name` }>{ data.strIngredient }</p>
-        </div>
-      ))}
+          >
+            <img
+              data-testid={ `${index}-card-img` }
+              src={ `https://www.themealdb.com/images/ingredients/${data.strIngredient}-Small.png` }
+              alt="ingrediente"
+              name={ data.strIngredient }
+              width="100%"
+            />
+            <p data-testid={ `${index}-card-name` }>{ data.strIngredient }</p>
+          </button>
+        ))}
+      </section>
       <Footer />
     </div>
   );

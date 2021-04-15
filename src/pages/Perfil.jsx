@@ -9,29 +9,30 @@ function Perfil() {
   const [user] = useState(JSON.parse(localStorage.getItem('user')) || '{}');
   const history = useHistory();
   return (
-    <>
+    <div className="background">
       <Header title="Perfil" disableBtn={ BOOLEAN_TRUE } />
-      <p data-testid="profile-email">
-        Email:
-        { user.email }
-      </p>
-      <Button
-        label="Receitas Feitas"
-        datatestid="profile-done-btn"
-        onClick={ () => history.push('/receitas-feitas') }
-      />
-      <Button
-        label="Receitas Favoritas"
-        datatestid="profile-favorite-btn"
-        onClick={ () => history.push('/receitas-favoritas') }
-      />
-      <Button
-        label="Sair"
-        datatestid="profile-logout-btn"
-        onClick={ () => localStorage.clear() || history.push('/') }
-      />
+      <section className="profile-container">
+        <p data-testid="profile-email">
+          { user.email }
+        </p>
+        <Button
+          label="Receitas Feitas"
+          datatestid="profile-done-btn"
+          onClick={ () => history.push('/receitas-feitas') }
+        />
+        <Button
+          label="Receitas Favoritas"
+          datatestid="profile-favorite-btn"
+          onClick={ () => history.push('/receitas-favoritas') }
+        />
+        <Button
+          label="Sair"
+          datatestid="profile-logout-btn"
+          onClick={ () => localStorage.clear() || history.push('/') }
+        />
+      </section>
       <Footer />
-    </>
+    </div>
   );
 }
 

@@ -51,22 +51,26 @@ const Comidas = () => {
   return (
     <>
       <Header title="Comidas" disableBtn={ BOOLEAN_FALSE } />
-      <Button
-        datatestid="All-category-filter"
-        label="All"
-        onClick={ filterAll }
-      />
-      {mealsCategories.map(({ strCategory: category }, index) => (
+      <section className="filter-buttons">
         <Button
-          datatestid={ `${category}-category-filter` }
-          label={ category }
-          key={ index }
-          onClick={ (event) => filterByCategory(category, event) }
+          datatestid="All-category-filter"
+          label="All"
+          onClick={ filterAll }
         />
-      ))}
-      { meals.map((meal, index) => (
-        <FoodCard index={ index } food={ meal } key={ index } />
-      ))}
+        {mealsCategories.map(({ strCategory: category }, index) => (
+          <Button
+            datatestid={ `${category}-category-filter` }
+            label={ category }
+            key={ index }
+            onClick={ (event) => filterByCategory(category, event) }
+          />
+        ))}
+      </section>
+      <section className="recipe-list">
+        { meals.map((meal, index) => (
+          <FoodCard index={ index } food={ meal } key={ index } />
+        ))}
+      </section>
       <Footer />
     </>
   );

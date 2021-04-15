@@ -62,25 +62,28 @@ function InProgressFood() {
 
   function renderInProgress() {
     return (
-      <>
-        <img
-          src={ currentFood.strMealThumb || currentFood.strDrinkThumb }
-          data-testid="recipe-photo"
-          alt="Thumbnail"
-          className="inProgressImg"
-        />
-        <h1 data-testid="recipe-title">
-          { currentFood.strMeal || currentFood.strDrink }
-        </h1>
-        <ShareButton path={ `${pathAndId[0]}` } />
-        <FavoriteButton currentFood={ currentFood } />
-        <h6
-          data-testid="recipe-category"
-        >
-          { currentFood.strAlcoholic
-            ? currentFood.strAlcoholic : currentFood.strCategory }
-        </h6>
-        <h2>Ingredientes</h2>
+      <div className="background-dark details-container">
+        <section className="detail-image-container">
+          <img
+            src={ currentFood.strMealThumb || currentFood.strDrinkThumb }
+            data-testid="recipe-photo"
+            alt="Thumbnail"
+            className="inProgressImg"
+          />
+          <h4
+            data-testid="recipe-category"
+          >
+            { currentFood.strAlcoholic
+              ? currentFood.strAlcoholic : currentFood.strCategory }
+          </h4>
+        </section>
+        <section className="detail-top-bar">
+          <h1 data-testid="recipe-title">
+            { currentFood.strMeal || currentFood.strDrink }
+          </h1>
+          <FavoriteButton currentFood={ currentFood } />
+        </section>
+        <h3>Ingredientes</h3>
         <div className="ingredientsSteps">
           { ingredients.map((curr, index) => (
             <div
@@ -100,15 +103,18 @@ function InProgressFood() {
             </div>
           ))}
         </div>
-        <h2>Instruções</h2>
+        <h3>Instruções</h3>
         <p data-testid="instructions">{ currentFood.strInstructions }</p>
-        <Button
-          datatestid="finish-recipe-btn"
-          label="Finalizar Receita"
-          onClick={ handleDoneClick }
-          disabled={ btnDisable }
-        />
-      </>
+        <div className="progress-footer">
+          <ShareButton path={ `${pathAndId[0]}` } />
+          <Button
+            datatestid="finish-recipe-btn"
+            label="Finalizar Receita"
+            onClick={ handleDoneClick }
+            disabled={ btnDisable }
+          />
+        </div>
+      </div>
     );
   }
 

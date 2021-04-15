@@ -10,6 +10,20 @@ export function createObject(currentFood, pathAndId) {
     '/bebidas': 'bebida',
   };
 
+  let tagArray;
+
+  if (typeRecipe[pathAndId[1]] === 'comida' && currentFood.strTags !== null) {
+    const array = currentFood.strTags.split(',');
+    console.log(array);
+    if (array.length === 1) {
+      tagArray = [array[0]];
+    } else {
+      tagArray = [array[0], array[1]];
+    }
+  } else {
+    tagArray = [];
+  }
+
   let today = new Date();
   const dd = String(today.getDate()).padStart(2, '0');
   const mm = String(today.getMonth() + 1).padStart(2, '0');
@@ -25,6 +39,6 @@ export function createObject(currentFood, pathAndId) {
     name: currentFood.strMeal || currentFood.strDrink,
     image: currentFood.strMealThumb || currentFood.strDrinkThumb,
     doneDate: today,
-    tags: [],
+    tags: tagArray,
   };
 }

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useLocation } from 'react-router';
-import blackHeartIcon from '../images/blackHeartIcon.svg';
-import whiteHeartIcon from '../images/whiteHeartIcon.svg';
+import blackHeartIcon from '../images/heart2-full.svg';
+import whiteHeartIcon from '../images/heart2.svg';
 import { checkFavoritesLocal, addFavoritesLocal,
   removeFavoritesLocal } from '../services/favoritesLocalStorage';
 
@@ -50,8 +50,8 @@ const FavoriteButton = (props) => {
       alt="share"
       data-testid="favorite-btn"
       onClick={ favRecipesBtn }
+      className="favorite-btn"
     />
-
   );
 };
 

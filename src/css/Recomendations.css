@@ -21,7 +21,7 @@
 }
 
 .start-recipe-btn {
-  bottom: 0;
+  bottom: 5px;
   margin-left: 10%;
   position: fixed;
   width: 80%;

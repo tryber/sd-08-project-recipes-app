@@ -18,24 +18,26 @@ function ExplorarComidas() {
   return (
     <div>
       <Header title="Explorar Comidas" disableBtn={ BOOLEAN_TRUE } />
-      <Button
-        type="button"
-        label="Por Ingredientes"
-        datatestid="explore-by-ingredient"
-        onClick={ () => history.push('comidas/ingredientes') }
-      />
-      <Button
-        type="button"
-        label="Por Local de Origem"
-        datatestid="explore-by-area"
-        onClick={ () => history.push('comidas/area') }
-      />
-      <Button
-        type="button"
-        label="Me Surpreenda!"
-        datatestid="explore-surprise"
-        onClick={ () => getRandomRecipe() }
-      />
+      <section className="explore-container">
+        <Button
+          type="button"
+          label="Por Ingredientes"
+          datatestid="explore-by-ingredient"
+          onClick={ () => history.push('comidas/ingredientes') }
+        />
+        <Button
+          type="button"
+          label="Por Local de Origem"
+          datatestid="explore-by-area"
+          onClick={ () => history.push('comidas/area') }
+        />
+        <Button
+          type="button"
+          label="Me Surpreenda!"
+          datatestid="explore-surprise"
+          onClick={ () => getRandomRecipe() }
+        />
+      </section>
       <Footer />
     </div>
   );

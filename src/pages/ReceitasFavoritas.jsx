@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router';
 import Button from '../components/Button';
 import Header from '../components/Header';
-import shareIcon from '../images/shareIcon.svg';
-import blackHeartIcon from '../images/blackHeartIcon.svg';
+import shareIcon from '../images/share.svg';
+import blackHeartIcon from '../images/heart2-full.svg';
 
 const copy = require('clipboard-copy');
 
@@ -51,59 +51,69 @@ function ReceitasFavoritas() {
   }
 
   return (
-    <>
+    <div className="backgrond">
       <Header title="Receitas Favoritas" disableBtn={ BOOLEAN_TRUE } />
-      <Button
-        label="All"
-        datatestid="filter-by-all-btn"
-        onClick={ () => setList(doneList()) }
-      />
-      <Button
-        label="Food"
-        datatestid="filter-by-food-btn"
-        onClick={ () => setList(doneList().filter((data) => data.type === 'comida')) }
-      />
-      <Button
-        label="Drinks"
-        datatestid="filter-by-drink-btn"
-        onClick={ () => setList(doneList().filter((data) => data.type === 'bebida')) }
-      />
-      { recipesList.map((data, index) => (
-        <div key={ index }>
-          <input
-            type="image"
-            data-testid={ `${index}-horizontal-image` }
-            src={ data.image }
-            alt="receita"
-            name={ data.name }
-            width="100%"
-            onClick={ () => history.push(`${data.type}s/${data.id}`) }
-          />
-          <a
-            href={ `${data.type}s/${data.id}` }
-            data-testid={ `${index}-horizontal-name` }
-          >
-            { data.name }
-          </a>
-          { renderRecipe(data, index) }
-          <input
-            type="image"
-            src={ shareIcon }
-            alt="share"
-            data-testid={ `${index}-horizontal-share-btn` }
-            onClick={ () => setMessage([true, index]) || copy(`http://localhost:3000/${data.type}s/${data.id}`) }
-          />
-          { message ? renderMessage(index, message[1]) : null }
-          <input
-            type="image"
-            src={ blackHeartIcon }
-            alt="blackHeartIcon"
-            data-testid={ `${index}-horizontal-favorite-btn` }
-            onClick={ () => disfavorite(data.id) }
-          />
-        </div>
-      ))}
-    </>
+      <section className="filter-buttons">
+        <Button
+          label="All"
+          datatestid="filter-by-all-btn"
+          onClick={ () => setList(doneList()) }
+        />
+        <Button
+          label="Food"
+          datatestid="filter-by-food-btn"
+          onClick={ () => setList(doneList().filter((data) => data.type === 'comida')) }
+        />
+        <Button
+          label="Drinks"
+          datatestid="filter-by-drink-btn"
+          onClick={ () => setList(doneList().filter((data) => data.type === 'bebida')) }
+        />
+      </section>
+      <section className="saved-recipes">
+        { recipesList.map((data, index) => (
+          <div key={ index } className="card">
+            <div className="top-container">
+              <input
+                type="image"
+                data-testid={ `${index}-horizontal-image` }
+                src={ data.image }
+                alt="receita"
+                name={ data.name }
+                width="100%"
+                onClick={ () => history.push(`${data.type}s/${data.id}`) }
+              />
+            </div>
+            <div className="bot-container">
+              <h4
+                href={ `${data.type}s/${data.id}` }
+                data-testid={ `${index}-horizontal-name` }
+              >
+                { data.name }
+              </h4>
+              { renderRecipe(data, index) }
+              <footer>
+                { message ? renderMessage(index, message[1]) : null }
+                <input
+                  type="image"
+                  src={ shareIcon }
+                  alt="share"
+                  data-testid={ `${index}-horizontal-share-btn` }
+                  onClick={ () => setMessage([true, index]) || copy(`http://localhost:3000/${data.type}s/${data.id}`) }
+                />
+                <input
+                  type="image"
+                  src={ blackHeartIcon }
+                  alt="blackHeartIcon"
+                  data-testid={ `${index}-horizontal-favorite-btn` }
+                  onClick={ () => disfavorite(data.id) }
+                />
+              </footer>
+            </div>
+          </div>
+        ))}
+      </section>
+    </div>
   );
 }
 

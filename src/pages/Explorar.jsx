@@ -10,18 +10,20 @@ function Explorar() {
   return (
     <div>
       <Header title="Explorar" disableBtn={ BOOLEAN_TRUE } />
-      <Button
-        type="button"
-        label="Explorar Comidas"
-        datatestid="explore-food"
-        onClick={ () => history.push('explorar/comidas') }
-      />
-      <Button
-        type="button"
-        label="Explorar Bebidas"
-        datatestid="explore-drinks"
-        onClick={ () => history.push('explorar/bebidas') }
-      />
+      <section className="explore-container">
+        <Button
+          type="button"
+          label="Explorar Comidas"
+          datatestid="explore-food"
+          onClick={ () => history.push('explorar/comidas') }
+        />
+        <Button
+          type="button"
+          label="Explorar Bebidas"
+          datatestid="explore-drinks"
+          onClick={ () => history.push('explorar/bebidas') }
+        />
+      </section>
       <Footer />
     </div>
   );

@@ -34,9 +34,13 @@ function ExplorarOrigem() {
   }
 
   return (
-    <div>
+    <div className="background">
       <Header title="Explorar Origem" disableBtn={ BOOLEAN_FALSE } />
-      <select data-testid="explore-by-area-dropdown" onChange={ handleChange }>
+      <select
+        data-testid="explore-by-area-dropdown"
+        onChange={ handleChange }
+        className="explore-area"
+      >
         <option data-testid="All-option" value="all">All</option>
         { areas.map((data, index) => (
           <option
@@ -48,19 +52,24 @@ function ExplorarOrigem() {
           </option>
         ))}
       </select>
-      { meals.map((meal, index) => (
-        <div data-testid={ `${index}-recipe-card` } key={ meal.strMeal }>
-          <input
-            type="image"
-            data-testid={ `${index}-card-img` }
-            src={ meal.strMealThumb }
-            alt="comida"
-            width="100%"
+      <section className="recipe-list">
+        { meals.map((meal, index) => (
+          <button
+            type="button"
+            data-testid={ `${index}-recipe-card` }
+            key={ meal.strMeal }
             onClick={ () => history.push(`../../comidas/${meal.idMeal}`) }
-          />
-          <p data-testid={ `${index}-card-name` }>{ meal.strMeal }</p>
-        </div>
-      ))}
+          >
+            <img
+              data-testid={ `${index}-card-img` }
+              src={ meal.strMealThumb }
+              alt="comida"
+              width="100%"
+            />
+            <p data-testid={ `${index}-card-name` }>{ meal.strMeal }</p>
+          </button>
+        ))}
+      </section>
       <Footer />
     </div>
   );

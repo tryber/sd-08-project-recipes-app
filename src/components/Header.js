@@ -3,6 +3,7 @@ import { Link, useHistory, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import profile from '../images/profileIcon.svg';
 import search from '../images/searchIcon.svg';
+import double from '../images/double.svg';
 import Input from './Inputs';
 import Button from './Button';
 import getResultFromAPI from '../api/getResultFromAPI';
@@ -51,44 +52,55 @@ const Header = (props) => {
 
   function renderSearchBar() {
     return (
-      <section>
-        <Input
-          type="text"
-          datatestid="search-input"
-          onChange={ handleSearchInput }
-          value={ userInput }
-        />
-        <br />
-        <Input
-          type="radio"
-          datatestid="ingredient-search-radio"
-          value="Ingredients"
-          name="food"
-          label="Ingredientes"
-          onChange={ handleFilterType }
-        />
-        <Input
-          type="radio"
-          datatestid="name-search-radio"
-          value="busca por nome"
-          label="Nome"
-          name="food"
-          onChange={ handleFilterType }
-        />
-        <Input
-          type="radio"
-          datatestid="first-letter-search-radio"
-          value="busca da primeira letra"
-          label="Letra"
-          name="food"
-          onChange={ handleFilterType }
-        />
-        <Button
-          datatestid="exec-search-btn"
-          type="button"
-          label="Buscar"
-          onClick={ handleSearchButton }
-        />
+      <section className="search-options">
+        <div className="search-top">
+          <Input
+            type="text"
+            datatestid="search-input"
+            onChange={ handleSearchInput }
+            value={ userInput }
+          />
+          {/* <Button
+            datatestid="exec-search-btn"
+            type="button"
+            label="Buscar"
+            onClick={ handleSearchButton }
+          /> */}
+          <input
+            type="image"
+            className="filter-btn"
+            src={ double }
+            alt="arrow"
+            data-testid="exec-search-btn"
+            onClick={ handleSearchButton }
+          />
+        </div>
+        <div className="search-bottom">
+          <Input
+            type="radio"
+            datatestid="ingredient-search-radio"
+            value="Ingredients"
+            name="food"
+            label="Ingredientes "
+            onChange={ handleFilterType }
+          />
+          <Input
+            type="radio"
+            datatestid="name-search-radio"
+            value="busca por nome"
+            label="Nome "
+            name="food"
+            onChange={ handleFilterType }
+          />
+          <Input
+            type="radio"
+            datatestid="first-letter-search-radio"
+            value="busca da primeira letra"
+            label="Letra "
+            name="food"
+            onChange={ handleFilterType }
+          />
+        </div>
       </section>
     );
   }
@@ -108,11 +120,23 @@ const Header = (props) => {
   return (
     <header>
       <section className="header-bar">
-        <Link to="/perfil">
-          <input type="image" src={ profile } alt="prof" data-testid="profile-top-btn" />
-        </Link>
-        <h3 data-testid="page-title">{ title }</h3>
-        { !disableBtn && renderSearchBtn() }
+        <div className="nav-header-button">
+          <Link to="/perfil">
+            <input
+              type="image"
+              src={ profile }
+              alt="prof"
+              data-testid="profile-top-btn"
+              className="profile-image"
+            />
+          </Link>
+        </div>
+        <div className="nav-header-title">
+          <h3 data-testid="page-title">{ title }</h3>
+        </div>
+        <div className="nav-header-button">
+          { !disableBtn && renderSearchBtn() }
+        </div>
       </section>
       { showSearchBar && renderSearchBar() }
     </header>
