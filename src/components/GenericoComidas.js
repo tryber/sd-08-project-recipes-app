@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import copy from 'clipboard-copy';
 import { Redirect } from 'react-router';
+import { Button, Container, Image } from 'react-bootstrap';
 import fav from '../images/blackHeartIcon.svg';
 import notFav from '../images/whiteHeartIcon.svg';
 import share from '../images/shareIcon.svg';
@@ -89,48 +90,51 @@ class GenericoComidas extends Component {
     }
 
     return (
-      <div className="card">
-        <center>
-          <img
-            src={ currentRecipe.strMealThumb }
-            alt=""
-            className="linkImage"
-            data-testid="recipe-photo"
-          />
-          <h1 data-testid="recipe-title">
-            {currentRecipe.strMeal}
-          </h1>
-          {currentRecipe.strDrink && <h2>{}</h2>}
-          <span data-testid="recipe-category">
-            {currentRecipe.strCategory}
-          </span>
-          <button
-            type="button"
-            onClick={ () => this.share() }
-          >
-            <img
-              src={ share }
-              alt="share"
-              data-testid="share-btn"
+      <div>
+        <Container>
+          <center>
+            <Image
+              src={ currentRecipe.strMealThumb }
+              alt=""
+              className="linkImage"
+              data-testid="recipe-photo"
             />
-          </button>
-          <button
-            type="button"
-            onClick={ this.favoriteThisItem }
-          >
-            <img
-              src={ favoriteRecipe ? fav : notFav }
-              alt="share"
-              data-testid="favorite-btn"
-            />
-          </button>
+            <h1 data-testid="recipe-title">
+              {currentRecipe.strMeal}
+            </h1>
+            {currentRecipe.strDrink && <h2>{}</h2>}
+            <span data-testid="recipe-category">
+              {currentRecipe.strCategory}
+            </span>
+            <button
+              className="recipe-button"
+              type="button"
+              onClick={ () => this.share() }
+            >
+              <img
+                src={ share }
+                alt="share"
+                data-testid="share-btn"
+              />
+            </button>
+            <button
+              className="recipe-button"
+              type="button"
+              onClick={ this.favoriteThisItem }
+            >
+              <img
+                src={ favoriteRecipe ? fav : notFav }
+                alt="share"
+                data-testid="favorite-btn"
+              />
+            </button>
 
-        </center>
-        {displayShareMesage && <span>Link copiado!</span>}
-        <h2>Ingredientes</h2>
-        {ingredientList && <IngredientList ingredientList={ ingredientList } />}
-        <div data-testid="instructions">{currentRecipe.strInstructions}</div>
-        {window.location.href.includes('comidas')
+          </center>
+          {displayShareMesage && <span>Link copiado!</span>}
+          <h4>Ingredientes</h4>
+          {ingredientList && <IngredientList ingredientList={ ingredientList } />}
+          <div data-testid="instructions">{currentRecipe.strInstructions}</div>
+          {window.location.href.includes('comidas')
          && (
            <center>
              <iframe
@@ -140,15 +144,16 @@ class GenericoComidas extends Component {
                data-testid="video"
              />
            </center>)}
-        {recomendations
+          {recomendations
               && <RecomendationCard
                 recomendations={ recomendations }
                 redirectToPage={ this.redirectToPage }
               />}
-        {!isThisRecipeDone
+          {!isThisRecipeDone
         && (
-          <button
-            className="start-recipe"
+          <Button
+            block
+            className="default-button green"
             type="button"
             data-testid="start-recipe-btn"
             onClick={ () => {
@@ -156,8 +161,9 @@ class GenericoComidas extends Component {
             } }
           >
             {continueThisRecipe ? 'Continuar Receita' : 'Iniciar receita'}
-          </button>
+          </Button>
         )}
+        </Container>
       </div>
     );
   }

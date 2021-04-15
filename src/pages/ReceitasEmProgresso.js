@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import copy from 'clipboard-copy';
 import PropTypes from 'prop-types';
+import { Container, Image, Button } from 'react-bootstrap';
 import shareIcon from '../images/shareIcon.svg';
 import { addFoodToFavorite, fetchDrinkApiById, fetchFoodApiById,
   getIngredientList, isFavoriteRecipe } from '../helpers';
@@ -132,78 +133,84 @@ class ReceitasEmProgresso extends Component {
       h1 = currentRecipe.strMeal;
     }
     return (
-      <div className="card">
-        <center>
-          <h1 data-testid="recipe-title">{h1}</h1>
-          <img
-            data-testid="recipe-photo"
-            alt="receita-em-progresso"
-            src={ thumb }
-            className="linkImage"
-          />
-        </center>
-        <button
-          type="button"
-          onClick={ () => this.share() }
-        >
-          <img
-            alt="card"
-            data-testid="share-btn"
-            src={ shareIcon }
-          />
-          {' '}
-        </button>
-        { displayShareMesage ? <p className="alert">Link copiado!</p> : <div />}
-        <button
-          type="button"
-          onClick={ this.favoriteThisItem }
-        >
-          <img
-            src={ favoriteRecipe ? fav : notFav }
-            alt="share"
-            data-testid="favorite-btn"
-          />
-        </button>
-        <p data-testid="recipe-category" />
-        {}
-        {ingredientList.map((obj, index) => (
-          <div key={ index }>
-
+      <div>
+        <Container>
+          <center>
+            <h1 data-testid="recipe-title">{h1}</h1>
+            <Image
+              data-testid="recipe-photo"
+              alt="receita-em-progresso"
+              src={ thumb }
+              className="linkImage"
+            />
+          </center>
+          <button
+            className="recipe-button"
+            type="button"
+            onClick={ () => this.share() }
+          >
+            <img
+              alt="card"
+              data-testid="share-btn"
+              src={ shareIcon }
+            />
             {' '}
-            <label
-              htmlFor={ obj.item }
-              className={ isDone[obj.item] ? 'checkboxInProgressChecked' : 'nunCheck' }
-              data-testid={ `${index}-ingredient-step` }
-            >
-              {obj.item}
-              :
+          </button>
+          { displayShareMesage ? <p className="alert">Link copiado!</p> : <div />}
+          <button
+            className="recipe-button"
+            type="button"
+            onClick={ this.favoriteThisItem }
+          >
+            <img
+              src={ favoriteRecipe ? fav : notFav }
+              alt="share"
+              data-testid="favorite-btn"
+            />
+          </button>
+          <p data-testid="recipe-category" />
+          {}
+          {ingredientList.map((obj, index) => (
+            <div key={ index }>
+
               {' '}
-              {obj.quantity}
-              <input
-                name={ obj.item }
-                className="checkboxInProgress"
-                type="checkbox"
-                id={ obj.item }
-                checked={ isDone[obj.item] }
-                onChange={ (event) => this.handleChangeChecked(event) }
-              />
-            </label>
-            {' '}
+              <label
+                htmlFor={ obj.item }
+                className={ isDone[obj.item] ? 'checkboxInProgressChecked' : 'nunCheck' }
+                data-testid={ `${index}-ingredient-step` }
+              >
+                {obj.item}
+                :
+                {' '}
+                {obj.quantity}
+                <input
+                  name={ obj.item }
+                  // className="checkboxInProgress"
+                  type="checkbox"
+                  id={ obj.item }
+                  checked={ isDone[obj.item] }
+                  onChange={ (event) => this.handleChangeChecked(event) }
+                />
+              </label>
+              {' '}
 
-          </div>
+            </div>
 
-        ))}
-        <p data-testid="instructions" />
-        <button
-          type="button"
-          data-testid="finish-recipe-btn"
-          disabled={ disable }
-          onClick={ () => history.push('/receitas-feitas') }
-        >
-          Finish
-        </button>
-        <br />
-        <br />
+          ))}
+          <p data-testid="instructions" />
+          <Button
+            block
+            className="default-button"
+            type="button"
+            data-testid="finish-recipe-btn"
+            disabled={ disable }
+            onClick={ () => history.push('/receitas-feitas') }
+          >
+            Finish
+          </Button>
+          <br />
+          <br />
+        </Container>
       </div>
     );
   }
@@ -216,7 +223,6 @@ class ReceitasEmProgresso extends Component {
 
   isDisable() {
     const { isDone } = this.state;
-    console.log('oi');
     if (isDone === '') return;
     const str = JSON.stringify(isDone);
     if (str.includes('false')) {

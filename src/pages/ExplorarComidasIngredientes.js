@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Container } from 'react-bootstrap';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import CardIngredientsFoods from '../components/CardIngredientsFoods';
@@ -19,8 +20,11 @@ export default function FoodIngredientes() {
 
   return (
     <div>
-      <Header title="Explorar Ingredientes" />
-      { (ingredients.length > zero)
+      <Container>
+        <Header title="Explorar Ingredientes" />
+        <center>
+          <div className="d-flex justify-content-around flex-wrap">
+            { (ingredients.length > zero)
         && ingredients.map((ingredient, index) => {
           if (index < twelve) {
             return (
@@ -34,7 +38,13 @@ export default function FoodIngredientes() {
           }
           return null;
         })}
-      <Footer />
+          </div>
+        </center>
+      </Container>
+      <br />
+      <br />
+      <br />
+      <Footer className="footer orange" />
     </div>
   );
 }

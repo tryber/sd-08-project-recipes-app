@@ -1,0 +1,11 @@
+
+.recipe-link {
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+.recipe-link:hover {
+    text-decoration: none;
+    color:black;
+}

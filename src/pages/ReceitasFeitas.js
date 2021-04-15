@@ -62,9 +62,6 @@ class ReceitasFeitas extends Component {
     return (
       <div>
         <HeaderLocation />
-        <br />
-        <br />
-        <br />
         <FilterButtons changeFilter={ this.changeFilter } />
         { displayShareMesage ? <p className="alert">Link copiado!</p> : <div />}
         <DoneAndFavoriteCards

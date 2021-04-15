@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Container, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
 import HeaderLocation from '../components/Header';
@@ -21,24 +22,37 @@ export default function ExploreDrinks() {
 
   return (
     <div>
-      <HeaderLocation title="Explorar Bebidas" />
-      <div>
-        <Link
-          data-testid="explore-by-ingredient"
-          to="/explorar/bebidas/ingredientes"
-        >
-          Por Ingredientes
-        </Link>
-        <Link
-          data-testid="explore-surprise"
-          to={ `/bebidas/${randomDrink}` }
-          onClick={ handleGetDrink }
-        >
-          Me Surpreenda!
-        </Link>
-
-      </div>
-      <Footer />
+      <Container fluid className="main-profile">
+        <HeaderLocation title="Explorar Bebidas" />
+        <div className="perfil-container">
+          <Link
+            data-testid="explore-by-ingredient"
+            to="/explorar/bebidas/ingredientes"
+          >
+            <Button
+              className="default-button"
+              block
+              type="button"
+            >
+              Por Ingredientes
+            </Button>
+          </Link>
+          <Link
+            data-testid="explore-surprise"
+            to={ `/bebidas/${randomDrink}` }
+            onClick={ handleGetDrink }
+          >
+            <Button
+              className="default-button"
+              block
+              type="button"
+            >
+              Me Surpreenda!
+            </Button>
+          </Link>
+        </div>
+      </Container>
+      <Footer className="footer white" />
     </div>
   );
 }

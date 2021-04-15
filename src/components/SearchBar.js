@@ -4,6 +4,7 @@ import { withRouter } from 'react-router';
 import PropTypes from 'prop-types';
 import { fetchFoodApiByIngredient,
   fetchFoodApiByLetter, fetchFoodApiByName } from '../helpers';
+import { Button, Form } from 'react-bootstrap';
 
 class SearchBar extends Component {
   constructor() {
@@ -113,45 +114,46 @@ class SearchBar extends Component {
     const newArr = this.twelveCards(array);
     return (
       <div>
-        <input
+        <Form.Control
           type="text"
           data-testid="search-input"
           name="input"
           onChange={ (event) => this.change(event) }
         />
         <div>
-          <input
+          <Form.Check
             type="radio"
             name="radio"
             value="nome"
+            label="Nome"
             data-testid="name-search-radio"
             onChange={ (event) => this.change(event) }
           />
-          Nome
-          <input
+          <Form.Check
             type="radio"
             data-testid="ingredient-search-radio"
             name="radio"
             value="ingredientes"
+            label="Ingrediente"
             onChange={ (event) => this.change(event) }
           />
-          Ingrediente
-          <input
+          <Form.Check
             type="radio"
             name="radio"
             value="primeiraLetra"
+            label="Primeira Letra"
             data-testid="first-letter-search-radio"
             onChange={ (event) => this.change(event) }
           />
-          Primeira Letra
         </div>
-        <button
+        <Button
+        className="filter-button"
           type="button"
           data-testid="exec-search-btn"
           onClick={ async () => this.foodAPIngredientes() }
         >
           Executar Pesquisa
-        </button>
+        </Button>
         {rotaComida ? (newArr.map((food, index) => (
           <div
             key={ food.idMeal }

@@ -1,0 +1,22 @@
+.color {
+  background-color: #f7c838;
+  height: 100vh;
+  width: 100vw;
+}
+
+.logo {
+  margin-top: 150px;
+  width: 450px;
+}
+
+.login-input {
+  height: 52px;
+  padding: 20px;
+  width: 100%;
+}
+
+.btn-login {
+  height: 47px;
+  margin: -11px;
+}
+

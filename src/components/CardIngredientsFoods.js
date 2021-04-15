@@ -1,4 +1,5 @@
 import React from 'react';
+import { Image } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
@@ -11,28 +12,24 @@ export default function CardIngredientsFoods({ index, name }) {
     history.push(path);
   };
   return (
-    <div
-      className="recipe-card"
-      data-testid={ `${index}-ingredient-card` }
-    >
-      <button
-        type="button"
-        onClick={ searchRecipes }
-      >
-        <img
+    <div data-testid={ `${index}-ingredient-card` }>
+      <center>
+        <Image
           alt="Recipe Thumbnail"
           data-testid={ `${index}-card-img` }
           src={ src }
-          className="recipe-thumb"
-          height="250"
+          onClick={ searchRecipes }
+          className="imageLink"
+          height="150"
+          style={ { cursor: 'pointer' } }
         />
-        <h2
-          className="recipe-name"
+        <h6
           data-testid={ `${index}-card-name` }
+          style={ { cursor: 'pointer' } }
         >
           {name}
-        </h2>
-      </button>
+        </h6>
+      </center>
     </div>
   );
 }

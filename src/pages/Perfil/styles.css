@@ -1,0 +1,15 @@
+.perfil-container {
+    background-color: #F7C838;
+    text-transform: uppercase;
+}
+
+h6.email {
+    margin-bottom: 30px;
+}
+
+.main-profile {
+    height: 100vh;
+    background-color: #F7C838;
+    padding: 0 10px;
+    margin: 0;
+}

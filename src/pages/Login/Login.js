@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import login from '../store/actions/user.actions';
+import { Button } from 'react-bootstrap';
+import login from '../../store/actions/user.actions';
+import logo from '../../logo.png';
+import './style.css';
 
 class Login extends Component {
   constructor() {
@@ -41,11 +44,17 @@ class Login extends Component {
     const { Email, senha, buttonDisabled } = this.state;
     const objUser = { email: Email };
     return (
-      <div className="login">
-        <main className="main">
-          <div className="form">
+      <div className="d-flex  flex-column p-2 bd-highlight color">
+        <div className="d-flex justify-content-center flex-row-reverse bd-highlight">
+          <img src={ logo } className="logo" alt="logo kitchen memories" width="250px" />
+        </div>
+        <div className="d-flex mb-3 justify-content-center flex-row-reverse bd-highlight">
+          <h1>Bem Vindo</h1>
+        </div>
+        <div className="d-flex flex-column bd-highlight">
+          <div className="d-flex p-2 bd-highlight">
             <input
-              className="input-text"
+              className="ml-2 mr-3 input-group mb-3 border border-dark login-input"
               type="text"
               name="Email"
               value={ Email }
@@ -53,8 +62,10 @@ class Login extends Component {
               data-testid="email-input"
               onChange={ (event) => this.change(event) }
             />
+          </div>
+          <div className="d-flex p-2 bd-highlight">
             <input
-              className="input-text"
+              className="ml-2  mr-3 mb-5 border border-dark login-input"
               type="text"
               name="senha"
               value={ senha }
@@ -62,23 +73,25 @@ class Login extends Component {
               data-testid="password-input"
               onChange={ (event) => this.change(event) }
             />
-            <button
-              className="btn-login"
-              type="button"
-              data-testid="login-submit-btn"
-              disabled={ buttonDisabled }
-              onClick={ () => {
-                localStorage.setItem('mealsToken', 1);
-                localStorage.setItem('cocktailsToken', 1);
-                localStorage.setItem('user', JSON.stringify(objUser));
-                setEmail(objUser.email);
-                history.push('/comidas');
-              } }
-            >
-              Entrar
-            </button>
           </div>
-        </main>
+
+          <Button
+            className="btn btn-dark btn-login"
+            type="button"
+            data-testid="login-submit-btn"
+            disabled={ buttonDisabled }
+            onClick={ () => {
+              localStorage.setItem('mealsToken', 1);
+              localStorage.setItem('cocktailsToken', 1);
+              localStorage.setItem('user', JSON.stringify(objUser));
+              setEmail(objUser.email);
+              history.push('/comidas');
+            } }
+          >
+            Entrar
+          </Button>
+
+        </div>
       </div>
     );
   }

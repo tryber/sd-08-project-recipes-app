@@ -26,23 +26,91 @@
   text-decoration: line-through solid black;
 }
 
+.default-button {
+  background-color: white;
+  color: black;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: 2px solid black;
+  margin-bottom: 20px;
+}
+
+.default-button:disabled {
+  background-color: white;
+  color: black;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: 2px solid black;
+  margin-bottom: 20px;
+}
+
+.default-button:hover {
+  background-color: white;
+  color: black;
+  border-color: black;
+}
+
+.filter-button {
+  border: none;
+  background-color: black;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.filter-button.orange {
+  margin: 5px 0;
+  color: black;
+}
+
+.default-button.orange:hover {
+  text-decoration: none;
+  background-color: #F7C838;
+}
+
+.green {
+  background-color: #3DC573;
+}
+
+.default-button.green:hover {
+  background-color: #3DC573;
+  color: black;
+  border-color: black;
+}
+
+.default-button.green:active {
+  background-color: #3DC573;
+  color: black;
+  border-color: black;
+}
+
+
+.orange {
+  background-color: #F7C838;
+}
+
+.filter-button.orange:hover {
+  background-color: #F7C838;
+}
+
+.white {
+  background-color: white;
+}
+
+.filter-button:hover {
+  background-color: black;
+  color: white;
+}
+
 .linkImage {
-  border: 3px solid rgb(18, 53, 41);
-  justify-content: center;
   margin-top: 10px;
-  width: 90%;
+  max-width: 80%;
 }
 
 .linkVideo {
   border: 3px solid rgb(18, 53, 41);
   margin-top: 10px;
   width: 98%;
-}
-
-.card {
-  background-color: rgba(101, 138, 65, 0.3);
-  border: 3px solid black;
-  margin: 10px;
 }
 
 .btn-login {
@@ -73,17 +141,6 @@
   margin-top: 10px;
 }
 
-.login {
-  align-content: center;
-  align-items: center;
-  background-image: url('./login1.jpg');
-  background-size: cover;
-  border: 3px solid black;
-  display: flex;
-  height: 100vh;
-  width: 100vw;
-}
-
 .input-text {
   align-self: center;
   border-radius: 5px;
@@ -98,29 +155,6 @@
   display: flex;
   margin-left: 140px;
   margin-top: 30px;
-}
-
-/*
-#iceLeft {
-  animation: clink .8s infinite ease;
-  opacity: 0.6;
-  transform-origin: 36px 66px;
-}
-
-#iceRight {
-  animation: clink .8s .2s infinite ease;
-  opacity: 0.6;
-  transform-origin: 60px 78px;
-}
-*/
-
-.footer {
-  background-color: rgba(57, 62, 65, 0.3);
-  bottom: 0;
-  display: flex;
-  justify-content: space-around;
-  position: fixed;
-  width: 100vw;
 }
 
 .notFound {
@@ -139,6 +173,13 @@
   font-family: Montserrat , sans-serif;
   font-size: 3em;
   font-weight: 900;
+}
+
+.recipe-button {
+  border: none;
+  background-color: #DADADA;
+  margin: 0 10px 10px 0;
+  border-radius: 7px;
 }
 
 @keyframes shake {

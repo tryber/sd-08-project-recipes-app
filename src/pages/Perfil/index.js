@@ -2,10 +2,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router';
-import Footer from '../components/Footer';
-import HeaderLocation from '../components/Header';
-import login from '../store/actions/user.actions';
-import './perfil.css';
+import { Button, Container } from 'react-bootstrap';
+import Footer from '../../components/Footer';
+import HeaderLocation from '../../components/Header';
+import login from '../../store/actions/user.actions';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles.css';
+// import './perfil.css';
 
 class Perfil extends Component {
   constructor() {
@@ -30,28 +33,34 @@ class Perfil extends Component {
 
     return (
       <div>
-        <HeaderLocation />
-        <main>
+        <Container fluid className="main-profile">
+          <HeaderLocation />
           <div className="perfil-container">
-            <span data-testid="profile-email">
+            <h6 className="email" data-testid="profile-email">
               {(userEmailLocalStorage && userEmailLocalStorage.email)
               || email || ''}
-            </span>
-            <button
+            </h6>
+            <Button
+              className="default-button"
+              block
               type="button"
               data-testid="profile-done-btn"
               onClick={ () => this.setRoute('/receitas-feitas') }
             >
               Receitas Feitas
-            </button>
-            <button
+            </Button>
+            <Button
+              className="default-button"
+              block
               type="button"
               data-testid="profile-favorite-btn"
               onClick={ () => this.setRoute('/receitas-favoritas') }
             >
               Receitas Favoritas
-            </button>
-            <button
+            </Button>
+            <Button
+              className="default-button"
+              block
               type="button"
               data-testid="profile-logout-btn"
               onClick={ () => {
@@ -61,10 +70,10 @@ class Perfil extends Component {
               } }
             >
               Sair
-            </button>
+            </Button>
           </div>
-        </main>
-        <Footer />
+        </Container>
+        <Footer className="footer white" />
       </div>
     );
   }

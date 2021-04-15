@@ -1,0 +1,17 @@
+.footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0 20px 0;
+  }
+
+.footer-icons {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  .footer-icons img {
+      height: 30px;
+  }

@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import fav from '../images/blackHeartIcon.svg';
-import notFav from '../images/whiteHeartIcon.svg';
-import shareIcon from '../images/shareIcon.svg';
+import { Container } from 'react-bootstrap';
+import fav from '../../images/blackHeartIcon.svg';
+import notFav from '../../images/whiteHeartIcon.svg';
+import shareIcon from '../../images/shareIcon.svg';
 import { addFoodToFavorite, fetchFoodApiById, fetchDrinkApiById,
-  removeFromFavorite } from '../helpers';
-import updateFavorites from '../store/actions/favoriteRecipes.actions';
+  removeFromFavorite } from '../../helpers';
+import updateFavorites from '../../store/actions/favoriteRecipes.actions';
+import './styles.css';
 
 class DoneAndFavoriteCards extends Component {
   componentDidMount() {
@@ -51,12 +53,12 @@ class DoneAndFavoriteCards extends Component {
 
     return (
       <div>
-        {recipes && recipes.filter((element) => !filter
+        <Container>
+          <center>
+            {recipes && recipes.filter((element) => !filter
         || filter === 'all' || element.type === filter)
-          .map((obj, index) => (
-            <div className="card" key={ obj.id }>
-              <center>
-                <div className="a">
+              .map((obj, index) => (
+                <div key={ obj.id }>
                   <Link to={ `${obj.type}s/${obj.id}` }>
                     <img
                       data-testid={ `${index}-horizontal-image` }
@@ -66,54 +68,57 @@ class DoneAndFavoriteCards extends Component {
                     />
                   </Link>
 
-                </div>
-                <p
-                  data-testid={ `${index}-horizontal-top-text` }
-                >
-                  {`${obj.alcoholicOrNot} ${obj.area} - ${obj.category}`}
-
-                </p>
-                <Link to={ `${obj.type}s/${obj.id}` }>
-                  <p data-testid={ `${index}-horizontal-name` }>{obj.name}</p>
-                </Link>
-                <p data-testid={ `${index}-horizontal-done-date` }>{obj.doneDate}</p>
-
-              </center>
-              <button
-                type="button"
-                onClick={ () => share(obj) }
-              >
-                <img
-                  alt="card"
-                  data-testid={ `${index}-horizontal-share-btn` }
-                  src={ shareIcon }
-                />
-              </button>
-              <button
-                type="button"
-                onClick={ () => this.favoriteThisItem(obj) }
-              >
-                <img
-                  src={ favoriteRecipe[Number(obj.id)] ? fav : notFav }
-                  alt="favorite"
-                  data-testid={ `${index}-horizontal-favorite-btn` }
-                />
-              </button>
-              {obj.tags && obj.tags.map((tag) => (
-                <div
-                  className="tags"
-                  key={ tag }
-                >
-                  tags:
                   <p
-                    data-testid={ `${index}-${tag}-horizontal-tag` }
+                    data-testid={ `${index}-horizontal-top-text` }
                   >
-                    {tag}
-                  </p>
-                </div>
-              ))}
+                    {`${obj.alcoholicOrNot} ${obj.area} - ${obj.category}`}
 
-            </div>))}
+                  </p>
+                  <Link className="recipe-link" to={ `${obj.type}s/${obj.id}` }>
+                    <p data-testid={ `${index}-horizontal-name` }>{obj.name}</p>
+                  </Link>
+                  <p data-testid={ `${index}-horizontal-done-date` }>{obj.doneDate}</p>
+
+                  {obj.tags && obj.tags.map((tag) => (
+                    <div
+                      className="tags"
+                      key={ tag }
+                    >
+                      tags:
+                      <p
+                        data-testid={ `${index}-${tag}-horizontal-tag` }
+                      >
+                        {tag}
+                      </p>
+                    </div>
+                  ))}
+                  <div className="d-flex justify-content-end">
+                    <button
+                      className="recipe-button"
+                      type="button"
+                      onClick={ () => share(obj) }
+                    >
+                      <img
+                        alt="card"
+                        data-testid={ `${index}-horizontal-share-btn` }
+                        src={ shareIcon }
+                      />
+                    </button>
+                    <button
+                      className="recipe-button"
+                      type="button"
+                      onClick={ () => this.favoriteThisItem(obj) }
+                    >
+                      <img
+                        src={ favoriteRecipe[Number(obj.id)] ? fav : notFav }
+                        alt="favorite"
+                        data-testid={ `${index}-horizontal-favorite-btn` }
+                      />
+                    </button>
+                  </div>
+                </div>))}
+          </center>
+        </Container>
       </div>
     );
   }

@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
-import profileIcon from '../images/profileIcon.svg';
-import searchIcon from '../images/searchIcon.svg';
-import SearchBarLocation from './SearchBar';
+import profileIcon from '../../images/profileIcon.svg';
+import searchIcon from '../../images/searchIcon.svg';
+import SearchBarLocation from '../SearchBar';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container } from 'react-bootstrap';
+import './styles.css';
 
 class Header extends Component {
   constructor() {
@@ -69,17 +72,34 @@ class Header extends Component {
     const { location, history } = this.props;
     const { hidden } = this.state;
     return (
-      <div>
-        <button type="button" onClick={ () => { history.push('./perfil'); } }>
-          <img
-            src={ profileIcon }
-            alt="imagem-profile"
-            data-testid="profile-top-btn"
+      <Container>
+        <div className="d-flex justify-content-between align-items-baseline">
+          <button
+            className="profile-button"
+            type="button"
+            onClick={ () => { history.push('./perfil'); } }
+          >
+            <img
+              src={ profileIcon }
+              alt="imagem-profile"
+              data-testid="profile-top-btn"
 
-          />
-        </button>
+            />
+          </button>
+          <button
+            className="profile-button"
+            type="button"
+            onClick={ () => this.invertHidden() }
+          >
+            <img
+              src={ searchIcon }
+              alt="search-icon"
+              data-testid="search-top-btn"
+            />
+          </button>
+        </div>
         <div data-testid="page-title">
-          {this.title(location.pathname)}
+          <h2>{this.title(location.pathname)}</h2>
         </div>
         {
           (location.pathname === '/comidas'
@@ -88,23 +108,13 @@ class Header extends Component {
           || location.pathname === '/explorar/bebidas/area')
             ? (
               <div>
-                <button
-                  type="button"
-                  onClick={ () => this.invertHidden() }
-                >
-                  <img
-                    src={ searchIcon }
-                    alt="search-icon"
-                    data-testid="search-top-btn"
-                  />
-                </button>
                 {hidden ? <div /> : <SearchBarLocation />}
               </div>
             ) : (
               <div />
             )
         }
-      </div>
+      </Container>
     );
   }
 }

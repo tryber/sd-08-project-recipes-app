@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Container, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
 import HeaderLocation from '../components/Header';
@@ -21,30 +22,50 @@ export default function ExploreFoods() {
 
   return (
     <div>
-      <HeaderLocation />
-      <div>
-        <Link
-          data-testid="explore-by-ingredient"
-          to="/explorar/comidas/ingredientes"
-        >
-          Por Ingredientes
-        </Link>
-        <Link
-          data-testid="explore-by-area"
-          to="/explorar/comidas/area"
-        >
-          Por Local de Origem
-        </Link>
-        <Link
-          data-testid="explore-surprise"
-          to={ `/comidas/${randomFood}` }
-          onClick={ handleGetFood }
-        >
-          Me Surpreenda!
-        </Link>
+      <Container fluid className="main-profile">
+        <HeaderLocation />
+        <div className="perfil-container">
+          <Link
+            data-testid="explore-by-ingredient"
+            to="/explorar/comidas/ingredientes"
+          >
+            <Button
+              className="default-button"
+              block
+              type="button"
+            >
+              Por Ingredientes
+            </Button>
+          </Link>
+          <Link
+            data-testid="explore-by-area"
+            to="/explorar/comidas/area"
+          >
+            <Button
+              className="default-button"
+              block
+              type="button"
+            >
+              Por Local de Origem
+            </Button>
+          </Link>
+          <Link
+            data-testid="explore-surprise"
+            to={ `/comidas/${randomFood}` }
+            onClick={ handleGetFood }
+          >
+            <Button
+              className="default-button"
+              block
+              type="button"
+            >
+              Me Surpreenda!
+            </Button>
+          </Link>
 
-      </div>
-      <Footer />
+        </div>
+      </Container>
+      <Footer className="footer white" />
     </div>
   );
 }

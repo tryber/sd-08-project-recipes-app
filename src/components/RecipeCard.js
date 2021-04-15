@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Image } from 'react-bootstrap';
 
 class RecipeCard extends React.Component {
   render() {
     const { idRecipeCard, idImg, srcImg, idCardName, mealName } = this.props;
     return (
-      <div data-testid={ idRecipeCard } className="card">
+      <div data-testid={ idRecipeCard }>
         <center>
-          <img
+          <Image
+            thumbnail
             data-testid={ idImg }
             src={ srcImg }
             alt="recipe pic"
