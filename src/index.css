@@ -5,9 +5,301 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #0D0600;
+  background-image: url("https://wallpapershome.com/images/pages/pic_v/12115.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.recommendation {
+  display: flex;
+  overflow-x: auto;
+  padding-bottom: 25px;
+}
+
+.recommendation::-webkit-scrollbar {
+  display: none;
+}
+
+.recommendation .recommendation-item {
+  min-width: 180px;
+}
+
+.recommendation .recommendation-item img {
+  height: 100px;
+  margin: 10px;
+  min-width: 150px;
+  object-fit: contain;
+}
+
+.imageDetails {
+  width: 100%;
+  padding: 0 auto;
+}
+
+.imageDetails img {
+  margin: 10px;
+  margin-left: 10%;
+  width: 200px;
+  object-fit: contain;
+}
+.recipe-card {
+  border: none;
+  background-color: white;
+  /* width:min-content; */
+  border-radius: 1em;
+  margin: 8px;
+  box-shadow: 1px 1px 8px rgb(73, 73, 73);
+  text-align: center;
+  width: 350px;
+  object-fit: contain;
+}
+
+.recipe-card img {
+  width: 350px;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+}
+
+.recipe-card p {
+  margin: 8px 0px;
+  justify-self: center;
+  align-self: center;
+}
+.recipe-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* .search-button {
+  border-radius: 1em;
+  border: none;
+  flex-basis: 100px;
+  flex-grow: 1;
+  /* width: min-content; */
+  /* display: inline-block;
+  height: 50px;
+  background-color: rgb(236, 142, 0);
+  color: white;
+  margin: 8px;
+  font-weight: 600;
+  transition: 0.3s;
+  box-shadow: 1px 1px 8px rgb(209, 206, 198);
+} */ 
+
+.search-button-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* .search-bar-button {
+  border-radius: 1em;
+  border: none;
+  width: 30%;
+  padding: 10px;
+  height: 40px;
+  background-color: rgb(236, 142, 0);
+  color: white;
+  margin: 8px;
+  font-weight: 600;
+  transition: 0.3s;
+  box-shadow: 1px 1px 8px rgb(209, 206, 198);
+} */
+
+.header-container {
+  display: flex;
+  /* width: max-content; */
+  flex-direction: row;
+  justify-content: space-between;
+  vertical-align: middle;
+  padding: 8px;
+  background-color: white;
+  box-shadow: 1px 1px 8px rgb(73, 73, 73)
+  /* position: fixed; */
+}
+
+.header-container h2{
+  margin: 0;
+  align-self: center;
+}
+
+.header-search-button{
+  border-radius: 35%;
+  border: none;
+  padding: 10px;
+  background-color: rgb(241, 241, 241);
+  /* color: white; */
+  margin: 2px;
+  font-weight: 600;
+  transition: 0.3s;
+  box-shadow: 1px 1px 8px rgb(196, 196, 196)
+}
+
+.checkbox-list {
+  list-style: none;
+}
+
+.checkedBox-true {
+  text-decoration: line-through;
+  color: gray;
+}
+.start-recipe {
+  bottom: 0px;
+  left: 120px;
+  position: fixed;
+}
+
+.page-buttons {
+  border-radius: 1em;
+  border: none;
+  width: 30%;
+  padding: 10px;
+  height: 40px;
+  background-color: rgb(236, 142, 0);
+  color: white;
+  margin: 8px;
+  font-weight: 600;
+  transition: 0.3s;
+  box-shadow: 1px 1px 8px rgb(73, 73, 73);
+  flex-grow: 1;
+}
+
+.explore-container{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.search-results-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.search-results {
+  height: max-content;
+  flex-grow: 1;
+}
+
+.search-results a{
+  text-decoration: none;
+  color: white;
+}
+
+.explore-container a button {
+  width: fit-content;
+}
+
+.page-buttons:disabled {
+  border-radius: 1em;
+  border: none;
+  width: 30%;
+  padding: 10px;
+  height: 40px;
+  background-color: #cccccc;
+  color: #666666;
+  margin: 8px;
+  font-weight: 600;
+  transition: 0.3s;
+  box-shadow: 1px 1px 8px rgb(73, 73, 73)
+}
+
+.login-page {
+  display: flex;
+  justify-content: center;
+}
+
+.login-container { 
+  align-items: center;
+  align-self: center;
+  background-color: white;
+  border-radius: 2em;
+  box-shadow: 1px 1px 8px rgb(73, 73, 73);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  vertical-align: middle;
+  width: 300px;
+  height: 250px;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%)
+ }
+
+ .login-container button {
+   width: 210px;
+   box-shadow: 1px 1px 8px rgb(73, 73, 73);
+ }
+
+ .login-container label {
+  display: flex;
+  flex-direction: column;
+}
+  
+.login-container label input {
+  width: 210px;
+}
+
+.login-container label p {
+  margin-bottom: 2px;
+  margin-left: 8px;
+  font-weight: 800;
+}
+
+.input-field {
+  border-radius: 1em;
+  padding: 8px;
+  border: none;
+  width: 30%;
+  height: 40px;
+  font-weight: 600;
+  transition: 0.3s;
+  box-shadow: 1px 1px 8px rgb(73, 73, 73);
+}
+
+.search-bar-container {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+}
+
+.search-bar-container .input-field{
+  box-shadow: 1px 1px 8px rgb(196, 196, 196);
+  width: 100%;
+  margin: 8px 0;
+}
+
+.profile-container {
+  margin: 8px;
+  background-color: white;
+  border-radius: 1em;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.profile-buttons-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+}
+
+.profile-buttons-container button{
+  flex-grow: 1;
+  height: fit-content;
+}
+
+.profile-container a {
+  text-decoration: none;
+  color: white;
 }

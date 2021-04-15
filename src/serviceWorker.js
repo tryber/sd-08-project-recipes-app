@@ -135,3 +135,11 @@ export function unregister() {
     });
   }
 }
+
+export function alertSearchRecipeNotFound() {
+  alert('Sinto muito, não encontramos nenhuma receita para esses filtros.')
+}
+
+export function alertSearchACaracter() {
+  alert('Sua busca deve conter somente 1 (um) caracter');
+}
