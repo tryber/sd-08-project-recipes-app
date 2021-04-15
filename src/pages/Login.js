@@ -3,8 +3,10 @@ import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 import { getEmail } from '../actions/userEmail';
-
 import { REGEX } from '../common/defs';
+
+import logoOrange from '../images/xo-miojo-orange.png';
+import food from '../images/food.png';
 
 export default function Login() {
   const dispatch = useDispatch();
@@ -30,11 +32,12 @@ export default function Login() {
   }
 
   return (
-    <div className="login-page">
-      <div className="login-content">
-        <form className="form">
-          <h1 className="form-title">App de Receitas - Login</h1>
-          <label htmlFor="input-email">
+    <div className="container-fluid login-page">
+      <img src={ food } alt="food" className="mx-auto d-block mb-n3" />
+      <img src={ logoOrange } alt="Xô Miojo" className="img-fluid" />
+      <div className="container login-content">
+        <form className="form-group p-4 d-flex flex-column">
+          <label htmlFor="input-email" className="inputEmail4 font-weight-bold">
             E-mail:
             <input
               id="input-email"
@@ -42,11 +45,11 @@ export default function Login() {
               data-testid="email-input"
               onChange={ handleChange }
               name="email"
-              className="form-input"
+              className="form-input form-control mt-2 font-weight-bold"
             />
           </label>
           <br />
-          <label htmlFor="input-password">
+          <label htmlFor="input-password" className="inputPassword4 font-weight-bold">
             Senha:
             <input
               id="input-password"
@@ -55,6 +58,7 @@ export default function Login() {
               type="password"
               onChange={ handleChange }
               name="password"
+              className="form-input form-control mt-2 font-weight-bold"
             />
           </label>
           <br />
@@ -63,7 +67,7 @@ export default function Login() {
             data-testid="login-submit-btn"
             disabled={ (!REGEX.test(email)) || (password.length <= '6') }
             onClick={ handleClick }
-            className="form-button"
+            className="btn btn-danger mb-2 font-weight-bold"
           >
             Entrar
           </button>

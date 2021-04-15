@@ -9,6 +9,7 @@ import {
   fetchMealsCategories,
   setMealsIngredientCurrency,
 } from '../actions/meals';
+import Loading from '../components/Loading';
 
 class Meals extends Component {
   componentDidMount() {
@@ -28,23 +29,27 @@ class Meals extends Component {
   render() {
     const zero = 0;
     const maxLength = 12;
-    const { meals } = this.props;
+    const { meals, isFetchingMeals } = this.props;
     const firstMeals = meals.slice(zero, maxLength);
+    if (isFetchingMeals) return <Loading />;
     return (
       <div>
         <Header title="Comidas" />
-        { firstMeals.map((meal, index) => (
-          <MealCard key={ index } meals={ meal } index={ index } testid="recipe-card" />
-        ))}
+        <div className="container widthM800 container-fluid d-flex flex-wrap marginB80">
+          { firstMeals.map((meal, index) => (
+            <MealCard key={ index } meals={ meal } index={ index } testid="recipe-card" />
+          ))}
+        </div>
         <Footer />
       </div>
     );
   }
 }
 
-const mapStateToProps = ({ meals }) => ({
-  meals: meals.meals,
-  ingredientCurrency: meals.ingredientCurrency,
+const mapStateToProps = (state) => ({
+  meals: state.meals.meals,
+  ingredientCurrency: state.meals.ingredientCurrency,
+  isFetchingMeals: state.meals.isFetchingMeals,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -60,6 +65,7 @@ Meals.propTypes = {
   searchRandomMeals: PropTypes.func.isRequired,
   ingredientCurrency: PropTypes.string.isRequired,
   sendMealsIngredientsCurrency: PropTypes.func.isRequired,
+  isFetchingMeals: PropTypes.bool.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Meals);

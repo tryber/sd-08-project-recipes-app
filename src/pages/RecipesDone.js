@@ -8,11 +8,25 @@ function RecipesDone() {
   return (
     <div>
       <Header title="Receitas Feitas" />
-      <div>
+      <div
+        className="
+          widthM800
+          widthM360
+          mx-auto
+          btn-group
+          btn-group-lg
+          btn-group-toggle
+          d-flex
+          justify-content-center"
+      >
         <button
           type="button"
           data-testid="filter-by-all-btn"
           onClick={ () => setDoneRecipes(recipesFromStorage) }
+          className="
+            btn-recipes-done
+            btn btn-warning
+            font-weight-bold"
         >
           All
         </button>
@@ -21,6 +35,10 @@ function RecipesDone() {
           data-testid="filter-by-food-btn"
           onClick={ () => setDoneRecipes(recipesFromStorage
             .filter((recipe) => recipe.type === 'comida')) }
+          className="
+            btn-recipes-done
+            btn btn-warning
+            font-weight-bold"
         >
           Food
         </button>
@@ -29,6 +47,10 @@ function RecipesDone() {
           data-testid="filter-by-drink-btn"
           onClick={ () => setDoneRecipes(recipesFromStorage
             .filter((recipe) => recipe.type === 'bebida')) }
+          className="
+            btn-recipes-done
+            btn btn-warning
+            font-weight-bold"
         >
           Drinks
         </button>

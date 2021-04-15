@@ -34,19 +34,32 @@ class MealsIngredients extends Component {
     return (
       <div>
         <Header title="Explorar Ingredientes" />
-        { firstIngredients.map((ingredient, index) => (
-          <button
-            type="button"
-            key={ index }
-            onClick={ (event) => this.sendIngredient(event, ingredient) }
-          >
-            <MealsIngredientCard
+        <div
+          className="
+          container
+          container-fluid
+          d-flex
+          flex-wrap
+          widthM360
+          widthM800
+          justify-content-center
+          p-0 ingredients-container"
+        >
+          { firstIngredients.map((ingredient, index) => (
+            <button
+              type="button"
               key={ index }
-              ingredient={ ingredient }
-              index={ index }
-            />
-          </button>
-        ))}
+              onClick={ (event) => this.sendIngredient(event, ingredient) }
+              className="btn p-0"
+            >
+              <MealsIngredientCard
+                key={ index }
+                ingredient={ ingredient }
+                index={ index }
+              />
+            </button>
+          ))}
+        </div>
         <Footer />
       </div>
     );

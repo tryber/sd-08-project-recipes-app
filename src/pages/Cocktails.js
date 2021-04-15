@@ -9,6 +9,7 @@ import {
   fetchCocktailsCategories,
   setCocktailsIngredientCurrency,
 } from '../actions/cocktails';
+import Loading from '../components/Loading';
 
 class Cocktails extends Component {
   componentDidMount() {
@@ -28,28 +29,32 @@ class Cocktails extends Component {
   render() {
     const zero = 0;
     const maxLength = 12;
-    const { cocktails } = this.props;
+    const { cocktails, isFetchingCocktails } = this.props;
     const firstCocktails = cocktails.slice(zero, maxLength);
+    if (isFetchingCocktails) return <Loading />;
     return (
       <div>
         <Header title="Bebidas" />
-        { firstCocktails.map((cocktail, index) => (
-          <CocktailCard
-            key={ index }
-            cocktail={ cocktail }
-            index={ index }
-            testid="recipe-card"
-          />
-        ))}
+        <div className="container widthM800 container-fluid d-flex flex-wrap marginB80">
+          { firstCocktails.map((cocktail, index) => (
+            <CocktailCard
+              key={ index }
+              cocktail={ cocktail }
+              index={ index }
+              testid="recipe-card"
+            />
+          ))}
+        </div>
         <Footer />
       </div>
     );
   }
 }
 
-const mapStateToProps = ({ cocktails }) => ({
-  cocktails: cocktails.cocktails,
-  ingredientCurrency: cocktails.ingredientCurrency,
+const mapStateToProps = (state) => ({
+  cocktails: state.cocktails.cocktails,
+  ingredientCurrency: state.cocktails.ingredientCurrency,
+  isFetchingCocktails: state.cocktails.isFetchingCocktails,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -65,6 +70,7 @@ Cocktails.propTypes = {
   searchRandomCocktails: PropTypes.func.isRequired,
   ingredientCurrency: PropTypes.string.isRequired,
   sendCocktailsIngredientsCurrency: PropTypes.func.isRequired,
+  isFetchingCocktails: PropTypes.bool.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cocktails);

@@ -29,30 +29,87 @@ class RecipeDoneCard extends Component {
     }, index } = this.props;
 
     return (
-      <div data-testid={ `${index}-recipe-card` }>
+      <div
+        data-testid={ `${index}-recipe-card` }
+        className="
+        container
+        container-recipes-done
+        widthM350
+        d-flex
+        flex-wrap
+        my-2
+        white70
+        justify-content-center
+        p-2"
+      >
         {type === 'bebida' ? (
-          <Link to={ `/bebidas/${id}` }>
-            <img
-              style={ { width: '100px' } }
-              data-testid={ `${index}-horizontal-image` }
-              src={ image }
-              alt={ name }
-            />
-          </Link>
+          <div className="container-fluid my-2">
+            <Link to={ `/bebidas/${id}` }>
+              <img
+                style={ { width: '100px' } }
+                data-testid={ `${index}-horizontal-image` }
+                src={ image }
+                alt={ name }
+                className="img-fluid img-done"
+              />
+            </Link>
+            <button
+              type="button"
+              onClick={ () => this.copyLink(id, type) }
+              className="btn share-done"
+            >
+              <img
+                src={ shareIcon }
+                data-testid={ `${index}-horizontal-share-btn` }
+                alt="Compartilhar receita"
+                className="share-icon icon"
+              />
+            </button>
+            <p
+              id="link"
+              style={ { display: 'none' } }
+              className="msg-copy-done"
+            >
+              Link copiado!
+            </p>
+          </div>
         ) : (
-          <Link to={ `/comidas/${id}` }>
-            <img
-              style={ { width: '100px' } }
-              data-testid={ `${index}-horizontal-image` }
-              src={ image }
-              alt={ name }
-            />
-          </Link>
+          <div className="container-fluid my-2">
+            <Link to={ `/comidas/${id}` }>
+              <img
+                style={ { width: '100px' } }
+                data-testid={ `${index}-horizontal-image` }
+                src={ image }
+                alt={ name }
+                className="img-fluid img-done"
+              />
+            </Link>
+            <button
+              type="button"
+              onClick={ () => this.copyLink(id, type) }
+              className="btn share-done"
+            >
+              <img
+                src={ shareIcon }
+                data-testid={ `${index}-horizontal-share-btn` }
+                alt="Compartilhar receita"
+                className="share-icon icon"
+              />
+            </button>
+            <p
+              id="link"
+              style={ { display: 'none' } }
+              className="msg-copy-done"
+            >
+              Link copiado!
+            </p>
+          </div>
         )}
         {type === 'bebida' ? (
           <Link
             to={ `/bebidas/${id}` }
             data-testid={ `${index}-horizontal-name` }
+            className="font-mountains txt-shdw1 h4 my-1 title-done"
           >
             { name }
           </Link>
@@ -60,36 +117,39 @@ class RecipeDoneCard extends Component {
           <Link
             to={ `/comidas/${id}` }
             data-testid={ `${index}-horizontal-name` }
+            className="font-mountains txt-shdw1 h4 my-1 title-done"
           >
             { name }
           </Link>
         )}
         {type === 'bebida' ? (
-          <p data-testid={ `${index}-horizontal-top-text` }>
+          <p
+            data-testid={ `${index}-horizontal-top-text` }
+            className="txt-shdw1"
+          >
             { alcoholicOrNot }
           </p>
         ) : (
-          <p data-testid={ `${index}-horizontal-top-text` }>
+          <p
+            data-testid={ `${index}-horizontal-top-text` }
+            className="txt-shdw1"
+          >
             {`${area} - ${category}`}
           </p>
         ) }
-        <p data-testid={ `${index}-horizontal-done-date` }>
+        <p
+          data-testid={ `${index}-horizontal-done-date` }
+          className="msg-done"
+        >
           Feito em:
           { doneDate }
         </p>
-        <button
-          type="button"
-          onClick={ () => this.copyLink(id, type) }
-        >
-          <img
-            src={ shareIcon }
-            data-testid={ `${index}-horizontal-share-btn` }
-            alt="Compartilhar receita"
-          />
-        </button>
-        <p id="link" style={ { display: 'none' } }>Link copiado!</p>
         {tags.map((tag) => (
-          <p key={ index + tag } data-testid={ `${index}-${tag}-horizontal-tag` }>
+          <p
+            key={ index + tag }
+            data-testid={ `${index}-${tag}-horizontal-tag` }
+            className="tag-done btn btn-warning"
+          >
             {tag}
           </p>
         ))}

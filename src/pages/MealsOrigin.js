@@ -28,10 +28,11 @@ class MealsOrigin extends React.Component {
     return (
       <div>
         <Header title="Explorar Origem" />
-        <div>
+        <div className="container container-fluid p-1 widthM360 widthM800 bg-warning">
           <select
             data-testid="explore-by-area-dropdown"
             onChange={ ({ target }) => searchMealsByArea(target.value) }
+            className="widthM360"
           >
             <option
               data-testid="All-option"

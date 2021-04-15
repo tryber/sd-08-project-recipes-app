@@ -9,16 +9,24 @@ class CocktailCard extends Component {
       strDrink,
       idDrink }, index, testid } = this.props;
     return (
-      <Link to={ `/bebidas/${idDrink}` }>
-        <div data-testid={ `${index}-${testid}` }>{ idDrink }</div>
-        <img
-          src={ strDrinkThumb }
-          alt={ strDrink }
-          data-testid={ `${index}-card-img` }
-          className="recipe-photo"
-        />
-        <p data-testid={ `${index}-card-name` }>{ strDrink }</p>
-      </Link>
+      <div className="container widthM350 mt-2 white70">
+        <Link to={ `/bebidas/${idDrink}` }>
+          <img
+            src={ strDrinkThumb }
+            alt={ strDrink }
+            data-testid={ `${index}-card-img` }
+            className="recipe-photo img-fluid pt-3"
+          />
+          <div data-testid={ `${index}-${testid}` }>
+            <p
+              data-testid={ `${index}-card-name` }
+              className="text-center font-mountains mt-1 h4 text-danger"
+            >
+              { strDrink }
+            </p>
+          </div>
+        </Link>
+      </div>
     );
   }
 }
