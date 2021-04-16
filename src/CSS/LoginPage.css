@@ -1,0 +1,38 @@
+.login-image {
+  background-image: url('../images/Login_Mobile.png');
+}
+
+.login-title {
+  background-color: rgb(7, 6, 6, 0.7);
+  color: #e3e0de;
+  font-family: Times , serif;
+  font-weight: 800;
+  height: 60px;
+  padding-top: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+.form-container {
+  align-items: center;
+  background-color: rgb(7, 6, 6, 0.7);
+  display: flex;
+  flex-flow: column wrap;
+  height: 155px;
+  position: relative;
+  top: -80px;
+  width: 80%;
+}
+
+.form-label {
+  color: #e3e0de;
+  display: flex;
+  flex-flow: column wrap;
+  font-weight: 600;
+  justify-content: flex-end;
+}
+
+.form-label input {
+  background-color: #e3e0de;
+  border-radius: 5px;
+}

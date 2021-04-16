@@ -1,0 +1,19 @@
+.footer-main-section {
+  background-color: rgb(36, 36, 36);
+  left: 0;
+  position: absolute;
+  z-index: 6;
+}
+
+.footer {
+  background-color: rgb(36, 36, 36, 0.5);
+  bottom: 0;
+  margin-left: 15px;
+  padding: 5px;
+  position: fixed;
+  width: 100%;
+}
+
+.logo-space {
+  margin-left: 10px;
+}

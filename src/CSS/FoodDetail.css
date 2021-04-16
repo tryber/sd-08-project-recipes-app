@@ -1,0 +1,95 @@
+.detail-main-section {
+  height: 100%;
+}
+
+.detail-main-container {
+  background-color: #0c0909;
+  color: #e3e0de;
+  display: flex;
+  flex-flow: column wrap;
+  height: 100%;
+}
+
+.detail-header-container {
+  display: flex;
+  flex-flow: row;
+  height: 160px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.detail-img {
+  width: 40%;
+}
+
+.detail-title {
+  align-items: start;
+  display: flex;
+  font-size: 26px;
+  justify-content: center;
+  padding: 10px 0 0 10px;
+  width: 40%;
+}
+
+.buttons-container {
+  display: flex;
+  flex-flow: column wrap;
+  margin: 10px 17px 0 6px;
+  width: 15%;
+}
+
+.detail-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  width: 90%;
+}
+
+.detail-subtitle {
+  font-weight: 600;
+  text-decoration-line: underline;
+  text-decoration-style: double;
+}
+
+.detail-ingredients {
+  margin: 10px 0 20px;
+}
+
+.details-video {
+  height: auto;
+  margin-left: 20px;
+  width: 90%;
+}
+
+.detail-recomendation {
+  display: flex;
+  flex-flow: row wrap;
+  margin-left: 20px;
+  width: 90%;
+}
+
+.carousel-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.recomendation-card {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  width: 40%;
+}
+
+.detail-btn {
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+}
+
+.beginRecipe-btn {
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+}

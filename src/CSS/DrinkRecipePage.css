@@ -1,0 +1,6 @@
+.cocktail-image {
+  background-attachment: fixed;
+  background-image: url('../images/Drinks_Mobile.png');
+  background-repeat: no-repeat;
+  height: 100%;
+}

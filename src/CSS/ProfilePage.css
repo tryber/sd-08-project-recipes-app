@@ -1,0 +1,89 @@
+.profile-page-img {
+  background-attachment: fixed;
+  background-image: url('../images/Login_Mobile.png');
+  background-repeat: no-repeat;
+}
+
+.user-title {
+  color: #e3e0de;
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+}
+
+.profile-header-section {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 230px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.profile-section {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 235px;
+  width: 100%;
+}
+
+.profile-section button {
+  margin-top: 3px;
+  width: 100%;
+}
+
+.profile-section a {
+  margin-top: 3px;
+  width: 100%;
+}
+
+.filter-type-btn-section {
+  width: 90%;
+}
+
+.done-section {
+  background-color: #0c0909;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  width: 100%;
+  z-index: -1;
+}
+
+.info-recipe-done {
+  color: #e3e0de;
+  display: flex;
+  flex-flow: row wrap;
+  width: 90%;
+}
+
+.info-text-done {
+  display: flex;
+  flex-flow: column wrap;
+  margin-left: 10px;
+  width: 43%;
+}
+
+.title-recipe-done {
+  margin: 5px 0 20px 20px;
+  width: 100%;
+}
+
+.title-recipe-done h4 {
+  color: #e3e0de;
+}
+
+.card-done-img {
+  max-width: 100px;
+}
+
+.buttons-container {
+  margin-right: 0;
+}
+
+.no-recipe {
+  position: absolute;
+  top: 40%;
+}
