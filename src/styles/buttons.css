@@ -1,0 +1,12 @@
+.start-recipe-btn {
+  bottom: 0;
+  font-size: 24px;
+  font-weight: 700;
+  position: fixed;
+  width: 16rem;
+}
+
+.start-finish-btn {
+  display: flex;
+  justify-content: center;
+}

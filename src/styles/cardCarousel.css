@@ -1,0 +1,4 @@
+.div-carousel {
+  display: flex;
+  overflow-x: scroll;
+}

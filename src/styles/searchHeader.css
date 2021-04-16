@@ -1,0 +1,16 @@
+.search-header-form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+.search-header-form input {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+
+.search-header-form section {
+  margin-top: 25px;
+}

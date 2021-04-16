@@ -1,3 +1,10 @@
+:root {
+
+  --gray: gray;
+
+  --white: white;
+}
+
 .meals {
   align-items: center;
   background: #0fa36b;
@@ -64,5 +71,478 @@
 
   100% {
     transform: rotate(-10deg);
+  }
+}
+
+.login {
+  align-items: center;
+  background-image: url('https://images.unsplash.com/photo-1495461199391-8c39ab674295?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80');
+  background-size: cover;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  margin: 0;
+  width: 100%;
+}
+
+.login form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media only screen and ( min-width : 401px ) and ( max-width : 1040px ) {
+
+  .login {
+    background-image: url('https://cdn.discordapp.com/attachments/822564174428110883/825021234646876210/unknown.png');
+    background-size: cover;
+  }
+
+  .header-recipe-detail {
+    display: flex;
+    padding: 1rem;
+  }
+
+  .detail-section {
+    margin-left: 2rem;
+  }
+
+  .detail-section h3 {
+    font-size: 8vw;
+    font-weight: 700;
+  }
+
+  .detail-section h5 {
+    font-size: 6vw;
+  }
+
+  .favorite-btn {
+    width: 15%;
+  }
+
+  .form-check-input {
+    margin-right: 5px;
+  }
+
+  .ingredients-recipe-inprogress {
+    margin-left: 20px;
+  }
+
+  .ingredients-recipe-details {
+    margin-left: 20px;
+  }
+
+  .list-group-item {
+    width: 300px;
+  }
+
+  .instructions-recipe-details {
+    padding: 20px;
+  }
+
+  .recommended-recipe-details {
+    margin-left: 20px;
+  }
+
+  .recommended-recipe-details h3 {
+    margin-bottom: 20px;
+  }
+
+  .share-btn {
+    margin-right: 20px;
+    width: 15%;
+  }
+
+  .copied-msg {
+    font-size: 2rem;
+    margin-top: 20px;
+  }
+
+  .image-details {
+    border-radius: 0.5rem;
+    width: 50%;
+  }
+
+  .video-recipe-details {
+    margin: 0 auto;
+    width: 80%;
+  }
+}
+
+.div-button {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.div-button button {
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.div-foods {
+  background-color: var(--white);
+}
+
+.card-section {
+  align-items: flex-end;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin-bottom: 100px;
+  margin-top: 35px;
+  width: 100%;
+}
+
+.profile-email {
+  color: gray;
+  font-family: Poppins , sans-serif;
+  font-weight: 700;
+}
+
+.card-item {
+  display: grid;
+  grid-gap: 1rem;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.card-category {
+  color: var(--gray);
+  font-size: 1.2;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+.card-title {
+  color: var(--gray);
+  font-size: 1.5em;
+  font-weight: 700;
+  margin-left: 5px;
+}
+
+@media screen and ( min-width : 680px ) {
+
+  .card-item {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and ( min-width : 1041px ) {
+
+  .explorar {
+    margin-top: 200px;
+    text-align: center;
+  }
+
+  .explorar button {
+    font-size: 36px;
+    margin-left: 20px;
+  }
+
+  .header-recipe-detail {
+    display: flex;
+    padding: 1rem;
+  }
+
+  .detail-section {
+    margin-left: 2rem;
+  }
+
+  .detail-section h3 {
+    font-size: 6rem;
+    font-weight: 700;
+  }
+
+  .detail-section h5 {
+    font-size: 3rem;
+  }
+
+  .favorite-btn {
+    width: 40px;
+  }
+
+  .ingredients-recipe-inprogress {
+    margin-left: 20px;
+  }
+
+  .ingredients-recipe-details {
+    margin-left: 20px;
+  }
+
+  .list-group-item {
+    width: 300px;
+  }
+
+  .instructions-recipe-details {
+    padding: 20px;
+  }
+
+  .recommended-recipe-details {
+    margin-left: 20px;
+  }
+
+  .recommended-recipe-details h3 {
+    margin-bottom: 20px;
+  }
+
+  .share-btn {
+    margin-right: 20px;
+    width: 40px;
+  }
+
+  .copied-msg {
+    font-size: 2rem;
+    margin-top: 20px;
+  }
+
+  .image-details {
+    border-radius: 0.5rem;
+    width: 500px;
+  }
+
+  .profile {
+    margin-top: 200px;
+    text-align: center;
+  }
+
+  .profile button {
+    font-size: 36px;
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+
+  .profile-email {
+    color: gray;
+    font-family: Poppins , sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    margin-left: 20px;
+  }
+
+  .card-item {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .video-recipe-details {
+    margin: 0 auto;
+    width: 60%;
+  }
+}
+
+@media screen and ( min-width : 1400px ) {
+
+  .card-item {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .video-recipe-details {
+    margin: 0 auto;
+    width: 60%;
+  }
+}
+
+@media only screen and ( max-width : 400px ) {
+
+  .explorar {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 70vh;
+  }
+
+  .explorar button {
+    font-size: 1.5em;
+    margin-bottom: 60px;
+  }
+
+  .header-recipe-detail {
+    margin-bottom: 30px;
+  }
+
+  .header-recipe-detail img {
+    margin: 0 0 15px;
+    width: 100%;
+  }
+
+  .header-recipe-detail h3 {
+    color: rgb(71, 70, 70);
+    font-size: 2em;
+    margin-left: 20px;
+  }
+
+  .header-recipe-detail h5 {
+    color: gray;
+    font-size: 1.5em;
+    margin-left: 20px;
+  }
+
+  .header-recipe-detail input {
+    margin: 5px 10px;
+  }
+
+  .header-recipe-detail section {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 15px;
+  }
+
+  .header-recipe-detail p {
+    color: red;
+    margin-left: 20px;
+  }
+
+  .ingredients-recipe-details {
+    margin-bottom: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .ingredients-recipe-details h3 {
+    font-size: 1.9em;
+    margin-bottom: 15px;
+  }
+
+  .instructions-recipe-details {
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .instructions-recipe-details h3 {
+    font-size: 1.9em;
+    margin-bottom: 15px;
+  }
+
+  .instructions-recipe-details p {
+    font-size: 1.055em;
+    margin-bottom: 15px;
+    text-align: justify;
+  }
+
+  .video-recipe-details {
+    margin-bottom: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .video-recipe-details h3 {
+    font-size: 1.9em;
+    margin-bottom: 15px;
+  }
+
+  .recommended-recipe-details h3 {
+    font-size: 1.9em;
+    margin-bottom: 15px;
+  }
+
+  .ingredients-recipe-inprogress {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .ingredients-recipe-inprogress h3 {
+    font-size: 1.9em;
+    margin-bottom: 15px;
+  }
+
+  .ingredients-recipe-inprogress section {
+    margin-bottom: 5px;
+  }
+
+  .select-by-origin {
+    background-color: white;
+    border-radius: 7px;
+    height: 30px;
+    margin-left: 26px;
+    width: 200px;
+  }
+
+  .profile {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0 20px;
+    min-height: 70vh;
+  }
+
+  .profile div {
+    font-size: 1.9em;
+  }
+
+  .profile button {
+    font-size: 1.3em;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .done-recipe {
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 1px 1px 5px 2px gray;
+    margin-bottom: 25px;
+    padding: 8px;
+    padding-bottom: 20px;
+    width: 300px;
+  }
+
+  .done-recipe img {
+    border-radius: 20px;
+    margin: auto;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .cards-favorites {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+    margin-top: 25px;
+  }
+
+  .share-btn-favorite {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+  }
+
+  .tag-favorites {
+    background-color: lightcoral;
+    border-radius: 20px;
+    color: white;
+    margin-right: 5px;
+    padding: 8px;
+  }
+
+  .favorite-recipe {
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 1px 1px 5px 2px gray;
+    margin-bottom: 25px;
+    padding: 8px;
+    padding-bottom: 20px;
+    width: 300px;
+  }
+
+  .favorite-recipe img {
+    border-radius: 20px;
+    margin: auto;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .btn-favorite-share {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
   }
 }

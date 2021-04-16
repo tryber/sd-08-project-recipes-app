@@ -1,0 +1,18 @@
+.header {
+  align-items: center;
+  background: #ea1d2c;
+  color: white;
+  display: flex;
+  font-family: Pacifico , cursive;
+  height: 60px;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 0 20px;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+.header h1 {
+  font-size: 1.7em;
+}

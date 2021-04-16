@@ -1,0 +1,56 @@
+.card {
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 1px 3px 5px 2px gray;
+  margin-bottom: 20px;
+  padding: 8px;
+  width: 100px;
+}
+
+.card > img {
+  border-radius: 20px;
+  margin-left: 6px;
+  max-width: 290px;
+  object-fit: cover;
+}
+
+@media screen and ( max-width : 360px ) {
+
+  .card {
+    width: 20rem;
+  }
+
+  .div-carousel .card {
+    margin-right: 10px;
+    min-width: 48%;
+  }
+}
+
+@media screen and ( min-width : 361px ) and ( max-width : 1040px ) {
+
+  .card {
+    margin-right: 10px;
+    width: 18rem;
+  }
+
+  .card > img {
+    margin-right: 5px;
+  }
+
+  .div-carousel .card {
+    min-width: 32%;
+  }
+}
+
+
+@media screen and ( min-width : 1041px ) {
+
+  .card {
+    margin-right: 10px;
+    width: 18rem;
+  }
+
+  .card > img {
+    margin-right: 5px;
+  }
+}
