@@ -10,6 +10,11 @@ const RecipesDetails = styled.main`
     margin: 10px;
   }
 
+  .interaction-btns {
+    display: flex;
+    margin: 5px;
+  }
+
   .ingredient {
     margin: 10px;
 

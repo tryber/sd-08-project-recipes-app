@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { Header, Footer } from '../../component';
 import Context from '../../context/Context';
 import CardsContainer from '../../styles/CardsContainer';
+import StyledRecipeCards from '../../styles/component/RecipeCards';
 
 export default function ExploreDrinksByIngredient() {
   const { setSearchParams } = useContext(Context);
@@ -45,20 +46,20 @@ export default function ExploreDrinksByIngredient() {
       <Header pageTitle="Explorar Ingredientes" showSearchButton={ false } />
       <CardsContainer>
         {ingredients.map((item, index) => (
-          <button
+          <StyledRecipeCards
             key={ index }
             onClick={ () => handleFilter(item.strIngredient1) }
-            type="button"
+            data-testid={ `${index}-ingredient-card` }
           >
-            <div data-testid={ `${index}-ingredient-card` }>
+            <div>
               <img
                 data-testid={ `${index}-card-img` }
                 alt="ingredients"
                 src={ source(item.strIngredient1) }
               />
-              <h1 data-testid={ `${index}-card-name` }>{item.strIngredient1}</h1>
+              <p data-testid={ `${index}-card-name` }>{item.strIngredient1}</p>
             </div>
-          </button>
+          </StyledRecipeCards>
         ))}
       </CardsContainer>
       <Footer />

@@ -19,10 +19,13 @@ export default function Recommendations() {
     ? location.replace('comidas', 'bebidas')
     : location.replace('bebidas', 'comidas');
 
-  useEffect(() => setSearchParams({
-    selectedParameter: 'none',
-    location: toggledLocation }),
-  [setSearchParams, toggledLocation]);
+  useEffect(
+    () => setSearchParams({
+      selectedParameter: 'none',
+      location: toggledLocation,
+    }),
+    [setSearchParams, toggledLocation],
+  );
 
   useEffect(() => {
     setRecommendations([...recipes].slice(0, SHOW_SIX_RECOMMENDATIONS));
@@ -33,7 +36,6 @@ export default function Recommendations() {
       <h4>Recomendadas</h4>
       <div style={ { overflowX: 'auto', whiteSpace: 'nowrap' } }>
         {recommendations.map((recipe, index) => (
-
           <div
             data-testid={ `${index}-recomendation-card` }
             key={ index }
@@ -48,7 +50,6 @@ export default function Recommendations() {
               index={ index }
             />
           </div>
-
         ))}
       </div>
     </StyledRecommendations>

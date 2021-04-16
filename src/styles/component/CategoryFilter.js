@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 const StyledCategoryFilter = styled.div`
-  border-radius: 5px;
   display: flex;
   justify-content: space-evenly;
   margin-bottom: 10px;

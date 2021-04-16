@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Context from '../../context/Context';
 import Recommendations from '../../component/Recommendations';
@@ -16,7 +16,12 @@ export default function FoodDetails({
   const history = useHistory();
   const [recipe, setRecipe] = useState();
 
-  const recipeInProgress = () => getRecipesInProgress().cocktails[id];
+  if (!JSON.parse(localStorage.getItem('inProgressRecipes'))) {
+    const inProgressRecipes = { cocktails: {}, meals: {} };
+    localStorage.setItem('inProgressRecipes', JSON.stringify(inProgressRecipes));
+  }
+
+  const recipeInProgress = getRecipesInProgress().meals[id];
 
   useEffect(
     () => setSearchParams({
@@ -50,22 +55,28 @@ export default function FoodDetails({
     .map((measure) => recipe[measure])
     .filter((measure) => measure);
 
+  const goTo = () => {
+    history.push(`/comidas/${id}/in-progress`);
+  };
+
   return (
     <RecipesDetails>
       <img data-testid="recipe-photo" src={ strMealThumb } alt="Recipe Done" />
       <h1 data-testid="recipe-title">{strMeal}</h1>
-      <FavoriteButton
-        recipeInfo={ {
-          id,
-          type: 'comida',
-          area: strArea,
-          category: strCategory,
-          alcoholicOrNot: '',
-          name: strMeal,
-          image: strMealThumb,
-        } }
-      />
-      <ShareDisplay />
+      <div className="interaction-btns">
+        <FavoriteButton
+          recipeInfo={ {
+            id,
+            type: 'comida',
+            area: strArea,
+            category: strCategory,
+            alcoholicOrNot: '',
+            name: strMeal,
+            image: strMealThumb,
+          } }
+        />
+        <ShareDisplay url={ history.location.pathname } />
+      </div>
       <h5 data-testid="recipe-category">{strCategory}</h5>
       <div className="ingredient">
         {ingredients.map((ingredient, index) => (
@@ -77,28 +88,23 @@ export default function FoodDetails({
       <p data-testid="instructions" className="instructions">
         {strInstructions}
       </p>
-      <div className="video-container">
-        <iframe
-          data-testid="video"
-          title="Recipe"
-          src={ strYoutube.replace('watch?v=', 'embed/') }
-        />
-      </div>
-      <Link
-        to={ `/comidas/${id}/in-progress` }
+      {strYoutube && (
+        <div className="video-container">
+          <iframe
+            data-testid="video"
+            title="Recipe"
+            src={ strYoutube.replace('watch?v=', 'embed/') }
+          />
+        </div>
+      )}
+      <button
+        type="button"
         data-testid="start-recipe-btn"
         className="start-resume-recipe"
-        onClick={ () => {
-          if (!recipeInProgress) {
-            localStorage.setItem(
-              'inProgressRecipes',
-              JSON.stringify([...getRecipesInProgress(), id]),
-            );
-          }
-        } }
+        onClick={ goTo }
       >
         {recipeInProgress ? 'Continuar Receita' : 'Iniciar Receita'}
-      </Link>
+      </button>
       <Recommendations />
     </RecipesDetails>
   );

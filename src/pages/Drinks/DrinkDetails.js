@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Context from '../../context/Context';
 import Recommendations from '../../component/Recommendations';
@@ -7,16 +7,17 @@ import { FavoriteButton, ShareDisplay } from '../../component';
 import { getRecipesInProgress } from '../../services/localStorage';
 import RecipesDetails from '../../styles/RecipesDetails';
 
-export default function DrinkDetails({
-  match: {
-    params: { id },
-  },
-}) {
+export default function DrinkDetails({ match: { params: { id } } }) {
   const { recipeDetail, setSearchParams } = useContext(Context);
   const history = useHistory();
   const [recipe, setRecipe] = useState();
 
-  const recipeInProgress = () => getRecipesInProgress().cocktails[id];
+  if (!JSON.parse(localStorage.getItem('inProgressRecipes'))) {
+    const inProgressRecipes = { cocktails: {}, meals: {} };
+    localStorage.setItem('inProgressRecipes', JSON.stringify(inProgressRecipes));
+  }
+
+  const recipeInProgress = getRecipesInProgress().cocktails[id];
 
   useEffect(() => {
     setSearchParams({
@@ -42,22 +43,28 @@ export default function DrinkDetails({
     .map((measure) => recipe[measure])
     .filter((measure) => measure);
 
+  const goTo = () => {
+    history.push(`/bebidas/${id}/in-progress`);
+  };
+
   return (
     <RecipesDetails>
       <img data-testid="recipe-photo" src={ strDrinkThumb } alt="Recipe Done" />
       <h1 data-testid="recipe-title">{strDrink}</h1>
-      <FavoriteButton
-        recipeInfo={ {
-          id,
-          type: 'bebida',
-          area: '',
-          category: strCategory,
-          alcoholicOrNot: strAlcoholic,
-          name: strDrink,
-          image: strDrinkThumb,
-        } }
-      />
-      <ShareDisplay />
+      <div className="interaction-btns">
+        <FavoriteButton
+          recipeInfo={ {
+            id,
+            type: 'bebida',
+            area: '',
+            category: strCategory,
+            alcoholicOrNot: strAlcoholic,
+            name: strDrink,
+            image: strDrinkThumb,
+          } }
+        />
+        <ShareDisplay url={ history.location.pathname } />
+      </div>
       <h5 data-testid="recipe-category">{`${strCategory} ${strAlcoholic}`}</h5>
       <div className="ingredient">
         {ingredients.map((ingredient, index) => (
@@ -69,21 +76,14 @@ export default function DrinkDetails({
       <p data-testid="instructions" className="instructions">
         {strInstructions}
       </p>
-      <Link
-        to={ `/bebidas/${id}/in-progress` }
+      <button
+        type="button"
         data-testid="start-recipe-btn"
         className="start-resume-recipe"
-        onClick={ () => {
-          if (!recipeInProgress) {
-            localStorage.setItem(
-              'RecipesInProgress',
-              JSON.stringify([...getRecipesInProgress(), id]),
-            );
-          }
-        } }
+        onClick={ goTo }
       >
         {recipeInProgress ? 'Continuar Receita' : 'Iniciar Receita'}
-      </Link>
+      </button>
       <Recommendations />
     </RecipesDetails>
   );

@@ -6,15 +6,15 @@ import StyledRecipeCards from '../styles/component/RecipeCards';
 export default function RecipeCards({ recipe, type, index, id, recommendation }) {
   const history = useHistory();
   const { pathname } = useLocation();
-  const link = pathname.includes('comidas') ? 'comidas' : 'bebidas';
+  let link = pathname.includes('comidas') ? 'comidas' : 'bebidas';
+  if (recommendation) {
+    link = pathname.includes('comidas') ? 'bebidas' : 'comidas';
+  }
 
   const goToLink = () => history.push(`/${link}/${id}`);
 
   return (
-    <StyledRecipeCards
-      onClick={ goToLink }
-      data-testid={ `${index}-recipe-card` }
-    >
+    <StyledRecipeCards onClick={ goToLink } data-testid={ `${index}-recipe-card` }>
       <img
         src={ recipe[`str${type}Thumb`] }
         alt={ recipe[`str${type}`] }

@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
 import copy from 'clipboard-copy';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import Header from '../../component/Header';
 import shareIcon from '../../images/shareIcon.svg';
 import blackHeartIcon from '../../images/blackHeartIcon.svg';
+import StyledFavorites from '../../styles/RecipesFavorite';
+
+const LINK_COPIED_TIMEOUT = 2000;
 
 export default function RecipesFavorite() {
   const storedFavorite = JSON.parse(localStorage.getItem('favoriteRecipes')) || [];
-  const [copied, setCopied] = useState(false);
+  const [copied, setCopied] = useState(storedFavorite.map(() => false));
   const [favoriteRecipes, setFavoriteRecipes] = useState(storedFavorite);
+  const history = useHistory();
 
   const filterRecipes = (filter) => {
     const filtered = !filter
@@ -17,9 +21,11 @@ export default function RecipesFavorite() {
     setFavoriteRecipes(filtered);
   };
 
-  const copyLink = (eachRecipe) => {
-    copy(`http://localhost:3000/${eachRecipe.type}s/${eachRecipe.id}`);
-    setCopied(true);
+  const copyLink = (eachRecipe, index) => {
+    const { type, id } = eachRecipe;
+    copy(`http://localhost:3000/${type}s/${id}`);
+    setCopied(copied.map((_each, i) => i === index));
+    setTimeout(() => setCopied(copied.map(() => false)), LINK_COPIED_TIMEOUT);
   };
 
   const unfavorite = (recipeId) => {
@@ -28,10 +34,12 @@ export default function RecipesFavorite() {
     localStorage.setItem('favoriteRecipes', JSON.stringify(newFavorites));
   };
 
+  const goToLink = (type, id) => history.push(`/${type}s/${id}`);
+
   return (
-    <>
+    <StyledFavorites>
       <Header pageTitle="Receitas Favoritas" showSearchButton={ false } />
-      <div>
+      <div className="filter-buttons">
         <button
           type="button"
           data-testid="filter-by-all-btn"
@@ -54,47 +62,57 @@ export default function RecipesFavorite() {
           Bebidas
         </button>
       </div>
-      <div>
+      <div className="favorite-recipes-container">
         {favoriteRecipes.map((eachRecipe, index) => (
-          <div key={ eachRecipe.id }>
-            <Link to={ `/${eachRecipe.type}s/${eachRecipe.id}` }>
+          <div key={ eachRecipe.id } className="recipe">
+            <button
+              type="button"
+              onClick={ () => goToLink(eachRecipe.type, eachRecipe.id) }
+              className="recipe-image-container"
+            >
               <img
-                style={ { width: '100vw' } }
                 src={ eachRecipe.image }
                 data-testid={ `${index}-horizontal-image` }
                 alt={ eachRecipe.name }
               />
-            </Link>
-            <p data-testid={ `${index}-horizontal-top-text` }>
-              {eachRecipe.type === 'comida'
-                ? `${eachRecipe.area} - ${eachRecipe.category}`
-                : `${eachRecipe.alcoholicOrNot}`}
-            </p>
-            <Link
-              to={ `/${eachRecipe.type}s/${eachRecipe.id}` }
-              data-testid={ `${index}-horizontal-name` }
-            >
-              {eachRecipe.name}
-            </Link>
-            <button type="button" onClick={ () => copyLink(eachRecipe) }>
-              <img
-                src={ shareIcon }
-                data-testid={ `${index}-horizontal-share-btn` }
-                alt="Share Button"
-              />
-              {copied && <p>Link copiado!</p>}
             </button>
-            <button type="button" onClick={ () => unfavorite(eachRecipe.id) }>
-              <img
-                src={ blackHeartIcon }
-                data-testid={ `${index}-horizontal-favorite-btn` }
-                alt="Favorite Button"
-              />
-              {copied && <p>Link copiado!</p>}
-            </button>
+            <div className="recipe-data">
+              <p data-testid={ `${index}-horizontal-top-text` }>
+                {eachRecipe.type === 'comida'
+                  ? `${eachRecipe.area} - ${eachRecipe.category}`
+                  : `${eachRecipe.alcoholicOrNot}`}
+              </p>
+              <button
+                type="button"
+                onClick={ () => goToLink(eachRecipe.type, eachRecipe.id) }
+                data-testid={ `${index}-horizontal-name` }
+                className="recipe-name"
+              >
+                {eachRecipe.name}
+              </button>
+              <button
+                type="button"
+                onClick={ () => copyLink(eachRecipe, index) }
+                className="share-btn"
+              >
+                <img
+                  src={ shareIcon }
+                  data-testid={ `${index}-horizontal-share-btn` }
+                  alt="Share Button"
+                />
+                {copied[index] && <span>Link copiado!</span>}
+              </button>
+              <button type="button" onClick={ () => unfavorite(eachRecipe.id) }>
+                <img
+                  src={ blackHeartIcon }
+                  data-testid={ `${index}-horizontal-favorite-btn` }
+                  alt="Favorite Button"
+                />
+              </button>
+            </div>
           </div>
         ))}
       </div>
-    </>
+    </StyledFavorites>
   );
 }
