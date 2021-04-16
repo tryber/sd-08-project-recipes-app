@@ -1,27 +1,20 @@
-.formContainer {
+.loginContainer {
   align-items: center;
+  background-color: rgba(255, 165, 0, 0.8);
+  color: rgb(255, 0, 0);
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  padding-top: 1rem;
+  height: 640px;
+  width: 360px;
+}
+
+.formContainer {
+  align-items: center;
+  display: flex;  
+  flex-direction: column;
   width: 80%;
-}
-
-.formContainer button {
-  background-color: red;
-  color: orange;
-  font-size: 1.5rem;
-  font-weight: 500;
-  margin-top: 2.5rem;
-  transition: 1s;
-  width: 50%;
-}
-
-.formContainer button:hover {
-  background-color: orange;
-  color: red;
-}
-
-.formContainer button [ disabled ] {
-  cursor: not-allowed;
 }
 
 .formContainer label {
@@ -31,8 +24,8 @@
 
 .formContainer input {
   background-color: transparent;
-  border: 2px solid orange;
-  color: red;
+  border: 2px solid rgb(255,150,0);
+  color: rgb(255, 0, 0);
   margin-top: 0.6rem;
   padding: 0.5rem 1rem;
   width: 100%;
@@ -42,14 +35,25 @@
   outline: none;
 }
 
-.loginContainer {
-  align-items: center;
-  background-color: rgba(255, 165, 0, 0.8);
-  color: red;
-  display: flex;
-  flex-direction: column;
-  height: 640px;
-  justify-content: center;
-  padding-top: 1rem;
-  width: 360px;
+::-webkit-input-placeholder {
+  color: rgb(255, 0, 0);
+}
+
+.formContainer button {
+  background-color: rgb(255, 0, 0);
+  color: rgb(255, 165, 0);
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 2.5rem;
+  transition: 1s;
+  width: 50%;
+}
+
+.formContainer button:hover{
+  background-color: rgb(255, 165, 0);
+  color: rgb(255, 0, 0);
+}
+
+.formContainer button[disabled] {
+  cursor: not-allowed;
 }

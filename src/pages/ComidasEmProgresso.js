@@ -79,15 +79,15 @@ function ComidasEmProgresso() {
   }, [id, setRecipe]); // []
 
   return (
-    <div>
-      <img
-        data-testid="recipe-photo"
-        src={ recipe.strMealThumb }
-        alt={ recipe.strMeal }
-      />
+    <div className="comidaContainer">
       <div className="nomeEbotões">
+        <img
+          data-testid="recipe-photo"
+          src={ recipe.strMealThumb }
+          alt={ recipe.strMeal }
+        />
         <h1 data-testid="recipe-title">{recipe.strMeal}</h1>
-        <div>
+        <div className="buttonContainer">
           <button
             type="button"
             data-testid="share-btn"
@@ -111,7 +111,10 @@ function ComidasEmProgresso() {
           </button>
         </div>
       </div>
-      <h4 data-testid="recipe-category">{recipe.strCategory}</h4>
+      <h4 data-testid="recipe-category">
+        {`Category:
+        ${recipe.strCategory}`}
+      </h4>
       <IngredientesEmProcesso id={ id } type="meals" />
       <div className="instruções">
         <h2>Instruções</h2>

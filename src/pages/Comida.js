@@ -81,15 +81,15 @@ function Comida() {
   }, [id, setRecipe]); // []
 
   return (
-    <div>
-      <img
-        data-testid="recipe-photo"
-        src={ recipe.strMealThumb }
-        alt={ recipe.strMeal }
-      />
+    <div className="comidaContainer">
       <div className="nomeEbotões">
+        <img
+          data-testid="recipe-photo"
+          src={ recipe.strMealThumb }
+          alt={ recipe.strMeal }
+        />
         <h1 data-testid="recipe-title">{recipe.strMeal}</h1>
-        <div>
+        <div className="buttonContainer">
           <button
             type="button"
             data-testid="share-btn"
@@ -113,13 +113,16 @@ function Comida() {
           </button>
         </div>
       </div>
-      <h4 data-testid="recipe-category">{recipe.strCategory}</h4>
+      <h4 data-testid="recipe-category">
+        {`Category:
+        ${recipe.strCategory}`}
+      </h4>
       <Ingredientes />
-      <div>
+      <div className="instructionsContainer">
         <h2>Instruções</h2>
         <p data-testid="instructions">{recipe.strInstructions}</p>
       </div>
-      <div>
+      <div className="videoContainer">
         <h2>Vídeo</h2>
         <iframe src={ urlVideo } title={ recipe.strMeal } data-testid="video" />
       </div>

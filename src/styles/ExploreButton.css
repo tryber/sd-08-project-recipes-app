@@ -17,12 +17,12 @@
 }
 
 .exploreContainer button:hover {
-  background-color: red;
-  color: orange;
+  color: black;
 }
 
 .exploreContainer input {
   width: 100%;
+  padding-left: 10px;
 }
 
 .exploreContainer input [ type = 'text' ] {
@@ -30,7 +30,7 @@
   border-color: red;
   color: red;
   outline: none;
-  padding-left: 1rem;
+  padding-left: 1.5rem;
   width: 150%;
 }
 

@@ -87,7 +87,7 @@ function IngredientesEmProcesso({ id, type }) {
   }
 
   return (
-    <div>
+    <div className="ingredientes">
       <h2>Ingredientes</h2>
       <ul>
         {objPronto.map((ingrediente, index) => (

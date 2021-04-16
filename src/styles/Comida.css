@@ -7,3 +7,92 @@
 .instruções {
   padding-bottom: 50px;
 }
+
+.comidaContainer {
+  background-color: rgba(255, 165, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+}
+
+.comidaContainer h4 {
+  background-color: rgba(255, 165, 0, 0.5);
+  color: red;
+}
+
+.comidaContainer img {
+  height: 5rem;
+  width: 5rem;
+}
+
+.comidaContainer h1 {
+  font-size: 2.5rem;
+  margin-top: 0.5rem;  
+}
+
+.nomeEbotões {
+  background: orange;
+  color: red;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.buttonContainer button {
+  height: 2.5rem;
+  width: 2.5rem;
+  background: transparent;
+  outline: none;
+}
+
+.buttonContainer button img{
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+.ingredientes {
+  background: red;
+  color: orange;
+  font-weight: bold;
+  margin-top: -0.4rem;
+}
+
+.ingredientes h2 {
+  margin-left: 0.5rem;
+}
+
+.ingredientes ul{
+  margin-left: 1.5rem;
+  list-style-type: none;
+}
+
+.instructionsContainer, .instruções {
+  background-color: rgba(255, 165, 0, 0.5);
+  color: red;
+}
+
+.instructionsContainer, .instruções h2 {
+  margin-left: 0.5rem;
+}
+
+.instructionsContainer, .instruções p {
+  margin-left: 1.5rem;
+  line-height: 1.5rem;
+  padding-right: 0.5rem;
+}
+
+.videoContainer {
+  background: red;
+  color: orange;
+}
+
+.recomendadas {
+  background-color: rgba(255, 165, 0, 0.5);
+  color: red;
+}
+
+.iniciar-receita-btn, .finish-recipe-btn {
+  background-color: rgb(255, 165, 0);
+  color: red;
+}
