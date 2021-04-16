@@ -1,0 +1,17 @@
+.message {
+  align-items: center;
+  background-color: rgb(243, 60, 60);
+  border-radius: 5px;
+  color: white;
+  flex-direction: column;
+  height: 3rem;
+  left: 50%;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  width: 10rem;
+}
+
+.message p {
+  margin: auto 0;
+}
