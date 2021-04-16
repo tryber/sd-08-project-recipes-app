@@ -19,7 +19,7 @@ function FoodContext(props) {
   const [meals, setMeals] = useState([]);
   const [categoryMeals, setCategoryMeals] = useState([]);
   const [categoriesMeals, setCategoriesMeals] = useState([]);
-  const [searchInputMeal, setSearchInputMeal] = useState([]);
+  const [searchInputMeal, setSearchInputMeal] = useState('');
   const [data, setData] = useState({ email: '', password: '' });
   const [tokens, setTokens] = useState({ mealsToken: '', cocktailsToken: '' });
 
@@ -61,8 +61,8 @@ function FoodContext(props) {
     if (!!firstLetterSearchRadio && searchInputMeal.length !== 1) {
       myCustomAlert('Sua busca deve conter somente 1 (um) caracter');
     }
-    if (ingredientSearchRadio) {
-      const res = await getMealByIngredients(searchInputMeal);
+    if (ingredientSearchRadio && searchInputMeal) {
+      const res = await getMealByIngredients(searchInputMeal) || [];
       setMeals(res);
     }
   }, [

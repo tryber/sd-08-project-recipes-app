@@ -83,16 +83,17 @@ function CardDoneRecipe({ typeFilter }) {
   return (
     <div>
       { recipeAll.map((el, index) => (
-        <div key={ el.id }>
-          <div>
+        <div className="recipe-card-done" key={ index }>
+          <div className="recipe-content-img">
             <a
+              className="link-img-done"
               data-recipedatails={ `${el.type}-${el.id}` }
               href={ `http://localhost:3000/${el.type}s/${el.id}` }
             >
               <img
+                className="img-done"
                 data-recipedatails={ `${el.type}-${el.id}` }
                 data-testid={ `${index}-horizontal-image` }
-                style={ { width: '100px' } }
                 src={ el.image }
                 alt={ el.name }
               />
@@ -100,6 +101,7 @@ function CardDoneRecipe({ typeFilter }) {
           </div>
           <div>
             <button
+              className="recipe-share-link"
               data-recipeid={ el.id }
               data-indexstate={ index }
               type="button"
@@ -114,6 +116,7 @@ function CardDoneRecipe({ typeFilter }) {
               />
             </button>
             <button
+              className="recipe-share-link"
               onClick={ (e) => onClickCopyLink(e) }
               src={ shareIcon }
               type="button"
@@ -129,6 +132,7 @@ function CardDoneRecipe({ typeFilter }) {
           </div>
           <div>
             <a
+              className="link-title-done"
               href={ `http://localhost:3000/${el.type}s/${el.id}` }
               data-recipedatails={ `${el.type}-${el.id}` }
             >
@@ -154,7 +158,11 @@ function CardDoneRecipe({ typeFilter }) {
             </div>
           )}
           <div>
-            <span data-testid={ `${index}-horizontal-done-date` }>{ el.doneDate}</span>
+            <span
+              data-testid={ `${index}-horizontal-done-date` }
+            >
+              { el.doneDate }
+            </span>
           </div>
           <div style={ { padding: '10px' } }>
             { renderTags(el.tags, index) }

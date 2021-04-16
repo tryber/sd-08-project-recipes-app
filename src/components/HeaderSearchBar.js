@@ -8,6 +8,11 @@ import { DataDrinksContext } from '../context/ContextDrinks';
 import { DataHeaderContext } from '../context/HeaderContext';
 
 function HeaderSearchBar() {
+  const stylecss = {
+    backgroundColor: 'grey',
+    borderRadius: '2px',
+    color: '#ddd',
+  };
   const headerContext = useContext(DataHeaderContext);
   const drinksContext = useContext(DataDrinksContext);
   const mealsContext = useContext(LoginAndFoodContext);
@@ -94,7 +99,7 @@ function HeaderSearchBar() {
                 data-testid="ingredient-search-radio"
                 type="radio"
               />
-              ingrediente
+              Ingrediente
             </label>
             <label htmlFor="name-search-radio">
               <input
@@ -157,6 +162,7 @@ function HeaderSearchBar() {
               type="button"
               className="exec-search-btn"
               data-testid="exec-search-btn"
+              style={ stylecss }
             >
               Buscar
             </button>

@@ -1,6 +1,6 @@
 .container {
   align-items: center;
-  background-color: #ddd;
+  background-color: black;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -61,7 +61,7 @@ label {
 }
 
 .container .exec-search-btn {
-  background-color: gray;
+  background-color: black;
   margin-top: 2%;
 }
 
@@ -104,7 +104,6 @@ label {
   flex-flow: wrap;
   flex-direction: row;
   justify-content: space-around;
-  margin-top: 2%;
   width: 100vw;
 }
 

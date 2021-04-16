@@ -7,6 +7,7 @@ import whiteHeartIcon from '../images/whiteHeartIcon.svg';
 import shareIcon from '../images/shareIcon.svg';
 import { PageProgress } from '../context/ContextProgress';
 import { saveDoneRecipes } from '../localStorage/doneRecipes';
+import './CardInProgress.css';
 
 import {
   saveRecipeFavorites,
@@ -42,56 +43,81 @@ function CardInProgress({ recipe, type }) {
   }, [thisSave]);
 
   return (
-    <>
-      <div>
+    <div className="main-card-in-progress">
+      <div className="recipe-card-image-progress">
         <img
+          className="recipe-image-progress"
           data-testid="recipe-photo"
-          style={ { width: '200px' } }
           src={ recipe.strMealThumb || recipe.strDrinkThumb }
           alt={ recipe.strMeal }
         />
       </div>
-      <div>
-        <h1 data-testid="recipe-title">{ recipe.strMeal || recipe.strDrink }</h1>
-      </div>
-      <div>
-        <button
-          onClick={ () => onClickCopyLink() }
-          data-testid="share-btn"
-          type="button"
+      <div className="recipe-card-title-progress">
+        <h1
+          className="recipe-title-progress"
+          data-testid="recipe-title"
         >
-          <img typ="image/svg+xml" src={ shareIcon } alt="share-icon" />
-        </button>
+          { recipe.strMeal || recipe.strDrink }
+        </h1>
       </div>
-      <div>
-        <button
-          onClick={ () => onClickFavorite() }
-          data-testid="favorite-btn"
-          type="button"
-          src={ favorite ? blackHeartIcon : whiteHeartIcon }
-        >
-          <img
-            type="image/svg+xml"
+      <div className="content-btn-share-copy">
+        <div>
+          <button
+            className="recipe-btn-copy-progress"
+            onClick={ () => onClickCopyLink() }
+            data-testid="share-btn"
+            type="button"
+          >
+            <img typ="image/svg+xml" src={ shareIcon } alt="share-icon" />
+          </button>
+        </div>
+        <div>
+          <button
+            className="recipe-btn-share-progress"
+            onClick={ () => onClickFavorite() }
+            data-testid="favorite-btn"
+            type="button"
             src={ favorite ? blackHeartIcon : whiteHeartIcon }
-            alt="t"
-          />
-        </button>
+          >
+            <img
+              type="image/svg+xml"
+              src={ favorite ? blackHeartIcon : whiteHeartIcon }
+              alt="t"
+            />
+          </button>
+        </div>
       </div>
       <div>
-        <h2 data-testid="recipe-category">{ recipe.strCategory }</h2>
+        { copyLink
+        && (
+          <span
+            className="recipe-progress-link-copy"
+          >
+            Link copiado!
+          </span>)}
+      </div>
+      <div className="recipe-card-category-alcoholic-progress">
+        <h2
+          data-testid="recipe-category"
+        >
+          { recipe.strCategory }
+        </h2>
         { recipe.strAlcoholic ? <h5>{ recipe.strAlcoholic }</h5> : null }
-      </div>
-      <div>
-        { copyLink && <span>Link copiado!</span>}
       </div>
       <div>
         <IngredientList { ...{ recipe, type } } />
       </div>
-      <div>
-        <p data-testid="instructions">{ recipe.strInstructions }</p>
+      <div className="recipe-card-instructions-progress">
+        <p
+          className="recipe-instructions-progress"
+          data-testid="instructions"
+        >
+          { recipe.strInstructions }
+        </p>
       </div>
-      <div>
+      <div className="recipe-card-btn-progress">
         <button
+          className="recipe-btn-progress"
           disabled={ recipeCompleted }
           data-testid="finish-recipe-btn"
           type="button"
@@ -103,7 +129,7 @@ function CardInProgress({ recipe, type }) {
           Finalizar receita
         </button>
       </div>
-    </>
+    </div>
   );
 }
 

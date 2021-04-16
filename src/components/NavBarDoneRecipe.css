@@ -1,0 +1,79 @@
+.recipe-done-nav-btn {
+  align-content: center;
+  align-items: center;
+  display: flex;
+  height: 50px;
+  justify-content: space-around;
+  margin: 10px auto;
+  width: 95%;
+}
+
+.recipe-done-btn-filter {
+  background-color: transparent;
+  border-radius: 4px;
+  box-shadow: 1px 1px 1px rgba(187, 187, 187, 0.836);
+  font-size: calc(2.5vh + 1vw);
+  height: 95%;
+  margin: 0;
+  width: calc(100% / 3.2);
+}
+
+.recipe-done-btn-filter:focus {
+  outline: none;
+}
+
+.recipe-card-done {
+  align-items: center;
+  background-image: url('../images/vintage-1557993_960_720\ \(1\).webp');
+  background-repeat: repeat;
+  box-shadow: 1px 1px 1px 1px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  letter-spacing: 1.2px;
+  margin: 15px auto;
+  width: 90%;
+}
+
+.recipe-content-img {
+  align-items: center;
+  display: flex;
+  height: 150px;
+  justify-content: center;
+  margin: 5px;
+  width: 100%;
+}
+
+.link-img-done {
+  align-items: center;
+  color: black;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  width: 50%;
+}
+
+.link-title-done {
+  color: black;
+  text-decoration: none;
+}
+
+.link-title-done h1 {
+  font-size: 2em;
+  text-align: center;
+}
+
+.img-done {
+  border-radius: 4px;
+  height: 100%;
+  width: 100%;
+}
+
+.recipe-share-link {
+  background-color: transparent;
+}
+
+h2 {
+  text-align: center;
+}

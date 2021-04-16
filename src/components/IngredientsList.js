@@ -5,6 +5,7 @@ import {
   saveRecipeInProgressStorage,
   getLocalStorageRecipesInProgress,
 } from '../localStorage/recipeProgressStorage';
+import './IngredientList.css';
 
 function setInitStateRecipe(id, type) {
   const local = getLocalStorageRecipesInProgress();
@@ -129,16 +130,17 @@ function ListIngredients({ recipe, type }) {
   }, [verifyRecipeCompleted]);
 
   return (
-    <ul>
+    <ul className="recipe-card-ingredient-progress">
       {Object.entries(recipe).reduce((acc, [key, value], index) => {
         if (key.includes('strIngredient') && value) {
           return acc.concat(
-            <li data-testid={ `${acc.length}-ingredient-step` } key={ index }>
-              <label htmlFor={ `${acc.length + 1}-ingredient` }>
-                {`${value} ${recipe[`strMeasure${acc.length + 1}`]}`}
-                {value}
-              </label>
+            <li
+              className="recipe-ingredient-progress"
+              data-testid={ `${acc.length}-ingredient-step` }
+              key={ index }
+            >
               <input
+                className="recipe-input-progress"
                 defaultChecked={ isChecked[acc.length] }
                 data-idingredient={ acc.length }
                 onClick={ (e) => {
@@ -147,6 +149,13 @@ function ListIngredients({ recipe, type }) {
                 id={ `${acc.length + 1}-ingredient` }
                 type="checkbox"
               />
+              <label
+                className="recipe-label-progress"
+                htmlFor={ `${acc.length + 1}-ingredient` }
+              >
+                {`${value} ${recipe[`strMeasure${acc.length + 1}`]}`}
+                {value}
+              </label>
             </li>,
           );
         }

@@ -46,6 +46,7 @@
 
 label {
   box-sizing: border-box;
+  color: #ddd;
   display: flex;
   flex-direction: row;
   font-size: 0.8em;

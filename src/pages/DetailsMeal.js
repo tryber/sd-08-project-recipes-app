@@ -131,30 +131,30 @@ function DetailsMeal() {
             </Link>
           )}
         </div>
-      </div>
-      <div className="share-favorite-btn">
-        <button
-          onClick={ () => onClickCopyLink() }
-          type="button"
-          variant="warning"
-        >
-          <img data-testid="share-btn" src={ shareIcon } alt="share-icon" />
-        </button>
-        <button
-          onClick={ () => {
-            saveRecipeFavorites(mealDetail);
-            setFavoriteRecipe(!favoriteRecipe);
-          } }
-          type="button"
-          variant="danger"
-        >
-          <img
-            data-testid="favorite-btn"
-            src={ favoriteRecipe ? blackHeartIcon : whiteHeartIcon }
-            alt="favorite-icon"
-          />
-        </button>
-        {copyLink && <span>Link copiado!</span>}
+        <div className="share-favorite-btn">
+          <button
+            onClick={ () => onClickCopyLink() }
+            type="button"
+            variant="warning"
+          >
+            <img data-testid="share-btn" src={ shareIcon } alt="share-icon" />
+          </button>
+          <button
+            onClick={ () => {
+              saveRecipeFavorites(mealDetail);
+              setFavoriteRecipe(!favoriteRecipe);
+            } }
+            type="button"
+            variant="danger"
+          >
+            <img
+              data-testid="favorite-btn"
+              src={ favoriteRecipe ? blackHeartIcon : whiteHeartIcon }
+              alt="favorite-icon"
+            />
+          </button>
+          {copyLink && <span>Link copiado!</span>}
+        </div>
       </div>
     </div>
   );

@@ -1,11 +1,11 @@
 body {
-  background-color: darkcyan;
+  background-image: url('https://cdn.pixabay.com/photo/2018/03/07/18/42/menu-3206748_960_720.jpg');
   display: flex;
   justify-content: center;
 }
 
 form {
-  border: 1px solid aquamarine;
+  border: 2px solid black;
   display: flex;
   flex-direction: column;
   height: 200px;
@@ -15,8 +15,10 @@ form {
 }
 
 .container-form-login {
-  background-color: #648b8b;
+  background-color: #797979b0;
+  color: white;
 }
+
 
 .label-login-form {
   align-self: center;

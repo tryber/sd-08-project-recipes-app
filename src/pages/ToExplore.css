@@ -1,6 +1,6 @@
 .container {
   align-items: center;
-  background-color: #ddd;
+  background-color: black;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -35,12 +35,16 @@
 }
 
 .main a {
+  align-items: center;
+  background-color: grey;
   border-radius: 8px;
-  box-shadow: 0 0 16px black;
-  color: black;
+  color: white;
+  display: flex;
   font-size: xx-large;
   height: 20%;
+  justify-content: center;
   margin-bottom: 2%;
+  margin-top: 10px;
   text-align: center;
   width: 90%;
 }

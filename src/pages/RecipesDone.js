@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
 import HeaderSimple from '../components/HeaderSimple';
 import NavBarDoneRecipe from '../components/NavBarDoneRecipe';
 import CardDoneRecipe from '../components/CardDoneRecipe';
+import './RecipesDone.css';
 
 function RecipesDone() {
   const [filter, setFilter] = useState('all');
@@ -12,15 +12,15 @@ function RecipesDone() {
   };
 
   return (
-    <Container fluid="sm">
-      <Row>
-        <Col xs={ 12 }>
-          <HeaderSimple />
-        </Col>
-      </Row>
-      <NavBarDoneRecipe onClickTypeFilter={ onClickTypeFilter } />
-      <CardDoneRecipe typeFilter={ filter } />
-    </Container>
+    <main>
+      <header>
+        <HeaderSimple />
+      </header>
+      <section className="main-content-recipe-done">
+        <NavBarDoneRecipe onClickTypeFilter={ onClickTypeFilter } />
+        <CardDoneRecipe typeFilter={ filter } />
+      </section>
+    </main>
   );
 }
 

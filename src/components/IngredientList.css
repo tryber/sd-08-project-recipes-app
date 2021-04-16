@@ -1,0 +1,29 @@
+.recipe-card-ingredient-progress {
+  background-color: rgba(82, 52, 52, 0.336);
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 0;
+  width: 95%;
+}
+
+.recipe-ingredient-progress {
+  align-content: center;
+  align-items: center;
+  display: flex;
+  margin: 8px 5px;
+  width: 100%;
+}
+
+.recipe-input-progress {
+  height: 20px;
+  width: 5%;
+}
+
+.recipe-label-progress {
+  color: black;
+  font-size: 0.8em;
+  height: auto;
+  margin: 0 0 0 10px;
+  width: 80%;
+}

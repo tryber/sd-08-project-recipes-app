@@ -1,16 +1,17 @@
 .container-card-meal-details {
+  background-color: black;
+  color: white;
   display: flex;
   flex-flow: row wrap;
   height: 80%;
   justify-content: space-around;
-  margin-top: 2%;
   overflow: scroll;
   width: 100%;
 }
 
 .card-meal-details {
   border-radius: 4px;
-  box-shadow: 0 0 8px orangered;
+  box-shadow: 0 0 8px rgb(161, 161, 161);
   display: flex;
   flex-direction: column;
   height: 35%;

@@ -3,13 +3,21 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 export default function RecipeCard({ id, meal }) {
+  const stylecss = {
+    display: 'flex',
+    justifyContent: 'center',
+    flexFlow: 'column',
+    alignItems: 'center',
+  };
   return (
     <Link to={ meal.idMeal ? `/comidas/${meal.idMeal}` : `/bebidas/${meal.idDrink}` }>
       <div
+        style={ stylecss }
         className="recipe-card"
         data-testid={ `${id}-recipe-card` }
       >
         <img
+          style={ { width: '80%' } }
           alt="recipe"
           src={ meal.strMealThumb ? meal.strMealThumb : meal.strDrinkThumb }
           data-testid={ `${id}-card-img` }

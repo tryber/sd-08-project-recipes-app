@@ -1,0 +1,89 @@
+.main-card-in-progress {
+  background-image: url('../images/vintage-1557993_960_720\ \(1\).webp');
+  background-repeat: repeat;
+  display: flex;
+  flex-direction: column;
+}
+
+.recipe-card-image-progress {
+  height: auto;
+  margin: 10px auto;
+  width: 95%;
+}
+
+.recipe-image-progress {
+  border-radius: 4px;
+  height: 250px;
+  width: 100%;
+}
+
+.recipe-card-title-progress {
+  background-color: rgba(82, 52, 52, 0.336);
+  border-radius: 4px;
+  height: auto;
+  margin: auto;
+  width: 95%;
+}
+
+.recipe-title-progress {
+  color: black;
+  font-size: 1.9em;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin: auto;
+  padding: 5px;
+  text-align: center;
+}
+
+.content-btn-share-copy {
+  display: flex;
+  justify-content: flex-end;
+  margin: 15px auto;
+  width: 95%;
+}
+
+.recipe-progress-link-copy {
+  background-color: rgba(245, 162, 9, 0.719);
+  padding: 1px 10px;
+}
+
+.recipe-card-category-alcoholic-progress {
+  background-color: rgba(82, 52, 52, 0.336);
+  border-radius: 4px;
+  color: black;
+  font-style: italic;
+  letter-spacing: 3px;
+  margin: auto;
+  text-align: center;
+  width: 95%;
+}
+
+.recipe-card-instructions-progress {
+  background-color: rgba(82, 52, 52, 0.336);
+  margin: 10px auto 45px;
+  width: 95%;
+}
+
+.recipe-instructions-progress {
+  color: black;
+  font-size: 1.1em;
+  font-weight: 600;
+  text-align: justify;
+}
+
+.recipe-card-btn-progress {
+  position: fixed;
+  top: 90%;
+  width: 100%;
+}
+
+.recipe-btn-progress {
+  background-color: #007bff;
+  width: 100%;
+}
+
+.recipe-btn-copy-progress, .recipe-btn-share-progress {
+  background-color: rgba(255, 255, 255, 0);
+  height: 40px;
+  width: 50px;
+}

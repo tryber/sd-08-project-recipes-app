@@ -26,7 +26,12 @@ function Profile() {
       <HeaderSimple />
       <div className="main">
         <div>
-          <span data-testid="profile-email">{userEmail.email}</span>
+          <span
+            style={ { color: 'white' } }
+            data-testid="profile-email"
+          >
+            {userEmail.email}
+          </span>
         </div>
         <button
           data-testid="profile-done-btn"
