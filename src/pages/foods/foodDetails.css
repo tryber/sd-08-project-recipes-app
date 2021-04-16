@@ -1,0 +1,9 @@
+div .food-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section p {
+  max-width: 300px;
+}
