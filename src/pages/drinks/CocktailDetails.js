@@ -10,6 +10,7 @@ import whiteHeartIcon from '../../images/whiteHeartIcon.svg';
 import blackHeartIcon from '../../images/blackHeartIcon.svg';
 import CocktailCard from '../../components/cards/CocktailCard';
 import setLocalStorage, { initFavoriteRecipes } from '../../services/LocalStorage';
+import './drinkdetails.css';
 
 export default function CocktailDetails({ match: { params } }) {
   const { recipeDetails, setSearchParam } = useContext(RecipesContext);
@@ -75,7 +76,7 @@ export default function CocktailDetails({ match: { params } }) {
     .map((measure) => recipeById[measure]);
 
   return (
-    <div>
+    <div className="drink-details">
       <img
         data-testid="recipe-photo"
         alt=""

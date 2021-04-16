@@ -11,7 +11,7 @@ export default function Header({ title, search }) {
   const [searchBar, setSearchBar] = useState(false);
   return (
     <>
-      <header className="navbar navbar-expand-lg">
+      <header className="navbar navbar-expand-lg hcor">
         <Link to="/perfil">
           <button type="button">
             <img data-testid="profile-top-btn" src={ ProfileIcon } alt="profile-icon" />
