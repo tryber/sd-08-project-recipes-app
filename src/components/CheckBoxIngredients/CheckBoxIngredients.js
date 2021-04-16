@@ -155,6 +155,7 @@ const CheckBoxIngredients = ({ object, title }) => {
                 id={ingredient}
                 onClick={handleClick}
                 checked
+                data-testid={ `${index}-checkBox-Ingredient` }
                 />
               <label
                 htmlFor={ingredient}
@@ -175,6 +176,7 @@ const CheckBoxIngredients = ({ object, title }) => {
                 name={ingredient}
                 id={ingredient}
                 onClick={handleClick}
+                data-testid={ `${index}-checkBox-Ingredient` }
                 />
               <label
                 htmlFor={ingredient}

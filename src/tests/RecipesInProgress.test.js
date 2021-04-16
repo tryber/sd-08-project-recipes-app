@@ -80,23 +80,21 @@ describe('1 - Verifica os elementos presentes na tela receitas em progresso e se
   })
 })
 
-describe.skip('50 - Salve o estado do progresso, que deve ser mantido caso a pessoa atualize a página ou volte para a mesma receita', () => {
+describe('50 - Salve o estado do progresso, que deve ser mantido caso a pessoa atualize a página ou volte para a mesma receita', () => {
   it('salva o progresso de uma receita de comida em andamento', async () => {
     const { findByTestId} = renderWithRouter(<RecipesInProgress title="Comidas" match={{params:{id:'52977'}}}/>)
 
 
-    fireEvent.click( await findByTestId('0-ingredient-step'))
-    
-    expect(await findByTestId(`0-checkBox-Ingredient`)).toBeInTheDocument()
-
-    // window.location.reload = jest.fn();
-    window.location.reload();
-    // expect(window.location.reload).toHaveBeenCalled();
-    
+    // fireEvent.click( await findByTestId('0-ingredient-step'))
     const check = await findByTestId(`0-checkBox-Ingredient`)
-    expect(check).toBeInTheDocument()
+    expect(check).toBeInTheDocument();
+    expect(check).not.toBeChecked()
 
-    expect(check).toHaveAttribute("checked")
+    fireEvent.click( await findByTestId(`0-checkBox-Ingredient`))
+
+    window.location.reload();
+
+    expect(check).toBeChecked()
 
   });
 });
