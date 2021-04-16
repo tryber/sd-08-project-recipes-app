@@ -1,0 +1,124 @@
+/* stylelint-disable order/properties-alphabetical-order */
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+/* stylelint-disable-next-line */
+#root {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and ( max-width : 360px ) {
+
+  .header {
+    background-color: #e66337;
+    border-radius: 0 0 20px 20px;
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100vw;
+    height: 45px;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+  }
+
+  .profileIcon {
+    left: 25px;
+    position: fixed;
+    top: 3px;
+  }
+
+  .margin-div-space {
+    box-shadow: 0 0 10px 5px lightgrey;
+    margin: 8px auto;
+    padding: 5px;
+  }
+
+  .input-and-searchBtn {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+
+  .input {
+    margin: 0 auto;
+    width: fit-content;
+  }
+
+  .radioBtns {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    padding: 4px;
+  }
+
+  .footer {
+    background-color: #e66337;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    height: 45px;
+    width: 100vw;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .imgIcons {
+    overflow: hidden;
+    border-radius: 50%;
+  }
+
+  .imgCards > button {
+    overflow: hidden;
+    border-radius: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 12px auto;
+    background: #403d39;
+    color: white;
+  }
+
+  .imgCards > button > h4 {
+    text-align: center;
+    margin: 3px auto;
+    padding: 4px;
+  }
+}
+
+/* Explore Ingredients */
+.ingredients-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: 1.4rem;
+}
+
+.ingredients-list > button {
+  background: #403d39;
+  color: white;
+  border-radius: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: 12px auto;
+}
+
+.ingredients-list > button > p {
+  width: 100%;
+  text-align: center;
+  padding: 2px;
+}
