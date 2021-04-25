@@ -20,7 +20,7 @@ export default function FoodDetails({ match: { params } }) {
   const [copyLink, setCopyLink] = useState(false);
   const { id } = params;
 
-  const storageRecipe = JSON.parse(localStorage.getItem('favoriteRecipes'));
+  const storageRecipe = JSON.parse(localStorage.getItem('favoriteRecipes' || '[]'));
   // const inProgress = JSON.parse(localStorage.getItem('inProgressRecipes'));
   const progressRecipe = storageRecipe && storageRecipe.includes(id);
 
