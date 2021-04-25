@@ -1,3 +1,12 @@
+.footer {
+  bottom: 0;
+  color: white;
+  left: 0;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+}
+
 .meals {
   align-items: center;
   background: #0fa36b;
@@ -13,6 +22,33 @@
 .rocksGlass {
   animation: shake 1s infinite ease;
   max-height: 80vh;
+}
+
+.login {
+  align-content: center;
+  align-items: center;
+  background-image: url('./login1.jpg');
+  background-size: cover;
+  border: 3px solid black;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+.input-text {
+  align-self: center;
+  border-radius: 5px;
+  display: flex;
+  margin-left: 70px;
+  margin-top: 30px;
+}
+
+.login-btn {
+  align-self: center;
+  border-radius: 5px;
+  display: flex;
+  margin-left: 140px;
+  margin-top: 30px;
 }
 
 /*
