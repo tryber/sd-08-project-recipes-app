@@ -1,0 +1,97 @@
+.header {
+  background: #c4c4c4;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 2px;
+  padding: 0;
+}
+
+.card-item a {
+  align-items: center;
+  border: 1px solid grey;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  height: 170px;
+  margin: 5px;
+  padding: 2px;
+  text-decoration: none;
+  width: 140px;
+
+}
+
+.card-item img {
+  height: 120px;
+  width: 100%;
+}
+
+.card-item h5 {
+  margin: 5px 0;
+}
+
+.footer {
+  background: grey;
+  bottom: 0;
+  display: flex;
+  height: 40px;
+  justify-content: space-between;
+  padding: 5px;
+  position: fixed;
+  width: 100%;
+}
+
+.footer img {
+  width: 30px;
+}
+
+.teste {
+  align-self: auto;
+  display: flex;
+  margin: 2px;
+  margin-left: 60px;
+}
+
+.radios {
+  display: flex;
+  justify-content: space-between;
+}
+
+.carousel-container {
+  width: 100%;
+}
+
+.carousel-container img {
+  height: 200px;
+  width: 100%;
+}
+
+.carousel-caption {
+  bottom: 0;
+  color: black;
+  left: 0;
+  position: relative;
+}
+
+.start-recipe-btn {
+  bottom: 0;
+  position: fixed;
+  z-index: 10;
+}
+
+.filter-buttons-search {
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 5px 2px;
+  outline: none;
+  width: 150px;
+}
+
+.filter-buttons-search:hover {
+  background: #ccc;
+}

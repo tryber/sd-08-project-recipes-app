@@ -21,7 +21,6 @@
   opacity: 0.6;
   transform-origin: 36px 66px;
 }
-
 #iceRight {
   animation: clink .8s .2s infinite ease;
   opacity: 0.6;
@@ -33,7 +32,7 @@
   animation: shake 1.5s infinite ease;
   color: aliceblue;
   font-family: Montserrat , sans-serif;
-  font-size: 3em;
+  font-size: 2.5em;
   font-weight: 900;
 }
 
@@ -65,4 +64,30 @@
   100% {
     transform: rotate(-10deg);
   }
+}
+
+/* ///////  */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.button-jogar {
+  background: #0b754c;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  height: 30px;
+  outline: none;
+  width: 200px;
+}
+
+.button-jogar:disabled {
+  background: #999;
+  color: rgb(228, 215, 215);
+}
+
+.button-jogar:hover {
+  background: #085839;
 }
